@@ -1,0 +1,35 @@
+{
+  "label": "nominal",
+  "status": "literature-anchored-modeled",
+  "usage_note": "Nominal room-temperature ensemble-NV scenario for relative EDT benchmarking without a local experiment.",
+  "provenance_note": "Representative assumptions informed by ensemble-NV dynamical-decoupling and magnetometry literature; not device-calibrated.",
+  "readout": {
+    "mode": "explicit",
+    "effective_detected_rate_cps": 15000000000.0,
+    "C_1": 0.03,
+    "init_fidelity": 0.9,
+    "integration_time_s": 3e-07
+  },
+  "coherence": {
+    "T2_1": 0.0003,
+    "alpha": 0.6,
+    "beta": 0.0,
+    "tau0": 1e-06,
+    "p": 2.0
+  },
+  "pulse": {
+    "piPulseFid": 0.997
+  },
+  "ensemble": {
+    "Neff": 1.0
+  },
+  "overheads": {
+    "t_init": 6e-06,
+    "t_read": 3e-07,
+    "t_dead": 1e-06
+  },
+  "benchmarks": {
+    "heuristic_N": 16,
+    "overdriven_N": 64
+  }
+}

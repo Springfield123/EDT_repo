@@ -1,0 +1,13 @@
+name: edt-nature-physics
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy=1.26.*
+  - scipy=1.11.*
+  - matplotlib=3.8.*
+  - pandas=2.2.*
+  - jupyterlab
+  - nbformat
+  - pytest=8.*
+  - qiskit=1.*

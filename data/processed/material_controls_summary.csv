@@ -1,0 +1,6 @@
+material,title,role,source_file,dataset_minus,dataset_plus,slice_start,slice_end,center_k,nominal_threshold,local_residual,nominal_width,threshold_min_width,threshold_max_width
+k3c60,K$_3$C$_{60}$,Main positive reference,data\k3c60\tmp.agr,207,208,150.0,281.0,0.818367,0.08,0.027798526567631557,0.09017200000000003,0.06242700000000001,0.13872700000000004
+v,V,Transition-metal comparison,data\v\V-EP-F1.agr,22,23,,,2.729483,0.08,0.0763903351179908,0.46952499999999997,0.29345299999999996,0.645597
+na,Na,Simple-metal baseline,data\na\Na-m5.agr,10,11,,,1.797594,0.08,0.0013383964799008371,0.3801080000000001,0.3801080000000001,0.3801080000000001
+lah10,LaH$_{10}$,High-curvature hydride control,data\lah10\tmp_LaH10_m16.agr,33,35,,,1.288173,0.08,0.2807796103709084,0.15773599999999988,0.0,0.2103139999999999
+ybacu3o7,YBa$_2$Cu$_3$O$_7$,Correlated-oxide control,data\ybacu3o7\YBa2Cu3O7_m33.agr,145,147,,,1.537275,0.08,0.8231116071036602,0.0,0.0,0.0
