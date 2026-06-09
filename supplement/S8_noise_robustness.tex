@@ -1,0 +1,5 @@
+\section{Noise and Robustness Checks}
+
+Time evolution under the minimal plaquette Hamiltonian is approximated using first-order Trotterization, with circuit depth and gate count scaling linearly with evolution time~\cite{Trotter1959,Suzuki1990,Lloyd1996,Childs2019}. Observable errors are quantified by comparing exact and Trotterized expectation values~\cite{BerryAhokasCleveSanders2007}. The archived circuit figure in Sec.~S7 should therefore be interpreted as an implementation template for plaquette-style dynamics rather than as the only possible decomposition of the stripped-down Hamiltonian used in the main-text lambda sweep.
+
+The finite dynamical regime is characterized by sweeping the loop strength $\lambda$ and identifying the optimal value $\lambda^\star$ that maximizes $S_{\mathrm{dyn}}$. Robustness in the present manuscript is evaluated in two ways: by repeating the exact sweep for several transverse-field values $h$ and several fixed $J$ values, and by comparing exact and Trotterized evolutions to verify that the finite optimum remains meaningful under approximate implementation~\cite{Childs2019}.

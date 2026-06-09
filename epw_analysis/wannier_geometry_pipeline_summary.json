@@ -1,0 +1,538 @@
+{
+  "results": [
+    {
+      "material": "Na",
+      "num_bands": 8,
+      "num_kpoints": 400,
+      "qc": {
+        "material": "Na",
+        "required_files_available": {
+          "pwscf.kgmap": true,
+          "pwscf.nnkp": true,
+          "pwscf.ukk": true,
+          "pwscf.win": true,
+          "pwscf.wout": true,
+          "pwscf_hr.dat": true,
+          "pwscf_wsvec.dat": true
+        },
+        "win": {
+          "dis_froz_max_ev": 6.0,
+          "dis_froz_min_ev": -5.0,
+          "dis_win_max_ev": 18.0,
+          "dis_win_min_ev": -12.0,
+          "num_iter": 1000,
+          "num_wann": 8,
+          "path": "epw_runs\\Na\\pwscf.win",
+          "projections": [
+            "Na:s",
+            "Na:p"
+          ]
+        },
+        "wout": {
+          "converged": false,
+          "explicit_convergence_message": false,
+          "final_spreads_ang2": [
+            3.80631069,
+            3.80630573,
+            5.05634647,
+            5.05634533,
+            5.05622189,
+            5.05633534,
+            5.05634509,
+            5.05622576
+          ],
+          "max_cycle": 1000,
+          "max_spread_ang2": 5.05634647,
+          "mean_spread_ang2": 4.743804537500001,
+          "normal_termination": true,
+          "omega_total_ang2": 37.95043629,
+          "path": "epw_runs\\Na\\pwscf.wout"
+        },
+        "wsvec": {
+          "available": true,
+          "max_degeneracy": 8,
+          "path": "epw_runs\\Na\\pwscf_wsvec.dat",
+          "records": 46656
+        }
+      },
+      "status": "completed"
+    },
+    {
+      "material": "V",
+      "num_bands": 18,
+      "num_kpoints": 200,
+      "qc": {
+        "material": "V",
+        "required_files_available": {
+          "pwscf.kgmap": true,
+          "pwscf.nnkp": true,
+          "pwscf.ukk": true,
+          "pwscf.win": true,
+          "pwscf.wout": true,
+          "pwscf_hr.dat": true,
+          "pwscf_wsvec.dat": true
+        },
+        "win": {
+          "dis_froz_max_ev": null,
+          "dis_froz_min_ev": null,
+          "dis_win_max_ev": null,
+          "dis_win_min_ev": null,
+          "num_iter": 1000,
+          "num_wann": 18,
+          "path": "epw_runs\\V\\pwscf.win",
+          "projections": [
+            "V:s",
+            "V:p",
+            "V:d"
+          ]
+        },
+        "wout": {
+          "converged": false,
+          "explicit_convergence_message": false,
+          "final_spreads_ang2": [
+            0.22545267,
+            0.22441759,
+            0.22684191,
+            0.23124504,
+            0.22544491,
+            0.22246713,
+            0.23483976,
+            0.23314376,
+            0.23379572,
+            0.32113466,
+            0.34872589,
+            0.23160873,
+            0.28207543,
+            0.23705402,
+            0.34573115,
+            0.3445289,
+            0.2357637,
+            0.23715672
+          ],
+          "max_cycle": 1000,
+          "max_spread_ang2": 0.34872589,
+          "mean_spread_ang2": 0.2578570938888889,
+          "normal_termination": true,
+          "omega_total_ang2": 4.64142768,
+          "path": "epw_runs\\V\\pwscf.wout"
+        },
+        "wsvec": {
+          "available": true,
+          "max_degeneracy": 8,
+          "path": "epw_runs\\V\\pwscf_wsvec.dat",
+          "records": 236196
+        }
+      },
+      "status": "completed"
+    },
+    {
+      "material": "Nb",
+      "qc": {
+        "material": "Nb",
+        "required_files_available": {
+          "pwscf.kgmap": true,
+          "pwscf.nnkp": true,
+          "pwscf.ukk": true,
+          "pwscf.win": true,
+          "pwscf.wout": true,
+          "pwscf_hr.dat": true,
+          "pwscf_wsvec.dat": true
+        },
+        "win": {
+          "dis_froz_max_ev": null,
+          "dis_froz_min_ev": null,
+          "dis_win_max_ev": null,
+          "dis_win_min_ev": null,
+          "num_iter": 1000,
+          "num_wann": 18,
+          "path": "epw_runs\\Nb\\pwscf.win",
+          "projections": [
+            "Nb:s",
+            "Nb:p",
+            "Nb:d"
+          ]
+        },
+        "wout": {
+          "converged": false,
+          "explicit_convergence_message": false,
+          "final_spreads_ang2": [
+            0.33447263,
+            0.33650414,
+            0.33442577,
+            0.33478697,
+            0.34361644,
+            0.33601231,
+            0.33682867,
+            0.34314196,
+            0.32341373,
+            0.49887601,
+            0.35308152,
+            0.35108014,
+            0.3521182,
+            0.32396696,
+            0.48591383,
+            0.35930848,
+            0.34975583,
+            0.35200733
+          ],
+          "max_cycle": 1000,
+          "max_spread_ang2": 0.49887601,
+          "mean_spread_ang2": 0.35829505111111115,
+          "normal_termination": true,
+          "omega_total_ang2": 6.449310914,
+          "path": "epw_runs\\Nb\\pwscf.wout"
+        },
+        "wsvec": {
+          "available": true,
+          "max_degeneracy": 8,
+          "path": "epw_runs\\Nb\\pwscf_wsvec.dat",
+          "records": 236196
+        }
+      },
+      "reason": "No AGR curvature file and EDT summary are available in this checkout.",
+      "status": "skipped_missing_agr_or_edt_summary"
+    },
+    {
+      "material": "Nb_m4",
+      "num_bands": 18,
+      "num_kpoints": 200,
+      "qc": {
+        "material": "Nb_m4",
+        "required_files_available": {
+          "pwscf.kgmap": true,
+          "pwscf.nnkp": true,
+          "pwscf.ukk": true,
+          "pwscf.win": true,
+          "pwscf.wout": true,
+          "pwscf_hr.dat": true,
+          "pwscf_wsvec.dat": true
+        },
+        "win": {
+          "dis_froz_max_ev": null,
+          "dis_froz_min_ev": null,
+          "dis_win_max_ev": null,
+          "dis_win_min_ev": null,
+          "num_iter": 1000,
+          "num_wann": 18,
+          "path": "epw_runs\\Nb\\pwscf.win",
+          "projections": [
+            "Nb:s",
+            "Nb:p",
+            "Nb:d"
+          ]
+        },
+        "wout": {
+          "converged": false,
+          "explicit_convergence_message": false,
+          "final_spreads_ang2": [
+            0.33447263,
+            0.33650414,
+            0.33442577,
+            0.33478697,
+            0.34361644,
+            0.33601231,
+            0.33682867,
+            0.34314196,
+            0.32341373,
+            0.49887601,
+            0.35308152,
+            0.35108014,
+            0.3521182,
+            0.32396696,
+            0.48591383,
+            0.35930848,
+            0.34975583,
+            0.35200733
+          ],
+          "max_cycle": 1000,
+          "max_spread_ang2": 0.49887601,
+          "mean_spread_ang2": 0.35829505111111115,
+          "normal_termination": true,
+          "omega_total_ang2": 6.449310914,
+          "path": "epw_runs\\Nb\\pwscf.wout"
+        },
+        "wsvec": {
+          "available": true,
+          "max_degeneracy": 8,
+          "path": "epw_runs\\Nb\\pwscf_wsvec.dat",
+          "records": 236196
+        }
+      },
+      "status": "completed"
+    },
+    {
+      "material": "Nb_m5",
+      "num_bands": 18,
+      "num_kpoints": 200,
+      "qc": {
+        "material": "Nb_m5",
+        "required_files_available": {
+          "pwscf.kgmap": true,
+          "pwscf.nnkp": true,
+          "pwscf.ukk": true,
+          "pwscf.win": true,
+          "pwscf.wout": true,
+          "pwscf_hr.dat": true,
+          "pwscf_wsvec.dat": true
+        },
+        "win": {
+          "dis_froz_max_ev": null,
+          "dis_froz_min_ev": null,
+          "dis_win_max_ev": null,
+          "dis_win_min_ev": null,
+          "num_iter": 1000,
+          "num_wann": 18,
+          "path": "epw_runs\\Nb\\pwscf.win",
+          "projections": [
+            "Nb:s",
+            "Nb:p",
+            "Nb:d"
+          ]
+        },
+        "wout": {
+          "converged": false,
+          "explicit_convergence_message": false,
+          "final_spreads_ang2": [
+            0.33447263,
+            0.33650414,
+            0.33442577,
+            0.33478697,
+            0.34361644,
+            0.33601231,
+            0.33682867,
+            0.34314196,
+            0.32341373,
+            0.49887601,
+            0.35308152,
+            0.35108014,
+            0.3521182,
+            0.32396696,
+            0.48591383,
+            0.35930848,
+            0.34975583,
+            0.35200733
+          ],
+          "max_cycle": 1000,
+          "max_spread_ang2": 0.49887601,
+          "mean_spread_ang2": 0.35829505111111115,
+          "normal_termination": true,
+          "omega_total_ang2": 6.449310914,
+          "path": "epw_runs\\Nb\\pwscf.wout"
+        },
+        "wsvec": {
+          "available": true,
+          "max_degeneracy": 8,
+          "path": "epw_runs\\Nb\\pwscf_wsvec.dat",
+          "records": 236196
+        }
+      },
+      "status": "completed"
+    },
+    {
+      "material": "Nb_m6",
+      "num_bands": 18,
+      "num_kpoints": 200,
+      "qc": {
+        "material": "Nb_m6",
+        "required_files_available": {
+          "pwscf.kgmap": true,
+          "pwscf.nnkp": true,
+          "pwscf.ukk": true,
+          "pwscf.win": true,
+          "pwscf.wout": true,
+          "pwscf_hr.dat": true,
+          "pwscf_wsvec.dat": true
+        },
+        "win": {
+          "dis_froz_max_ev": null,
+          "dis_froz_min_ev": null,
+          "dis_win_max_ev": null,
+          "dis_win_min_ev": null,
+          "num_iter": 1000,
+          "num_wann": 18,
+          "path": "epw_runs\\Nb\\pwscf.win",
+          "projections": [
+            "Nb:s",
+            "Nb:p",
+            "Nb:d"
+          ]
+        },
+        "wout": {
+          "converged": false,
+          "explicit_convergence_message": false,
+          "final_spreads_ang2": [
+            0.33447263,
+            0.33650414,
+            0.33442577,
+            0.33478697,
+            0.34361644,
+            0.33601231,
+            0.33682867,
+            0.34314196,
+            0.32341373,
+            0.49887601,
+            0.35308152,
+            0.35108014,
+            0.3521182,
+            0.32396696,
+            0.48591383,
+            0.35930848,
+            0.34975583,
+            0.35200733
+          ],
+          "max_cycle": 1000,
+          "max_spread_ang2": 0.49887601,
+          "mean_spread_ang2": 0.35829505111111115,
+          "normal_termination": true,
+          "omega_total_ang2": 6.449310914,
+          "path": "epw_runs\\Nb\\pwscf.wout"
+        },
+        "wsvec": {
+          "available": true,
+          "max_degeneracy": 8,
+          "path": "epw_runs\\Nb\\pwscf_wsvec.dat",
+          "records": 236196
+        }
+      },
+      "status": "completed"
+    },
+    {
+      "material": "YBaCuO",
+      "num_bands": 44,
+      "num_kpoints": 400,
+      "qc": {
+        "material": "YBaCuO",
+        "required_files_available": {
+          "pwscf.kgmap": true,
+          "pwscf.nnkp": true,
+          "pwscf.ukk": true,
+          "pwscf.win": true,
+          "pwscf.wout": true,
+          "pwscf_hr.dat": true,
+          "pwscf_wsvec.dat": true
+        },
+        "win": {
+          "dis_froz_max_ev": null,
+          "dis_froz_min_ev": null,
+          "dis_win_max_ev": null,
+          "dis_win_min_ev": null,
+          "num_iter": 1000,
+          "num_wann": 44,
+          "path": "epw_runs\\YBaCuO\\pwscf.win",
+          "projections": [
+            "Cu:d",
+            "O:p",
+            "Y:d",
+            "Y:s",
+            "Ba:s"
+          ]
+        },
+        "wout": {
+          "converged": false,
+          "explicit_convergence_message": false,
+          "final_spreads_ang2": [
+            0.31478269,
+            0.31970638,
+            0.31942625,
+            0.30068585,
+            0.31897329,
+            0.31481773,
+            0.31971948,
+            0.31944014,
+            0.30067243,
+            0.31915492,
+            0.29340175,
+            0.319016,
+            0.31716959,
+            0.30581487,
+            0.31768332,
+            0.48826877,
+            0.50446437,
+            0.48503499,
+            0.50657098,
+            0.49344409,
+            0.50582582,
+            0.50650749,
+            0.49372865,
+            0.50584452,
+            0.50434366,
+            0.50635883,
+            0.48892276,
+            0.50482967,
+            0.50652855,
+            0.48876649,
+            0.50570979,
+            0.50231579,
+            0.49304049,
+            0.50541503,
+            0.50131234,
+            0.49253486,
+            1.29677989,
+            1.27226116,
+            1.28629325,
+            1.26410191,
+            1.29324696,
+            0.4830085,
+            0.75067501,
+            0.75068903
+          ],
+          "max_cycle": 1000,
+          "max_spread_ang2": 1.29677989,
+          "mean_spread_ang2": 0.536074735,
+          "normal_termination": true,
+          "omega_total_ang2": 23.587312384,
+          "path": "epw_runs\\YBaCuO\\pwscf.wout"
+        },
+        "wsvec": {
+          "available": true,
+          "max_degeneracy": 4,
+          "path": "epw_runs\\YBaCuO\\pwscf_wsvec.dat",
+          "records": 284592
+        }
+      },
+      "status": "completed"
+    },
+    {
+      "material": "K3C60",
+      "num_kpoints": 400,
+      "qc": {
+        "all_required_files_present": false,
+        "material": "K3C60",
+        "required_files_available": {
+          "pwscf.kgmap": false,
+          "pwscf.nnkp": false,
+          "pwscf.ukk": false,
+          "pwscf.win": false,
+          "pwscf.wout": false,
+          "pwscf_hr.dat": false,
+          "pwscf_wsvec.dat": false
+        },
+        "warnings": [
+          "missing pwscf.win",
+          "missing pwscf.wout",
+          "missing pwscf_hr.dat",
+          "missing pwscf_wsvec.dat",
+          "missing pwscf.nnkp",
+          "missing pwscf.ukk",
+          "missing pwscf.kgmap"
+        ],
+        "win": {
+          "available": false,
+          "path": "epw_runs\\K3C60\\pwscf.win"
+        },
+        "wout": {
+          "available": false,
+          "path": "epw_runs\\K3C60\\pwscf.wout"
+        },
+        "wsvec": {
+          "available": false,
+          "max_degeneracy": null,
+          "path": "epw_runs\\K3C60\\pwscf_wsvec.dat",
+          "records": 0
+        }
+      },
+      "reason": "Missing Wannier Hamiltonian file: epw_runs\\K3C60\\pwscf_hr.dat",
+      "status": "edt_only_missing_wannier"
+    }
+  ]
+}

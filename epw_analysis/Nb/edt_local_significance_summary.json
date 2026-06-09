@@ -1,0 +1,23 @@
+{
+  "analysis_dir": "epw_analysis\\Nb",
+  "curvature_only_metrics": {},
+  "input_warnings": [
+    "AGR file is labeled 'Band Energy in eV'; it is not an EDT curvature AGR file.",
+    "EDT geometry summary status is 'skipped_missing_agr_or_edt_summary', not 'completed'."
+  ],
+  "interpretation": "Required EDT curvature/window and Wannier metric files are missing, so no k0-centered comparison was generated. AGR file is labeled 'Band Energy in eV'; it is not an EDT curvature AGR file. EDT geometry summary status is 'skipped_missing_agr_or_edt_summary', not 'completed'.",
+  "material": "Nb",
+  "missing_inputs": [
+    "edt_geometry_comparison",
+    "quantum_metric",
+    "wannier_bands"
+  ],
+  "required_inputs": {
+    "agr_curvature": "data\\nb\\bands-Nb.agr",
+    "edt_geometry_comparison": "epw_analysis\\Nb\\edt_geometry_comparison.csv",
+    "edt_geometry_summary": "epw_analysis\\Nb\\edt_geometry_summary.json",
+    "quantum_metric": "epw_analysis\\Nb\\quantum_metric_on_agr_path.csv",
+    "wannier_bands": "epw_analysis\\Nb\\wannier_bands_on_agr_path.csv"
+  },
+  "status": "missing_required_inputs"
+}

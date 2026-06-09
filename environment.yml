@@ -1,0 +1,14 @@
+name: edt-codebase
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - numpy>=1.24
+  - scipy>=1.11
+  - matplotlib>=3.8
+  - pandas>=2.0
+  - pytest>=8.0
+  - qiskit>=1.0
+  - pip:
+      - -e .

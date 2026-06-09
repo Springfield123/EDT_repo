@@ -1,0 +1,56 @@
+{
+  "details": {
+    "epc_g2": {
+      "inside_count": 0,
+      "inside_max": null,
+      "inside_mean": null,
+      "inside_median": null,
+      "inside_outside_ratio": null,
+      "outside_count": 0,
+      "outside_max": null,
+      "outside_mean": null,
+      "outside_median": null
+    },
+    "lambda_qnu": {
+      "inside_count": 0,
+      "inside_max": null,
+      "inside_mean": null,
+      "inside_median": null,
+      "inside_outside_ratio": null,
+      "outside_count": 0,
+      "outside_max": null,
+      "outside_mean": null,
+      "outside_median": null
+    },
+    "linewidth": {
+      "inside_count": 0,
+      "inside_max": null,
+      "inside_mean": null,
+      "inside_median": null,
+      "inside_outside_ratio": null,
+      "outside_count": 0,
+      "outside_max": null,
+      "outside_mean": null,
+      "outside_median": null
+    }
+  },
+  "edt_window": {
+    "edt_width": 1.0157120000000002,
+    "k0": 2.7178432559865664,
+    "k_left": 2.230612,
+    "k_right": 3.246324
+  },
+  "input_epc_csv": "epw_analysis\\V\\epc_extracted.csv",
+  "k_grid_source": "epw_analysis\\V\\quantum_metric_on_agr_path.csv",
+  "material": "V",
+  "metrics": {
+    "R_EPC_g2": null,
+    "R_lambda": null,
+    "R_linewidth": null
+  },
+  "notes": "No EPC values could be mapped into the EDT window. Run or stage EPW EPC outputs first.",
+  "num_epc_rows": 0,
+  "num_rows_mapped_to_k": 0,
+  "output_csv": "epw_analysis\\V\\epc_edt_window_comparison.csv",
+  "status": "insufficient_epc_data"
+}

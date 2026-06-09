@@ -1,0 +1,62 @@
+{
+  "material": "Nb",
+  "required_files_available": {
+    "pwscf.kgmap": true,
+    "pwscf.nnkp": true,
+    "pwscf.ukk": true,
+    "pwscf.win": true,
+    "pwscf.wout": true,
+    "pwscf_hr.dat": true,
+    "pwscf_wsvec.dat": true
+  },
+  "win": {
+    "dis_froz_max_ev": null,
+    "dis_froz_min_ev": null,
+    "dis_win_max_ev": null,
+    "dis_win_min_ev": null,
+    "num_iter": 1000,
+    "num_wann": 18,
+    "path": "epw_runs\\Nb\\pwscf.win",
+    "projections": [
+      "Nb:s",
+      "Nb:p",
+      "Nb:d"
+    ]
+  },
+  "wout": {
+    "converged": false,
+    "explicit_convergence_message": false,
+    "final_spreads_ang2": [
+      0.33447263,
+      0.33650414,
+      0.33442577,
+      0.33478697,
+      0.34361644,
+      0.33601231,
+      0.33682867,
+      0.34314196,
+      0.32341373,
+      0.49887601,
+      0.35308152,
+      0.35108014,
+      0.3521182,
+      0.32396696,
+      0.48591383,
+      0.35930848,
+      0.34975583,
+      0.35200733
+    ],
+    "max_cycle": 1000,
+    "max_spread_ang2": 0.49887601,
+    "mean_spread_ang2": 0.35829505111111115,
+    "normal_termination": true,
+    "omega_total_ang2": 6.449310914,
+    "path": "epw_runs\\Nb\\pwscf.wout"
+  },
+  "wsvec": {
+    "available": true,
+    "max_degeneracy": 8,
+    "path": "epw_runs\\Nb\\pwscf_wsvec.dat",
+    "records": 236196
+  }
+}

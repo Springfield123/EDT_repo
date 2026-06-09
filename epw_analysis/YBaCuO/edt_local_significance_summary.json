@@ -1,0 +1,61 @@
+{
+  "curvature_branch_labels": {
+    "kappa_minus": "G0.S146",
+    "kappa_plus": "G0.S147"
+  },
+  "edt_window": {
+    "delta_k_EDT": 0.276748,
+    "k0": 1.200896,
+    "k_left": 1.062522,
+    "k_right": 1.33927,
+    "path_labels": [
+      "\\G",
+      "Z",
+      "T",
+      "X",
+      "S",
+      "Y",
+      "R",
+      "U",
+      "\\G"
+    ]
+  },
+  "interpretation": "EDT window is not a global path-projected metric maximum; the available metric is lower inside on average, so any significance is more local than global.",
+  "local_significance": {
+    "boundary_metric_spikes_larger_than_inside": false,
+    "exchange_score": 0.3748726344394929,
+    "exchange_score_definition": "mean_inside_abs(kappa_plus + kappa_minus) / mean_inside_abs(kappa_plus - kappa_minus)",
+    "exchange_score_small_threshold": 0.25,
+    "left_boundary_region": [
+      1.0348472,
+      1.0901968
+    ],
+    "max_metric_inside_window": 2375.734851336454,
+    "max_metric_left_boundary": 520.8534954674788,
+    "max_metric_right_boundary": 2375.734851336454,
+    "mean_inside_abs_kappa_minus": 3.4880039215686276,
+    "mean_inside_abs_kappa_plus": 1.7899392156862743,
+    "mean_outside_abs_kappa_minus": 3.3317853868194844,
+    "mean_outside_abs_kappa_plus": 2.6323722063037254,
+    "metric_inside_mean": 516.9051735291914,
+    "metric_inside_outside_ratio": 0.19510126303625855,
+    "metric_outside_mean": 2649.4199242222603,
+    "right_boundary_region": [
+      1.3115952,
+      1.3669448
+    ]
+  },
+  "material": "YBaCuO",
+  "metric_source": "sum_bands_g_parallel",
+  "mode_label": "m33",
+  "parsing_assumptions": {
+    "curvature_branches": "Detected from edt_geometry_summary.curvature_datasets by ordering inside_mean; lower is kappa_minus and higher is kappa_plus.",
+    "delta_k_EDT": "Taken from edt_window.edt_width when delta_k_EDT is absent.",
+    "metric": "Band-resolved quantum_metric_parallel values are summed over bands at each k_coord."
+  },
+  "plots": {
+    "k0_centered": "epw_analysis\\YBaCuO\\fig_ybacuo_k0_centered_comparison.png",
+    "k0_centered_wide": "epw_analysis\\YBaCuO\\fig_ybacuo_k0_centered_comparison_wide.png"
+  },
+  "status": "completed"
+}

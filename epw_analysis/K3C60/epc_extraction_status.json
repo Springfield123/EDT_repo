@@ -1,0 +1,101 @@
+{
+  "candidate_files": [
+    {
+      "bytes": 794,
+      "matched_lines": 0,
+      "notes": "",
+      "path": "epw_runs\\K3C60\\epw.in",
+      "roles": [
+        "name:epw",
+        "text:epb",
+        "text:specfun"
+      ],
+      "text_scanned": true
+    },
+    {
+      "bytes": 854,
+      "matched_lines": 0,
+      "notes": "",
+      "path": "epw_runs\\K3C60\\epw_epc_restart.in",
+      "roles": [
+        "name:epw",
+        "text:epb",
+        "text:specfun"
+      ],
+      "text_scanned": true
+    },
+    {
+      "bytes": 7128,
+      "matched_lines": 0,
+      "notes": "",
+      "path": "epw_runs\\K3C60\\nscf.in",
+      "roles": [
+        "text:linewidth"
+      ],
+      "text_scanned": true
+    },
+    {
+      "bytes": 3019,
+      "matched_lines": 0,
+      "notes": "",
+      "path": "epw_runs\\K3C60\\README_assumptions.txt",
+      "roles": [
+        "text:epb",
+        "text:linewidth",
+        "text:specfun"
+      ],
+      "text_scanned": true
+    },
+    {
+      "bytes": 980,
+      "matched_lines": 0,
+      "notes": "",
+      "path": "epw_runs\\K3C60\\README_epw_restart_narval.txt",
+      "roles": [
+        "name:epw",
+        "text:epb",
+        "text:lambda",
+        "text:linewidth",
+        "text:specfun"
+      ],
+      "text_scanned": true
+    },
+    {
+      "bytes": 3297,
+      "matched_lines": 0,
+      "notes": "",
+      "path": "epw_runs\\K3C60\\scf.in",
+      "roles": [
+        "text:linewidth"
+      ],
+      "text_scanned": true
+    },
+    {
+      "bytes": 1717,
+      "matched_lines": 0,
+      "notes": "not text-scanned: size=1717 bytes or suffix='.sh'",
+      "path": "epw_runs\\K3C60\\submit_epw.sh",
+      "roles": [
+        "name:epw"
+      ],
+      "text_scanned": false
+    },
+    {
+      "bytes": 1605,
+      "matched_lines": 0,
+      "notes": "not text-scanned: size=1605 bytes or suffix='.sh'",
+      "path": "epw_runs\\K3C60\\submit_epw_restart_narval.sh",
+      "roles": [
+        "name:epw"
+      ],
+      "text_scanned": false
+    }
+  ],
+  "epw_folder": "epw_runs\\K3C60",
+  "material": "K3C60",
+  "notes": "No band/mode/k-resolved EPC, lambda, or linewidth quantities were parsed. The current EPW output appears to stop before phonon self-energy/EPC data are written.",
+  "num_extracted_rows": 0,
+  "output_csv": "epw_analysis\\K3C60\\epc_extracted.csv",
+  "resolution": "none",
+  "status": "no_resolved_epc_quantities_found"
+}

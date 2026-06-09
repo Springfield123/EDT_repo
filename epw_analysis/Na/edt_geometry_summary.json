@@ -1,0 +1,38 @@
+{
+  "comparison_csv": "epw_analysis\\Na\\edt_geometry_comparison.csv",
+  "curvature_datasets": {
+    "G0.S10": {
+      "inside_count": 99,
+      "inside_mean": -33.08626161616162,
+      "outside_count": 301,
+      "outside_mean": -1.1291857142857142
+    },
+    "G0.S11": {
+      "inside_count": 99,
+      "inside_mean": 29.872214141414144,
+      "outside_count": 301,
+      "outside_mean": -0.4786388704318937
+    }
+  },
+  "edt_window": {
+    "edt_width": 1.0347399999999998,
+    "k0": 1.836899216185377,
+    "k_left": 1.280224,
+    "k_right": 2.314964
+  },
+  "inside_outside_metric_ratio_all_bands": 0.3622345471771923,
+  "inside_quantum_metric_parallel_mean_all_bands": 42.23388324341117,
+  "material": "Na",
+  "mode_label": "m5",
+  "num_bands": 8,
+  "num_kpoints": 400,
+  "outside_quantum_metric_parallel_mean_all_bands": 116.59264300583636,
+  "path_labels": [
+    "\\G",
+    "H",
+    "N",
+    "\\G",
+    "P"
+  ],
+  "status": "completed"
+}

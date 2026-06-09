@@ -1,0 +1,44 @@
+{
+  "analysis_dir": "epw_analysis\\K3C60",
+  "curvature_only_metrics": {
+    "boundary_metric_spikes_larger_than_inside": false,
+    "exchange_score": 0.06697739606970872,
+    "exchange_score_definition": "mean_inside_abs(kappa_plus + kappa_minus) / mean_inside_abs(kappa_plus - kappa_minus)",
+    "exchange_score_small_threshold": 0.25,
+    "left_boundary_region": [
+      0.7265644,
+      0.7574276
+    ],
+    "max_metric_inside_window": null,
+    "max_metric_left_boundary": null,
+    "max_metric_right_boundary": null,
+    "mean_inside_abs_kappa_minus": 17.888517391304347,
+    "mean_inside_abs_kappa_plus": 15.642684782608695,
+    "mean_outside_abs_kappa_minus": 5.764989830508474,
+    "mean_outside_abs_kappa_plus": 2.1135166666666665,
+    "metric_inside_mean": null,
+    "metric_inside_outside_ratio": null,
+    "metric_outside_mean": null,
+    "right_boundary_region": [
+      0.8808804,
+      0.9117436
+    ]
+  },
+  "input_warnings": [
+    "EDT geometry summary status is 'edt_only_missing_wannier', not 'completed'."
+  ],
+  "interpretation": "Required EDT curvature/window and Wannier metric files are missing, so no k0-centered comparison was generated. EDT geometry summary status is 'edt_only_missing_wannier', not 'completed'.",
+  "material": "K3C60",
+  "missing_inputs": [
+    "quantum_metric",
+    "wannier_bands"
+  ],
+  "required_inputs": {
+    "agr_curvature": "data\\k3c60\\tmp.agr",
+    "edt_geometry_comparison": "epw_analysis\\K3C60\\edt_geometry_comparison.csv",
+    "edt_geometry_summary": "epw_analysis\\K3C60\\edt_geometry_summary.json",
+    "quantum_metric": "epw_analysis\\K3C60\\quantum_metric_on_agr_path.csv",
+    "wannier_bands": "epw_analysis\\K3C60\\wannier_bands_on_agr_path.csv"
+  },
+  "status": "missing_required_inputs"
+}

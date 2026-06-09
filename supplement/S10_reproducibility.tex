@@ -1,0 +1,11 @@
+\section{Reproducibility}
+
+The reproducibility assets for this manuscript are organized in the repository root. The directory \texttt{scripts/} contains figure-generation and analysis code, \texttt{data/} contains bundled data products used by the companion workflows, \texttt{tests/} contains automated checks for the packaged Python modules, and \texttt{figures/} contains the PRX-style main and supplementary figure assets copied from the legacy manuscript workspace.
+
+For the K$_3$C$_{60}$ case study, the main reproducibility entry point is \texttt{scripts/make\_fig2\_k3c60\_edt.py}. Running \texttt{python scripts/make\_fig2\_k3c60\_edt.py} regenerates the curvature panels used in the main-text K$_3$C$_{60}$ figure, the supplementary robustness figure \texttt{figures/supplementary/S5\_threshold\_bootstrap.pdf}, and the summary file \texttt{data/k3c60/k3c60\_edt\_window\_summary.json} from the bundled curvature export \texttt{data/k3c60/tmp.agr}.
+
+For the cross-material controls, the main reproducibility entry point is \texttt{scripts/make\_figS4\_material\_controls.py}. Running \texttt{python scripts/make\_figS4\_material\_controls.py} regenerates the supplementary comparison figure \texttt{figures/supplementary/S4\_material\_controls.pdf} and the processed summary table \texttt{data/processed/material\_controls\_summary.csv} from the archived curvature exports in \texttt{data/na/}, \texttt{data/v/}, \texttt{data/lah10/}, and \texttt{data/ybacu3o7/}, together with the K$_3$C$_{60}$ reference export.
+
+For the plaquette-dynamics case study, the main reproducibility entry point is \texttt{scripts/fig4\_plaquette\_dynamics.py}. Running \texttt{python scripts/fig4\_plaquette\_dynamics.py} regenerates the main-text dynamics figure \texttt{figures/main/fig4\_plaquette\_dynamics.pdf} and the processed sweep table \texttt{data/processed/plaquette\_lambda\_sweep.csv}. The stripped-down model implementation used by that script is the package \texttt{src/plaquette\_model}.
+
+Across all systems studied, curvature arising from electron--vibration interaction defines structured manifolds in which electronic states are organized and degeneracies are lifted. This establishes curvature as the microscopic origin of EDT and links the manuscript claims to specific analysis scripts and figure products in the repository.

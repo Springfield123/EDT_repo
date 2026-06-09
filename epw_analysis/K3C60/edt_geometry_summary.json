@@ -1,0 +1,65 @@
+{
+  "comparison_csv": "epw_analysis\\K3C60\\edt_geometry_comparison.csv",
+  "curvature_datasets": {
+    "G0.S207": {
+      "inside_abs_sum": 822.8718,
+      "inside_count": 46,
+      "inside_mean": -17.888517391304347,
+      "outside_abs_sum": 2040.8064,
+      "outside_count": 354,
+      "outside_mean": -5.764989830508474
+    },
+    "G0.S208": {
+      "inside_abs_sum": 719.5635,
+      "inside_count": 46,
+      "inside_mean": 15.642684782608695,
+      "outside_abs_sum": 748.1849,
+      "outside_count": 354,
+      "outside_mean": -0.15667259887005647
+    }
+  },
+  "edt_window": {
+    "delta_k_EDT": 0.154316,
+    "edt_width": 0.154316,
+    "k0": 0.8232720345858631,
+    "k_left": 0.741996,
+    "k_right": 0.896312
+  },
+  "inside_outside_metric_ratio_all_bands": null,
+  "inside_quantum_metric_parallel_mean_all_bands": null,
+  "material": "K3C60",
+  "mode_frequency_cm^-1": 1090.35,
+  "mode_label": "m120",
+  "num_bands": null,
+  "num_kpoints": 400,
+  "outside_quantum_metric_parallel_mean_all_bands": null,
+  "path_labels": [
+    "G",
+    "X",
+    "L",
+    "W",
+    "G"
+  ],
+  "reason": "Missing Wannier Hamiltonian file: epw_runs\\K3C60\\pwscf_hr.dat",
+  "required_wannier_files_available": {
+    "pwscf.kgmap": false,
+    "pwscf.nnkp": false,
+    "pwscf.ukk": false,
+    "pwscf.win": false,
+    "pwscf.wout": false,
+    "pwscf_hr.dat": false,
+    "pwscf_wsvec.dat": false
+  },
+  "selected_pair": {
+    "band_minus_label": "Band 208",
+    "band_plus_label": "Band 209",
+    "dataset_minus": 207,
+    "dataset_plus": 208
+  },
+  "status": "edt_only_missing_wannier",
+  "wannier_qc_json": "epw_analysis\\K3C60\\wannier_qc.json",
+  "warnings": [
+    "Wannier Hamiltonian outputs are not yet available locally; bands, path metric, Berry phase, and surfaces were not computed.",
+    "No EPC comparison is made without resolved EPW EPC/lambda/linewidth output."
+  ]
+}

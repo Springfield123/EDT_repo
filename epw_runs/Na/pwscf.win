@@ -1,0 +1,13 @@
+begin projections
+ Na:s
+ Na:p
+end projections
+num_wann =   8
+iprint =   2
+dis_win_min =   -12.000000000000
+dis_win_max =    18.000000000000
+dis_froz_min =    -5.000000000000
+dis_froz_max =     6.000000000000
+num_iter =    1000
+write_bvec = .true.
+ write_hr = .true.

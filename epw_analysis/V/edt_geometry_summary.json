@@ -1,0 +1,38 @@
+{
+  "comparison_csv": "epw_analysis\\V\\edt_geometry_comparison.csv",
+  "curvature_datasets": {
+    "G0.S22": {
+      "inside_count": 36,
+      "inside_mean": -15.929802777777777,
+      "outside_count": 164,
+      "outside_mean": 0.3272310975609756
+    },
+    "G0.S23": {
+      "inside_count": 36,
+      "inside_mean": 15.373150000000003,
+      "outside_count": 164,
+      "outside_mean": 2.6248798780487808
+    }
+  },
+  "edt_window": {
+    "edt_width": 1.0157120000000002,
+    "k0": 2.7178432559865664,
+    "k_left": 2.230612,
+    "k_right": 3.246324
+  },
+  "inside_outside_metric_ratio_all_bands": 2.327826869209938,
+  "inside_quantum_metric_parallel_mean_all_bands": 51.65394515643905,
+  "material": "V",
+  "mode_label": "F1",
+  "num_bands": 18,
+  "num_kpoints": 200,
+  "outside_quantum_metric_parallel_mean_all_bands": 22.189771000439713,
+  "path_labels": [
+    "G",
+    "H",
+    "N",
+    "P",
+    "G"
+  ],
+  "status": "completed"
+}

@@ -1,0 +1,18 @@
+\section{EDT Window Algorithm}
+
+Electronic structure and electron--vibration interactions were computed using all-electron quantum solid-state methods with numerical atomic orbitals, with additional cross-checks against plane-wave density-functional calculations~\cite{Blum2009,Giannozzi2009,Giannozzi2017}. Second-order derivatives were evaluated using a five-point finite-difference scheme,
+\begin{equation}
+\frac{\partial^2 A}{\partial u_\nu^2}
+\approx
+\frac{-A(-2\Delta u) + 16A(-\Delta u) - 30A(0) + 16A(\Delta u) - A(2\Delta u)}{12(\Delta u)^2}.
+\end{equation}
+
+In practice, curvature is evaluated in momentum space,
+\begin{equation}
+\kappa_n(k) = \frac{\partial^2 E_n}{\partial k^2},
+\end{equation}
+and paired curvature branches near crossings are fit locally to
+\begin{equation}
+\kappa_\pm(k) \approx a_\pm (k-k_0)^2 + b_\pm .
+\end{equation}
+The EDT window $\Delta k_{\mathrm{EDT}}$ is defined as the interval over which the quadratic residual remains below a prescribed threshold. This provides a reproducible, data-driven criterion for identifying finite structured manifolds in real materials.

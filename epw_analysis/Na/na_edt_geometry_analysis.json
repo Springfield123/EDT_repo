@@ -1,0 +1,101 @@
+{
+  "epc_extraction": {
+    "candidate_epc_files": [],
+    "material": "Na",
+    "next_action": "Run or stage EPW EPC outputs such as epw.out plus epb/epmat/lambda/linewidth/specfun files, then compute EPC inside/outside ratios on the same EDT window.",
+    "outputs_dir_has_files": false,
+    "save_dir_has_files": false,
+    "status": "blocked_missing_epw_epc_outputs"
+  },
+  "geometry_summary": {
+    "band_resolved": [
+      {
+        "band": 1,
+        "inside_mean": 55.8061722628,
+        "inside_outside_ratio": 0.709701357869,
+        "outside_mean": 78.6333175836
+      },
+      {
+        "band": 2,
+        "inside_mean": 54.3366116859,
+        "inside_outside_ratio": 0.308791151719,
+        "outside_mean": 175.965572146
+      },
+      {
+        "band": 3,
+        "inside_mean": 20.9490887093,
+        "inside_outside_ratio": 0.170186357095,
+        "outside_mean": 123.09499461
+      },
+      {
+        "band": 4,
+        "inside_mean": 39.1276510203,
+        "inside_outside_ratio": 0.326309901013,
+        "outside_mean": 119.909481444
+      },
+      {
+        "band": 5,
+        "inside_mean": 45.4114334131,
+        "inside_outside_ratio": 0.369062118375,
+        "outside_mean": 123.045501427
+      },
+      {
+        "band": 6,
+        "inside_mean": 45.4113607327,
+        "inside_outside_ratio": 0.505159836236,
+        "outside_mean": 89.8950341561
+      },
+      {
+        "band": 7,
+        "inside_mean": 20.9492500618,
+        "inside_outside_ratio": 0.255320352967,
+        "outside_mean": 82.0508424742
+      },
+      {
+        "band": 8,
+        "inside_mean": 55.8794980614,
+        "inside_outside_ratio": 0.39872232165,
+        "outside_mean": 140.146400207
+      }
+    ],
+    "inside_mean_all_bands": 42.23388324341117,
+    "inside_outside_ratio_all_bands": 0.3622345471771923,
+    "outside_mean_all_bands": 116.59264300583636
+  },
+  "material": "Na",
+  "note": "For Na, the EDT curvature window is not where the path-projected quantum metric is largest. Treat this as a control result, not as a failure.",
+  "plots": {
+    "bands": "epw_analysis\\Na\\fig_na_wannier_bands_on_agr_path.png",
+    "metric": "epw_analysis\\Na\\fig_na_quantum_metric_parallel.png",
+    "ratios": "epw_analysis\\Na\\fig_na_metric_inside_outside_ratios.png"
+  },
+  "qc_confirmed": {
+    "convergence_warning": true,
+    "disentanglement_window_ev": [
+      -12.0,
+      18.0
+    ],
+    "final_spreads_ang2": [
+      3.80631069,
+      3.80630573,
+      5.05634647,
+      5.05634533,
+      5.05622189,
+      5.05633534,
+      5.05634509,
+      5.05622576
+    ],
+    "frozen_window_ev": [
+      -5.0,
+      6.0
+    ],
+    "normal_termination": true,
+    "num_wann": 8,
+    "omega_total_ang2": 37.95043629,
+    "projections": [
+      "Na:s",
+      "Na:p"
+    ],
+    "required_files_present": true
+  }
+}

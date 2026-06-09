@@ -1,0 +1,18 @@
+\section{Minimal plaquette model of finite EDT dynamics}
+
+The plaquette Hamiltonian is a minimal model designed to capture the same structural ingredients identified in the curvature analysis: local interactions, loop-induced nonlocal correlations, and finite-regime operator spreading. It is not claimed to be a quantitatively fitted Hamiltonian for K$_3$C$_{60}$ unless explicit parameter fitting is provided. In this sense, the plaquette model plays the role of a controlled dynamical analog of the curvature-defined finite window rather than a microscopic materials model.
+
+The minimal Hamiltonian is
+\begin{equation}
+H =
+J \sum_{\langle i,j\rangle} Z_i Z_j
++
+h \sum_i X_i
++
+\lambda Z_0 Z_1 Z_2 Z_3.
+\end{equation}
+The first term provides local nearest-neighbor Ising interactions on the four-site plaquette, the transverse-field term drives operator growth away from a static computational basis, and the four-body loop term generates the nonlocal interference structure that makes the finite EDT regime nontrivial. In the code base, this Hamiltonian is implemented directly in the minimal package \texttt{plaquette\_model}, which exposes exact evolution, OTOC evaluation, entanglement diagnostics, correlation tracking, and first-order Trotter evolution as separate reproducible functions.
+
+The purpose of this model is diagnostic rather than materials-specific. By sweeping the loop strength $\lambda$ and following the resulting time evolution, one can ask whether the same finite-regime logic seen in the K$_3$C$_{60}$ curvature window reappears dynamically: weak loop strength leaves correlations too local, strong loop strength overdrives the system into rapidly scrambled behavior, and an intermediate regime supports simultaneous operator spreading, persistent correlations, and moderate entanglement growth. That intermediate regime is the minimal dynamical analog of the finite EDT window.
+
+In practice, the dynamical observables used below are the out-of-time-ordered correlator, nearest-neighbor two-point correlations, and subsystem entanglement entropy. These are combined into a composite dynamical score that is intentionally finite-regime in character: it rewards operator spreading and correlation retention while penalizing both trivial product-state dynamics and fully saturated scrambling. Exact time evolution and Trotterized evolution are both computed so that the finite EDT regime can be tested not only as a property of the Hamiltonian, but also as a feature that survives approximate implementation.

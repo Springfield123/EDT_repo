@@ -1,0 +1,57 @@
+{
+  "curvature_branch_labels": {
+    "kappa_minus": "G0.S22",
+    "kappa_plus": "G0.S23"
+  },
+  "edt_window": {
+    "delta_k_EDT": 1.0157120000000002,
+    "k0": 2.7178432559865664,
+    "k_left": 2.230612,
+    "k_right": 3.246324,
+    "path_labels": [
+      "G",
+      "H",
+      "N",
+      "P",
+      "G"
+    ]
+  },
+  "interpretation": "EDT window overlaps enhanced path-projected quantum metric, suggesting stronger quantum-geometric character inside the curvature-stable window. Paired curvature branches show strong opposite-sign curvature exchange.",
+  "local_significance": {
+    "boundary_metric_spikes_larger_than_inside": false,
+    "exchange_score": 0.038264139618351574,
+    "exchange_score_definition": "mean_inside_abs(kappa_plus + kappa_minus) / mean_inside_abs(kappa_plus - kappa_minus)",
+    "exchange_score_small_threshold": 0.25,
+    "left_boundary_region": [
+      2.1290408,
+      2.3321832
+    ],
+    "max_metric_inside_window": 23159.331354936996,
+    "max_metric_left_boundary": 125.74588343256991,
+    "max_metric_right_boundary": 23159.331354936996,
+    "mean_inside_abs_kappa_minus": 15.929802777777777,
+    "mean_inside_abs_kappa_plus": 15.65112777777778,
+    "mean_outside_abs_kappa_minus": 3.0584676829268296,
+    "mean_outside_abs_kappa_plus": 4.8962408536585365,
+    "metric_inside_mean": 929.7710128161016,
+    "metric_inside_outside_ratio": 2.32782686921123,
+    "metric_outside_mean": 399.4158780077785,
+    "right_boundary_region": [
+      3.1447528,
+      3.3478952
+    ]
+  },
+  "material": "V",
+  "metric_source": "sum_bands_g_parallel",
+  "mode_label": "F1",
+  "parsing_assumptions": {
+    "curvature_branches": "Detected from edt_geometry_summary.curvature_datasets by ordering inside_mean; lower is kappa_minus and higher is kappa_plus.",
+    "delta_k_EDT": "Taken from edt_window.edt_width when delta_k_EDT is absent.",
+    "metric": "Band-resolved quantum_metric_parallel values are summed over bands at each k_coord."
+  },
+  "plots": {
+    "k0_centered": "epw_analysis\\V\\fig_v_k0_centered_comparison.png",
+    "k0_centered_wide": "epw_analysis\\V\\fig_v_k0_centered_comparison_wide.png"
+  },
+  "status": "completed"
+}

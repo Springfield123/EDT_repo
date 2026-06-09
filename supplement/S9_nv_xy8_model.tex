@@ -1,0 +1,19 @@
+\section{NV XY8 Model}
+
+Quantum sensing in NV-center ensembles is analyzed within a quantum resource engineering framework using a rate-based model (\texttt{nvratemodel} API)~\cite{NVRateModel2023,Degen2017,Barry2020}. For XY8 dynamical-decoupling sequences, the control parameter set is defined as
+\begin{equation}
+\mathcal{C} = \{P_{\mathrm{laser}},\, t_{\mathrm{read}},\, \Omega_{\mathrm{MW}},\, \tau,\, N_{\pi},\, B_0,\, T,\, \mathrm{strain}\},
+\end{equation}
+which determines initialization, control, and environmental conditions of the sensor~\cite{Casola2018}.
+
+These controls are mapped onto an effective resource vector
+\begin{equation}
+\mathcal{R} = \{R_{\mathrm{ph}},\, C,\, T_2(N_{\pi}),\, \chi(\omega),\, \mathrm{duty}\},
+\end{equation}
+where $R_{\mathrm{ph}}$ is the detected photon rate, $C$ is the fluorescence contrast, $T_2(N_{\pi})$ is the coherence time under dynamical decoupling, $\chi(\omega)$ is the filter-function response, and $\mathrm{duty}$ accounts for initialization and readout overhead. The filter function is peaked near $\omega \simeq \pi/\tau$, enabling frequency-selective amplification of ac fields~\cite{Cywinski2008}.
+
+Sensing performance is quantified by a sensitivity proxy $\eta_{\mathrm{AC}}(\omega)$, which scales approximately as
+\begin{equation}
+\eta_{\mathrm{AC}}(\omega) \propto \frac{1}{\chi(\omega)\,C\,\sqrt{R_{\mathrm{ph}}\,T_2(N_{\pi})}} \times f_{\mathrm{duty}},
+\end{equation}
+consistent with standard analyses of NV magnetometry sensitivity~\cite{Degen2017,Barry2020}. Parameter sweeps over $(\tau,N_{\pi})$ identify optimal sensing configurations and reveal a finite optimum set by the competition between filter gain, coherence, pulse errors, and timing overhead~\cite{Cywinski2008,Casola2018}.

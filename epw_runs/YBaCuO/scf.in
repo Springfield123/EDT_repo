@@ -1,0 +1,51 @@
+&CONTROL
+    calculation = 'scf',
+    restart_mode = 'from_scratch',
+    prefix = 'pwscf',
+    outdir = './qe_out',
+    pseudo_dir = 'C:\Users\agahu\Dropbox\NRC\EDT\qe_input\pseudo',
+    verbosity = 'high',
+    wf_collect = .true.,
+/
+&SYSTEM
+    ibrav=  0,
+    nat = 13,
+    ntyp = 4,
+    ecutwfc =100.0,
+    nbnd = 110,
+    input_dft='pbe',
+    exxdiv_treatment='gygi-baldereschi',
+    x_gamma_extrapolation = .true.,
+    occupations='smearing',
+    smearing='methfessel-paxton',
+    degauss=0.08,
+/
+&ELECTRONS
+    conv_thr = 1.0d-8,
+    electron_maxstep = 200,
+/
+ATOMIC_SPECIES
+  Ba   137.3277       Ba.pbe-spn-kjpaw_psl.1.0.0.UPF
+  Y    88.905852      Y.pbe-spn-kjpaw_psl.1.0.0.UPF
+  Cu   63.5463        Cu.pbe-dn-kjpaw_psl.1.0.0.UPF
+  O    15.999         O.pbe-n-kjpaw_psl.1.0.0.UPF
+CELL_PARAMETERS (angstrom)
+   3.844668000000000   0.000000000000000   0.000000000000000
+   0.000000000000000   3.926152000000000   0.000000000000000
+   0.000000000000000   0.000000000000000  11.823664000000001
+ATOMIC_POSITIONS (crystal)
+Ba   0.500000000000000   0.500000000000000   0.819391000000000
+Ba   0.500000000000000   0.500000000000000   0.180609000000000
+Y    0.500000000000000   0.500000000000000   0.500000000000000
+Cu   0.000000000000000   0.000000000000000   0.646678000000000
+Cu   0.000000000000000   0.000000000000000   0.353322000000000
+Cu   0.000000000000000   0.000000000000000   0.000000000000000
+O    0.000000000000000   0.500000000000000   0.000000000000000
+O    0.500000000000000   0.000000000000000   0.620653000000000
+O    0.500000000000000   0.000000000000000   0.379347000000000
+O    0.000000000000000   0.500000000000000   0.621651000000000
+O    0.000000000000000   0.500000000000000   0.378349000000000
+O    0.000000000000000   0.000000000000000   0.840820000000000
+O    0.000000000000000   0.000000000000000   0.159180000000000
+K_POINTS automatic
+  8 8 4  0 0 0

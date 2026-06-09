@@ -1,0 +1,6 @@
+{
+  "material": "Nb",
+  "reason": "No AGR curvature file and EDT summary are available in this checkout.",
+  "status": "skipped_missing_agr_or_edt_summary",
+  "wannier_qc_json": "epw_analysis\\Nb\\wannier_qc.json"
+}

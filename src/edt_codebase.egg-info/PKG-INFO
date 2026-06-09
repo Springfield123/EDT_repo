@@ -1,0 +1,158 @@
+Metadata-Version: 2.4
+Name: edt-codebase
+Version: 0.2.0
+Summary: Paper-companion research codebase for Entanglement-Dynamic Topology workflows
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.24
+Requires-Dist: scipy>=1.11
+Requires-Dist: matplotlib>=3.8
+Requires-Dist: pandas>=2.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Provides-Extra: quantum
+Requires-Dist: qiskit>=1.0; extra == "quantum"
+Provides-Extra: nv
+Requires-Dist: nvratemodel; extra == "nv"
+
+# EDT Codebase
+
+A paper-companion research repository for **Programmable Quantum Resource Manifolds via Entanglement-Dynamic Topology (EDT)**.
+
+This updated version is grounded not only in the manuscript draft but also in the uploaded supplementary information and the actual figure-generation scripts you provided. It now includes the core paper assets directly in the repository:
+
+1. **K$_3$C$_{60}$ local-fit EDT analysis** from the uploaded `superfinger_k3c60_edt_localfit_v6.py` script, using the provided `.agr` data file.
+2. **Four-qubit plaquette / Trotter EDT dynamics** from `demo_edt_gyro_trotter_4q_fig34_clean.py`.
+3. **NV XY8 sensing workflow** from `make_fig_xy8_qre.py` together with `nvratemodel_api.py`.
+4. **Figure 1 concept graphic** from `fig1_edt_framework_camera_ready.py`.
+5. The uploaded manuscript and supplementary text under `docs/`.
+
+## What changed relative to the starter scaffold
+
+The earlier scaffold abstracted the paper into reusable modules. This version keeps that reusable structure **and** adds the actual paper-side scripts and input data so the repository can serve as a true companion codebase for the manuscript.
+
+## Repository layout
+
+```text
+scripts/
+  fig1_edt_framework_camera_ready.py
+  superfinger_k3c60_edt_localfit_v6.py
+  demo_edt_gyro_trotter_4q_fig34_clean.py
+  make_fig_xy8_qre.py
+  nvratemodel_api.py
+
+data/
+  k3c60/
+    tmp.agr
+
+docs/
+  main_paper_draft.tex
+  supplementary_information.tex
+
+src/edt/
+  analysis/
+  nv/
+  quantum/
+  plotting/
+  paper/               # paths to manuscript assets
+
+examples/
+  run_curvature_demo.py
+  run_plaquette_demo.py
+  run_nv_demo.py
+  run_uploaded_assets.py
+```
+
+## Mapping to the paper
+
+### 1) K$_3$C$_{60}$ curvature and EDT window
+
+The supplementary text defines the EDT window through paired quadratic fits and a residual threshold in momentum space. The uploaded K$_3$C$_{60}$ script implements exactly that workflow: it parses `.agr` datasets, rescales curvature using a zero-point displacement factor, fits local parabolas to paired branches, computes normalized residuals, and extracts both a core window and an EDT window.
+
+Use:
+
+```bash
+python scripts/superfinger_k3c60_edt_localfit_v6.py
+```
+
+By default this script expects the AGR file in the working directory as `tmp.agr`. If you run from the repository root, either copy/link `data/k3c60/tmp.agr` into the root or edit `AGR_FILE` in the script to point to `data/k3c60/tmp.agr`.
+
+### 2) Four-qubit plaquette EDT dynamics
+
+The SI section on quantum-circuit realization is implemented directly by the uploaded 4-qubit script. It builds a plaquette Hamiltonian
+
+```math
+H = \Omega Z_0 + g Z_0 X_3 + J_{01} Z_0 Z_1 + J_{12} Z_1 Z_2 + h_x X_0 + \lambda Z_0 Z_1 Z_2 Z_3,
+```
+
+computes exact and Trotterized dynamics, OTOCs, lambda sweeps, and figure panels for the EDT regime and scaling analysis.
+
+Use:
+
+```bash
+python scripts/demo_edt_gyro_trotter_4q_fig34_clean.py
+```
+
+This requires `qiskit`.
+
+### 3) NV XY8 sensing workflow
+
+The uploaded NV scripts implement a sensitivity proxy based on readout rate, contrast, coherence decay, pulse fidelity, filter gain, and duty-cycle overhead. The `nvratemodel_api.py` file wraps the external `nvratemodel` dependency and exposes the paper-facing functions used in the figure script.
+
+Use:
+
+```bash
+python scripts/make_fig_xy8_qre.py
+```
+
+This requires the external `nvratemodel` package to be installed and available.
+To swap in measured readout/coherence/pulse/ensemble values, pass a JSON calibration file such as
+`data/nv/xy8_calibration_template.json`:
+
+```bash
+python scripts/make_fig_xy8_qre.py --calibration data/nv/xy8_calibration_template.json
+```
+
+If you do not yet have experimental data, you can run three built-in literature-anchored scenario files:
+
+```bash
+python scripts/make_fig_xy8_qre.py --calibration data/nv/xy8_scenario_conservative.json
+python scripts/make_fig_xy8_qre.py --calibration data/nv/xy8_scenario_nominal.json
+python scripts/make_fig_xy8_qre.py --calibration data/nv/xy8_scenario_optimistic.json
+```
+
+These presets are intended for modeled sensitivity comparisons and EDT operating-point optimization only. They should be described as `projected`, `modeled`, or `literature-anchored`, not experimentally validated.
+
+### 4) EDT concept figure
+
+The uploaded `fig1_edt_framework_camera_ready.py` script produces the conceptual multi-panel EDT framework figure used to organize the paper narrative.
+
+Use:
+
+```bash
+python scripts/fig1_edt_framework_camera_ready.py
+```
+
+## Install
+
+Base install:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -e .
+```
+
+Optional extras:
+
+```bash
+pip install -e .[quantum]
+```
+
+The NV workflow depends on `nvratemodel`, which is not bundled here.
+
+## Notes
+
+- The uploaded figure scripts are preserved largely as provided so the repository stays close to the manuscript workflow.
+- The reusable package code under `src/edt/` remains useful for later cleanup, refactoring, and publication-ready modularization.
+- The bundled `tmp.agr` file is the raw K$_3$C$_{60}$ curvature input currently available in this conversation.

@@ -1,0 +1,11 @@
+Bundled manuscript assets
+=========================
+
+main_paper_draft.tex                  <- uploaded manuscript draft
+supplementary_information.tex         <- uploaded SI text
+scripts/fig1_edt_framework_camera_ready.py
+scripts/superfinger_k3c60_edt_localfit_v6.py
+scripts/demo_edt_gyro_trotter_4q_fig34_clean.py
+scripts/make_fig_xy8_qre.py
+scripts/nvratemodel_api.py
+data/k3c60/tmp.agr                    <- uploaded AGR dataset used by the K3C60 local-fit script

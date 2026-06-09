@@ -1,0 +1,36 @@
+{
+  "all_required_files_present": false,
+  "material": "K3C60",
+  "required_files_available": {
+    "pwscf.kgmap": false,
+    "pwscf.nnkp": false,
+    "pwscf.ukk": false,
+    "pwscf.win": false,
+    "pwscf.wout": false,
+    "pwscf_hr.dat": false,
+    "pwscf_wsvec.dat": false
+  },
+  "warnings": [
+    "missing pwscf.win",
+    "missing pwscf.wout",
+    "missing pwscf_hr.dat",
+    "missing pwscf_wsvec.dat",
+    "missing pwscf.nnkp",
+    "missing pwscf.ukk",
+    "missing pwscf.kgmap"
+  ],
+  "win": {
+    "available": false,
+    "path": "epw_runs\\K3C60\\pwscf.win"
+  },
+  "wout": {
+    "available": false,
+    "path": "epw_runs\\K3C60\\pwscf.wout"
+  },
+  "wsvec": {
+    "available": false,
+    "max_degeneracy": null,
+    "path": "epw_runs\\K3C60\\pwscf_wsvec.dat",
+    "records": 0
+  }
+}

@@ -1,0 +1,47 @@
+\section{Curvature diagnostic for non-adiabatic resource manifolds}
+
+The microscopic diagnostic used in the present work is the electronic curvature of band $n$ with respect to phonon normal-mode coordinate $Q_\alpha$,
+\begin{equation}
+\kappa_{n\alpha}(k)=\frac{\partial^2 E_n(k,Q_\alpha)}{\partial Q_\alpha^2}.
+\end{equation}
+This quantity measures the second-order response of the electronic structure to lattice displacement and provides a direct non-adiabatic diagnostic near degeneracies and avoided crossings~\cite{Mead1979,Yarkony1996,Giustino2017}. In practice, $\kappa_{n\alpha}(k)$ is computed numerically from displaced calculations using either centered finite differences or local fits to displaced energy data. For a symmetric three-point stencil at displacements $(-\Delta Q,0,+\Delta Q)$, one may write
+\begin{equation}
+\kappa_{n\alpha}(k)\approx
+\frac{E_n(k,-\Delta Q)-2E_n(k,0)+E_n(k,+\Delta Q)}{(\Delta Q)^2},
+\end{equation}
+while higher-order fitted-displacement schemes can be used when additional displaced configurations are available.
+
+Near a candidate EDT region, we analyze paired curvature branches using the form
+\begin{equation}
+\kappa_\pm(k)
+=
+\kappa_0
+\pm a(k-k_0)^2
++
+\epsilon_\pm(k),
+\end{equation}
+where $\kappa_0$ is the common offset, $a$ sets the local quadratic scale, $k_0$ is the center of the paired structure, and $\epsilon_\pm(k)$ are residual deviations from the shared quadratic model. The corresponding normalized residual is defined as
+\begin{equation}
+R_{\rm quad}
+=
+\frac{
+\sqrt{\sum_k |\epsilon_+(k)|^2 + |\epsilon_-(k)|^2}
+}{
+\sqrt{\sum_k |\kappa_+(k)|^2 + |\kappa_-(k)|^2}
+}.
+\end{equation}
+This quantity provides a scale-independent measure of how well the paired branches admit a coherent local quadratic description.
+
+The EDT momentum window is then defined as
+\begin{equation}
+\Delta k_{\rm EDT}
+=
+\max_{\Delta k}
+\left\{
+\Delta k:
+R_{\rm quad}(\Delta k)<R_{\rm th}
+\right\},
+\end{equation}
+where $R_{\rm th}$ is a prescribed residual threshold. In words, $\Delta k_{\rm EDT}$ is the largest momentum interval over which the paired curvature branches remain compatible with the local quadratic model. This provides a falsifiable and reproducible criterion for identifying finite non-adiabatic resource manifolds in band-structure data.
+
+To make this diagnostic directly reproducible in the code base, we provide a dedicated module, \texttt{edt.curvature}; the implementation is in \texttt{src/edt/curvature.py}. The module includes utilities to load tabulated band data, compute curvature from displaced calculations, fit paired quadratic branches, evaluate the normalized residual, extract the EDT window from a thresholded residual profile, and estimate uncertainty in the extracted window through bootstrap resampling.

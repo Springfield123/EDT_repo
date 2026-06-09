@@ -1,0 +1,42 @@
+{
+  "comparison_csv": "epw_analysis\\YBaCuO\\edt_geometry_comparison.csv",
+  "curvature_datasets": {
+    "G0.S146": {
+      "inside_count": 51,
+      "inside_mean": -1.082870588235294,
+      "outside_count": 349,
+      "outside_mean": -2.098730945558739
+    },
+    "G0.S147": {
+      "inside_count": 51,
+      "inside_mean": 1.5325901960784314,
+      "outside_count": 349,
+      "outside_mean": 0.8788191977077364
+    }
+  },
+  "edt_window": {
+    "edt_width": 0.276748,
+    "k0": 1.200896,
+    "k_left": 1.062522,
+    "k_right": 1.33927
+  },
+  "inside_outside_metric_ratio_all_bands": 0.19510126303629127,
+  "inside_quantum_metric_parallel_mean_all_bands": 11.747844852936778,
+  "material": "YBaCuO",
+  "mode_label": "m33",
+  "num_bands": 44,
+  "num_kpoints": 400,
+  "outside_quantum_metric_parallel_mean_all_bands": 60.21408918686258,
+  "path_labels": [
+    "\\G",
+    "Z",
+    "T",
+    "X",
+    "S",
+    "Y",
+    "R",
+    "U",
+    "\\G"
+  ],
+  "status": "completed"
+}

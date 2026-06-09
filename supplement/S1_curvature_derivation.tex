@@ -1,0 +1,21 @@
+\section{Curvature Derivation}
+
+The central quantity underlying EDT is the curvature of electronic energies with respect to normal-mode coordinates,
+\begin{equation}
+\kappa_{n\alpha} = \frac{\partial^2 E_n}{\partial Q_\alpha^2},
+\end{equation}
+which captures the second-order response of electronic structure to lattice dynamics. This curvature encodes non-adiabatic electron--phonon coupling and becomes strongly structured near degeneracies, where electronic states form coupled manifolds~\cite{Giustino2017,Yarkony1996}.
+
+Starting from the electron--phonon Hamiltonian,
+\begin{equation}
+H = H_e(\mathbf{r};\{Q_\alpha\}) + \sum_\alpha \left(\frac{P_\alpha^2}{2M_\alpha} + \frac{1}{2}M_\alpha\omega_\alpha^2 Q_\alpha^2\right),
+\end{equation}
+expanding the electronic Hamiltonian to second order in $Q_\alpha$ yields
+\begin{equation}
+H_e(\{Q_\alpha\}) \approx H_e^{(0)} + \sum_\alpha Q_\alpha \partial_\alpha H_e + \frac{1}{2}\sum_{\alpha\beta} Q_\alpha Q_\beta \partial_\alpha\partial_\beta H_e .
+\end{equation}
+Projection onto an adiabatic electronic basis introduces NACT matrix elements
+\begin{equation}
+A_{mn}^{(\alpha)} = \langle m | \partial_{Q_\alpha} | n \rangle,
+\end{equation}
+which generate off-diagonal mixing and geometric phases~\cite{Mead1979,Berry1984}. The resulting second-order response provides the microscopic origin of curvature-mediated interactions and of the finite EDT window used in the main text.

@@ -1,0 +1,82 @@
+\section{Methods}
+
+\paragraph*{Electronic Structure and Curvature Analysis}
+
+The data-driven identification of EDT in K$_3$C$_{60}$ is based on curvature-resolved analysis of electronic band structure near the Fermi level~\cite{Gunnarsson1997,Capone2009}. Microscopically, the relevant curvature originates from second-order variations of band energies with respect to normal-mode coordinates,
+\begin{equation}
+\kappa_{n\alpha} = \frac{\partial^2 E_n}{\partial Q_\alpha^2},
+\end{equation}
+which quantify the modulation of electronic energies under lattice distortions and encode non-adiabatic electron--phonon coupling~\cite{Mead1979,Yarkony1996,Giustino2017}. As discussed in the Supplement, these curvature terms arise from second-order mixing between electronic states mediated by NACT, extending beyond the Born--Oppenheimer approximation~\cite{BornOppenheimer1927}.
+
+In practice, the K$_3$C$_{60}$ workflow uses mode-resolved curvature traces
+\begin{equation}
+\kappa_{n\alpha}(k) = \frac{\partial^2 E_n(k,Q_\alpha)}{\partial Q_\alpha^2},
+\end{equation}
+evaluated along a high-symmetry momentum path for a selected normal mode. Near degeneracies and avoided crossings, curvature is treated within a multi-band subspace, and paired curvature branches are analyzed using local quadratic fits,
+\begin{equation}
+\kappa_\pm(k) \approx a_\pm (k-k_0)^2 + b_\pm.
+\end{equation}
+The EDT window $\Delta k_{\mathrm{EDT}}$ is then defined as the maximal interval over which the residual of this quadratic approximation remains below a specified threshold. The main-text quantitative diagnostic is the K$_3$C$_{60}$ analysis, while the supplementary controls use the same candidate-pair scan on archived comparison datasets from V, Na, LaH$_{10}$, and YBa$_2$Cu$_3$O$_7$ to test portability under a common threshold protocol.
+
+\paragraph*{Minimal Dynamical Model}
+
+The dynamical realization of EDT is studied using a four-qubit plaquette Hamiltonian,
+\begin{equation}
+H =
+J \sum_{\langle i,j\rangle} Z_i Z_j
++
+h \sum_i X_i
++
+\lambda Z_0 Z_1 Z_2 Z_3,
+\end{equation}
+where the nearest-neighbor $ZZ$ terms provide local couplings, the transverse-field term drives operator spreading, and the plaquette term introduces loop-induced nonlocal correlations. The Hamiltonian is used as a minimal structural model rather than as a quantitatively fitted K$_3$C$_{60}$ Hamiltonian. Time evolution is computed both exactly and using first-order Trotterized implementations~\cite{Lloyd1996,Trotter1959,Suzuki1990,Childs2019}.
+
+\paragraph*{OTOC and Correlation Diagnostics}
+
+Operator spreading is quantified using the out-of-time-ordered echo
+\begin{equation}
+F(t) = \langle W^\dagger(t)V^\dagger W(t)V\rangle,
+\end{equation}
+and the plotted OTOC metric is $1-\mathrm{Re}\,F(t)$~\cite{Larkin1969,Maldacena2016,Swingle2018}. In the script workflow this metric is averaged over several initial-state/operator probes rather than being inferred from a single choice. Long-time correlations are characterized by
+\begin{equation}
+A_{\mathrm{corr}}^{\mathrm{raw}} = \overline{|\langle Z_i Z_{i+1}(t) \rangle|}_{\mathrm{late},\,i},
+\end{equation}
+while the entanglement contribution is obtained from the late-time one-qubit entropy. The dynamical EDT score is defined as
+\begin{equation}
+S_{\mathrm{dyn}}(\lambda) =
+A_{\mathrm{spread}}(\lambda)\,
+A_{\mathrm{corr}}(\lambda)\,
+A_{\mathrm{stability}}(\lambda),
+\end{equation}
+where $A_{\mathrm{spread}}$ is the normalized mid-time OTOC amplitude, $A_{\mathrm{corr}}$ is the normalized late-time correlation persistence, and $A_{\mathrm{stability}}$ is an intermediate-entropy factor peaked away from both zero and saturation.
+
+\paragraph*{Trotterized Implementation and Scaling}
+
+Time evolution under the Hamiltonian is approximated using first-order Trotterization, with circuit depth and gate count scaling linearly with evolution time~\cite{Trotter1959,Suzuki1990,Lloyd1996,Childs2019}. Observable errors are quantified by comparing exact and Trotterized expectation values~\cite{BerryAhokasCleveSanders2007}. The finite dynamical regime is characterized by sweeping the loop strength $\lambda$ and identifying the optimal value $\lambda^\star$ that maximizes $S_{\mathrm{dyn}}$. Robustness is evaluated by repeating the sweep for several transverse-field values $h$ and several fixed $J$ values, and by comparing exact and Trotterized evolutions.
+
+\paragraph*{NV-Center Sensing Model}
+
+Quantum sensing in NV-center ensembles is analyzed within a quantum resource engineering framework using a rate-based model~\cite{NVRateModel2023,Degen2017,Barry2020}. For XY8 dynamical-decoupling sequences, the control parameter set is
+\begin{equation}
+\mathcal{C} = \{P_{\mathrm{laser}},\, t_{\mathrm{read}},\, \Omega_{\mathrm{MW}},\, \tau,\, N_{\pi},\, B_0,\, T,\, \mathrm{strain}\},
+\end{equation}
+and the effective resource vector is
+\begin{equation}
+\mathcal{R} = \{R_{\mathrm{ph}},\, C,\, T_2(N_{\pi}),\, \chi(\omega),\, \mathrm{duty}\}.
+\end{equation}
+Here $R_{\mathrm{ph}}$ is the detected photon rate, $C$ is the fluorescence contrast, $T_2(N_{\pi})$ is the coherence time under dynamical decoupling, $\chi(\omega)$ is the filter-function response, and $\mathrm{duty}$ accounts for initialization and readout overhead. The sensing proxy is taken to scale as
+\begin{equation}
+\eta_{\mathrm{AC}}(\omega) \propto \frac{1}{\chi(\omega)\,C\,\sqrt{R_{\mathrm{ph}}\,T_2(N_{\pi})}} \times f_{\mathrm{duty}},
+\end{equation}
+and parameter sweeps over $(\tau,N_{\pi})$ are used to identify finite optimal operating points.
+
+\subsection{Availability and Declarations}
+
+\paragraph*{Data availability.}
+The data supporting the findings of this study are available from the corresponding author upon reasonable request.
+
+\paragraph*{Code availability.}
+The code used in this study is available from the corresponding author upon reasonable request and will be made publicly available upon publication. The active reproducibility bundle includes \texttt{scripts/make\_fig2\_k3c60\_edt.py} for the main K$_3$C$_{60}$ diagnostic, \texttt{scripts/make\_figS4\_material\_controls.py} for the supplementary archived cross-material controls, and \texttt{scripts/fig4\_plaquette\_dynamics.py} for the plaquette dynamics sweep.
+
+\paragraph*{Competing interests.}
+The authors declare no competing interests.

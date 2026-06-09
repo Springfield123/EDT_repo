@@ -1,0 +1,12 @@
+begin projections
+ Cu:d
+ O:p
+ Y:d
+ Y:s
+ Ba:s
+end projections
+num_wann =  44
+iprint =   2
+num_iter =    1000
+write_bvec = .true.
+ write_hr = .true.

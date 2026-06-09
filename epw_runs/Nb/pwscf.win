@@ -1,0 +1,10 @@
+begin projections
+ Nb:s
+ Nb:p
+ Nb:d
+end projections
+num_wann =  18
+iprint =   2
+num_iter =    1000
+write_bvec = .true.
+ write_hr = .true.

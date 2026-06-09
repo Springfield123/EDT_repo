@@ -1,0 +1,17 @@
+.pytest_cache/
+__pycache__/
+*.py[cod]
+
+# Local inaccessible/temp folders.
+tmpah_n7yzr/
+
+# Large archive payloads should live outside the GitHub repo or in a release/LFS store.
+*.tgz
+
+# EPW/Wannier generated payloads that are too large or machine-specific for GitHub.
+epw_runs/**/pwscf.mmn
+epw_runs/**/pwscf.chk
+epw_runs/**/pwscf.ukk
+epw_runs/**/logs/
+epw_runs/**/outputs/
+epw_runs/**/save/

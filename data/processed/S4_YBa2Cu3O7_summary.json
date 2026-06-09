@@ -1,0 +1,125 @@
+{
+  "material": "YBa2Cu3O7",
+  "title": "YBa$_2$Cu$_3$O$_7$",
+  "mode_label": "m33",
+  "data_file": "data\\ybacu3o7\\YBa2Cu3O7_m33.agr",
+  "band_figure": "figures\\supplementary\\YBa2Cu3O7_bands.pdf",
+  "dataset_minus": 146,
+  "dataset_plus": 147,
+  "analysis_window_indices": [
+    null,
+    null
+  ],
+  "fit_half_window_points": 5,
+  "residual_threshold": 0.08,
+  "nominal_result": {
+    "k0": 1.200896,
+    "k_left": 1.062522,
+    "k_right": 1.33927,
+    "edt_width": 0.276748,
+    "core_width": 0.276748
+  },
+  "residual_threshold_result": {
+    "k0_from_quadratic_apices": 1.1010554561308266,
+    "k_left": 0.93156,
+    "k_right": 1.137344,
+    "edt_width": 0.20578399999999986,
+    "core_width": 0.17347299999999988
+  },
+  "local_quadratic_fit": {
+    "minus": {
+      "dataset": 146,
+      "band": 147,
+      "fit_center_k": 1.062522,
+      "k_apex": 1.0937051013736303,
+      "y_apex": -6.007834336769378,
+      "coeffs": [
+        -213.0861836499237,
+        466.10689218031956,
+        -260.8995772182814
+      ]
+    },
+    "plus": {
+      "dataset": 147,
+      "band": 148,
+      "fit_center_k": 1.062522,
+      "k_apex": 1.1084058108880228,
+      "y_apex": 4.75257726191964,
+      "coeffs": [
+        198.87035129911104,
+        -440.8581059865542,
+        249.07742048821189
+      ]
+    },
+    "fit_half_window_points": 5
+  },
+  "bootstrap": {
+    "samples": 500,
+    "width_mean": 0.20505952999999993,
+    "width_std": 0.004755367255277447,
+    "width_ci_95": [
+      0.20047099999999995,
+      0.21690292499999964
+    ],
+    "width_definition": "residual-threshold EDT width from the recalculated local quadratic fit"
+  },
+  "threshold_scan": {
+    "thresholds": [
+      0.04,
+      0.05,
+      0.06,
+      0.06999999999999999,
+      0.07999999999999999,
+      0.09,
+      0.09999999999999999,
+      0.10999999999999999,
+      0.12,
+      0.12999999999999998,
+      0.13999999999999999,
+      0.15,
+      0.15999999999999998,
+      0.16999999999999998,
+      0.18
+    ],
+    "widths": [
+      0.16815900000000006,
+      0.17347299999999988,
+      0.17878699999999992,
+      0.20047099999999995,
+      0.20578399999999986,
+      0.2110979999999999,
+      0.2110979999999999,
+      0.23278299999999996,
+      0.238097,
+      0.24341100000000004,
+      0.24872499999999986,
+      0.254038,
+      0.270408,
+      0.275722,
+      0.28103600000000006
+    ],
+    "width_definition": "residual-threshold EDT width from the recalculated local quadratic fit"
+  },
+  "archived_y_label": "d^2E_nN(k)/d^2q in eV/AS2",
+  "path_labels": [
+    "\\G",
+    "Z",
+    "T",
+    "X",
+    "S",
+    "Y",
+    "R",
+    "U",
+    "\\G"
+  ],
+  "manual_window_override": {
+    "reason": "User-corrected Band 147/148 EDT window on the T-X AGR interval.",
+    "dataset_minus": 146,
+    "dataset_plus": 147,
+    "band_minus": 147,
+    "band_plus": 148,
+    "k_left": 1.062522,
+    "k_right": 1.33927,
+    "corrected_k0_rule": "midpoint of corrected [k_left, k_right] interval"
+  }
+}

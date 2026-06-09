@@ -1,0 +1,406 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{authblk}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{caption}
+
+\geometry{margin=1in}
+\setstretch{1.2}
+
+\title{
+Supplementary Information: \\ Programmable Quantum Resource Manifolds via Entanglement-Dynamic Topology
+}
+
+\author[1]{Hang Hu \thanks{Correspondence to: hang.hu@cnrc-nrc.gc.ca}}
+\affil[1]{Digital Technologies, National Research Council of Canada, 222 College Street, Toronto, ON M5T 3J1, Canada}
+\author[1]{Hsu Kiang Ooi}
+\author[2]{Anguang Hu \thanks{Correspondence to: anguang.hu@forces.gc.ca}}
+\affil[2]{Suffield Research Centre, Defence Research and Development Canada, PO Box 4000 Station Main, Medicine Hat, Alberta T1A 8K6, Canada}
+
+\begin{document}
+
+\maketitle
+
+%\begin{center}
+%{\Large \textbf{Supplementary Information}}\\[6pt]
+%\textbf{Programmable Quantum Resource Manifolds via Entanglement--Dynamic Topology}
+%\end{center}
+
+%\author[1]{Hang Hu \thanks{Correspondence to: hang.hu@cnrc-nrc.gc.ca>}}
+%\affil[1]{Digital Technologies, National Research Council of Canada, 222 College Street, Toronto, ON M5T 3J1, Canada}
+%\author[1]{Hsu Kiang Ooi}
+%\author[2]{Anguang Hu \thanks{Correspondence to: anguang.hu@forces.gc.ca}}
+%\affil[2]{Suffield Research Centre, Defence Research and Development Canada, PO Box 4000 Station Main, Medicine Hat, Alberta T1A 8K6, Canada}
+
+%\vspace{1em}
+
+% ============================================================
+%\section*{Overview}
+
+%The central quantity underlying Entanglement--Dynamic Topology (EDT) is the curvature of electronic energies with respect to normal-mode coordinates,
+%\begin{equation}
+%\kappa_{n\alpha} = \frac{\partial^2 E_n}{\partial Q_\alpha^2},
+%\end{equation}
+%which captures the second-order response of electronic structure to lattice dynamics. This curvature encodes non-adiabatic electron--phonon coupling and becomes strongly structured near degeneracies, where electronic states form coupled manifolds.
+%
+%This Supplementary Information provides computational details, curvature extraction methods, and extended material datasets demonstrating that curvature-defined structured manifolds arise broadly across quantum materials.
+%
+% ============================================================
+%\section*{S1. Computational details}
+%
+%Electronic structure and electron--vibration interactions were computed using all-electron quantum solid-state methods with numerical atomic orbitals.
+%
+%Second-order derivatives were evaluated using a finite-difference scheme,
+%\begin{equation}
+%\frac{\partial^2 A}{\partial u_\nu^2}
+%\approx
+%\frac{-A(-2\Delta u) + 16A(-\Delta u) - 30A(0) + 16A(\Delta u) - A(2\Delta u)}{12(\Delta u)^2}.
+%\end{equation}
+%
+%Phonon modes were computed using density-functional perturbation theory and finite supercell methods. Temperature-dependent band structures were obtained using vibration amplitudes derived from Bose--Einstein statistics.
+%
+% ============================================================
+%\section*{S2. Curvature and EDT definition}
+%
+%In practice, curvature is evaluated in momentum space,
+%\begin{equation}
+%\kappa_n(k) = \frac{\partial^2 E_n}{\partial k^2}.
+%\end{equation}
+%
+%Near degeneracies, curvature is analyzed using paired quadratic fits,
+%\begin{equation}
+%\kappa_\pm(k) \approx a_\pm (k-k_0)^2 + b_\pm,
+%\end{equation}
+%and the EDT window $\Delta k_{\mathrm{EDT}}$ is defined as the interval over which the quadratic residual remains below a threshold.
+%
+%This provides a data-driven criterion for identifying finite structured manifolds. The relation between curvature and non-adiabatic coupling is further developed in Sec.~S5.
+%% ============================================================
+%\section*{S3. Degeneracy and curvature structure}
+%
+%Degenerate electronic states form coupled manifolds in momentum space. In the absence of lattice dynamics, these degeneracies persist along symmetry lines.
+%
+%Electron--vibration interactions introduce second-order modulation of band energies. Near degeneracies, paired curvature structures emerge: one band exhibits positive curvature and the other negative curvature, corresponding to extrema in the energy landscape.
+%
+%This structured curvature reflects the geometry of the coupled manifold and leads to natural lifting of degeneracies under lattice motion.
+
+\section*{Overview}
+
+The central quantity underlying Entanglement--Dynamic Topology (EDT) is the curvature of electronic energies with respect to normal-mode coordinates,
+\begin{equation}
+\kappa_{n\alpha} = \frac{\partial^2 E_n}{\partial Q_\alpha^2},
+\end{equation}
+which captures the second-order response of electronic structure to lattice dynamics and encodes non-adiabatic electron--phonon coupling~\cite{Giustino2017,Baroni2001}. This curvature becomes strongly structured near degeneracies, where electronic states form coupled manifolds~\cite{Yarkony1996}.
+
+This Supplementary Information provides computational details, curvature extraction methods, and extended material datasets demonstrating that curvature-defined structured manifolds arise broadly across quantum materials.
+
+% ============================================================
+\section*{S1. Computational details}
+
+Electronic structure and electron--vibration interactions were computed using all-electron quantum solid-state methods with numerical atomic orbitals, as implemented in the FHI-aims package~\cite{Blum2009,FHIaims2020}. Additional calculations and cross-validation were performed using plane-wave density-functional theory as implemented in Quantum ESPRESSO~\cite{Giannozzi2009,Giannozzi2017}.
+
+Second-order derivatives were evaluated using a finite-difference scheme,
+\begin{equation}
+\frac{\partial^2 A}{\partial u_\nu^2}
+\approx
+\frac{-A(-2\Delta u) + 16A(-\Delta u) - 30A(0) + 16A(\Delta u) - A(2\Delta u)}{12(\Delta u)^2}.
+\end{equation}
+
+Phonon modes were computed using density-functional perturbation theory (DFPT) and finite supercell methods~\cite{Baroni2001}. Temperature-dependent band structures were obtained using vibration amplitudes derived from Bose--Einstein statistics.
+
+% ============================================================
+\section*{S2. Curvature and EDT definition}
+
+In practice, curvature is evaluated in momentum space,
+\begin{equation}
+\kappa_n(k) = \frac{\partial^2 E_n}{\partial k^2}.
+\end{equation}
+
+Near degeneracies, curvature is analyzed using paired quadratic fits,
+\begin{equation}
+\kappa_\pm(k) \approx a_\pm (k-k_0)^2 + b_\pm,
+\end{equation}
+and the EDT window $\Delta k_{\mathrm{EDT}}$ is defined as the interval over which the quadratic residual remains below a threshold.
+
+This provides a data-driven criterion for identifying finite structured manifolds. The relation between curvature and non-adiabatic coupling is further developed in Sec.~S5~\cite{Mead1979,Yarkony1996}.
+
+% ============================================================
+\section*{S3. Degeneracy and curvature structure}
+
+Degenerate electronic states form coupled manifolds in momentum space. In the absence of lattice dynamics, these degeneracies persist along symmetry lines.
+
+Electron--vibration interactions introduce second-order modulation of band energies. Near degeneracies, paired curvature structures emerge: one band exhibits positive curvature and the other negative curvature, corresponding to extrema in the energy landscape.
+
+This structured curvature reflects the geometry of the coupled manifold and leads to natural lifting of degeneracies under lattice motion~\cite{Giustino2017,Yarkony1996}.
+
+% ============================================================
+%\section*{S4. Generality across quantum materials}
+
+%We apply curvature analysis to a range of materials, including metals, superconductors, and correlated systems.
+
+%\subsection*{S4A. Metals}
+
+%\section*{S4. Generality across quantum materials}
+
+%To assess the generality of Entanglement-Dynamic Topology (EDT), we apply curvature-resolved analysis to a diverse set of materials, including simple metals, transition metals, molecular superconductors, hydrides, and correlated oxides. Across these systems, the existence or absence of an EDT regime is found to be governed not only by interaction strength, but by the geometric structure of band dispersion and the resulting curvature topology. Temperature-dependent stability of these curvature structures is analyzed in Sec.~S5.
+
+%\subsection*{S4A. Metals}
+
+%We first consider simple and transition metals as baseline systems for curvature topology.
+
+%In alkali metals such as Na, the curvature exhibits a monotonic profile without nodes, indicating a uniform second-order response under lattice modulation and the absence of structured electron--vibration coupling. In contrast, Li, K, Rb, and Cs display a single-node curvature structure, reflecting a simple sign change but lacking paired branches capable of supporting a stable quadratic manifold.
+
+%Transition metals such as V, Nb, and Ta exhibit a qualitatively different behavior. Multiple bands cross near the Fermi level, forming near-degenerate manifolds that give rise to paired curvature branches with two nodes connected by smooth, slowly varying profiles. These systems admit a consistent local quadratic description over a finite momentum interval, defining a well-resolved EDT window. This establishes transition metals as canonical examples of EDT-compatible systems, with robust and smoothly structured electron--vibration coupling.
+
+\section*{S4. Generality across quantum materials}
+
+To assess the generality of Entanglement-Dynamic Topology (EDT), we apply curvature-resolved analysis to a diverse set of materials, including simple metals, transition metals, molecular superconductors, hydrides, and correlated oxides. Across these systems, the existence or absence of an EDT regime is found to be governed not only by interaction strength, but by the geometric structure of band dispersion and the resulting curvature topology~\cite{Kittel2004,Ziman1972,Giustino2017}. Temperature-dependent stability of these curvature structures is analyzed in Sec.~S5.
+
+\subsection*{S4A. Metals}
+
+We first consider simple and transition metals as baseline systems for curvature topology.
+
+In alkali metals such as Na, the curvature exhibits a monotonic profile without nodes, indicating a uniform second-order response under lattice modulation and the absence of structured electron--vibration coupling. In contrast, Li, K, Rb, and Cs display a single-node curvature structure, reflecting a simple sign change but lacking paired branches capable of supporting a stable quadratic manifold~\cite{Kittel2004,Hu2025_APQ,Hu2026_JPCM}.
+
+Transition metals such as V, Nb, and Ta exhibit a qualitatively different behavior. Multiple bands cross near the Fermi level, forming near-degenerate manifolds that give rise to paired curvature branches with two nodes connected by smooth, slowly varying profiles. These systems admit a consistent local quadratic description over a finite momentum interval, defining a well-resolved EDT window. This establishes transition metals as canonical examples of EDT-compatible systems, with robust and smoothly structured electron--vibration coupling~\cite{Giustino2017,Baroni2001,Hu2024_ACP}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.80\textwidth]{figs/Na_bands.pdf}
+
+%\vspace{1em}
+
+\includegraphics[width=0.80\textwidth]{figs/Na-m5.pdf}
+
+\caption{\textbf{S1 | Band structure and curvature topology of Na.}
+\textbf{Top,} Electronic band structure of body-centered cubic (bcc) Na along high-symmetry directions, showing simple, nearly free-electron-like dispersion with weak band interactions near the Fermi level.
+\textbf{Bottom,} Second-order derivatives of band energies with respect to a normal-mode coordinate ($\partial^2 E_n / \partial Q_\alpha^2$) of bands 11 and 12 for a representative phonon mode at frequency $117.39~\mathrm{cm}^{-1}$. The curvature exhibits a monotonic profile without nodes, indicating a single-sign second-order response across the momentum range. This reflects minimal electronic mixing under lattice motion and the absence of paired curvature structure. As a result, no local quadratic manifold can be defined, and no EDT window is observed.}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.65\textwidth]{figs/V-bands.pdf}
+
+%\vspace{1em}
+
+\includegraphics[width=0.65\textwidth]{figs/V-EP-F1.pdf}
+
+\caption{\textbf{S2 | Band structure and curvature topology of V.}
+\textbf{Top,} Electronic band structure of body-centered cubic (bcc) V along high-symmetry directions, showing multiple bands crossing and forming near-degenerate manifolds in the vicinity of the Fermi level.
+\textbf{Bottom,} Second-order derivatives of band energies with respect to a normal-mode coordinate ($\partial^2 E_n / \partial Q_\alpha^2$) of bands 19–25 for a representative phonon mode at frequency $260.98~\mathrm{cm}^{-1}$. The curvature exhibits paired two-node structures connected by smooth, slowly varying branches, characteristic of coherent multi-band coupling. In contrast to simple metals, these curvature profiles admit a consistent local quadratic description over a finite momentum interval, defining a well-resolved EDT window. This behavior is representative of transition metals such as Nb and Ta, which share similar band dispersion and curvature topology supporting stable EDT manifolds.}
+\end{figure}
+
+%\subsection*{S4B. Superconducting systems}
+
+%\subsection*{S4B. Superconducting systems}
+%
+%We next examine superconducting materials spanning different classes, including molecular superconductors (K$_3$C$_{60}$), high-temperature hydrides (LaH$_{10}$), and correlated oxides (YBa$_2$Cu$_3$O$_7$).
+%
+%In K$_3$C$_{60}$, the electronic structure near the Fermi level is characterized by weakly dispersive bands that extend over a finite region in momentum space. The resulting curvature is smooth and slowly varying, forming paired branches that admit a stable quadratic description. This defines a broad EDT window and demonstrates that molecular superconductors naturally support extended, geometry-aligned resource manifolds.
+%
+%In contrast, hydrides such as LaH$_{10}$ and correlated oxides such as YBa$_2$Cu$_3$O$_7$ exhibit highly dispersive band structures with strong degeneracy near the Fermi level. While curvature in these systems also displays two-node structures, it is accompanied by sharp peaks and rapid variation, reflecting complex multi-electron involvement in lattice dynamics. This behavior prevents the formation of a stable local quadratic manifold, yielding $\Delta k_{\mathrm{EDT}} \approx 0$.
+
+%These results demonstrate that strong coupling alone does not guarantee the existence of an EDT regime. Rather, the curvature must be both structured and smoothly varying to support a finite, geometry-aligned manifold. The comparison across materials classes establishes curvature topology as a unifying criterion for identifying EDT-compatible systems.
+
+\subsection*{S4B. Superconducting systems}
+
+We next examine superconducting materials spanning different classes, including molecular superconductors (K$_3$C$_{60}$), high-temperature hydrides (LaH$_{10}$), and correlated oxides (YBa$_2$Cu$_3$O$_7$)~\cite{Capone2009,Drozdov2015,Pickett1989}.
+
+In K$_3$C$_{60}$, the electronic structure near the Fermi level is characterized by weakly dispersive bands that extend over a finite region in momentum space~\cite{Gunnarsson1997,Capone2009}. The resulting curvature is smooth and slowly varying, forming paired branches that admit a stable quadratic description. This defines a broad EDT window and demonstrates that molecular superconductors naturally support extended, geometry-aligned resource manifolds~\cite{Hu2025_APQ}.
+
+In contrast, hydrides such as LaH$_{10}$ and correlated oxides such as YBa$_2$Cu$_3$O$_7$ exhibit highly dispersive band structures with strong degeneracy near the Fermi level~\cite{Drozdov2019,Pickett1989}. While curvature in these systems also displays two-node structures, it is accompanied by sharp peaks and rapid variation, reflecting complex multi-electron involvement in lattice dynamics~\cite{Giustino2017}. This behavior prevents the formation of a stable local quadratic manifold, yielding $\Delta k_{\mathrm{EDT}} \approx 0$.
+
+These results demonstrate that strong coupling alone does not guarantee the existence of an EDT regime. Rather, the curvature must be both structured and smoothly varying to support a finite, geometry-aligned manifold. The comparison across materials classes establishes curvature topology as a unifying criterion for identifying EDT-compatible systems.
+
+\begin{figure*}[h]
+\centering
+\includegraphics[width=0.75\textwidth]{figs/K3C60-bands.pdf}
+
+%\vspace{1em}
+
+\includegraphics[width=0.75\textwidth]{figs/K3C60-m120.pdf}
+
+\caption{\textbf{S3 | Curvature-resolved electronic structure of K$_3$C$_{60}$.}
+\textbf{Top,} Electronic band structure of cubic K$_3$C$_{60}$, showing multiple flat, near-degenerate bands in the vicinity of the Fermi level.
+\textbf{Bottom,} Second-order derivatives of band energies with respect to a normal-mode coordinate ($\partial^{2} E_n / \partial Q_\alpha^{2}$) for a representative phonon mode at frequency $1090.35~\mathrm{cm}^{-1}$. Pronounced curvature amplitudes are observed near band crossings and degeneracies, indicating strong non-adiabatic electron--phonon coupling. These structured curvature features define a broad EDT window, in which lattice-induced modulation organizes electronic states into coupled manifolds.}
+\end{figure*}
+
+
+\begin{figure*}[h]
+\centering
+\includegraphics[width=0.70\textwidth]{figs/YBa2Cu3O7_bands.pdf}
+
+\vspace{1em}
+
+\includegraphics[width=0.70\textwidth]{figs/YBa2Cu3O7_m33.pdf}
+
+\caption{\textbf{S4 | Band structure and curvature topology of YBa$_2$Cu$_3$O$_7$.}
+\textbf{Top,} Electronic band structure of YBa$_2$Cu$_3$O$_7$ along high-symmetry directions, showing multiple dispersive bands crossing and forming near-degenerate manifolds in the vicinity of the Fermi level.
+\textbf{Bottom,} Second-order derivatives of band energies with respect to a normal-mode coordinate ($\partial^2 E_n / \partial Q_\alpha^2$) of bands 146–149 for a representative phonon mode at frequency $439.72~\mathrm{cm}^{-1}$. The curvature exhibits two-node structures associated with band degeneracies, but is characterized by sharp, localized peaks and rapidly varying behavior. Unlike transition metals and fullerides, the curvature does not form smooth, parabolic branches and fails to admit a consistent local quadratic description over a finite momentum interval. As a result, no well-defined EDT window is observed ($\Delta k_{\mathrm{EDT}} \approx 0$), indicating that strong coupling alone is insufficient to generate a stable EDT manifold in highly dispersive systems.}
+\end{figure*}
+
+
+\begin{figure*}[h]
+\centering
+\includegraphics[width=0.80\textwidth]{figs/LaH10-300GPa-bands.pdf}
+
+\vspace{1em}
+
+\includegraphics[width=0.80\textwidth]{figs/tmp_LaH10_m16.pdf}
+
+\caption{\textbf{S5 | Curvature-resolved electronic structure of LaH$_{10}$.}
+\textbf{Top,} Electronic band structure of cubic LaH$_{10}$ at high pressure (300 GPa), showing multiple near-degenerate bands in the vicinity of the Fermi level.
+	\textbf{Bottom,} Second-order derivatives of band energies with respect to a normal-mode coordinate ($\partial^{2} E_n / \partial Q_\alpha^{2}$) for a representative phonon mode at frequency $1137.54~\mathrm{cm}^{-1}$. Large curvature amplitudes are observed near band crossings and degeneracies, indicating strong non-adiabatic electron--phonon coupling. These structured curvature features define an extended EDT regime, in which lattice-induced modulation organizes electronic states into coupled manifolds.}
+\end{figure*}
+
+These results show that curvature-defined structured manifolds appear across material classes.
+
+% ============================================================
+%\section*{S5. Temperature-dependent effects}
+%
+%Temperature-dependent band structures are evaluated by incorporating phonon occupation statistics, which modulate electronic energies through electron--phonon coupling. Within a harmonic approximation, the temperature-dependent renormalization of band energies can be expressed as
+%\begin{equation}
+%E_n(k,T) = E_n^{(0)}(k) + \sum_{\alpha} \left(n_{\alpha}(T) + \frac{1}{2}\right)
+%\frac{\partial^2 E_n(k)}{\partial Q_\alpha^2},
+%\end{equation}
+%where $n_{\alpha}(T) = \left(e^{\hbar \omega_\alpha / k_B T} - 1\right)^{-1}$ is the Bose--Einstein occupation factor for phonon mode $\alpha$, and $Q_\alpha$ is the normal-mode coordinate.
+%
+%The second-order derivative $\partial^2 E_n / \partial Q_\alpha^2$ defines the curvature and directly captures the electronic response to lattice motion. This quantity is closely related to the non-adiabatic coupling (NACT) between electronic states,
+%\begin{equation}
+%A_{nm}^{(\alpha)} = \left\langle \psi_n \middle| \frac{\partial}{\partial Q_\alpha} \middle| \psi_m \right\rangle,
+%\end{equation}
+%which governs the mixing of electronic states under vibrational motion. Near degeneracies, these couplings become enhanced and give rise to curvature features through second-order perturbation,
+%\begin{equation}
+%\frac{\partial^2 E_n}{\partial Q_\alpha^2}
+%\sim
+%\sum_{m \neq n}
+%\frac{|A_{nm}^{(\alpha)}|^2}{E_n - E_m}.
+%\end{equation}
+%
+%This establishes curvature as a direct observable manifestation of NACT fields in the electronic structure.
+%
+%In EDT-compatible systems such as Nb, temperature-induced renormalization preserves band connectivity and near-degenerate structure. The curvature remains smooth and slowly varying, maintaining paired two-node topology and a finite EDT window.
+%
+%In contrast, in systems such as YBa$_2$Cu$_3$O$_7$ and LaH$_{10}$, temperature enhances sharp curvature features and lifts degeneracies non-uniformly. This leads to rapidly varying curvature profiles that do not admit a stable quadratic description, reinforcing the absence of an EDT regime.
+%
+%These results demonstrate that temperature acts as a dynamical probe of NACT-induced geometry: systems with smooth curvature retain structured manifolds, whereas systems with sharp curvature exhibit geometric instability under thermal excitation.
+\section*{S5. Temperature-dependent effects}
+
+Temperature-dependent band structures are evaluated by incorporating phonon occupation statistics, which modulate electronic energies through electron--phonon coupling~\cite{AllenHeine1976,Giustino2017}. Within a harmonic approximation, the temperature-dependent renormalization of band energies can be expressed as
+\begin{equation}
+E_n(k,T) = E_n^{(0)}(k) + \sum_{\alpha} \left(n_{\alpha}(T) + \frac{1}{2}\right)
+\frac{\partial^2 E_n(k)}{\partial Q_\alpha^2},
+\end{equation}
+where $n_{\alpha}(T) = \left(e^{\hbar \omega_\alpha / k_B T} - 1\right)^{-1}$ is the Bose--Einstein occupation factor for phonon mode $\alpha$~\cite{AshcroftMermin}, and $Q_\alpha$ is the normal-mode coordinate.
+
+The second-order derivative $\partial^2 E_n / \partial Q_\alpha^2$ defines the curvature and directly captures the electronic response to lattice motion. This quantity is closely related to the non-adiabatic coupling (NACT) between electronic states,
+\begin{equation}
+A_{nm}^{(\alpha)} = \left\langle \psi_n \middle| \frac{\partial}{\partial Q_\alpha} \middle| \psi_m \right\rangle,
+\end{equation}
+which governs the mixing of electronic states under vibrational motion~\cite{Mead1979,Yarkony1996}. Near degeneracies, these couplings become enhanced and give rise to curvature features through second-order perturbation,
+\begin{equation}
+\frac{\partial^2 E_n}{\partial Q_\alpha^2}
+\sim
+\sum_{m \neq n}
+\frac{|A_{nm}^{(\alpha)}|^2}{E_n - E_m},
+\end{equation}
+consistent with standard treatments of electron--phonon renormalization and non-adiabatic effects~\cite{AllenHeine1976,Giustino2017}.
+
+This establishes curvature as a direct observable manifestation of NACT fields in the electronic structure.
+
+In EDT-compatible systems such as Nb, temperature-induced renormalization preserves band connectivity and near-degenerate structure. The curvature remains smooth and slowly varying, maintaining paired two-node topology and a finite EDT window.
+
+In contrast, in systems such as YBa$_2$Cu$_3$O$_7$ and LaH$_{10}$, temperature enhances sharp curvature features and lifts degeneracies non-uniformly~\cite{Pickett1989,Drozdov2019}. This leads to rapidly varying curvature profiles that do not admit a stable quadratic description, reinforcing the absence of an EDT regime.
+
+These results demonstrate that temperature acts as a dynamical probe of NACT-induced geometry: systems with smooth curvature retain structured manifolds, whereas systems with sharp curvature exhibit geometric instability under thermal excitation.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.70\textwidth]{figs/bands-Nb.pdf}
+
+\vspace{1em}
+
+\includegraphics[width=0.70\textwidth]{figs/Nb_bands_temperature.pdf}
+
+\caption{\textbf{S6 | Electronic band structure and temperature-renormalized bands of Nb.}
+\textbf{Top,} Electronic band structure of body-centered cubic (bcc) Nb along high-symmetry directions, showing multiple dispersive bands (37–43) crossing and forming near-degenerate manifolds in the vicinity of the Fermi.
+\textbf{Bottom,} Temperature-renormalized band structure including electron--phonon interactions, illustrating modulation of band energies under vibrational motion at frequency $223.29~\mathrm{cm}^{-1}$. The band structure exhibits coherent multi-band crossings with moderate dispersion, supporting smooth curvature profiles and paired two-node topology. Importantly, the temperature-induced modulation preserves the overall band connectivity and near-degenerate structure, indicating robust electron--vibration coupling within a stable geometric manifold. This behavior is consistent with a well-defined EDT regime, in which curvature remains smoothly varying and admits a finite quadratic description over an extended momentum interval.}
+\end{figure}
+
+%\section*{S6. Curvature topology classification}
+
+%Beyond magnitude, the \emph{topology} of curvature near degeneracies provides an additional diagnostic for classifying electron--vibration coupling regimes. Here, curvature is defined with respect to a normal-mode coordinate, $\kappa(k) = \partial^2 E_n / \partial Q_\alpha^2$, evaluated along a momentum path.
+%
+%We identify three representative classes based on the number of nodes (zeros of $\kappa$) and the smoothness of the connecting branches:
+%
+%\paragraph*{(i) Single-node curvature (simple metals).}
+%In alkali and simple metallic systems (e.g., Li, Na, K, Rb, Cs), the curvature typically exhibits a single node. This reflects relatively simple band dispersion and limited mixing in the relevant subspace. The resulting curvature profile does not support a stable quadratic manifold over a finite interval.
+%
+%\paragraph*{(ii) Two-node smooth curvature (EDT-compatible).}
+%In systems such as Nb and K$_3$C$_{60}$, paired bands near the Fermi level produce two nodes connected by smooth, approximately parabolic branches. The curvature varies slowly across a finite region, allowing a consistent local quadratic description and yielding a finite EDT window $\Delta k_{\mathrm{EDT}}$.
+%
+%\paragraph*{(iii) Two-node sharp curvature (EDT-suppressed).}
+%In systems such as YBa$_2$Cu$_3$O$_7$ and LaH$_{10}$, two nodes are also present, but are connected by sharply varying curvature with localized peaks. This rapid variation prevents stable quadratic fitting and suppresses the formation of a finite EDT window ($\Delta k_{\mathrm{EDT}} \approx 0$), despite strong coupling.
+%
+%\paragraph*{Role of band geometry and lattice structure.}
+%These classes are governed primarily by band dispersion and lattice-scale parameters (crystal structure and lattice constants), rather than pairing symmetry. Even within simple metals, different crystal structures and lattice constants can lead to distinct curvature topologies. Accordingly, curvature topology provides a geometric classification of electron--vibration response that is complementary to conventional interaction-based descriptions.
+%
+%A full theoretical treatment linking curvature topology to multi-electron vibrational dynamics is beyond the scope of the present work and will be addressed in future studies.
+
+% ============================================================
+\section*{S6. Curvature topology classification}
+
+Beyond magnitude, the \emph{topology} of curvature near degeneracies provides an additional diagnostic for classifying electron--vibration coupling regimes. Here, curvature is defined with respect to a normal-mode coordinate, $\kappa(k) = \partial^2 E_n / \partial Q_\alpha^2$, evaluated along a momentum path~\cite{Giustino2017,Yarkony1996}.
+
+We identify three representative classes based on the number of nodes (zeros of $\kappa$) and the smoothness of the connecting branches:
+
+\paragraph*{(i) Single-node curvature (simple metals).}
+In alkali and simple metallic systems (e.g., Li, Na, K, Rb, Cs), the curvature typically exhibits a single node. This reflects relatively simple band dispersion and limited mixing in the relevant subspace~\cite{Kittel2004}. The resulting curvature profile does not support a stable quadratic manifold over a finite interval.
+
+\paragraph*{(ii) Two-node smooth curvature (EDT-compatible).}
+In systems such as Nb and K$_3$C$_{60}$, paired bands near the Fermi level produce two nodes connected by smooth, approximately parabolic branches~\cite{Gunnarsson1997,Capone2009}. The curvature varies slowly across a finite region, allowing a consistent local quadratic description and yielding a finite EDT window $\Delta k_{\mathrm{EDT}}$.
+
+\paragraph*{(iii) Two-node sharp curvature (EDT-suppressed).}
+In systems such as YBa$_2$Cu$_3$O$_7$ and LaH$_{10}$, two nodes are also present, but are connected by sharply varying curvature with localized peaks~\cite{Drozdov2019,Pickett1989}. This rapid variation prevents stable quadratic fitting and suppresses the formation of a finite EDT window ($\Delta k_{\mathrm{EDT}} \approx 0$), despite strong coupling.
+
+\paragraph*{Role of band geometry and lattice structure.}
+These classes are governed primarily by band dispersion and lattice-scale parameters (crystal structure and lattice constants), rather than pairing symmetry. Even within simple metals, different crystal structures and lattice constants can lead to distinct curvature topologies~\cite{Ziman1972}. Accordingly, curvature topology provides a geometric classification of electron--vibration response that is complementary to conventional interaction-based descriptions.
+
+A full theoretical treatment linking curvature topology to multi-electron vibrational dynamics is beyond the scope of the present work and will be addressed in future studies.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{figs/figS7_curvature_topology.pdf}
+\caption{\textbf{S7 | Schematic classification of curvature topology.}
+Representative curvature profiles $\partial^2 E / \partial Q_\alpha^2$ illustrating three regimes:
+\textbf{(left)} single-node curvature typical of simple metals,
+\textbf{(middle)} two-node smooth curvature with slowly varying parabolic branches supporting a finite EDT window,
+and \textbf{(right)} two-node sharp curvature with localized peaks that suppress the formation of a stable quadratic manifold.
+These classes are governed primarily by band dispersion and lattice-scale parameters rather than pairing symmetry.}
+\end{figure}
+
+\section*{S7. Quantum circuit realization of EDT dynamics}
+
+To demonstrate the implementability of Entanglement-Dynamic Topology (EDT) on quantum hardware, we construct a Trotterized quantum circuit representation of the minimal four-qubit plaquette model introduced in the main text. The four-qubit plaquette model can be interpreted as a minimal quantum gyroscope, where loop-induced interactions generate effective rotational dynamics in operator space. This provides a physically intuitive picture of how EDT organizes coherent evolution through non-local interference.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.52\textwidth]{figs/demo_edt_gyro_trotter_4q_circuit_example.pdf}
+  \caption{\textbf{S8 | 4-qubit plaquette Trotter realization of EDT dynamics.}
+  Representative first-order Trotter circuit implementing the four-qubit plaquette Hamiltonian. The circuit decomposes the time-evolution operator into local interaction terms and a non-local plaquette operator, corresponding to loop-induced interactions in the EDT framework. The plaquette unitary $e^{-i \lambda Z_0 Z_1 Z_2 Z_3}$ generates multi-qubit entanglement associated with loop topology, while single- and two-qubit terms implement local fields and nearest-neighbor interactions. This decomposition provides a direct mapping between EDT Hamiltonian structure and quantum circuit primitives, enabling experimental realization of structured quantum resource dynamics.}
+  \label{fig:si_4q_plaquette_trotter_circuits}
+\end{figure*}
+
+% ============================================================
+\section*{Summary}
+
+Across all systems studied, curvature arising from electron--vibration interaction defines structured manifolds in which electronic states are organized and degeneracies are lifted. This establishes curvature as the microscopic origin of Entanglement--Dynamic Topology.
+
+\bibliographystyle{unsrt}
+\bibliography{SI_references}
+
+\end{document}

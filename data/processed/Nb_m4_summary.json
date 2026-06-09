@@ -1,0 +1,88 @@
+{
+  "analysis_window_indices": [
+    null,
+    null
+  ],
+  "archived_y_label": "d^2E_nN(k)/d^2q in eV/AS2",
+  "auto_pair_selection": {
+    "dataset_minus": 48,
+    "dataset_plus": 49,
+    "edt_width": 1.2972359999999998,
+    "exchange_mean_abs_inside": 8.432434545454546,
+    "k_minus_extreme": 1.911775,
+    "k_plus_extreme": 2.96172,
+    "minus_extreme": -100.7098,
+    "paired_extreme_separation": 1.0499450000000001,
+    "plus_extreme": 110.2079,
+    "score": 29.00736094787444,
+    "selection_rule": "max finite-window score = edt_width * (|min_minus| + |max_plus|) / (1 + mean_inside_abs(kappa_plus + kappa_minus))"
+  },
+  "band_figure": "figures\\supplementary\\Nb_bands.pdf",
+  "bootstrap": {
+    "samples": 500,
+    "width_ci_95": [
+      1.1983199999999998,
+      1.3137219999999998
+    ],
+    "width_mean": 1.2852012199999996,
+    "width_std": 0.028569368559198904
+  },
+  "data_file": "data\\nb\\Nb-second-m4.agr",
+  "dataset_minus": 48,
+  "dataset_plus": 49,
+  "fit_half_window_points": 8,
+  "material": "Nb_m4",
+  "mode_label": "m4",
+  "nominal_result": {
+    "core_width": 1.2972359999999998,
+    "edt_width": 1.2972359999999998,
+    "k0": 2.4130453540186987,
+    "k_left": 1.911775,
+    "k_right": 3.209011
+  },
+  "path_labels": [
+    "\\G",
+    "H",
+    "N",
+    "P",
+    "\\G"
+  ],
+  "residual_threshold": 0.08,
+  "threshold_scan": {
+    "thresholds": [
+      0.04,
+      0.05,
+      0.06,
+      0.06999999999999999,
+      0.07999999999999999,
+      0.09,
+      0.09999999999999999,
+      0.10999999999999999,
+      0.12,
+      0.12999999999999998,
+      0.13999999999999999,
+      0.15,
+      0.15999999999999998,
+      0.16999999999999998,
+      0.18
+    ],
+    "widths": [
+      1.2807499999999998,
+      1.2807499999999998,
+      1.2972359999999998,
+      1.2972359999999998,
+      1.2972359999999998,
+      1.2972359999999998,
+      1.2972359999999998,
+      1.2972359999999998,
+      1.3137219999999998,
+      1.3137219999999998,
+      1.3137219999999998,
+      1.3137219999999998,
+      1.3137219999999998,
+      1.3137219999999998,
+      1.3137219999999998
+    ]
+  },
+  "title": "Nb m4"
+}

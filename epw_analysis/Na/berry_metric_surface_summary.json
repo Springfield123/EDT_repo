@@ -1,0 +1,42 @@
+{
+  "berry_abs_sum_path_projected": {
+    "hotspot_threshold": 288.92706603437864,
+    "inside_hotspot_fraction": 0.09090909090909091,
+    "inside_max": 34015.66006386167,
+    "inside_mean": 1671.8614894875468,
+    "outside_hotspot_fraction": 0.37209302325581395,
+    "outside_max": 88214.6601499987,
+    "outside_mean": 12370.310183694652
+  },
+  "edt_window": {
+    "edt_width": 1.0347399999999998,
+    "k0": 1.836899216185377,
+    "k_left": 1.280224,
+    "k_right": 2.314964
+  },
+  "epc_claim": "No EPC comparison is made here; resolved EPW EPC/lambda/linewidth outputs are required for EPC claims.",
+  "grid_size": 101,
+  "interpretation": {
+    "berry_hotspot_overlap": "EDT projected segment has lower hotspot overlap than outside path",
+    "metric_hotspot_overlap": "EDT projected segment has lower hotspot overlap than outside path"
+  },
+  "kz_frac": 0.0,
+  "material": "Na",
+  "metric_trace_sum_path_projected": {
+    "hotspot_threshold": 20131.806595798,
+    "inside_hotspot_fraction": 0.15151515151515152,
+    "inside_max": 63239.741299233545,
+    "inside_mean": 10919.488787239201,
+    "outside_hotspot_fraction": 0.4186046511627907,
+    "outside_max": 81508.9063727947,
+    "outside_mean": 29157.057019975866
+  },
+  "plane": "kx-ky",
+  "plots": {
+    "berry_abs_sum": "epw_analysis\\Na\\fig_na_berry_curvature_xy_kz0.png",
+    "metric_trace_sum": "epw_analysis\\Na\\fig_na_quantum_metric_trace_xy_kz0.png"
+  },
+  "projection_note": "AGR path is projected onto the kx-ky plane; kz along the AGR path is not represented in this 2D slice.",
+  "status": "completed",
+  "surface_csv": "epw_analysis\\Na\\berry_metric_surface_xy_kz0.csv"
+}

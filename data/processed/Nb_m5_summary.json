@@ -1,0 +1,100 @@
+{
+  "analysis_window_indices": [
+    null,
+    null
+  ],
+  "archived_y_label": "d^2E_nN(k)/d^2q in eV/AS2",
+  "auto_pair_selection": {
+    "dataset_minus": 42,
+    "dataset_plus": 41,
+    "edt_width": 2.6814560000000003,
+    "exchange_mean_abs_inside": 6.275125,
+    "k_minus_extreme": 4.297093,
+    "k_plus_extreme": 1.615637,
+    "minus_extreme": -43.4956,
+    "paired_extreme_separation": 2.6814560000000003,
+    "plus_extreme": 26.5588,
+    "score": 25.82055857547465,
+    "selection_rule": "max finite-window score = edt_width * (|min_minus| + |max_plus|) / (1 + mean_inside_abs(kappa_plus + kappa_minus))"
+  },
+  "band_figure": "figures\\supplementary\\Nb_bands.pdf",
+  "bootstrap": {
+    "samples": 500,
+    "width_ci_95": [
+      2.6814560000000003,
+      2.6814560000000003
+    ],
+    "width_mean": 2.681456,
+    "width_std": 4.445339663058968e-16
+  },
+  "data_file": "data\\nb\\Nb-seconddri_m5.agr",
+  "dataset_minus": 42,
+  "dataset_plus": 41,
+  "fit_half_window_points": 8,
+  "manual_window_override": {
+    "corrected_k0_rule": "midpoint of corrected [k_left, k_right] interval",
+    "k_right": 2.880955,
+    "original_nominal_result": {
+      "core_width": 2.6814560000000003,
+      "edt_width": 2.6814560000000003,
+      "k0": 2.945565461102208,
+      "k_left": 1.615637,
+      "k_right": 4.297093
+    },
+    "reason": "User-corrected EDT right edge: stop just before the major path-projected metric-sum spike near k=2.91-2.93."
+  },
+  "material": "Nb_m5",
+  "mode_label": "m5",
+  "nominal_result": {
+    "core_width": 1.2653180000000002,
+    "edt_width": 1.2653180000000002,
+    "k0": 2.248296,
+    "k_left": 1.615637,
+    "k_right": 2.880955
+  },
+  "path_labels": [
+    "\\G",
+    "H",
+    "N",
+    "P",
+    "\\G"
+  ],
+  "residual_threshold": 0.08,
+  "threshold_scan": {
+    "thresholds": [
+      0.04,
+      0.05,
+      0.06,
+      0.06999999999999999,
+      0.07999999999999999,
+      0.09,
+      0.09999999999999999,
+      0.10999999999999999,
+      0.12,
+      0.12999999999999998,
+      0.13999999999999999,
+      0.15,
+      0.15999999999999998,
+      0.16999999999999998,
+      0.18
+    ],
+    "widths": [
+      2.6814560000000003,
+      2.6814560000000003,
+      2.6814560000000003,
+      2.6814560000000003,
+      2.6814560000000003,
+      2.6814560000000003,
+      2.6814560000000003,
+      2.6814560000000003,
+      2.6814560000000003,
+      2.6814560000000003,
+      2.6814560000000003,
+      2.6814560000000003,
+      2.6814560000000003,
+      2.6814560000000003,
+      2.6814560000000003
+    ]
+  },
+  "title": "Nb m5"
+}

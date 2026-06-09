@@ -1,0 +1,37 @@
+\documentclass[aps,prx,reprint,superscriptaddress,longbibliography,floatfix]{revtex4-2}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,bm,graphicx,physics,xcolor,hyperref}
+\graphicspath{{figures/main/}{figures/supplementary/}}
+
+\begin{document}
+
+\title{Finite Dynamical Resource Manifolds from Non-Adiabatic Curvature and Operator Topology}
+
+\author{Hang Hu}
+\affiliation{Digital Technologies, National Research Council of Canada, 222 College Street, Toronto, ON M5T 3J1, Canada}
+\author{Hsu Kiang Ooi}
+\affiliation{Digital Technologies, National Research Council of Canada, 222 College Street, Toronto, ON M5T 3J1, Canada}
+\author{Anguang Hu}
+\affiliation{Suffield Research Centre, Defence Research and Development Canada, PO Box 4000 Station Main, Medicine Hat, Alberta T1A 8K6, Canada}
+
+\begin{abstract}
+Quantum resources such as entanglement, coherence, superposition, and interference are often discussed in terms of global enhancement, but in realistic systems their usefulness is usually confined to finite dynamical regimes in which competing mechanisms remain jointly effective. Here we formulate Entanglement-Dynamic Topology (EDT) as a quantitative framework for identifying such finite resource manifolds. The microscopic diagnostic is non-adiabatic electron--phonon curvature, defined through second-order variations of electronic energies with respect to normal-mode coordinates, which organizes correlated dynamics near degeneracies. As a main material example, we analyze K$_3$C$_{60}$ and identify a finite EDT window by fitting paired curvature branches to a local quadratic form with a residual threshold. To test the same finite-regime logic in a minimal dynamical setting, we study a four-qubit plaquette Hamiltonian in which loop-induced interactions produce an interior optimum of operator spreading and long-time correlation retention. We further examine robustness under Trotterized implementation and bounded circuit depth, showing that the optimal regime persists under approximate compilation. Finally, we use NV-center XY8 sensing as a control-oriented case study in which sweeps over pulse spacing and sequence depth reveal a finite optimum set by the balance among filter response, coherence, pulse fidelity, and readout overhead. Taken together, these results support a finite-regime view of quantum resource organization that links non-adiabatic curvature diagnostics, minimal dynamical models, and sensing-oriented control landscapes within a common quantitative framework.
+\end{abstract}
+
+\maketitle
+
+\input{sections/01_introduction}
+\input{sections/02_edt_definition}
+\input{sections/03_curvature_diagnostic}
+\input{sections/04_k3c60_analysis}
+\input{sections/05_minimal_plaquette_model}
+\input{sections/06_operator_spreading_and_robustness}
+\input{sections/07_nv_xy8_case_study}
+\input{sections/08_discussion}
+\input{sections/09_methods}
+
+\bibliography{references}
+
+\end{document}

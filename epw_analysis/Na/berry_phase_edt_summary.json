@@ -1,0 +1,224 @@
+{
+  "aggregates": {
+    "band_mean": {
+      "inside_abs_phase_sum_rad": 41.307584742907764,
+      "inside_total_phase_rad": 11.178161733605469,
+      "inside_winding_classification": "fractional",
+      "inside_winding_cycles": 1.7790596945839805,
+      "left_boundary_phase_jump_cycles": -0.03184304049988742,
+      "left_boundary_phase_jump_rad": -0.20007572420481712,
+      "outside_abs_phase_sum_rad": 174.67332499383082,
+      "outside_total_phase_rad": 74.45141857459014,
+      "right_boundary_phase_jump_cycles": -0.07798073831505874,
+      "right_boundary_phase_jump_rad": -0.48996742922419323,
+      "total_phase_rad": 85.62958030819563
+    },
+    "band_sum": {
+      "inside_abs_phase_sum_rad": 330.4606779432621,
+      "inside_total_phase_rad": 89.42529386884375,
+      "inside_winding_classification": "fractional",
+      "inside_winding_cycles": 14.232477556671844,
+      "left_boundary_phase_jump_cycles": -0.25474432399909935,
+      "left_boundary_phase_jump_rad": -1.600605793638537,
+      "outside_abs_phase_sum_rad": 1397.3865999506465,
+      "outside_total_phase_rad": 595.6113485967211,
+      "right_boundary_phase_jump_cycles": -0.6238459065204699,
+      "right_boundary_phase_jump_rad": -3.919739433793546,
+      "total_phase_rad": 685.036642465565
+    }
+  },
+  "band_resolved": {
+    "1": {
+      "inside_abs_phase_sum_rad": 145.09444285133435,
+      "inside_total_phase_rad": 33.29721431696285,
+      "inside_winding_classification": "fractional",
+      "inside_winding_cycles": 5.299416249734866,
+      "left_boundary_phase_jump_cycles": 0.15160740512693235,
+      "left_boundary_phase_jump_rad": 0.9525774203531645,
+      "mean_overlap_abs": 0.9959167499230412,
+      "min_overlap_abs": 0.6058408864073589,
+      "outside_abs_phase_sum_rad": 517.1069759144729,
+      "outside_total_phase_rad": 269.65317239678313,
+      "right_boundary_phase_jump_cycles": -0.061299878931718545,
+      "right_boundary_phase_jump_rad": -0.38515849863566143,
+      "total_phase_rad": 302.950386713746
+    },
+    "2": {
+      "inside_abs_phase_sum_rad": 158.25277122169828,
+      "inside_total_phase_rad": 36.247360867455505,
+      "inside_winding_classification": "fractional",
+      "inside_winding_cycles": 5.768946656091275,
+      "left_boundary_phase_jump_cycles": -0.2080781532725745,
+      "left_boundary_phase_jump_rad": -1.3073935953873022,
+      "mean_overlap_abs": 0.9920498252753847,
+      "min_overlap_abs": 0.5072461672847526,
+      "outside_abs_phase_sum_rad": 463.3343549538532,
+      "outside_total_phase_rad": 88.03752474218237,
+      "right_boundary_phase_jump_cycles": 0.2897277338260135,
+      "right_boundary_phase_jump_rad": 1.8204130402580463,
+      "total_phase_rad": 124.28488560963788
+    },
+    "3": {
+      "inside_abs_phase_sum_rad": 148.37772293733332,
+      "inside_total_phase_rad": 76.67643569760841,
+      "inside_winding_classification": "fractional",
+      "inside_winding_cycles": 12.20343375994224,
+      "left_boundary_phase_jump_cycles": -0.1587587581716401,
+      "left_boundary_phase_jump_rad": -0.997510696730126,
+      "mean_overlap_abs": 0.995329321435651,
+      "min_overlap_abs": 0.5674516587482248,
+      "outside_abs_phase_sum_rad": 434.66486305385814,
+      "outside_total_phase_rad": -73.90365317537923,
+      "right_boundary_phase_jump_cycles": 0.10388891898044898,
+      "right_boundary_phase_jump_rad": 0.6527533293167275,
+      "total_phase_rad": 2.772782522229221
+    },
+    "4": {
+      "inside_abs_phase_sum_rad": 141.75903944727153,
+      "inside_total_phase_rad": -12.06196051931896,
+      "inside_winding_classification": "near_integer",
+      "inside_winding_cycles": -1.9197206400288975,
+      "left_boundary_phase_jump_cycles": -0.4023076177905389,
+      "left_boundary_phase_jump_rad": -2.527773313067935,
+      "mean_overlap_abs": 0.9940393756958704,
+      "min_overlap_abs": 0.5615728564788482,
+      "outside_abs_phase_sum_rad": 465.207108469,
+      "outside_total_phase_rad": 156.39939225174945,
+      "right_boundary_phase_jump_cycles": -0.03652027260063362,
+      "right_boundary_phase_jump_rad": -0.22946364021849439,
+      "total_phase_rad": 144.33743173243047
+    },
+    "5": {
+      "inside_abs_phase_sum_rad": 163.7717659881131,
+      "inside_total_phase_rad": 36.069698989089424,
+      "inside_winding_classification": "fractional",
+      "inside_winding_cycles": 5.740670889950322,
+      "left_boundary_phase_jump_cycles": -0.3257097073771125,
+      "left_boundary_phase_jump_rad": -2.046494447797636,
+      "mean_overlap_abs": 0.9960025988203223,
+      "min_overlap_abs": 0.7125742173546042,
+      "outside_abs_phase_sum_rad": 436.5906210682646,
+      "outside_total_phase_rad": -60.27872367116332,
+      "right_boundary_phase_jump_cycles": -0.4453716261168521,
+      "right_boundary_phase_jump_rad": -2.798352457452085,
+      "total_phase_rad": -24.20902468207389
+    },
+    "6": {
+      "inside_abs_phase_sum_rad": 120.15720338183165,
+      "inside_total_phase_rad": 24.27896123798622,
+      "inside_winding_classification": "fractional",
+      "inside_winding_cycles": 3.8641166941620297,
+      "left_boundary_phase_jump_cycles": 0.1646585319242296,
+      "left_boundary_phase_jump_rad": 1.0345800684880804,
+      "mean_overlap_abs": 0.9961943523590433,
+      "min_overlap_abs": 0.7059822016393751,
+      "outside_abs_phase_sum_rad": 407.9622741293694,
+      "outside_total_phase_rad": 120.9958183766996,
+      "right_boundary_phase_jump_cycles": -0.3501779758929397,
+      "right_boundary_phase_jump_rad": -2.200233113028406,
+      "total_phase_rad": 145.27477961468583
+    },
+    "7": {
+      "inside_abs_phase_sum_rad": 148.92621903362476,
+      "inside_total_phase_rad": -67.38500883625157,
+      "inside_winding_classification": "fractional",
+      "inside_winding_cycles": -10.724657246580485,
+      "left_boundary_phase_jump_cycles": 0.1051741222211393,
+      "left_boundary_phase_jump_rad": 0.6608284994353725,
+      "mean_overlap_abs": 0.9942777884105941,
+      "min_overlap_abs": 0.5718040558202059,
+      "outside_abs_phase_sum_rad": 530.8991129433335,
+      "outside_total_phase_rad": -22.743973470173856,
+      "right_boundary_phase_jump_cycles": -0.3888507970506764,
+      "right_boundary_phase_jump_rad": -2.443221614713881,
+      "total_phase_rad": -90.12898230642543
+    },
+    "8": {
+      "inside_abs_phase_sum_rad": 136.5089042012238,
+      "inside_total_phase_rad": -37.69740788468815,
+      "inside_winding_classification": "near_integer",
+      "inside_winding_cycles": -5.999728806599509,
+      "left_boundary_phase_jump_cycles": 0.41866985334046547,
+      "left_boundary_phase_jump_rad": 2.6305802710678448,
+      "mean_overlap_abs": 0.992943563297833,
+      "min_overlap_abs": 0.5587493921678908,
+      "outside_abs_phase_sum_rad": 461.9441122477516,
+      "outside_total_phase_rad": 117.45179114602294,
+      "right_boundary_phase_jump_cycles": 0.26475799126588806,
+      "right_boundary_phase_jump_rad": 1.663523520680209,
+      "total_phase_rad": 79.75438326133482
+    }
+  },
+  "boundary_links": {
+    "left": {
+      "index": 98,
+      "k_left": 1.267293,
+      "k_mid": 1.2737585,
+      "k_right": 1.280224
+    },
+    "right": {
+      "index": 196,
+      "k_left": 2.304406,
+      "k_mid": 2.309685,
+      "k_right": 2.314964
+    }
+  },
+  "counts": {
+    "inside_links": 98,
+    "num_kpoints": 400,
+    "num_links": 399,
+    "outside_links": 301
+  },
+  "edt_phase_files": {
+    "PhaseA": {
+      "available": false,
+      "files": [],
+      "plot_status": "not_generated_no_phase_file"
+    },
+    "PhaseB": {
+      "available": false,
+      "files": [],
+      "plot_status": "not_generated_no_phase_file"
+    },
+    "PhaseG": {
+      "available": false,
+      "files": [],
+      "plot_status": "not_generated_no_phase_file"
+    },
+    "PhaseH": {
+      "available": false,
+      "files": [],
+      "plot_status": "not_generated_no_phase_file"
+    },
+    "PhaseT": {
+      "available": false,
+      "files": [],
+      "plot_status": "not_generated_no_phase_file"
+    }
+  },
+  "edt_window": {
+    "edt_width": 1.0347399999999998,
+    "k0": 1.836899216185377,
+    "k_left": 1.280224,
+    "k_right": 2.314964
+  },
+  "material": "Na",
+  "open_path_note": "These are open-path, band-tracked, parallel-transport phase diagnostics. Individual-band phases near degeneracies should be interpreted with the overlap and residual gauges.",
+  "outputs": {
+    "berry_phase_csv": "epw_analysis\\Na\\berry_phase_on_agr_path.csv",
+    "k0_centered_plot": "epw_analysis\\Na\\fig_na_k0_centered_berry_phase_comparison.png"
+  },
+  "parallel_transport_qc": {
+    "low_overlap_count_lt_1e_minus_6": 0,
+    "max_abs_residual_phase_increment": 3.914662661409143e-16,
+    "mean_abs_residual_phase_increment": 7.557495063833589e-17,
+    "min_overlap_abs": 0.5072461672847526
+  },
+  "phase_definition": "phase_increment is the parallel-transport link correction -angle(<u_i^PT|u_{i+1}>); after applying it, the same-band overlap is real-positive when overlap_abs is above tolerance.",
+  "selected_bands_for_plot": [
+    3,
+    7,
+    8
+  ],
+  "status": "completed"
+}

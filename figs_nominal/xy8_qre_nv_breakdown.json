@@ -1,0 +1,86 @@
+{
+  "best": {
+    "tau_s": 3.697916666666667e-06,
+    "N": 4,
+    "eta_proxy": 0.23452860578735615,
+    "breakdown": {
+      "tau_s": 3.697916666666667e-06,
+      "N": 4,
+      "f_target_Hz": 200000.0,
+      "T_seq_s": 0.00023666666666666668,
+      "T2eff_s": 0.0006892190129982209,
+      "env_factor": 0.8887738551636122,
+      "pulse_factor": 0.9083329444789532,
+      "G": 0.09487004566230817,
+      "effective_detected_rate_cps": 15000000000.0,
+      "Rph_ens_cps": 15000000000.0,
+      "C_raw": 0.03,
+      "piPulseFid": 0.997,
+      "T_cycle_s": 0.0002439666666666667
+    },
+    "relative_to_best": 1.0,
+    "improvement_vs_point_percent": 0.0,
+    "label": "best"
+  },
+  "heuristic": {
+    "tau_s": 1.3541666666666667e-06,
+    "N": 16,
+    "eta_proxy": 0.6610244084835897,
+    "breakdown": {
+      "tau_s": 1.3541666666666667e-06,
+      "N": 16,
+      "f_target_Hz": 200000.0,
+      "T_seq_s": 0.00034666666666666667,
+      "T2eff_s": 0.001583409492927473,
+      "env_factor": 0.9531973262715314,
+      "pulse_factor": 0.6807384224674946,
+      "G": 0.03443670883588095,
+      "effective_detected_rate_cps": 15000000000.0,
+      "Rph_ens_cps": 15000000000.0,
+      "C_raw": 0.03,
+      "piPulseFid": 0.997,
+      "T_cycle_s": 0.0003539666666666667
+    },
+    "relative_to_best": 2.8185235923115126,
+    "improvement_vs_point_percent": 64.52043180593407,
+    "label": "heuristic"
+  },
+  "overdriven": {
+    "tau_s": 1.3541666666666667e-06,
+    "N": 64,
+    "eta_proxy": 4.58363929857978,
+    "breakdown": {
+      "tau_s": 1.3541666666666667e-06,
+      "N": 64,
+      "f_target_Hz": 200000.0,
+      "T_seq_s": 0.0013866666666666667,
+      "T2eff_s": 0.0036377197596249547,
+      "env_factor": 0.8647570216766949,
+      "pulse_factor": 0.21474400849948888,
+      "G": 0.008609177208970321,
+      "effective_detected_rate_cps": 15000000000.0,
+      "Rph_ens_cps": 15000000000.0,
+      "C_raw": 0.03,
+      "piPulseFid": 0.997,
+      "T_cycle_s": 0.0013939666666666665
+    },
+    "relative_to_best": 19.544052134670952,
+    "improvement_vs_point_percent": 94.88335380447532,
+    "label": "overdriven"
+  },
+  "best_breakdown": {
+    "tau_s": 3.697916666666667e-06,
+    "N": 4,
+    "f_target_Hz": 200000.0,
+    "T_seq_s": 0.00023666666666666668,
+    "T2eff_s": 0.0006892190129982209,
+    "env_factor": 0.8887738551636122,
+    "pulse_factor": 0.9083329444789532,
+    "G": 0.09487004566230817,
+    "effective_detected_rate_cps": 15000000000.0,
+    "Rph_ens_cps": 15000000000.0,
+    "C_raw": 0.03,
+    "piPulseFid": 0.997,
+    "T_cycle_s": 0.0002439666666666667
+  }
+}

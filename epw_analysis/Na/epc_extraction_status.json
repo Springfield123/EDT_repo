@@ -1,0 +1,88 @@
+{
+  "candidate_files": [
+    {
+      "bytes": 668,
+      "matched_lines": 0,
+      "notes": "",
+      "path": "epw_runs\\Na\\epw.in",
+      "roles": [
+        "name:epw",
+        "text:epb",
+        "text:specfun"
+      ],
+      "text_scanned": true
+    },
+    {
+      "bytes": 31309,
+      "matched_lines": 0,
+      "notes": "",
+      "path": "epw_runs\\Na\\nscf.in",
+      "roles": [
+        "text:linewidth"
+      ],
+      "text_scanned": true
+    },
+    {
+      "bytes": 49151,
+      "matched_lines": 0,
+      "notes": "",
+      "path": "epw_runs\\Na\\outputs\\epw.out",
+      "roles": [
+        "name:epw",
+        "text:g2",
+        "text:phonon"
+      ],
+      "text_scanned": true
+    },
+    {
+      "bytes": 2356,
+      "matched_lines": 0,
+      "notes": "",
+      "path": "epw_runs\\Na\\README_assumptions.txt",
+      "roles": [
+        "text:epb",
+        "text:lambda",
+        "text:linewidth",
+        "text:specfun"
+      ],
+      "text_scanned": true
+    },
+    {
+      "bytes": 1048,
+      "matched_lines": 0,
+      "notes": "",
+      "path": "epw_runs\\Na\\scf.in",
+      "roles": [
+        "text:linewidth"
+      ],
+      "text_scanned": true
+    },
+    {
+      "bytes": 1710,
+      "matched_lines": 0,
+      "notes": "not text-scanned: size=1710 bytes or suffix='.sh'",
+      "path": "epw_runs\\Na\\submit_epw.sh",
+      "roles": [
+        "name:epw"
+      ],
+      "text_scanned": false
+    },
+    {
+      "bytes": 1025,
+      "matched_lines": 0,
+      "notes": "not text-scanned: size=1025 bytes or suffix='.sh'",
+      "path": "epw_runs\\Na\\submit_epw_only.sh",
+      "roles": [
+        "name:epw"
+      ],
+      "text_scanned": false
+    }
+  ],
+  "epw_folder": "epw_runs\\Na",
+  "material": "Na",
+  "notes": "No band/mode/k-resolved EPC, lambda, or linewidth quantities were parsed. The current EPW output appears to stop before phonon self-energy/EPC data are written.",
+  "num_extracted_rows": 0,
+  "output_csv": "epw_analysis\\Na\\epc_extracted.csv",
+  "resolution": "none",
+  "status": "no_resolved_epc_quantities_found"
+}

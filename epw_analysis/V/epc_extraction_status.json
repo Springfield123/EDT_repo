@@ -1,0 +1,75 @@
+{
+  "candidate_files": [
+    {
+      "bytes": 572,
+      "matched_lines": 0,
+      "notes": "",
+      "path": "epw_runs\\V\\epw.in",
+      "roles": [
+        "name:epw",
+        "text:epb",
+        "text:specfun"
+      ],
+      "text_scanned": true
+    },
+    {
+      "bytes": 31261,
+      "matched_lines": 0,
+      "notes": "",
+      "path": "epw_runs\\V\\nscf.in",
+      "roles": [
+        "text:linewidth"
+      ],
+      "text_scanned": true
+    },
+    {
+      "bytes": 2347,
+      "matched_lines": 0,
+      "notes": "",
+      "path": "epw_runs\\V\\README_assumptions.txt",
+      "roles": [
+        "text:epb",
+        "text:linewidth",
+        "text:specfun"
+      ],
+      "text_scanned": true
+    },
+    {
+      "bytes": 997,
+      "matched_lines": 0,
+      "notes": "",
+      "path": "epw_runs\\V\\scf.in",
+      "roles": [
+        "text:linewidth"
+      ],
+      "text_scanned": true
+    },
+    {
+      "bytes": 1708,
+      "matched_lines": 0,
+      "notes": "not text-scanned: size=1708 bytes or suffix='.sh'",
+      "path": "epw_runs\\V\\submit_epw.sh",
+      "roles": [
+        "name:epw"
+      ],
+      "text_scanned": false
+    },
+    {
+      "bytes": 1023,
+      "matched_lines": 0,
+      "notes": "not text-scanned: size=1023 bytes or suffix='.sh'",
+      "path": "epw_runs\\V\\submit_epw_only.sh",
+      "roles": [
+        "name:epw"
+      ],
+      "text_scanned": false
+    }
+  ],
+  "epw_folder": "epw_runs\\V",
+  "material": "V",
+  "notes": "No band/mode/k-resolved EPC, lambda, or linewidth quantities were parsed. The current EPW output appears to stop before phonon self-energy/EPC data are written.",
+  "num_extracted_rows": 0,
+  "output_csv": "epw_analysis\\V\\epc_extracted.csv",
+  "resolution": "none",
+  "status": "no_resolved_epc_quantities_found"
+}
