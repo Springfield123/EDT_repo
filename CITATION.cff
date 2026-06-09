@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the repository release and the associated manuscript."
+title: "EDT_NaturePhysics_Data_Code"
+type: software
+authors:
+  - family-names: Hu
+    given-names: Hang
+abstract: "Companion data and code repository for the manuscript 'Programmable Quantum Resource Manifolds via Entanglement-Dynamic Topology'."
+version: 0.1.0
+date-released: 2026-05-18
+doi: "DOI_TO_BE_ADDED"
+repository-code: "GITHUB_URL_TO_BE_ADDED"
+preferred-citation:
+  type: article
+  title: "Programmable Quantum Resource Manifolds via Entanglement-Dynamic Topology"
+  authors:
+    - family-names: Hu
+      given-names: Hang
+  doi: "MANUSCRIPT_DOI_TO_BE_ADDED"
