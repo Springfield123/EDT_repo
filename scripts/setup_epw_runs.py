@@ -215,8 +215,8 @@ MATERIALS: tuple[MaterialConfig, ...] = (
         epw_qf_grid=(1, 1, 1),
         nscf_nbnd=320,
         nbndsub=183,
-        dis_win_min=-8.0,
-        dis_win_max=8.0,
+        dis_win_min=-30.0,
+        dis_win_max=30.0,
         dis_froz_min=-2.0,
         dis_froz_max=2.0,
         slurm_tasks=96,
@@ -225,6 +225,7 @@ MATERIALS: tuple[MaterialConfig, ...] = (
         notes=(
             "K3C60 DFPT is now treated as completed; stage this from the KC60 source input folder used by the QE runner.",
             "Stage 1 mirrors the successful Na-style EPW input: Wannierize, write EPB data, and enable phonselfen/specfun_ph in the first run.",
+            "The K3C60 outer disentanglement window is intentionally wide because [-8, 8] eV contained only 104 states at k-point 1 for 183 target WFs.",
             "The AGR EDT pair is Band 208/Band 209 for mode m120 along Gamma-X-L-W-Gamma.",
         ),
     ),

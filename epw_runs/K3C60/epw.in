@@ -19,8 +19,8 @@
 
   nbndsub = 183,
   num_iter = 1000,
-  dis_win_min = -8.000000,
-  dis_win_max = 8.000000,
+  dis_win_min = -30.000000,
+  dis_win_max = 30.000000,
   dis_froz_min = -2.000000,
   dis_froz_max = 2.000000,
   proj(1) = 'C:p',

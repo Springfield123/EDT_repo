@@ -14,7 +14,7 @@ EPW fine k-grid: 8 8 8
 EPW fine q-grid: 1 1 1
 NSCF nbnd: 320
 EPW nbndsub/num_wann: 183
-Disentanglement window: [-8.0, 8.0] eV
+Disentanglement window: [-30.0, 30.0] eV
 Frozen window: [-2.0, 2.0] eV
 Used final relaxed geometry from pw.x output: False
 
@@ -28,6 +28,7 @@ Projection assumptions:
 Validation notes:
 - K3C60 DFPT is now treated as completed; stage this from the KC60 source input folder used by the QE runner.
 - Stage 1 mirrors the successful Na-style EPW input: Wannierize, write EPB data, and enable phonselfen/specfun_ph in the first run.
+- The K3C60 outer disentanglement window is intentionally wide because [-8, 8] eV contained only 104 states at k-point 1 for 183 target WFs.
 - The AGR EDT pair is Band 208/Band 209 for mode m120 along Gamma-X-L-W-Gamma.
 - ph.x output not found locally; assume-completed enabled for setup only
 - dynmat.x output not found locally; assume-completed enabled for setup only

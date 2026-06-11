@@ -1,0 +1,14 @@
+Normal modes for AA
+ &inputph
+  tr2_ph=1.0d-14,
+  prefix='pwscf',
+  amass(1)=22.989769282,
+  outdir='/home/ahu/works/Na/'
+  epsil=.false.,
+  lraman=.false.,
+  trans=.true.,
+  asr=.true.
+  fildyn='dmat.Na'
+ /
+ 0.0 0.0 0.0
+

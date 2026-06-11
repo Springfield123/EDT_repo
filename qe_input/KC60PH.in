@@ -1,0 +1,14 @@
+Normal modes for AA
+ &inputph
+  tr2_ph=1.0d-14,
+  prefix='pwscf',
+  amass(1)=39.0983,
+  amass(2)=12.011,
+  outdir='/home/ahu/works/SuperConductivity/sbpd82/A3C60/qe/'
+  epsil=.false.,
+  lraman=.false.
+  trans=.true.,
+  asr=.true.
+  fildyn='dmat.AA'
+ /
+ 0.0 0.0 0.0

@@ -1,0 +1,15 @@
+Normal modes for AA
+ &inputph
+  tr2_ph=1.0d-14,
+  prefix='pwscf',
+  amass(1)=138.905477,
+  amass(2)=1.008,
+  outdir='/home/ahu/works/superconductors/LaH10/Spectrum/IR/'
+  epsil=.false.,
+  lraman=.false.,
+  trans=.true.,
+  asr=.true.
+  fildyn='dmat.LaH10'
+ /
+ 0.0 0.0 0.0
+

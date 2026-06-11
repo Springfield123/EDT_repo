@@ -1,0 +1,14 @@
+Normal modes for AA
+ &inputph
+  tr2_ph=1.0d-14,
+  prefix='pwscf',
+  amass(1)=50.94151,
+  outdir='/home/ahu/works/superconductors/V/bG/'
+  epsil=.false.,
+  lraman=.false.,
+  trans=.true.,
+  asr=.true.
+  fildyn='dmat.V'
+ /
+ 0.0 0.0 0.0
+

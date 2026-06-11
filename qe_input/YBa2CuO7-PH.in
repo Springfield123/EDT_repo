@@ -1,0 +1,16 @@
+Normal modes for AA
+ &inputph
+  tr2_ph=1.0d-14,
+  prefix='pwscf',
+  amass(1)=137.3277,
+  amass(2)=88.905852,
+  amass(3)=63.5463,
+  amass(4)=15.999,
+  outdir='/home/ahu/works/YBa2CuO7/',
+  epsil=.false.,
+  lraman=.false.
+  trans=.true.,
+  asr=.true.
+  fildyn='dmat.YBaCuO'
+ /
+ 0.0 0.0 0.0

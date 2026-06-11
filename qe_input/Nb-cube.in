@@ -1,0 +1,41 @@
+ &control
+    calculation = 'relax'
+    nstep=1000
+    etot_conv_thr=1.0D-5
+    forc_conv_thr=1.0D-4
+    pseudo_dir='/home/ahu/pseudopotentials/'
+ /
+&SYSTEM
+    ibrav = 0,
+    nat = 2, ntyp = 1,
+    ecutwfc =120.0,  nbnd = 200
+    input_dft='pbe',
+    exxdiv_treatment='gygi-baldereschi'
+    x_gamma_extrapolation = .true.
+    occupations='smearing', smearing='methfessel-paxton', degauss=0.05
+ /
+&electrons
+ mixing_beta=0.1
+ conv_thr  =  1.0d-7
+ /
+ &IONS
+ ion_dynamics='bfgs'
+ ion_positions='from_input'
+ /
+ &CELL
+ cell_dynamics='bfgs'
+ press=3000.0
+ press_conv_thr=0.01
+ cell_dofree='all'
+ /
+ATOMIC_SPECIES
+   Nb   92.90638  Nb.pbe-spn-kjpaw_psl.1.0.0.UPF
+CELL_PARAMETERS
+     6.23723004673944      0.00000000000000      0.00000000000000
+     0.00000000000000      6.23723004673944      0.00000000000000
+     0.00000000000000      0.00000000000000      6.23723004673944
+ATOMIC_POSITIONS crystal
+Nb      0.00000000000000      0.00000000000000      0.00000000000000
+Nb      0.50000000000000      0.50000000000000      0.50000000000000
+K_POINTS automatic
+8  8  8   0 0 0
