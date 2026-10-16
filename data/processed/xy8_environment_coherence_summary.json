@@ -1,0 +1,42 @@
+{
+  "anchoring_rule": "1/T2_1(T)=1/T2_1(300K)+[R1(T)-R1(300K)]/2",
+  "configuration_id": "xy8_environment_scan_v1",
+  "configuration_sha256": "85730bb286f708488b0b14ead7aeb4e2166fa4b0143d7a197b63f42627f4e388",
+  "diagnostic_csv_sha256": "5e7da467dc224d2d5b56ece3a373375f0526f6391ed4b9f18f6a2397edca12ba",
+  "diagnostic_row_count": 44,
+  "double_counting_guard": "Do not multiply the nominal coherence envelope by a second full T1 decay. Compare the two T1 sources as separate variants and never combine or fit them.",
+  "edt_score_surfaces_evaluated": false,
+  "literature_bundle_sha256": "1ae3ab99330f6c94b11bc8392c118e5b6115bc60c9a832ad81be6ab43d35a139",
+  "reference_T2_1_us": 300.0,
+  "reference_temperature_K": 300.0,
+  "schema_version": "1.0",
+  "separation_rule": "Jarmola experimental and Mondal first-principles T1 sources are separate sensitivity variants; they are not averaged, combined, or fitted.",
+  "stage": "anchored_temperature_dependent_coherence",
+  "temperature_count": 22,
+  "variants": {
+    "jarmola_experimental_S8": {
+      "N128_T1_limited_temperature_count": 2,
+      "all_N128_T2_le_2T1": true,
+      "all_T2_le_2T1": true,
+      "maximum_T1_ms": 1389.2416845811572,
+      "maximum_T2_1_us": 308.5804494975858,
+      "minimum_T1_ms": 1.9512250489451695,
+      "minimum_T2_1_us": 285.997393191822,
+      "reference_T2_1_us": 300.0,
+      "row_count": 22,
+      "warning_row_count": 0
+    },
+    "mondal_first_principles_digitized": {
+      "N128_T1_limited_temperature_count": 0,
+      "all_N128_T2_le_2T1": true,
+      "all_T2_le_2T1": true,
+      "maximum_T1_ms": 401.82381513017214,
+      "maximum_T2_1_us": 305.3907682747812,
+      "minimum_T1_ms": 4.079835475542814,
+      "minimum_T2_1_us": 294.4811706773655,
+      "reference_T2_1_us": 300.0,
+      "row_count": 22,
+      "warning_row_count": 0
+    }
+  }
+}

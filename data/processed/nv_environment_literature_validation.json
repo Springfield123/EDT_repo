@@ -1,0 +1,64 @@
+{
+  "analysis_gate": {
+    "criteria": {
+      "frozen_bundle_verified": true,
+      "independent_D_temperature_validation_within_2sigma": true
+    },
+    "important_scope_note": "Passing this gate checks provenance and one independent D(T) trend. It does not validate an environment-conditioned EDT prediction.",
+    "status": "ready_for_edt_environment_analysis"
+  },
+  "analytical_law_diagnostics": {
+    "cambria_local_slope_at_300K_kHz_per_K": -70.26697885521571,
+    "cambria_secant_slope_280_to_330K_kHz_per_K": -71.98891904414268,
+    "diagnostic_role": "reported for transparency; not used as the held-out test"
+  },
+  "digitized_input_diagnostics": {
+    "point_count": 12,
+    "source_id": "mondal_2023_spin_phonon",
+    "temperature_range_K": [
+      100.0,
+      400.0
+    ],
+    "uncertainty_scope": "vector-coordinate extraction only"
+  },
+  "frozen_bundle": {
+    "bundle_id": "nv_environment_literature_v1",
+    "bundle_sha256": "1ae3ab99330f6c94b11bc8392c118e5b6115bc60c9a832ad81be6ab43d35a139",
+    "expected_bundle_sha256": "1ae3ab99330f6c94b11bc8392c118e5b6115bc60c9a832ad81be6ab43d35a139",
+    "files": [
+      {
+        "matches": true,
+        "path": "acosta_2011_zfs_slope_validation.csv"
+      },
+      {
+        "matches": true,
+        "path": "mondal_2023_fig3_nv_t1_dft.csv"
+      },
+      {
+        "matches": true,
+        "path": "nv_environment_literature_manifest.json"
+      },
+      {
+        "matches": true,
+        "path": "nv_temperature_laws.json"
+      },
+      {
+        "matches": true,
+        "path": "udvarhelyi_2018_spin_strain_coefficients.csv"
+      }
+    ],
+    "verified": true
+  },
+  "independent_validation": {
+    "absolute_error_in_measurement_sigma": 1.6499999999999915,
+    "absolute_error_kHz_per_K": 0.9899999999999949,
+    "measured_kHz_per_K": -75.0,
+    "measurement_uncertainty_1sigma_kHz_per_K": 0.6,
+    "predicted_kHz_per_K": -75.99,
+    "prediction_source": "tang_2023_transition_energies",
+    "separation_status": "validation_not_used_for_parameter_estimation",
+    "validation_source": "acosta_2011_zfs_erratum",
+    "within_two_measurement_sigma": true
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,40 @@
+{
+  "canonical_surface_sha256": "6ba1e9f751aa115a4287262a2cb7c74a96aa0270642c90fa7797d8b5d509770a",
+  "coherent_response": {
+    "clipped_gain_count": 0,
+    "detuning_max_Hz": 1565481.4226372764,
+    "detuning_min_Hz": -2493964.5295698936,
+    "gain_floor": 1e-12,
+    "method": "batched deterministic finite-pulse two-quadrature small-signal derivative",
+    "pi_pulse_duration_s": 4e-08,
+    "pulse_substeps": 8,
+    "unique_detuning_count": 341
+  },
+  "configuration_id": "xy8_environment_scan_v1",
+  "configuration_sha256": "85730bb286f708488b0b14ead7aeb4e2166fa4b0143d7a197b63f42627f4e388",
+  "dimensions": {
+    "carrier_policy_count": 2,
+    "coherence_variant_count": 2,
+    "depth_count": 32,
+    "environment_condition_count": 374,
+    "point_count": 1771264,
+    "surface_count": 1496,
+    "tau_count": 37
+  },
+  "interpretation_limit": "These are literature-conditioned model surfaces, not measured sensitivities. Topology stability requires the preregistered confirmation-grid stage.",
+  "literature_bundle_sha256": "1ae3ab99330f6c94b11bc8392c118e5b6115bc60c9a832ad81be6ab43d35a139",
+  "reference_regression": {
+    "all_reference_rows_match_expected_summary": true,
+    "expected_best_N": 20,
+    "expected_best_tau_s": 1.25e-06,
+    "expected_window_N_max": 34,
+    "expected_window_N_min": 10,
+    "maximum_absolute_eta_error": 0.0,
+    "row_count": 16
+  },
+  "schema_version": "1.0",
+  "score_rule": "eta_env = eta_canonical * coherence_reference/coherence_environment * G(0)/G(detuning)",
+  "stage": "environment_conditioned_discovery_score_surfaces",
+  "summary_csv_sha256": "3c032eac854546b9d56ead4fe083830633bc6459797d2322f58b7dd7de95144f",
+  "surfaces_npz_sha256": "0358175c7c0e654670a9b8d941a54e308f62a30234cba0db7241b1bd7d439b42"
+}

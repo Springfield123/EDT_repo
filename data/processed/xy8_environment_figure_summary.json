@@ -1,0 +1,83 @@
+{
+  "confirmed_result": {
+    "confirmation_failure_count": 0,
+    "confirmation_pass_count": 226,
+    "discovery_surface_count": 1496,
+    "fine_beta_0_distribution": {
+      "1": 226
+    },
+    "four_eight_disagreement_count": 0,
+    "selected_fine_grid_surface_count": 226
+  },
+  "examples": [
+    {
+      "amplitude_microstrain": 0.0,
+      "applied_detuning_kHz": 0.0,
+      "best_N": 20,
+      "beta_0_eight": 1,
+      "beta_0_four": 1,
+      "condition_id": "zero_strain_T300K",
+      "confirmation_passed": true,
+      "confirmation_surface_index": 4,
+      "example": "Nominal reference",
+      "temperature_K": 300.0,
+      "timing_width_ns": 9.00000000000004,
+      "window_N_max": 34,
+      "window_N_min": 10
+    },
+    {
+      "amplitude_microstrain": 20.0,
+      "applied_detuning_kHz": -2217.964529570054,
+      "best_N": 12,
+      "beta_0_eight": 1,
+      "beta_0_four": 1,
+      "condition_id": "axial_zz_T330K_A+20us",
+      "confirmation_passed": true,
+      "confirmation_surface_index": 58,
+      "example": "Environment-shifted",
+      "temperature_K": 330.0,
+      "timing_width_ns": 14.250000000000012,
+      "window_N_max": 16,
+      "window_N_min": 7
+    }
+  ],
+  "figure_title": "Environmental detuning deforms one persistent EDT region and changes control depth",
+  "frozen_slice": {
+    "coherence_variant": "jarmola_experimental_S8",
+    "fixed_carrier_best_depths": [
+      12,
+      14,
+      16,
+      20
+    ],
+    "retracked_carrier_best_depths": [
+      20
+    ],
+    "strain_path": "axial_zz"
+  },
+  "interpretation": "Within the frozen environmental range, temperature and strain do not split the near-optimal EDT set into additional resonant components. Fixed-carrier detuning deforms the same connected region and can move the recommended depth from N=20 to N=12, whereas ideal carrier retracking preserves N=20 in the displayed slice.",
+  "schema_version": "1.0",
+  "source_artifacts": {
+    "xy8_environment_confirmation_results.csv": {
+      "path": "data/processed/xy8_environment_confirmation_results.csv",
+      "sha256": "231483fae670ddc731363ff743a7b632c9f14e289424b87e83b9c2304f93d1c3"
+    },
+    "xy8_environment_confirmation_selection.csv": {
+      "path": "data/processed/xy8_environment_confirmation_selection.csv",
+      "sha256": "7255c9620f142b627c2e8b3daddaa633088a16a5e8fc1b2c77a6cbbbb33ed3ec"
+    },
+    "xy8_environment_confirmation_surfaces.npz": {
+      "path": "data/processed/xy8_environment_confirmation_surfaces.npz",
+      "sha256": "f514b9a14f4e2dfff01f49cd36bdbce5424dac76e7190229dc5002b522d35f0b"
+    },
+    "xy8_environment_score_summary.csv": {
+      "path": "data/processed/xy8_environment_score_summary.csv",
+      "sha256": "3c032eac854546b9d56ead4fe083830633bc6459797d2322f58b7dd7de95144f"
+    },
+    "xy8_environment_topology_summary.json": {
+      "path": "data/processed/xy8_environment_topology_summary.json",
+      "sha256": "d76aa982cc78d772faedc457bab3b1de60052dc00b23d7574d484e21c36b2a19"
+    }
+  },
+  "stage": "stage6_environment_topology_communication"
+}

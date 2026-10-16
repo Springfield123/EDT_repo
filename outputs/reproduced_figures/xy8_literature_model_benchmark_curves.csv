@@ -1,0 +1,601 @@
+method_id,method,total_pi_pulses,relative_score,in_method_10pct_window
+coherence_only,Coherence only,2,5.387583148772804,0
+coherence_only,Coherence only,4,3.8867756178618813,0
+coherence_only,Coherence only,6,3.226328205116841,0
+coherence_only,Coherence only,8,2.8350094335524045,0
+coherence_only,Coherence only,10,2.569508773899434,0
+coherence_only,Coherence only,12,2.374634236327309,0
+coherence_only,Coherence only,14,2.2240250098377654,0
+coherence_only,Coherence only,16,2.103297681555772,0
+coherence_only,Coherence only,18,2.003853076269726,0
+coherence_only,Coherence only,20,1.9201942669220644,0
+coherence_only,Coherence only,22,1.8486225883304015,0
+coherence_only,Coherence only,24,1.7865463011770564,0
+coherence_only,Coherence only,26,1.7320884865816892,0
+coherence_only,Coherence only,28,1.6838522755810168,0
+coherence_only,Coherence only,30,1.64077388126233,0
+coherence_only,Coherence only,32,1.602027100717103,0
+coherence_only,Coherence only,34,1.5669592627738393,0
+coherence_only,Coherence only,36,1.5350470780399867,0
+coherence_only,Coherence only,38,1.5058654753999912,0
+coherence_only,Coherence only,40,1.4790651409837428,0
+coherence_only,Coherence only,42,1.4543560272485454,0
+coherence_only,Coherence only,44,1.4314950439140248,0
+coherence_only,Coherence only,46,1.4102767331986605,0
+coherence_only,Coherence only,48,1.3905261107252873,0
+coherence_only,Coherence only,50,1.3720931020190281,0
+coherence_only,Coherence only,52,1.3548481708872275,0
+coherence_only,Coherence only,54,1.3386788493822315,0
+coherence_only,Coherence only,56,1.3234869576611596,0
+coherence_only,Coherence only,58,1.3091863573883384,0
+coherence_only,Coherence only,60,1.295701121821623,0
+coherence_only,Coherence only,62,1.2829640342832827,0
+coherence_only,Coherence only,64,1.2709153476166186,0
+coherence_only,Coherence only,66,1.259501752696056,0
+coherence_only,Coherence only,68,1.248675515622991,0
+coherence_only,Coherence only,70,1.2383937519704973,0
+coherence_only,Coherence only,72,1.2286178130913008,0
+coherence_only,Coherence only,74,1.219312764613592,0
+coherence_only,Coherence only,76,1.2104469412066947,0
+coherence_only,Coherence only,78,1.2019915647863761,0
+coherence_only,Coherence only,80,1.1939204157558754,0
+coherence_only,Coherence only,82,1.1862095487979527,0
+coherence_only,Coherence only,84,1.1788370462610236,0
+coherence_only,Coherence only,86,1.1717828034058368,0
+coherence_only,Coherence only,88,1.1650283407644304,0
+coherence_only,Coherence only,90,1.1585566396608162,0
+coherence_only,Coherence only,92,1.1523519975921006,0
+coherence_only,Coherence only,94,1.1463999006996834,0
+coherence_only,Coherence only,96,1.1406869109964357,0
+coherence_only,Coherence only,98,1.1352005663757614,0
+coherence_only,Coherence only,100,1.1299292917268513,0
+coherence_only,Coherence only,102,1.1248623197287146,0
+coherence_only,Coherence only,104,1.119989620103029,0
+coherence_only,Coherence only,106,1.1153018362797509,0
+coherence_only,Coherence only,108,1.1107902285758195,0
+coherence_only,Coherence only,110,1.1064466231108614,0
+coherence_only,Coherence only,112,1.1022633657885144,0
+coherence_only,Coherence only,114,1.0982332807609723,1
+coherence_only,Coherence only,116,1.0943496328702107,1
+coherence_only,Coherence only,118,1.0906060936242108,1
+coherence_only,Coherence only,120,1.0869967103221063,1
+coherence_only,Coherence only,122,1.0835158779899854,1
+coherence_only,Coherence only,124,1.0801583138302957,1
+coherence_only,Coherence only,126,1.0769190339234107,1
+coherence_only,Coherence only,128,1.0737933319507742,1
+coherence_only,Coherence only,130,1.070776759735831,1
+coherence_only,Coherence only,132,1.0678651094222793,1
+coherence_only,Coherence only,134,1.0650543971295108,1
+coherence_only,Coherence only,136,1.0623408479429075,1
+coherence_only,Coherence only,138,1.0597208821122315,1
+coherence_only,Coherence only,140,1.057191102345018,1
+coherence_only,Coherence only,142,1.0547482820939287,1
+coherence_only,Coherence only,144,1.0523893547475989,1
+coherence_only,Coherence only,146,1.0501114036438852,1
+coherence_only,Coherence only,148,1.0479116528326975,1
+coherence_only,Coherence only,150,1.0457874585229185,1
+coherence_only,Coherence only,152,1.0437363011544392,1
+coherence_only,Coherence only,154,1.0417557780421047,1
+coherence_only,Coherence only,156,1.039843596543535,1
+coherence_only,Coherence only,158,1.037997567707359,1
+coherence_only,Coherence only,160,1.0362156003625174,1
+coherence_only,Coherence only,162,1.0344956956129483,1
+coherence_only,Coherence only,164,1.0328359417052622,1
+coherence_only,Coherence only,166,1.031234509239958,1
+coherence_only,Coherence only,168,1.029689646699376,1
+coherence_only,Coherence only,170,1.0281996762679741,1
+coherence_only,Coherence only,172,1.0267629899226478,1
+coherence_only,Coherence only,174,1.0253780457727517,1
+coherence_only,Coherence only,176,1.024043364631231,1
+coherence_only,Coherence only,178,1.0227575267998417,1
+coherence_only,Coherence only,180,1.021519169052869,1
+coherence_only,Coherence only,182,1.0203269818050493,1
+coherence_only,Coherence only,184,1.0191797064505774,1
+coherence_only,Coherence only,186,1.0180761328611294,1
+coherence_only,Coherence only,188,1.017015097031829,1
+coherence_only,Coherence only,190,1.0159954788649397,1
+coherence_only,Coherence only,192,1.015016200081882,1
+coherence_only,Coherence only,194,1.0140762222549056,1
+coherence_only,Coherence only,196,1.0131745449504101,1
+coherence_only,Coherence only,198,1.0123102039765293,1
+coherence_only,Coherence only,200,1.01148226972813,1
+coherence_only,Coherence only,202,1.0106898456229223,1
+coherence_only,Coherence only,204,1.0099320666228035,1
+coherence_only,Coherence only,206,1.0092080978350346,1
+coherence_only,Coherence only,208,1.0085171331881926,1
+coherence_only,Coherence only,210,1.007858394178252,1
+coherence_only,Coherence only,212,1.0072311286804396,1
+coherence_only,Coherence only,214,1.0066346098228482,1
+coherence_only,Coherence only,216,1.0060681349180445,1
+coherence_only,Coherence only,218,1.005531024449197,1
+coherence_only,Coherence only,220,1.0050226211074644,1
+coherence_only,Coherence only,222,1.00454228887762,1
+coherence_only,Coherence only,224,1.0040894121690878,1
+coherence_only,Coherence only,226,1.0036633949897547,1
+coherence_only,Coherence only,228,1.003263660160098,1
+coherence_only,Coherence only,230,1.0028896485653318,1
+coherence_only,Coherence only,232,1.002540818443418,1
+coherence_only,Coherence only,234,1.0022166447069347,1
+coherence_only,Coherence only,236,1.001916618296922,1
+coherence_only,Coherence only,238,1.0016402455669384,1
+coherence_only,Coherence only,240,1.0013870476956805,1
+coherence_only,Coherence only,242,1.0011565601266141,1
+coherence_only,Coherence only,244,1.0009483320331696,1
+coherence_only,Coherence only,246,1.0007619258081317,1
+coherence_only,Coherence only,248,1.0005969165759487,1
+coherence_only,Coherence only,250,1.0004528917267592,1
+coherence_only,Coherence only,252,1.0003294504709976,1
+coherence_only,Coherence only,254,1.0002262034135283,1
+coherence_only,Coherence only,256,1.0001427721462948,1
+coherence_only,Coherence only,258,1.0000787888585505,1
+coherence_only,Coherence only,260,1.0000338959637807,1
+coherence_only,Coherence only,262,1.00000774574248,1
+coherence_only,Coherence only,264,1.0,1
+coherence_only,Coherence only,266,1.0000103297387146,1
+coherence_only,Coherence only,268,1.0000384148438164,1
+coherence_only,Coherence only,270,1.0000839437820674,1
+coherence_only,Coherence only,272,1.000146613312891,1
+coherence_only,Coherence only,274,1.0002261282111993,1
+coherence_only,Coherence only,276,1.0003222010014188,1
+coherence_only,Coherence only,278,1.0004345517021624,1
+coherence_only,Coherence only,280,1.0005629075810671,1
+coherence_only,Coherence only,282,1.0007070029193128,1
+coherence_only,Coherence only,284,1.0008665787853814,1
+coherence_only,Coherence only,286,1.0010413828176308,1
+coherence_only,Coherence only,288,1.001231169015274,1
+coherence_only,Coherence only,290,1.0014356975373997,1
+coherence_only,Coherence only,292,1.0016547345096536,1
+coherence_only,Coherence only,294,1.0018880518382522,1
+coherence_only,Coherence only,296,1.0021354270309997,1
+coherence_only,Coherence only,298,1.0023966430249958,1
+coherence_only,Coherence only,300,1.002671488020746,1
+coherence_only,Coherence only,302,1.002959755322396,1
+coherence_only,Coherence only,304,1.003261243183821,1
+coherence_only,Coherence only,306,1.0035757546603268,1
+coherence_only,Coherence only,308,1.0039030974657126,1
+coherence_only,Coherence only,310,1.0042430838344798,1
+coherence_only,Coherence only,312,1.0045955303889615,1
+coherence_only,Coherence only,314,1.0049602580111716,1
+coherence_only,Coherence only,316,1.0053370917191737,1
+coherence_only,Coherence only,318,1.005725860547789,1
+coherence_only,Coherence only,320,1.006126397433457,1
+coherence_only,Coherence only,322,1.0065385391030877,1
+coherence_only,Coherence only,324,1.0069621259667378,1
+coherence_only,Coherence only,326,1.0073970020139587,1
+coherence_only,Coherence only,328,1.0078430147136694,1
+coherence_only,Coherence only,330,1.008300014917416,1
+coherence_only,Coherence only,332,1.008767856765876,1
+coherence_only,Coherence only,334,1.0092463975984944,1
+coherence_only,Coherence only,336,1.0097354978661108,1
+coherence_only,Coherence only,338,1.0102350210464754,1
+coherence_only,Coherence only,340,1.0107448335625382,1
+coherence_only,Coherence only,342,1.0112648047034019,1
+coherence_only,Coherence only,344,1.0117948065478388,1
+coherence_only,Coherence only,346,1.0123347138902767,1
+coherence_only,Coherence only,348,1.012884404169156,1
+coherence_only,Coherence only,350,1.013443757397573,1
+coherence_only,Coherence only,352,1.0140126560961198,1
+coherence_only,Coherence only,354,1.014590985227846,1
+coherence_only,Coherence only,356,1.0151786321352552,1
+coherence_only,Coherence only,358,1.0157754864792687,1
+coherence_only,Coherence only,360,1.0163814401800801,1
+coherence_only,Coherence only,362,1.0169963873598382,1
+coherence_only,Coherence only,364,1.01762022428708,1
+coherence_only,Coherence only,366,1.0182528493228673,1
+coherence_only,Coherence only,368,1.0188941628685524,1
+coherence_only,Coherence only,370,1.0195440673151224,1
+coherence_only,Coherence only,372,1.0202024669940613,1
+coherence_only,Coherence only,374,1.0208692681296847,1
+coherence_only,Coherence only,376,1.0215443787928844,1
+coherence_only,Coherence only,378,1.0222277088562437,1
+coherence_only,Coherence only,380,1.0229191699504696,1
+coherence_only,Coherence only,382,1.0236186754221017,1
+coherence_only,Coherence only,384,1.0243261402924482,1
+coherence_only,Coherence only,386,1.0250414812177124,1
+coherence_only,Coherence only,388,1.0257646164502663,1
+coherence_only,Coherence only,390,1.0264954658010348,1
+coherence_only,Coherence only,392,1.0272339506029495,1
+coherence_only,Coherence only,394,1.0279799936754448,1
+coherence_only,Coherence only,396,1.0287335192899445,1
+coherence_only,Coherence only,398,1.029494453136333,1
+coherence_only,Coherence only,400,1.0302627222903495,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,2,3.5722610791449863,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,4,2.592676665896431,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,6,2.1650958000971507,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,8,1.9139595913860301,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,10,1.7451712285629333,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,12,1.6225360236773436,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,14,1.5287869714799178,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,16,1.4545134204311112,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,18,1.3940955747151638,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,20,1.343945090289411,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,22,1.3016502170404751,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,24,1.265522873734852,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,26,1.2343419282251535,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,28,1.2071995865838197,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,30,1.183405292785394,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,32,1.1624233231994792,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,34,1.1438309563188935,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,36,1.127289657943886,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,38,1.1125247546781145,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,40,1.0993107926690058,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,42,1.0874607945666017,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,44,1.076818245651063,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,46,1.067251026589868,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,48,1.0586467581233137,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,50,1.0509091854867465,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,52,1.043955339109204,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,54,1.037713282221815,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,56,1.0321203073493745,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,58,1.0271214797802986,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,60,1.0226684518841482,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,62,1.0187184907762512,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,64,1.0152336754579552,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,66,1.0121802296429208,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,68,1.0095279640153778,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,70,1.0072498073532161,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,72,1.00532141027961,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,74,1.003720808732992,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,76,1.002428136820085,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,78,1.0014253807250093,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,80,1.000696166924969,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,82,1.0002255792103958,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,84,1.0,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,86,1.0000069722357263,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,88,1.0002350787822734,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,90,1.0006738367735462,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,92,1.001313604769622,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,94,1.0021455009321252,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,96,1.0031613307087328,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,98,1.0043535227508447,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,100,1.0057150719817427,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,102,1.00723948889337,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,104,1.0089207542841498,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,106,1.010753278762795,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,108,1.0127318664377785,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,110,1.0148516822920246,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,112,1.0171082228100923,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,114,1.019497289482611,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,116,1.0220149648617423,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,118,1.024657590883314,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,120,1.0274217492071815,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,122,1.0303042433582137,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,124,1.0333020824768937,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,126,1.0364124665114844,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,128,1.0396327727036083,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,130,1.0429605432363465,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,132,1.0463934739290002,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,134,1.0499294038757425,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,136,1.0535663059368523,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,138,1.057302278001237,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,140,1.0611355349477585,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,142,1.0650644012406039,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,144,1.069087304100766,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,146,1.073202767201701,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,148,1.0774094048425635,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,150,1.0817059165571112,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,152,1.0860910821205638,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,154,1.0905637569204027,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,156,1.095122867660412,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,158,1.099767408370195,1
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,160,1.1044964366950467,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,162,1.1093090704433943,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,164,1.1142044843711427,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,166,1.119181907184138,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,168,1.1242406187416558,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,170,1.1293799474453594,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,172,1.1345992677995267,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,174,1.1398979981295925,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,176,1.1452755984471714,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,178,1.1507315684507262,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,180,1.156265445651962,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,182,1.1618768036188598,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,184,1.1675652503270082,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,186,1.1733304266115594,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,188,1.1791720047127858,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,190,1.185089686908737,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,192,1.1910832042290413,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,194,1.1971523152443426,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,196,1.2032968049262989,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,198,1.2095164835734586,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,200,1.2158111857986722,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,202,1.2221807695740508,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,204,1.228625115329743,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,206,1.235144125103116,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,208,1.2417377217351395,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,210,1.2484058481110294,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,212,1.2551484664424037,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,214,1.2619655575884083,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,216,1.2688571204134327,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,218,1.2758231711792307,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,220,1.2828637429693734,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,222,1.2899788851441385,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,224,1.2971686628240535,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,226,1.304433156400417,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,228,1.3117724610712669,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,230,1.3191866864013335,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,232,1.3266759559046286,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,234,1.334240406648402,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,236,1.341880188877289,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,238,1.3495954656565285,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,240,1.3573864125332262,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,242,1.365253217214677,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,244,1.3731960792628486,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,246,1.3812152098041557,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,248,1.3893108312537332,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,250,1.3974831770534497,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,252,1.4057324914229448,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,254,1.4140590291230428,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,256,1.4224630552308937,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,258,1.4309448449262678,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,260,1.4395046832884435,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,262,1.4481428651031603,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,264,1.4568596946791585,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,266,1.46565548567382,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,268,1.4745305609274952,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,270,1.4834852523060833,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,272,1.4925199005514906,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,274,1.501634855139587,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,276,1.510830474145322,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,278,1.5201071241146638,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,280,1.529465179943057,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,282,1.5389050247601002,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,284,1.5484270498201664,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,286,1.5580316543987094,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,288,1.5677192456939881,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,290,1.5774902387340033,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,292,1.5873450562883877,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,294,1.5972841287850699,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,296,1.6073078942314842,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,298,1.6174167981401582,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,300,1.627611293458475,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,302,1.6378918405024623,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,304,1.6482589068944205,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,306,1.6587129675042602,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,308,1.6692545043943767,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,310,1.679884006767943,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,312,1.6906019709204747,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,314,1.7014089001945498,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,316,1.7123053049375532,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,318,1.7232917024623406,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,320,1.7343686170107113,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,322,1.7455365797195792,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,324,1.7567961285897558,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,326,1.7681478084572368,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,328,1.7795921709669198,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,330,1.7911297745486463,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,332,1.8027611843955127,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,334,1.814486972444351,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,336,1.8263077173583142,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,338,1.8382240045114975,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,340,1.8502364259755268,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,342,1.862345580508049,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,344,1.8745520735430625,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,346,1.8868565171830356,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,348,1.8992595301927477,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,350,1.9117617379948078,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,352,1.924363772666794,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,354,1.9370662729399777,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,356,1.9498698841995603,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,358,1.962775258486414,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,360,1.9757830545002484,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,362,1.9888939376041952,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,364,2.002108579830741,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,366,2.0154276598890006,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,368,2.0288518631732746,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,370,2.04238188177287,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,372,2.0560184144831353,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,374,2.069762166817714,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,376,2.083613851021936,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,378,2.0975741860873676,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,380,2.1116438977674616,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,382,2.1258237185943014,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,384,2.1401143878963924,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,386,2.1545166518175036,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,388,2.169031263336518,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,390,2.1836589822882755,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,392,2.198400575385384,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,394,2.2132568162410013,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,396,2.2282284853925236,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,398,2.2433163703262173,0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,400,2.258521265502729,0
+full_resource_score,Full resource score,2,4.51005780546559,0
+full_resource_score,Full resource score,4,2.9446035190645743,0
+full_resource_score,Full resource score,6,2.3604010005492757,0
+full_resource_score,Full resource score,8,2.0416425208006923,0
+full_resource_score,Full resource score,10,1.8365531705905378,0
+full_resource_score,Full resource score,12,1.6917976538303323,0
+full_resource_score,Full resource score,14,1.5833965903306917,0
+full_resource_score,Full resource score,16,1.4988254425535044,0
+full_resource_score,Full resource score,18,1.4308422841459034,0
+full_resource_score,Full resource score,20,1.3749389553115703,0
+full_resource_score,Full resource score,22,1.3281471488841705,0
+full_resource_score,Full resource score,24,1.2884242701411612,0
+full_resource_score,Full resource score,26,1.2543137493452905,0
+full_resource_score,Full resource score,28,1.2247459337468571,0
+full_resource_score,Full resource score,30,1.198915702223065,0
+full_resource_score,Full resource score,32,1.1762041964939083,0
+full_resource_score,Full resource score,34,1.1561270552554352,0
+full_resource_score,Full resource score,36,1.1382991743819277,0
+full_resource_score,Full resource score,38,1.1224101084411162,0
+full_resource_score,Full resource score,40,1.1082065187178822,0
+full_resource_score,Full resource score,42,1.095479403555138,1
+full_resource_score,Full resource score,44,1.0840546459102984,1
+full_resource_score,Full resource score,46,1.0737859070989437,1
+full_resource_score,Full resource score,48,1.0645492092075193,1
+full_resource_score,Full resource score,50,1.0562387522713557,1
+full_resource_score,Full resource score,52,1.0487636473561683,1
+full_resource_score,Full resource score,54,1.0420453379618642,1
+full_resource_score,Full resource score,56,1.0360155449448296,1
+full_resource_score,Full resource score,58,1.0306146140179773,1
+full_resource_score,Full resource score,60,1.0257901759839048,1
+full_resource_score,Full resource score,62,1.0214960521987302,1
+full_resource_score,Full resource score,64,1.017691354016791,1
+full_resource_score,Full resource score,66,1.014339736925624,1
+full_resource_score,Full resource score,68,1.0114087789751518,1
+full_resource_score,Full resource score,70,1.008869459786271,1
+full_resource_score,Full resource score,72,1.00669572148971,1
+full_resource_score,Full resource score,74,1.0048640968203655,1
+full_resource_score,Full resource score,76,1.0033533925798355,1
+full_resource_score,Full resource score,78,1.0021444190013349,1
+full_resource_score,Full resource score,80,1.00121975736818,1
+full_resource_score,Full resource score,82,1.0005635596689997,1
+full_resource_score,Full resource score,84,1.0001613752086171,1
+full_resource_score,Full resource score,86,1.0,1
+full_resource_score,Full resource score,88,1.000067345490281,1
+full_resource_score,Full resource score,90,1.00035232376112,1
+full_resource_score,Full resource score,92,1.0008447468202173,1
+full_resource_score,Full resource score,94,1.0015352379893245,1
+full_resource_score,Full resource score,96,1.0024151537125014,1
+full_resource_score,Full resource score,98,1.0034765143703697,1
+full_resource_score,Full resource score,100,1.004711942902756,1
+full_resource_score,Full resource score,102,1.0061146102218828,1
+full_resource_score,Full resource score,104,1.0076781865481386,1
+full_resource_score,Full resource score,106,1.0093967979257819,1
+full_resource_score,Full resource score,108,1.0112649872811923,1
+full_resource_score,Full resource score,110,1.0132776794749456,1
+full_resource_score,Full resource score,112,1.0154301498739535,1
+full_resource_score,Full resource score,114,1.0177179960334863,1
+full_resource_score,Full resource score,116,1.0201371121329872,1
+full_resource_score,Full resource score,118,1.0226836658557328,1
+full_resource_score,Full resource score,120,1.0253540774418997,1
+full_resource_score,Full resource score,122,1.0281450006784913,1
+full_resource_score,Full resource score,124,1.0310533056187432,1
+full_resource_score,Full resource score,126,1.0340760628487806,1
+full_resource_score,Full resource score,128,1.0372105291410785,1
+full_resource_score,Full resource score,130,1.0404541343531175,1
+full_resource_score,Full resource score,132,1.043804469446046,1
+full_resource_score,Full resource score,134,1.0472592755124168,1
+full_resource_score,Full resource score,136,1.0508164337145427,1
+full_resource_score,Full resource score,138,1.0544739560459102,1
+full_resource_score,Full resource score,140,1.0582299768376509,1
+full_resource_score,Full resource score,142,1.062082744940452,1
+full_resource_score,Full resource score,144,1.0660306165196871,1
+full_resource_score,Full resource score,146,1.0700720484080424,1
+full_resource_score,Full resource score,148,1.074205591965678,1
+full_resource_score,Full resource score,150,1.0784298874030414,1
+full_resource_score,Full resource score,152,1.082743658525963,1
+full_resource_score,Full resource score,154,1.0871457078666746,1
+full_resource_score,Full resource score,156,1.0916349121679298,1
+full_resource_score,Full resource score,158,1.0962102181906075,1
+full_resource_score,Full resource score,160,1.1008706388179779,0
+full_resource_score,Full resource score,162,1.1056152494323568,0
+full_resource_score,Full resource score,164,1.1104431845421268,0
+full_resource_score,Full resource score,166,1.1153536346391297,0
+full_resource_score,Full resource score,168,1.1203458432682525,0
+full_resource_score,Full resource score,170,1.1254191042926636,0
+full_resource_score,Full resource score,172,1.1305727593396184,0
+full_resource_score,Full resource score,174,1.1358061954130878,0
+full_resource_score,Full resource score,176,1.1411188426606391,0
+full_resource_score,Full resource score,178,1.1465101722830984,0
+full_resource_score,Full resource score,180,1.1519796945764682,0
+full_resource_score,Full resource score,182,1.1575269570964901,0
+full_resource_score,Full resource score,184,1.1631515429370123,0
+full_resource_score,Full resource score,186,1.1688530691140575,0
+full_resource_score,Full resource score,188,1.1746311850481514,0
+full_resource_score,Full resource score,190,1.1804855711380595,0
+full_resource_score,Full resource score,192,1.186415937419623,0
+full_resource_score,Full resource score,194,1.1924220223039013,0
+full_resource_score,Full resource score,196,1.1985035913892461,0
+full_resource_score,Full resource score,198,1.2046604363423883,0
+full_resource_score,Full resource score,200,1.2108923738439417,0
+full_resource_score,Full resource score,202,1.2171992445941409,0
+full_resource_score,Full resource score,204,1.223580912374872,0
+full_resource_score,Full resource score,206,1.2300372631644132,0
+full_resource_score,Full resource score,208,1.2365682043015103,0
+full_resource_score,Full resource score,210,1.2431736636956978,0
+full_resource_score,Full resource score,212,1.2498535890809768,0
+full_resource_score,Full resource score,214,1.256607947310174,0
+full_resource_score,Full resource score,216,1.2634367236874917,0
+full_resource_score,Full resource score,218,1.2703399213369442,0
+full_resource_score,Full resource score,220,1.2773175606045144,0
+full_resource_score,Full resource score,222,1.2843696784920398,0
+full_resource_score,Full resource score,224,1.2914963281209542,0
+full_resource_score,Full resource score,226,1.2986975782241372,0
+full_resource_score,Full resource score,228,1.3059735126642606,0
+full_resource_score,Full resource score,230,1.313324229977102,0
+full_resource_score,Full resource score,232,1.3207498429384166,0
+full_resource_score,Full resource score,234,1.328250478153035,0
+full_resource_score,Full resource score,236,1.3358262756649613,0
+full_resource_score,Full resource score,238,1.3434773885872922,0
+full_resource_score,Full resource score,240,1.3512039827508953,0
+full_resource_score,Full resource score,242,1.3590062363708086,0
+full_resource_score,Full resource score,244,1.3668843397294232,0
+full_resource_score,Full resource score,246,1.3748384948755443,0
+full_resource_score,Full resource score,248,1.382868915338502,0
+full_resource_score,Full resource score,250,1.390975825856516,0
+full_resource_score,Full resource score,252,1.3991594621185752,0
+full_resource_score,Full resource score,254,1.4074200705191477,0
+full_resource_score,Full resource score,256,1.415757907925051,0
+full_resource_score,Full resource score,258,1.42417324145388,0
+full_resource_score,Full resource score,260,1.432666348263411,0
+full_resource_score,Full resource score,262,1.4412375153514334,0
+full_resource_score,Full resource score,264,1.4498870393655028,0
+full_resource_score,Full resource score,266,1.4586152264221222,0
+full_resource_score,Full resource score,268,1.4674223919349054,0
+full_resource_score,Full resource score,270,1.4763088604512866,0
+full_resource_score,Full resource score,272,1.4852749654973711,0
+full_resource_score,Full resource score,274,1.4943210494305437,0
+full_resource_score,Full resource score,276,1.5034474632994757,0
+full_resource_score,Full resource score,278,1.5126545667111866,0
+full_resource_score,Full resource score,280,1.5219427277048334,0
+full_resource_score,Full resource score,282,1.5313123226319303,0
+full_resource_score,Full resource score,284,1.5407637360427042,0
+full_resource_score,Full resource score,286,1.550297360578313,0
+full_resource_score,Full resource score,288,1.5599135968686655,0
+full_resource_score,Full resource score,290,1.569612853435609,0
+full_resource_score,Full resource score,292,1.5793955466012313,0
+full_resource_score,Full resource score,294,1.5892621004010836,0
+full_resource_score,Full resource score,296,1.599212946502089,0
+full_resource_score,Full resource score,298,1.6092485241249619,0
+full_resource_score,Full resource score,300,1.6193692799709305,0
+full_resource_score,Full resource score,302,1.629575668152603,0
+full_resource_score,Full resource score,304,1.6398681501287902,0
+full_resource_score,Full resource score,306,1.6502471946431434,0
+full_resource_score,Full resource score,308,1.6607132776664344,0
+full_resource_score,Full resource score,310,1.6712668823423507,0
+full_resource_score,Full resource score,312,1.6819084989366568,0
+full_resource_score,Full resource score,314,1.6926386247895964,0
+full_resource_score,Full resource score,316,1.7034577642714093,0
+full_resource_score,Full resource score,318,1.7143664287408422,0
+full_resource_score,Full resource score,320,1.7253651365065479,0
+full_resource_score,Full resource score,322,1.7364544127912536,0
+full_resource_score,Full resource score,324,1.747634789698614,0
+full_resource_score,Full resource score,326,1.7589068061826305,0
+full_resource_score,Full resource score,328,1.7702710080195658,0
+full_resource_score,Full resource score,330,1.781727947782244,0
+full_resource_score,Full resource score,332,1.793278184816674,0
+full_resource_score,Full resource score,334,1.8049222852209001,0
+full_resource_score,Full resource score,336,1.8166608218260094,0
+full_resource_score,Full resource score,338,1.82849437417922,0
+full_resource_score,Full resource score,340,1.8404235285289918,0
+full_resource_score,Full resource score,342,1.8524488778120751,0
+full_resource_score,Full resource score,344,1.8645710216424514,0
+full_resource_score,Full resource score,346,1.8767905663020965,0
+full_resource_score,Full resource score,348,1.8891081247335084,0
+full_resource_score,Full resource score,350,1.9015243165339517,0
+full_resource_score,Full resource score,352,1.9140397679513554,0
+full_resource_score,Full resource score,354,1.9266551118818307,0
+full_resource_score,Full resource score,356,1.939370987868737,0
+full_resource_score,Full resource score,358,1.9521880421032787,0
+full_resource_score,Full resource score,360,1.9651069274265591,0
+full_resource_score,Full resource score,362,1.9781283033330845,0
+full_resource_score,Full resource score,364,1.991252835975638,0
+full_resource_score,Full resource score,366,2.004481198171524,0
+full_resource_score,Full resource score,368,2.017814069410117,0
+full_resource_score,Full resource score,370,2.031252135861705,0
+full_resource_score,Full resource score,372,2.0447960903875644,0
+full_resource_score,Full resource score,374,2.0584466325512727,0
+full_resource_score,Full resource score,376,2.0722044686311865,0
+full_resource_score,Full resource score,378,2.0860703116340944,0
+full_resource_score,Full resource score,380,2.100044881309991,0
+full_resource_score,Full resource score,382,2.1141289041679543,0
+full_resource_score,Full resource score,384,2.1283231134931033,0
+full_resource_score,Full resource score,386,2.1426282493646083,0
+full_resource_score,Full resource score,388,2.1570450586747314,0
+full_resource_score,Full resource score,390,2.1715742951488775,0
+full_resource_score,Full resource score,392,2.186216719366622,0
+full_resource_score,Full resource score,394,2.200973098783725,0
+full_resource_score,Full resource score,396,2.2158442077550697,0
+full_resource_score,Full resource score,398,2.230830827558549,0
+full_resource_score,Full resource score,400,2.2459337464198463,0

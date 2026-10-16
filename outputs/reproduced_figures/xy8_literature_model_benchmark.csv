@@ -1,0 +1,6 @@
+method_id,method,method_type,description,predicted_optimum_total_pi_pulses,absolute_error_vs_observed_optimum_pulses,window_10pct_min_total_pi_pulses,window_10pct_max_total_pi_pulses,observed_optimum_inside_10pct_window,normalized_rmse,spearman_rank_correlation,fixed_choice_experimental_penalty_pct,per_pulse_fidelity,overhead_s
+coherence_only,Coherence only,predictive_curve,Paper-reported coherence scaling; no pulse loss or preparation/readout overhead,264,158,114,400,0,0.14213486245877863,0.024316221747202587,,1.0,0.0
+coherence_plus_pulse_fidelity,Coherence + pulse fidelity,predictive_curve,Coherence model with the predeclared independent per-pulse survival factor,84,22,40,158,1,0.16173512373358906,0.516719712128055,,0.997,0.0
+full_resource_score,Full resource score,predictive_curve,"Coherence, pulse survival, preparation/readout overhead, signal accumulation, contrast, and cycle time",86,20,42,158,1,0.1551134616599272,0.516719712128055,,0.997,7.3e-06
+fixed_xy8_N16,Fixed XY8 N=16,fixed_decision,"Conventional fixed choice of 16 XY8 blocks, equal to 128 pi pulses",128,22,,,,,,0.5530417295123158,,
+experimental_reference,Experimental reference,reference_curve,Digitized experimental central values; included as the comparison reference,106,0,80,212,1,0.0,1.0,0.0,,

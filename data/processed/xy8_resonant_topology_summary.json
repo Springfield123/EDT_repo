@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "status": "sampled_grid_region_characterization",
+  "configuration_digest": "12b6b467e41372c1",
+  "source_csv": "data/processed/xy8_qre_nv_results.csv",
+  "source_data_sha256": "6ba1e9f751aa115a4287262a2cb7c74a96aa0270642c90fa7797d8b5d509770a",
+  "calibration_digest": "fe2b8d2c6faee1d4",
+  "scenario": "nominal",
+  "target_frequency_hz": 200000.0,
+  "relative_limit": 1.1,
+  "threshold_percent": 10.0,
+  "connectivity": 4,
+  "beta_0": 1,
+  "surface_shape": [
+    37,
+    32
+  ],
+  "global_minimum": {
+    "tau_s": 1.25e-06,
+    "tau_us": 1.25,
+    "N": 20,
+    "eta_proxy": 0.03662935463129414
+  },
+  "regions": [
+    {
+      "component_id": "R1",
+      "label": 1,
+      "relative_limit": 1.1,
+      "point_count": 11,
+      "sampled_tau_count": 1,
+      "sampled_depth_count": 11,
+      "eta_min": 0.03662935463129414,
+      "relative_min": 1.0,
+      "best_tau_s": 1.25e-06,
+      "best_depth": 20,
+      "tau_min_s": 1.25e-06,
+      "tau_max_s": 1.25e-06,
+      "tau_width_s": 0.0,
+      "depth_min": 10,
+      "depth_max": 34,
+      "depth_span_blocks": 24,
+      "contains_global_optimum": true,
+      "resonance_orders": [
+        0
+      ],
+      "resonance_taus_s": [
+        1.25e-06
+      ],
+      "touches_tau_lower_boundary": false,
+      "touches_tau_upper_boundary": false,
+      "touches_depth_lower_boundary": false,
+      "touches_depth_upper_boundary": false,
+      "contains_depth_16": true,
+      "contains_depth_20": true,
+      "threshold_percent": 10.0,
+      "best_tau_us": 1.25,
+      "tau_min_us": 1.25,
+      "tau_max_us": 1.25,
+      "tau_width_us": 0.0,
+      "best_N": 20,
+      "N_min": 10,
+      "N_max": 34,
+      "N_span_blocks": 24,
+      "resonance_identity": "m=0",
+      "resonance_taus_us": [
+        1.25
+      ],
+      "touches_tau_boundary": false,
+      "touches_N_boundary": false,
+      "boundary_status": "resolved_interior",
+      "sampling_status": "timing_single_grid_row"
+    }
+  ],
+  "interpretation_limit": "Connectedness is defined on the sampled grid. Grid refinement and threshold-persistence checks are required before interpreting beta_0 as a stable property of the underlying continuous landscape."
+}

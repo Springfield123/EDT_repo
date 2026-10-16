@@ -1,0 +1,6 @@
+resource,resource_label,prediction_target,model,baseline_mae_blocks,permutation_mae_increase_blocks,permutation_95pct_lower,permutation_95pct_upper,relative_mae_increase,permutation_repeats
+pulse_fidelity,Pulse fidelity,N_best,5-fold cross-validated 15-nearest-neighbour regression,3.4883333333333333,5.676356666666666,5.22715,6.081791666666668,1.6272403248924987,100
+coherence,Coherence time and scaling,N_best,5-fold cross-validated 15-nearest-neighbour regression,3.4883333333333333,0.4361150000000001,0.3036666666666664,0.5531625,0.1250210224558051,100
+optical_contrast,Optical contrast,N_best,5-fold cross-validated 15-nearest-neighbour regression,3.4883333333333333,0.03712000000000002,-0.05871666666666707,0.14225416666666663,0.010641184902054474,100
+photon_rate,Detected photon rate,N_best,5-fold cross-validated 15-nearest-neighbour regression,3.4883333333333333,0.10805,0.006412500000000043,0.20449583333333332,0.030974677496416626,100
+timing_overhead,Preparation/readout overhead,N_best,5-fold cross-validated 15-nearest-neighbour regression,3.4883333333333333,0.035148333333333316,-0.04892083333333338,0.15336666666666687,0.010075967510750114,100

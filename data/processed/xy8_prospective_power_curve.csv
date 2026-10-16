@@ -1,0 +1,177 @@
+metric_id,description,independent_batches_per_control,batch_duration_s,full_protocol_acquisition_time_h,metric_specific_acquisition_time_h,power,monte_carlo_standard_error,target_power
+exact_optimum,N=20 is selected as the best of the six resonant controls,3,1.0,0.005833333333333334,0.005,0.21278,0.001830326045271716,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,3,1.0,0.005833333333333334,0.005,0.7748,0.0018680736602179262,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,3,1.0,0.005833333333333334,0.0033333333333333335,0.31694,0.002080812516302226,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,3,1.0,0.005833333333333334,0.0016666666666666668,0.96684,0.0008007548239005491,0.9
+n20_beats_n8,N=20 performs better than N=8,3,1.0,0.005833333333333334,0.0016666666666666668,0.57926,0.0022077946118242067,0.9
+n20_beats_n64,N=20 performs better than N=64,3,1.0,0.005833333333333334,0.0016666666666666668,0.74908,0.0019388612822994842,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,3,1.0,0.005833333333333334,0.0016666666666666668,0.50302,0.002236027189459019,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,3,1.0,0.005833333333333334,0.0016666666666666668,0.0,0.0,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,5,1.0,0.009722222222222222,0.008333333333333333,0.24206,0.00191555191211306,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,5,1.0,0.009722222222222222,0.008333333333333333,0.82284,0.0017074796303323796,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,5,1.0,0.009722222222222222,0.005555555555555556,0.39444,0.0021856673415687027,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,5,1.0,0.009722222222222222,0.002777777777777778,0.99638,0.0002685850181972165,0.9
+n20_beats_n8,N=20 performs better than N=8,5,1.0,0.009722222222222222,0.002777777777777778,0.6204,0.0021702711351349628,0.9
+n20_beats_n64,N=20 performs better than N=64,5,1.0,0.009722222222222222,0.002777777777777778,0.84598,0.0016142976156830562,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,5,1.0,0.009722222222222222,0.002777777777777778,0.514,0.0022351912669836558,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,5,1.0,0.009722222222222222,0.002777777777777778,0.0,0.0,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,8,1.0,0.015555555555555555,0.013333333333333334,0.26154,0.001965384585265693,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,8,1.0,0.015555555555555555,0.013333333333333334,0.85962,0.0015535343935684201,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,8,1.0,0.015555555555555555,0.008888888888888889,0.4655,0.0022307386668993746,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,8,1.0,0.015555555555555555,0.0044444444444444444,0.99986,5.291132203981091e-05,0.9
+n20_beats_n8,N=20 performs better than N=8,8,1.0,0.015555555555555555,0.0044444444444444444,0.65634,0.002123948231007526,0.9
+n20_beats_n64,N=20 performs better than N=64,8,1.0,0.015555555555555555,0.0044444444444444444,0.91476,0.0012487925560316251,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,8,1.0,0.015555555555555555,0.0044444444444444444,0.5042,0.0022359890876299015,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,8,1.0,0.015555555555555555,0.0044444444444444444,0.0,0.0,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,10,1.0,0.019444444444444445,0.016666666666666666,0.27692,0.002001176222125378,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,10,1.0,0.019444444444444445,0.016666666666666666,0.87544,0.0014767857420763515,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,10,1.0,0.019444444444444445,0.011111111111111112,0.50264,0.0022360368082837995,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,10,1.0,0.019444444444444445,0.005555555555555556,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,10,1.0,0.019444444444444445,0.005555555555555556,0.67992,0.0020862827881186195,0.9
+n20_beats_n64,N=20 performs better than N=64,10,1.0,0.019444444444444445,0.005555555555555556,0.94088,0.0010547495020145775,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,10,1.0,0.019444444444444445,0.005555555555555556,0.51164,0.002235461967468917,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,10,1.0,0.019444444444444445,0.005555555555555556,0.0,0.0,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,16,1.0,0.03111111111111111,0.02666666666666667,0.30322,0.002055614903623731,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,16,1.0,0.03111111111111111,0.02666666666666667,0.9019,0.0013302359941002948,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,16,1.0,0.03111111111111111,0.017777777777777778,0.5761,0.002210017149254729,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,16,1.0,0.03111111111111111,0.008888888888888889,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,16,1.0,0.03111111111111111,0.008888888888888889,0.72546,0.001995834604369811,0.9
+n20_beats_n64,N=20 performs better than N=64,16,1.0,0.03111111111111111,0.008888888888888889,0.97846,0.0006492461536274205,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,16,1.0,0.03111111111111111,0.008888888888888889,0.51492,0.00223507222970534,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,16,1.0,0.03111111111111111,0.008888888888888889,0.0,0.0,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,25,1.0,0.04861111111111111,0.041666666666666664,0.33288,0.0021074672267914394,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,25,1.0,0.04861111111111111,0.041666666666666664,0.92572,0.0011727103785675304,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,25,1.0,0.04861111111111111,0.027777777777777776,0.65176,0.002130581621999026,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,25,1.0,0.04861111111111111,0.013888888888888888,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,25,1.0,0.04861111111111111,0.013888888888888888,0.77896,0.0018557010448884271,0.9
+n20_beats_n64,N=20 performs better than N=64,25,1.0,0.04861111111111111,0.013888888888888888,0.9954,0.00030261658910244984,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,25,1.0,0.04861111111111111,0.013888888888888888,0.51904,0.0022344461434547934,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,25,1.0,0.04861111111111111,0.013888888888888888,0.0,0.0,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,40,1.0,0.07777777777777778,0.06666666666666667,0.37,0.00215916650585359,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,40,1.0,0.07777777777777778,0.06666666666666667,0.94914,0.0009825808913265107,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,40,1.0,0.07777777777777778,0.044444444444444446,0.73322,0.0019779202794855005,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,40,1.0,0.07777777777777778,0.022222222222222223,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,40,1.0,0.07777777777777778,0.022222222222222223,0.83506,0.0016597276668176618,0.9
+n20_beats_n64,N=20 performs better than N=64,40,1.0,0.07777777777777778,0.022222222222222223,0.99942,0.00010767205765657355,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,40,1.0,0.07777777777777778,0.022222222222222223,0.52152,0.002233995924794851,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,40,1.0,0.07777777777777778,0.022222222222222223,0.0,0.0,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,63,1.0,0.1225,0.105,0.41086,0.0022002457153690812,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,63,1.0,0.1225,0.105,0.96938,0.000770485763658226,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,63,1.0,0.1225,0.07,0.81002,0.0017543522998531398,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,63,1.0,0.1225,0.035,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,63,1.0,0.1225,0.035,0.89038,0.0013971646688919674,0.9
+n20_beats_n64,N=20 performs better than N=64,63,1.0,0.1225,0.035,0.99998,1.9999799999009992e-05,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,63,1.0,0.1225,0.035,0.52936,0.0022322096245648614,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,63,1.0,0.1225,0.035,0.0,0.0,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,100,1.0,0.19444444444444445,0.16666666666666666,0.45864,0.002228404588040511,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,100,1.0,0.19444444444444445,0.16666666666666666,0.98632,0.0005194777685329763,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,100,1.0,0.19444444444444445,0.1111111111111111,0.88834,0.0014084888668356593,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,100,1.0,0.19444444444444445,0.05555555555555555,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,100,1.0,0.19444444444444445,0.05555555555555555,0.94004,0.0010617419498164327,0.9
+n20_beats_n64,N=20 performs better than N=64,100,1.0,0.19444444444444445,0.05555555555555555,1.0,0.0,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,100,1.0,0.19444444444444445,0.05555555555555555,0.5406,0.002228684096053095,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,100,1.0,0.19444444444444445,0.05555555555555555,0.0,0.0,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,160,1.0,0.3111111111111111,0.26666666666666666,0.4987,0.002236060419577253,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,160,1.0,0.3111111111111111,0.26666666666666666,0.99558,0.00029666356702500493,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,160,1.0,0.3111111111111111,0.17777777777777778,0.95094,0.000965951514311148,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,160,1.0,0.3111111111111111,0.08888888888888889,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,160,1.0,0.3111111111111111,0.08888888888888889,0.97742,0.0006643815710869778,0.9
+n20_beats_n64,N=20 performs better than N=64,160,1.0,0.3111111111111111,0.08888888888888889,1.0,0.0,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,160,1.0,0.3111111111111111,0.08888888888888889,0.55072,0.0022245335762806546,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,160,1.0,0.3111111111111111,0.08888888888888889,0.0,0.0,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,250,1.0,0.4861111111111111,0.4166666666666667,0.53224,0.0022314147189619413,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,250,1.0,0.4861111111111111,0.4166666666666667,0.99894,0.00014552500816010627,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,250,1.0,0.4861111111111111,0.2777777777777778,0.98436,0.0005548944115775539,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,250,1.0,0.4861111111111111,0.1388888888888889,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,250,1.0,0.4861111111111111,0.1388888888888889,0.9925,0.0003858432324144082,0.9
+n20_beats_n64,N=20 performs better than N=64,250,1.0,0.4861111111111111,0.1388888888888889,1.0,0.0,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,250,1.0,0.4861111111111111,0.1388888888888889,0.558,0.0022209727598509624,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,250,1.0,0.4861111111111111,0.1388888888888889,0.0,0.0,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,400,1.0,0.7777777777777778,0.6666666666666666,0.5668,0.0022160223825584435,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,400,1.0,0.7777777777777778,0.6666666666666666,0.99986,5.291132203981091e-05,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,400,1.0,0.7777777777777778,0.4444444444444444,0.99774,0.00021236253906939612,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,400,1.0,0.7777777777777778,0.2222222222222222,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,400,1.0,0.7777777777777778,0.2222222222222222,0.99922,0.00012485123948123247,0.9
+n20_beats_n64,N=20 performs better than N=64,400,1.0,0.7777777777777778,0.2222222222222222,1.0,0.0,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,400,1.0,0.7777777777777778,0.2222222222222222,0.57594,0.0022101272198676706,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,400,1.0,0.7777777777777778,0.2222222222222222,0.20052,0.0017905961554744833,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,630,1.0,1.225,1.05,0.5911,0.0021986395338936303,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,630,1.0,1.225,1.05,1.0,0.0,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,630,1.0,1.225,0.7,0.99994,3.4639976905289354e-05,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,630,1.0,1.225,0.35,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,630,1.0,1.225,0.35,0.99996,2.828370555639413e-05,0.9
+n20_beats_n64,N=20 performs better than N=64,630,1.0,1.225,0.35,1.0,0.0,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,630,1.0,1.225,0.35,0.5935,0.0021966235453531858,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,630,1.0,1.225,0.35,0.52964,0.002232135615951683,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,1000,1.0,1.9444444444444444,1.6666666666666667,0.62138,0.0021691790871202865,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,1000,1.0,1.9444444444444444,1.6666666666666667,1.0,0.0,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,1000,1.0,1.9444444444444444,1.1111111111111112,1.0,0.0,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,1000,1.0,1.9444444444444444,0.5555555555555556,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,1000,1.0,1.9444444444444444,0.5555555555555556,1.0,0.0,0.9
+n20_beats_n64,N=20 performs better than N=64,1000,1.0,1.9444444444444444,0.5555555555555556,1.0,0.0,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,1000,1.0,1.9444444444444444,0.5555555555555556,0.62162,0.0021689102129871583,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,1000,1.0,1.9444444444444444,0.5555555555555556,0.80794,0.0017616637386289134,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,1600,1.0,3.111111111111111,2.6666666666666665,0.6547,0.0021263485603258934,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,1600,1.0,3.111111111111111,2.6666666666666665,1.0,0.0,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,1600,1.0,3.111111111111111,1.7777777777777777,1.0,0.0,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,1600,1.0,3.111111111111111,0.8888888888888888,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,1600,1.0,3.111111111111111,0.8888888888888888,1.0,0.0,0.9
+n20_beats_n64,N=20 performs better than N=64,1600,1.0,3.111111111111111,0.8888888888888888,1.0,0.0,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,1600,1.0,3.111111111111111,0.8888888888888888,0.6547,0.0021263485603258934,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,1600,1.0,3.111111111111111,0.8888888888888888,0.95676,0.0009096186277775972,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,2500,1.0,4.861111111111111,4.166666666666667,0.68826,0.002071512357674943,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,2500,1.0,4.861111111111111,4.166666666666667,1.0,0.0,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,2500,1.0,4.861111111111111,2.7777777777777777,1.0,0.0,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,2500,1.0,4.861111111111111,1.3888888888888888,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,2500,1.0,4.861111111111111,1.3888888888888888,1.0,0.0,0.9
+n20_beats_n64,N=20 performs better than N=64,2500,1.0,4.861111111111111,1.3888888888888888,1.0,0.0,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,2500,1.0,4.861111111111111,1.3888888888888888,0.68826,0.002071512357674943,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,2500,1.0,4.861111111111111,1.3888888888888888,0.9955,0.00029932423891158394,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,4000,1.0,7.777777777777778,6.666666666666667,0.72918,0.001987342585464318,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,4000,1.0,7.777777777777778,6.666666666666667,1.0,0.0,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,4000,1.0,7.777777777777778,4.444444444444445,1.0,0.0,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,4000,1.0,7.777777777777778,2.2222222222222223,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,4000,1.0,7.777777777777778,2.2222222222222223,1.0,0.0,0.9
+n20_beats_n64,N=20 performs better than N=64,4000,1.0,7.777777777777778,2.2222222222222223,1.0,0.0,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,4000,1.0,7.777777777777778,2.2222222222222223,0.72918,0.001987342585464318,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,4000,1.0,7.777777777777778,2.2222222222222223,0.99982,5.9994599756971126e-05,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,6300,1.0,12.25,10.5,0.78048,0.0018511130143781067,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,6300,1.0,12.25,10.5,1.0,0.0,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,6300,1.0,12.25,7.0,1.0,0.0,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,6300,1.0,12.25,3.5,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,6300,1.0,12.25,3.5,1.0,0.0,0.9
+n20_beats_n64,N=20 performs better than N=64,6300,1.0,12.25,3.5,1.0,0.0,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,6300,1.0,12.25,3.5,0.78048,0.0018511130143781067,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,6300,1.0,12.25,3.5,1.0,0.0,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,10000,1.0,19.444444444444443,16.666666666666668,0.83252,0.0016699128695833202,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,10000,1.0,19.444444444444443,16.666666666666668,1.0,0.0,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,10000,1.0,19.444444444444443,11.11111111111111,1.0,0.0,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,10000,1.0,19.444444444444443,5.555555555555555,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,10000,1.0,19.444444444444443,5.555555555555555,1.0,0.0,0.9
+n20_beats_n64,N=20 performs better than N=64,10000,1.0,19.444444444444443,5.555555555555555,1.0,0.0,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,10000,1.0,19.444444444444443,5.555555555555555,0.83252,0.0016699128695833202,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,10000,1.0,19.444444444444443,5.555555555555555,1.0,0.0,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,16000,1.0,31.11111111111111,26.666666666666668,0.88798,0.0014104716913146468,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,16000,1.0,31.11111111111111,26.666666666666668,1.0,0.0,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,16000,1.0,31.11111111111111,17.77777777777778,1.0,0.0,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,16000,1.0,31.11111111111111,8.88888888888889,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,16000,1.0,31.11111111111111,8.88888888888889,1.0,0.0,0.9
+n20_beats_n64,N=20 performs better than N=64,16000,1.0,31.11111111111111,8.88888888888889,1.0,0.0,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,16000,1.0,31.11111111111111,8.88888888888889,0.88798,0.0014104716913146468,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,16000,1.0,31.11111111111111,8.88888888888889,1.0,0.0,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,25000,1.0,48.611111111111114,41.666666666666664,0.93858,0.001073755871695238,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,25000,1.0,48.611111111111114,41.666666666666664,1.0,0.0,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,25000,1.0,48.611111111111114,27.77777777777778,1.0,0.0,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,25000,1.0,48.611111111111114,13.88888888888889,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,25000,1.0,48.611111111111114,13.88888888888889,1.0,0.0,0.9
+n20_beats_n64,N=20 performs better than N=64,25000,1.0,48.611111111111114,13.88888888888889,1.0,0.0,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,25000,1.0,48.611111111111114,13.88888888888889,0.93858,0.001073755871695238,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,25000,1.0,48.611111111111114,13.88888888888889,1.0,0.0,0.9
+exact_optimum,N=20 is selected as the best of the six resonant controls,40000,1.0,77.77777777777777,66.66666666666667,0.97436,0.0007068605293832723,0.9
+operating_window,the best measured resonant control lies inside the predicted 10% window,40000,1.0,77.77777777777777,66.66666666666667,1.0,0.0,0.9
+depth_controls,N=8 and N=64 both perform worse than N=16 and N=20,40000,1.0,77.77777777777777,44.44444444444444,1.0,0.0,0.9
+timing_selectivity,the off-resonance control performs worse than resonant N=20,40000,1.0,77.77777777777777,22.22222222222222,1.0,0.0,0.9
+n20_beats_n8,N=20 performs better than N=8,40000,1.0,77.77777777777777,22.22222222222222,1.0,0.0,0.9
+n20_beats_n64,N=20 performs better than N=64,40000,1.0,77.77777777777777,22.22222222222222,1.0,0.0,0.9
+n20_beats_n16,the measured ordering identifies the 0.97% advantage of N=20 over N=16,40000,1.0,77.77777777777777,22.22222222222222,0.97436,0.0007068605293832723,0.9
+n16_n20_equivalent_10pct,a two-sided 90% confidence interval places N=16 and N=20 within 10%,40000,1.0,77.77777777777777,22.22222222222222,1.0,0.0,0.9

@@ -1,0 +1,5 @@
+ablation,tau_best_s,N_best,eta_best,best_at_N_boundary,calibration_digest
+Nominal,1.25e-06,20,0.03662935463129414,0,fe2b8d2c6faee1d4
+No pulse errors,1.25e-06,128,0.01049715432132287,1,6f97b62de2ed321d
+No decoherence,1.25e-06,20,0.03488388745224602,0,a8a295023d1b7581
+No timing overhead,1.25e-06,20,0.03629961823520618,0,a75a83aae736f48b

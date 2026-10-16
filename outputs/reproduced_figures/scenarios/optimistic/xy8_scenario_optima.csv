@@ -1,0 +1,4 @@
+scenario,tau_best_s,N_best,eta_best,edt_window_N_min,edt_window_N_max,edt_window_tau_min_s,edt_window_tau_max_s,improvement_vs_N16_percent,improvement_vs_N64_percent,calibration_digest
+conservative,1.25e-06,8,0.19845037534699958,5,12,1.25e-06,1.25e-06,14.685160451732793,93.46275647633462,9278a5c6eca20daf
+nominal,1.25e-06,20,0.03662935463129414,10,34,1.25e-06,1.25e-06,0.9633835626949083,42.00417849058648,fe2b8d2c6faee1d4
+optimistic,1.25e-06,64,0.007487003073559987,32,96,1.25e-06,1.25e-06,26.224693584045443,0.0,dc70d121e10237dd

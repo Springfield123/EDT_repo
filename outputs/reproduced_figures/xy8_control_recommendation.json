@@ -1,0 +1,57 @@
+{
+  "model_version": "xy8-proxy-v1",
+  "model_source": "code/plotting/make_fig_xy8_qre.py",
+  "model_source_digest": "1ef093f9b59badf9",
+  "base_scenario": "nominal",
+  "calibration_digest": "fe2b8d2c6faee1d4",
+  "inputs": {
+    "frequency_Hz": 200000.0,
+    "pulse_fidelity": 0.997,
+    "T2_s": 0.0003,
+    "T2_scale_relative_to_base": 1.0
+  },
+  "recommendation": {
+    "tau_s": 1.25e-06,
+    "resonant_tau_s": 1.25e-06,
+    "N": 20,
+    "total_pi_pulses": 160,
+    "predicted_eta_proxy": 0.03662935463129414,
+    "control_region": "Moderate",
+    "edt_window_10pct": {
+      "N_min": 10,
+      "N_max": 34,
+      "N_values": [
+        10,
+        11,
+        12,
+        14,
+        16,
+        20,
+        24,
+        28,
+        32,
+        33,
+        34
+      ],
+      "touches_depth_boundary": false
+    },
+    "pareto_alternative": {
+      "N": 16,
+      "total_pi_pulses": 128,
+      "predicted_eta_proxy": 0.03698566848200258,
+      "relative_to_best": 1.0097275492373547,
+      "penalty_percent": 0.9727549237354749,
+      "pulse_savings_percent": 20.0
+    },
+    "boundary_status": "resolved interior optimum"
+  },
+  "uncertainty": null,
+  "warnings": [
+    {
+      "code": "nominal_resources_assumed",
+      "severity": "info",
+      "message": "Contrast, photon rate, overheads, coherence exponents, and other resources remain fixed to the base calibration."
+    }
+  ],
+  "recommendation_digest": "4e5b4ff8b4a9a8a6"
+}

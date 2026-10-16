@@ -1,0 +1,237 @@
+{
+  "f_target_Hz": 200000.0,
+  "mc_samples": 400,
+  "mc_seed": 20260826,
+  "frequency_range_Hz": [
+    50000.0,
+    500000.0
+  ],
+  "pareto": {
+    "definition": "Minimize sensitivity proxy and total pi-pulse count simultaneously.",
+    "pareto_depths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      16,
+      20
+    ],
+    "fewest_pulses_within_10pct": {
+      "tau_best_at_depth_s": 1.25e-06,
+      "N": 10,
+      "total_pi_pulses": 80,
+      "eta_proxy": 0.040252115238364694,
+      "relative_to_best": 1.0989032060088622,
+      "sensitivity_penalty_pct": 9.890320600886216,
+      "pulse_savings_vs_best_pct": 50.0,
+      "within_10pct": 1,
+      "pareto_optimal": 1,
+      "is_global_best": 0,
+      "is_heuristic_N16": 0
+    },
+    "heuristic_N16": {
+      "tau_best_at_depth_s": 1.25e-06,
+      "N": 16,
+      "total_pi_pulses": 128,
+      "eta_proxy": 0.03698566848200258,
+      "relative_to_best": 1.0097275492373547,
+      "sensitivity_penalty_pct": 0.9727549237354749,
+      "pulse_savings_vs_best_pct": 20.0,
+      "within_10pct": 1,
+      "pareto_optimal": 1,
+      "is_global_best": 0,
+      "is_heuristic_N16": 1
+    },
+    "performance_optimum": {
+      "tau_best_at_depth_s": 1.25e-06,
+      "N": 20,
+      "total_pi_pulses": 160,
+      "eta_proxy": 0.03662935463129414,
+      "relative_to_best": 1.0,
+      "sensitivity_penalty_pct": 0.0,
+      "pulse_savings_vs_best_pct": 0.0,
+      "within_10pct": 1,
+      "pareto_optimal": 1,
+      "is_global_best": 1,
+      "is_heuristic_N16": 0
+    }
+  },
+  "uncertainty_model": {
+    "piPulseFid": "truncated normal, sigma=0.0012, range=[0.990, 1.000]",
+    "T2_scale": "log-normal, log-sigma=0.20",
+    "T2_alpha": "truncated normal, sigma=0.07, range=[0.30, 0.90]",
+    "contrast_scale": "log-normal, log-sigma=0.18",
+    "photon_rate_scale": "log-normal, log-sigma=0.25",
+    "overhead_scale": "log-normal, log-sigma=0.20"
+  },
+  "optimal_depth_distribution": [
+    {
+      "N_best": 9,
+      "count": 1,
+      "probability": 0.0025
+    },
+    {
+      "N_best": 10,
+      "count": 3,
+      "probability": 0.0075
+    },
+    {
+      "N_best": 11,
+      "count": 6,
+      "probability": 0.015
+    },
+    {
+      "N_best": 12,
+      "count": 26,
+      "probability": 0.065
+    },
+    {
+      "N_best": 14,
+      "count": 56,
+      "probability": 0.14
+    },
+    {
+      "N_best": 16,
+      "count": 90,
+      "probability": 0.225
+    },
+    {
+      "N_best": 20,
+      "count": 77,
+      "probability": 0.1925
+    },
+    {
+      "N_best": 24,
+      "count": 54,
+      "probability": 0.135
+    },
+    {
+      "N_best": 28,
+      "count": 28,
+      "probability": 0.07
+    },
+    {
+      "N_best": 32,
+      "count": 10,
+      "probability": 0.025
+    },
+    {
+      "N_best": 33,
+      "count": 5,
+      "probability": 0.0125
+    },
+    {
+      "N_best": 34,
+      "count": 4,
+      "probability": 0.01
+    },
+    {
+      "N_best": 35,
+      "count": 5,
+      "probability": 0.0125
+    },
+    {
+      "N_best": 36,
+      "count": 3,
+      "probability": 0.0075
+    },
+    {
+      "N_best": 37,
+      "count": 2,
+      "probability": 0.005
+    },
+    {
+      "N_best": 38,
+      "count": 1,
+      "probability": 0.0025
+    },
+    {
+      "N_best": 39,
+      "count": 2,
+      "probability": 0.005
+    },
+    {
+      "N_best": 40,
+      "count": 9,
+      "probability": 0.0225
+    },
+    {
+      "N_best": 48,
+      "count": 5,
+      "probability": 0.0125
+    },
+    {
+      "N_best": 56,
+      "count": 3,
+      "probability": 0.0075
+    },
+    {
+      "N_best": 64,
+      "count": 1,
+      "probability": 0.0025
+    },
+    {
+      "N_best": 80,
+      "count": 6,
+      "probability": 0.015
+    },
+    {
+      "N_best": 96,
+      "count": 1,
+      "probability": 0.0025
+    },
+    {
+      "N_best": 128,
+      "count": 2,
+      "probability": 0.005
+    }
+  ],
+  "robust_controls": [
+    {
+      "control": "Nominal optimum",
+      "tau_s": 1.25e-06,
+      "N": 20,
+      "median_regret": 1.017501214443326,
+      "mean_regret": 1.040843510459358,
+      "p90_regret": 1.0922024391057161,
+      "p95_regret": 1.15363721177263,
+      "worst_regret": 1.6067356263612849,
+      "nominal_eta": 0.03662935463129414,
+      "nominal_relative_to_best": 1.0
+    },
+    {
+      "control": "Robust p95 optimum",
+      "tau_s": 1.25e-06,
+      "N": 20,
+      "median_regret": 1.017501214443326,
+      "mean_regret": 1.040843510459358,
+      "p90_regret": 1.0922024391057161,
+      "p95_regret": 1.15363721177263,
+      "worst_regret": 1.6067356263612849,
+      "nominal_eta": 0.03662935463129414,
+      "nominal_relative_to_best": 1.0
+    },
+    {
+      "control": "Minimum-mean-regret",
+      "tau_s": 1.25e-06,
+      "N": 20,
+      "median_regret": 1.017501214443326,
+      "mean_regret": 1.040843510459358,
+      "p90_regret": 1.0922024391057161,
+      "p95_regret": 1.15363721177263,
+      "worst_regret": 1.6067356263612849,
+      "nominal_eta": 0.03662935463129414,
+      "nominal_relative_to_best": 1.0
+    }
+  ],
+  "sequence_comparison_scope": "Instantaneous-pulse scalar-fidelity baseline; phase cycling is unresolved."
+}

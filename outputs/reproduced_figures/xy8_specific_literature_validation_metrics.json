@@ -1,0 +1,152 @@
+{
+  "validation_status": "partial_agreement_model_refinement_needed",
+  "coherent_validation_status": "coherent_model_does_not_improve_frozen_holdout",
+  "figure_title": "Independent XY8 data identify where the model needs refinement",
+  "dataset_selected_before_model_evaluation": true,
+  "sequence": "conventional XY8",
+  "observable": "relative fluorescence contrast normalized to a one-pulse Hahn echo in the same short-free-evolution limit",
+  "number_of_depths": 3,
+  "measured_xy8_blocks": [
+    1,
+    9,
+    73
+  ],
+  "measured_total_pi_pulses": [
+    8,
+    72,
+    584
+  ],
+  "baseline_per_pulse_fidelity": 0.997,
+  "normalization_reference_pi_pulses": 1,
+  "predeclared_fidelity_range": [
+    0.995,
+    0.999
+  ],
+  "spearman_rank_correlation": 1.0,
+  "rmse_relative_contrast": 0.1841464905352814,
+  "normalized_rmse_by_measured_span": 0.2877288914613772,
+  "points_overlapping_predeclared_model_range": 2,
+  "fraction_points_overlapping_predeclared_model_range": 0.6666666666666666,
+  "predicted_first_depth_below_half_contrast_total_pi_pulses": 232,
+  "measured_first_sample_below_half_contrast_total_pi_pulses": 584,
+  "measured_half_contrast_crossing_bracket_total_pi_pulses": [
+    72,
+    584
+  ],
+  "implied_per_pulse_fidelity_range_all_depths": [
+    0.9916151114782435,
+    1.0
+  ],
+  "implied_per_pulse_fidelity_range_nontrivial_depths": [
+    0.9916151114782435,
+    0.998249131050451
+  ],
+  "checks": {
+    "correct_monotonic_ordering": true,
+    "all_points_covered_by_predeclared_fidelity_range": false,
+    "nominal_half_contrast_crossing_inside_measured_bracket": true
+  },
+  "coherent_model": {
+    "freeze_status": "frozen_before_coherent_model_evaluation",
+    "fitting": "none",
+    "sampling_method": "seeded Monte Carlo with common standard-normal draws for every uncertainty case",
+    "sample_count": 10000,
+    "random_seed": 150500636,
+    "uncertainty_combinations": 27,
+    "spearman_rank_correlation": 1.0,
+    "rmse_relative_contrast": 0.3927953285987669,
+    "normalized_rmse_by_measured_span": 0.6137427009355733,
+    "points_overlapping_predeclared_model_range": 1,
+    "fraction_points_overlapping_predeclared_model_range": 0.3333333333333333,
+    "predicted_first_depth_below_half_contrast_total_pi_pulses": null,
+    "nominal_predictions_at_measured_depths": [
+      1.012139862105399,
+      0.9981798094746636,
+      0.8717147571004339
+    ],
+    "uncertainty_low_at_measured_depths": [
+      1.00616087345795,
+      0.9705956684521592,
+      0.8148334241130618
+    ],
+    "uncertainty_high_at_measured_depths": [
+      1.0194723827658816,
+      1.0161041273192328,
+      0.9389960085020495
+    ],
+    "checks": {
+      "correct_monotonic_ordering": true,
+      "all_points_covered_by_predeclared_range": false,
+      "nominal_half_contrast_crossing_inside_measured_bracket": false
+    },
+    "parameters": {
+      "freeze_status": "frozen_before_coherent_model_evaluation",
+      "model": "instantaneous conventional-XY8 propagator with quasi-static coherent angle and rotation-axis errors",
+      "initial_spin_component": "Sx",
+      "readout_spin_component": "Sx",
+      "normalization_reference": "one imperfect X-axis pi pulse representing the reported Hahn-echo normalization",
+      "rotation_angle_fractional_error_std": 0.06,
+      "rotation_axis_z_component_std": 0.06,
+      "rotation_axis_in_plane_component_std": 0.05,
+      "distribution_means": 0.0,
+      "distribution_family": "independent Gaussian",
+      "quasi_static_scope": "one draw per NV centre, held fixed for all pulses in that sequence",
+      "sampling_method": "seeded Monte Carlo with common standard-normal draws for every uncertainty case",
+      "sample_count": 10000,
+      "random_seed": 150500636,
+      "sampling_rationale": "The source simulation averages 10000 NV centres. Seed 150500636 is fixed from the paper's arXiv identifier 1505.00636 and is unrelated to the measured contrast values. Preliminary numerical QA rejected low-order Gaussian quadrature because it was not converged at N=73; no physical parameter was changed.",
+      "uncertainty_range_rule": "multiply all three reported approximate standard deviations independently by 0.75, 1.00, or 1.25 and use the pointwise envelope of the resulting 27 predeclared combinations",
+      "uncertainty_range_rationale": "The supplement reports approximate error scales but no parameter confidence intervals; a symmetric plus-or-minus 25 percent sensitivity range was declared before coherent evaluation and is not fitted to the contrast points.",
+      "dense_xy8_block_range": [
+        1,
+        128
+      ],
+      "fitting": "none",
+      "no_fit_statement": "No coherent error magnitude, distribution weight, normalization, pulse depth, or uncertainty range is adjusted after comparison with the three experimental XY8 points.",
+      "source_provenance": {
+        "main_article_doi": "10.1103/PhysRevB.92.060301",
+        "supplement_section": "Initial Contrast Simulation",
+        "reported_simulated_ensemble_size": 10000,
+        "reported_hyperfine_populations": [
+          0.7,
+          0.2,
+          0.1
+        ],
+        "reported_hyperfine_line_offsets_Hz": [
+          0.0,
+          2200000.0,
+          4400000.0
+        ],
+        "reported_within_line_detuning_std_Hz": 500000.0,
+        "effective_axis_error_treatment": "The paper states that the physical detuning mixture gives behavior similar to a zero-mean Gaussian nz distribution with standard deviation approximately 0.06; the latter is used to match its Eq. 1 pulse-error abstraction without double-counting detuning."
+      }
+    }
+  },
+  "model_comparison": {
+    "lower_normalized_rmse_model": "scalar_pulse_survival",
+    "normalized_rmse_improvement_fraction": -1.133058998067137,
+    "coherent_has_better_normalized_rmse": false,
+    "coherent_has_equal_or_better_pointwise_coverage": false
+  },
+  "interpretation": "Both frozen predictions reproduce the measured direction of change, but neither reproduces the three-point curve quantitatively. The sequence-specific coherent model built from the paper's reported Gaussian angle and axis errors predicts substantially too much retained contrast at 72 and 584 pulses. Its normalized RMSE is 0.614, compared with 0.288 for the scalar baseline, and its uncertainty envelope overlaps fewer measurements. It therefore does not pass the predeclared improvement test. The outcome is consistent with the source paper's own statement that its pulse-error simulation overestimated experimental contrast. The remaining discrepancy points to missing loss, error correlations, preparation/readout imperfections, or other ensemble physics; these must be introduced from independent measurements rather than fitted to this three-point holdout.",
+  "scope_guardrail": "This holdout isolates XY8 pulse-error accumulation in a short-free-evolution state-preservation experiment. It does not test target-frequency selection, absolute sensitivity, coherence scaling, photon collection, or preparation/readout overhead.",
+  "no_fit_statement": "Neither the nominal fidelity, the fidelity range, nor the pulse-count axis is fitted to the measured XY8 contrast curve.",
+  "source": {
+    "citation": "D. Farfurnik et al., Optimizing a dynamical decoupling protocol for solid-state electronic spin ensembles in diamond, Physical Review B 92, 060301(R) (2015).",
+    "doi": "10.1103/PhysRevB.92.060301",
+    "doi_url": "https://doi.org/10.1103/PhysRevB.92.060301",
+    "arxiv_id": "1505.00636",
+    "arxiv_url": "https://arxiv.org/abs/1505.00636",
+    "figure": "Figure 3b",
+    "panel_content": "experimental relative contrast in the short-free-evolution limit",
+    "sequence": "conventional XY8",
+    "initial_spin_component": "Sx",
+    "temperature_K": 77,
+    "source_archive_sha256": "9d160b16dbd8fde2b828a9805da22406cb963c4ab6e87549d451cf8576eaeece",
+    "source_figure_sha256": "615a22ea0fef5a95b7164a6a43c02daacdedd21164ec9ac1141d9a0af5f40956"
+  },
+  "input_digests": {
+    "manifest_sha256": "3362898d422a65923c141edf4bf84e348620e39eaa2c31c0e4600faeb8363c3d",
+    "measurements_sha256": "44ebf5840479b3848a7c4343f4b3080fddc8cf93605add01403d08e6a27dce11"
+  }
+}

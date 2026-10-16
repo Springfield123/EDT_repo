@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "status": "prospective_power_analysis_no_measurements",
+  "slide_headline": "The operating window is much easier to test than the exact optimum.",
+  "protocol_id": "xy8-prospective-216df54faf8d81b6",
+  "protocol_digest": "216df54faf8d81b6",
+  "calibration_digest": "fe2b8d2c6faee1d4",
+  "measurement_model": "Each independent batch yields an approximately Gaussian field estimate; eta is estimated from the sample standard deviation, giving a scaled-chi sampling distribution.",
+  "interpretation_limit": "This is conditional power under the nominal predicted eta values. It does not include model-form error, correlations between batches, drift, or uncertainty in the signal-calibration slope.",
+  "trials": 50000,
+  "seed": 20260915,
+  "target_power": 0.9,
+  "batch_duration_s": 1.0,
+  "equivalence_margin": 1.1,
+  "equivalence_confidence": 0.9,
+  "operating_window_N": [
+    10,
+    34
+  ],
+  "candidate_batch_grid": [
+    3,
+    5,
+    8,
+    10,
+    16,
+    25,
+    40,
+    63,
+    100,
+    160,
+    250,
+    400,
+    630,
+    1000,
+    1600,
+    2500,
+    4000,
+    6300,
+    10000,
+    16000,
+    25000,
+    40000
+  ],
+  "maximum_sequence_executions_per_batch_excluding_overhead": {
+    "low_depth": 6249,
+    "edt_lower_edge": 5000,
+    "practical_choice": 3124,
+    "predicted_optimum": 2500,
+    "edt_upper_edge": 1470,
+    "overdriven": 781,
+    "off_resonance": 2551
+  },
+  "current_protocol_allocation": {
+    "low_depth": 3,
+    "edt_lower_edge": 3,
+    "practical_choice": 3,
+    "predicted_optimum": 5,
+    "edt_upper_edge": 3,
+    "overdriven": 3,
+    "off_resonance": 3
+  },
+  "current_protocol_total_batch_time_s": 23.0,
+  "current_protocol_power": {
+    "exact_optimum": {
+      "description": "N=20 is selected as the best of the six resonant controls",
+      "power": 0.1407,
+      "monte_carlo_standard_error": 0.0015550145336941388
+    },
+    "operating_window": {
+      "description": "the best measured resonant control lies inside the predicted 10% window",
+      "power": 0.7548,
+      "monte_carlo_standard_error": 0.001923938460554287
+    },
+    "depth_controls": {
+      "description": "N=8 and N=64 both perform worse than N=16 and N=20",
+      "power": 0.32024,
+      "monte_carlo_standard_error": 0.0020865586136027906
+    },
+    "timing_selectivity": {
+      "description": "the off-resonance control performs worse than resonant N=20",
+      "power": 0.97044,
+      "monte_carlo_standard_error": 0.0007574457921198062
+    },
+    "n20_beats_n8": {
+      "description": "N=20 performs better than N=8",
+      "power": 0.56832,
+      "monte_carlo_standard_error": 0.0022150953821449765
+    },
+    "n20_beats_n64": {
+      "description": "N=20 performs better than N=64",
+      "power": 0.75896,
+      "monte_carlo_standard_error": 0.001912797524046913
+    },
+    "n20_beats_n16": {
+      "description": "the measured ordering identifies the 0.97% advantage of N=20 over N=16",
+      "power": 0.48294,
+      "monte_carlo_standard_error": 0.0022347660119126566
+    },
+    "n16_n20_equivalent_10pct": {
+      "description": "a two-sided 90% confidence interval places N=16 and N=20 within 10%",
+      "power": 0.0,
+      "monte_carlo_standard_error": 0.0
+    }
+  },
+  "recommended_designs": {
+    "core_window_and_boundary_test": {
+      "purpose": "Prioritize the operating-window, shallow/overdriven, and timing claims; do not claim that the exact N=20 optimum has been resolved.",
+      "allocation": {
+        "low_depth": 160,
+        "edt_lower_edge": 160,
+        "practical_choice": 160,
+        "predicted_optimum": 160,
+        "edt_upper_edge": 160,
+        "overdriven": 160,
+        "off_resonance": 3
+      },
+      "total_batch_time_h": 0.2675,
+      "power": {
+        "exact_optimum": {
+          "description": "N=20 is selected as the best of the six resonant controls",
+          "power": 0.49564,
+          "monte_carlo_standard_error": 0.0022359829623680052
+        },
+        "operating_window": {
+          "description": "the best measured resonant control lies inside the predicted 10% window",
+          "power": 0.99554,
+          "monte_carlo_standard_error": 0.0002979969261586441
+        },
+        "depth_controls": {
+          "description": "N=8 and N=64 both perform worse than N=16 and N=20",
+          "power": 0.95088,
+          "monte_carlo_standard_error": 0.0009665115167446277
+        },
+        "timing_selectivity": {
+          "description": "the off-resonance control performs worse than resonant N=20",
+          "power": 0.97242,
+          "monte_carlo_standard_error": 0.0007323843744919746
+        },
+        "n20_beats_n8": {
+          "description": "N=20 performs better than N=8",
+          "power": 0.9764,
+          "monte_carlo_standard_error": 0.0006788672918914264
+        },
+        "n20_beats_n64": {
+          "description": "N=20 performs better than N=64",
+          "power": 1.0,
+          "monte_carlo_standard_error": 0.0
+        },
+        "n20_beats_n16": {
+          "description": "the measured ordering identifies the 0.97% advantage of N=20 over N=16",
+          "power": 0.54528,
+          "monte_carlo_standard_error": 0.0022268799770081907
+        },
+        "n16_n20_equivalent_10pct": {
+          "description": "a two-sided 90% confidence interval places N=16 and N=20 within 10%",
+          "power": 0.0,
+          "monte_carlo_standard_error": 0.0
+        }
+      }
+    },
+    "ten_percent_equivalence_add_on": {
+      "purpose": "Add precision at N=16 and N=20 to establish their equivalence within 10%; this still does not efficiently prove the 0.97% nominal ordering.",
+      "allocation": {
+        "low_depth": 160,
+        "edt_lower_edge": 160,
+        "practical_choice": 1600,
+        "predicted_optimum": 1600,
+        "edt_upper_edge": 160,
+        "overdriven": 160,
+        "off_resonance": 3
+      },
+      "total_batch_time_h": 1.0675,
+      "power": {
+        "exact_optimum": {
+          "description": "N=20 is selected as the best of the six resonant controls",
+          "power": 0.588,
+          "monte_carlo_standard_error": 0.0022011633287877573
+        },
+        "operating_window": {
+          "description": "the best measured resonant control lies inside the predicted 10% window",
+          "power": 0.99652,
+          "monte_carlo_standard_error": 0.000263358675573828
+        },
+        "depth_controls": {
+          "description": "N=8 and N=64 both perform worse than N=16 and N=20",
+          "power": 0.99022,
+          "monte_carlo_standard_error": 0.0004400988888874865
+        },
+        "timing_selectivity": {
+          "description": "the off-resonance control performs worse than resonant N=20",
+          "power": 0.97244,
+          "monte_carlo_standard_error": 0.0007321263060428853
+        },
+        "n20_beats_n8": {
+          "description": "N=20 performs better than N=8",
+          "power": 0.9947,
+          "monte_carlo_standard_error": 0.0003247124882107238
+        },
+        "n20_beats_n64": {
+          "description": "N=20 performs better than N=64",
+          "power": 1.0,
+          "monte_carlo_standard_error": 0.0
+        },
+        "n20_beats_n16": {
+          "description": "the measured ordering identifies the 0.97% advantage of N=20 over N=16",
+          "power": 0.65052,
+          "monte_carlo_standard_error": 0.0021323401679844613
+        },
+        "n16_n20_equivalent_10pct": {
+          "description": "a two-sided 90% confidence interval places N=16 and N=20 within 10%",
+          "power": 0.95404,
+          "monte_carlo_standard_error": 0.0009364579905153247
+        }
+      }
+    }
+  },
+  "required_for_target_power": {
+    "exact_optimum": {
+      "description": "N=20 is selected as the best of the six resonant controls",
+      "required_independent_batches_per_control": 25000,
+      "full_protocol_acquisition_time_h": 48.611111111111114,
+      "metric_specific_acquisition_time_h": 41.666666666666664,
+      "achieved_power": 0.93858,
+      "resolved_within_grid": true
+    },
+    "operating_window": {
+      "description": "the best measured resonant control lies inside the predicted 10% window",
+      "required_independent_batches_per_control": 16,
+      "full_protocol_acquisition_time_h": 0.03111111111111111,
+      "metric_specific_acquisition_time_h": 0.02666666666666667,
+      "achieved_power": 0.9019,
+      "resolved_within_grid": true
+    },
+    "depth_controls": {
+      "description": "N=8 and N=64 both perform worse than N=16 and N=20",
+      "required_independent_batches_per_control": 160,
+      "full_protocol_acquisition_time_h": 0.3111111111111111,
+      "metric_specific_acquisition_time_h": 0.17777777777777778,
+      "achieved_power": 0.95094,
+      "resolved_within_grid": true
+    },
+    "timing_selectivity": {
+      "description": "the off-resonance control performs worse than resonant N=20",
+      "required_independent_batches_per_control": 3,
+      "full_protocol_acquisition_time_h": 0.005833333333333334,
+      "metric_specific_acquisition_time_h": 0.0016666666666666668,
+      "achieved_power": 0.96684,
+      "resolved_within_grid": true
+    },
+    "n20_beats_n8": {
+      "description": "N=20 performs better than N=8",
+      "required_independent_batches_per_control": 100,
+      "full_protocol_acquisition_time_h": 0.19444444444444445,
+      "metric_specific_acquisition_time_h": 0.05555555555555555,
+      "achieved_power": 0.94004,
+      "resolved_within_grid": true
+    },
+    "n20_beats_n64": {
+      "description": "N=20 performs better than N=64",
+      "required_independent_batches_per_control": 8,
+      "full_protocol_acquisition_time_h": 0.015555555555555555,
+      "metric_specific_acquisition_time_h": 0.0044444444444444444,
+      "achieved_power": 0.91476,
+      "resolved_within_grid": true
+    },
+    "n20_beats_n16": {
+      "description": "the measured ordering identifies the 0.97% advantage of N=20 over N=16",
+      "required_independent_batches_per_control": 25000,
+      "full_protocol_acquisition_time_h": 48.611111111111114,
+      "metric_specific_acquisition_time_h": 13.88888888888889,
+      "achieved_power": 0.93858,
+      "resolved_within_grid": true
+    },
+    "n16_n20_equivalent_10pct": {
+      "description": "a two-sided 90% confidence interval places N=16 and N=20 within 10%",
+      "required_independent_batches_per_control": 1600,
+      "full_protocol_acquisition_time_h": 3.111111111111111,
+      "metric_specific_acquisition_time_h": 0.8888888888888888,
+      "achieved_power": 0.95676,
+      "resolved_within_grid": true
+    }
+  }
+}

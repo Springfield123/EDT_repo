@@ -1,0 +1,29 @@
+{
+  "ambiguous_state_count": 0,
+  "carrier_policies": [
+    "fixed_reference_carrier",
+    "ideal_retracked_carrier"
+  ],
+  "configuration_id": "xy8_environment_scan_v1",
+  "configuration_sha256": "85730bb286f708488b0b14ead7aeb4e2166fa4b0143d7a197b63f42627f4e388",
+  "diagnostic_csv_sha256": "4afa7ccc6e1150b7e30153902ae099f02faf9d85f8139b98fbea4bef744a4362",
+  "diagnostic_row_count": 44,
+  "edt_score_surfaces_evaluated": false,
+  "interpretation": "These diagnostics validate frequency shifts and state tracking only. They are not EDT scores, connected-region results, or experimental predictions.",
+  "literature_bundle_sha256": "1ae3ab99330f6c94b11bc8392c118e5b6115bc60c9a832ad81be6ab43d35a139",
+  "maximum_absolute_transition_shift_kHz": 2263.9645295698756,
+  "minimum_assigned_state_overlap": 0.9999999691668877,
+  "reference": {
+    "strain": "zero",
+    "temperature_K": 300.0,
+    "transition": "m_s_0_like_to_m_s_minus_1_like",
+    "transition_frequency_MHz": 2309.6664556288374
+  },
+  "scan_families": {
+    "operational_temperature_zero_strain": 11,
+    "strain_paths_at_300K": 33
+  },
+  "schema_version": "1.0",
+  "stage": "environment_to_spin_hamiltonian_adapter",
+  "warning_row_count": 0
+}

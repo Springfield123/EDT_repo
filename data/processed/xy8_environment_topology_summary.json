@@ -1,0 +1,92 @@
+{
+  "artifacts": {
+    "components": "data/processed/xy8_environment_components.csv",
+    "persistence": "data/processed/xy8_environment_persistence.csv",
+    "selection": "data/processed/xy8_environment_confirmation_selection.csv",
+    "thresholds": "data/processed/xy8_environment_topology_thresholds.csv"
+  },
+  "configuration_id": "xy8_environment_scan_v1",
+  "configuration_sha256": "85730bb286f708488b0b14ead7aeb4e2166fa4b0143d7a197b63f42627f4e388",
+  "confirmation": {
+    "artifacts": {
+      "components": {
+        "path": "data/processed/xy8_environment_confirmation_components.csv",
+        "sha256": "6998ef772041f43ffcd3660fb2c93112e39eac61aa49b3d24efea4856025dbcd"
+      },
+      "persistence": {
+        "path": "data/processed/xy8_environment_confirmation_persistence.csv",
+        "sha256": "182b23d4d4a2d853e3a0b809d05f04179f8cf1080928e4cdc4923c97dad88952"
+      },
+      "results": {
+        "path": "data/processed/xy8_environment_confirmation_results.csv",
+        "sha256": "231483fae670ddc731363ff743a7b632c9f14e289424b87e83b9c2304f93d1c3"
+      },
+      "surfaces": {
+        "path": "data/processed/xy8_environment_confirmation_surfaces.npz",
+        "sha256": "f514b9a14f4e2dfff01f49cd36bdbce5424dac76e7190229dc5002b522d35f0b"
+      },
+      "thresholds": {
+        "path": "data/processed/xy8_environment_confirmation_thresholds.csv",
+        "sha256": "7d1fc463833d15e2c115a70d1f60980968d4b205012914c0d19574ebd3262a88"
+      }
+    },
+    "confirmation_failure_count": 0,
+    "confirmation_pass_count": 226,
+    "exact_N_change_survives_count": 180,
+    "fine_best_N_distribution": {
+      "12": 2,
+      "14": 48,
+      "16": 60,
+      "20": 116
+    },
+    "fine_four_eight_disagreement_count": 0,
+    "fine_grid": {
+      "clipped_gain_count": 1,
+      "depth_count": 32,
+      "gain_floor": 1e-12,
+      "grid_stage": "fine",
+      "surface_count": 226,
+      "tau_count": 1922,
+      "unique_fixed_detuning_count": 89
+    },
+    "fine_primary_beta_0_four_distribution": {
+      "1": 226
+    },
+    "maximum_discovery_to_fine_best_tau_shift_ns": 0.7500000000001622,
+    "maximum_medium_to_fine_best_tau_shift_ns": 0.2500000000001247,
+    "maximum_medium_to_fine_width_relative_change": 0.028571428571430645,
+    "medium_grid": {
+      "clipped_gain_count": 0,
+      "depth_count": 32,
+      "gain_floor": 1e-12,
+      "grid_stage": "medium",
+      "surface_count": 226,
+      "tau_count": 962,
+      "unique_fixed_detuning_count": 89
+    },
+    "selected_surface_count": 226,
+    "selection_freeze_sha256": "2407164439d7f7b3130cf2fe7a07f97e3793b3bec805180138d1b73c85ac3a27",
+    "supplementary_exact_N_selected_count": 180
+  },
+  "confirmation_selection": {
+    "preregistered_surface_count": 60,
+    "selected_surface_count": 226,
+    "selection_is_frozen_before_confirmation_scores": true,
+    "supplementary_exact_N_surface_count": 180
+  },
+  "confirmation_status": "complete",
+  "discovery": {
+    "component_record_count": 8976,
+    "persistence_track_count": 1496,
+    "primary_beta_0_four_distribution": {
+      "1": 1496
+    },
+    "primary_four_eight_disagreement_count": 0,
+    "surface_count": 1496,
+    "threshold_count": 6,
+    "threshold_record_count": 8976
+  },
+  "schema_version": "1.0",
+  "stage": "environment_topology_confirmed",
+  "stage4_surfaces_sha256": "0358175c7c0e654670a9b8d941a54e308f62a30234cba0db7241b1bd7d439b42"
+}

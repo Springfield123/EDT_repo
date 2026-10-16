@@ -1,0 +1,108 @@
+{
+  "status": "frozen_loretz_spurious_topology_evaluated",
+  "scope": "segmented one-dimensional experimental XY8 spectrum; separate pulse-error mechanism check",
+  "first_threshold_percent_where_identity_is_selected": {
+    "fundamental": 1,
+    "second_harmonic": 61,
+    "fourth_harmonic": 61
+  },
+  "component_count_events": [
+    {
+      "threshold_percent": 1,
+      "beta_0": 1
+    },
+    {
+      "threshold_percent": 27,
+      "beta_0": 2
+    },
+    {
+      "threshold_percent": 42,
+      "beta_0": 1
+    },
+    {
+      "threshold_percent": 61,
+      "beta_0": 3
+    },
+    {
+      "threshold_percent": 77,
+      "beta_0": 4
+    },
+    {
+      "threshold_percent": 78,
+      "beta_0": 5
+    },
+    {
+      "threshold_percent": 83,
+      "beta_0": 6
+    },
+    {
+      "threshold_percent": 88,
+      "beta_0": 7
+    },
+    {
+      "threshold_percent": 89,
+      "beta_0": 8
+    },
+    {
+      "threshold_percent": 90,
+      "beta_0": 9
+    },
+    {
+      "threshold_percent": 91,
+      "beta_0": 10
+    },
+    {
+      "threshold_percent": 92,
+      "beta_0": 12
+    },
+    {
+      "threshold_percent": 94,
+      "beta_0": 14
+    },
+    {
+      "threshold_percent": 95,
+      "beta_0": 16
+    },
+    {
+      "threshold_percent": 96,
+      "beta_0": 17
+    },
+    {
+      "threshold_percent": 97,
+      "beta_0": 16
+    },
+    {
+      "threshold_percent": 98,
+      "beta_0": 14
+    },
+    {
+      "threshold_percent": 99,
+      "beta_0": 17
+    },
+    {
+      "threshold_percent": 100,
+      "beta_0": 5
+    }
+  ],
+  "no_fit_statement": "The published simulation was excluded. No frequency shift, curve fit, or model tuning was performed.",
+  "interpretation": "The fundamental response dominates strict thresholds, while second- and fourth-harmonic regions enter only when a larger response loss is allowed. Connected-region persistence therefore detects experimentally observed spurious XY8 passbands.",
+  "separation_guardrail": "This irregular multi-acquisition spectrum is a pulse-error and harmonic-resonance mechanism check. It is not combined with DeVience, Pham, or the project's 200 kHz operating-point validation.",
+  "source": {
+    "citation": "M. Loretz et al., Spurious harmonic response of multipulse quantum sensing sequences, Physical Review X 5, 021009 (2015).",
+    "doi": "10.1103/PhysRevX.5.021009",
+    "doi_url": "https://doi.org/10.1103/PhysRevX.5.021009",
+    "arxiv_id": "1412.5768",
+    "figure": "Figure 4a",
+    "source_asset_in_arxiv_archive": "fig_13Cspectrum.pdf",
+    "observable": "experimental transition probability",
+    "sequence": "XY8",
+    "reported_nuclear_frequencies_MHz": [
+      1.97,
+      2.08
+    ]
+  },
+  "input_digests": {
+    "manifest_sha256": "57aeea7a7c5d61f45e44ec17eb333685810a5bc9dbe2bb14c7bad00a7bc3bf81",
+    "digitized_measurements_sha256": "4c2795079ccde52a92e05be597fa7ba12cbbddba73d9e3bf25fa89c15c8e7c74"
+  }
+}

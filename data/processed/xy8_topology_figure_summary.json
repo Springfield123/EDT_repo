@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "status": "topology_figure_generated",
+  "figure_title": "One connected EDT region persists while its operating tolerance expands",
+  "persistence_configuration_digest": "044a5b86eb03321f",
+  "threshold_curve_sha256": "32a8b28de18bc7090dd844ea2257ec8a8ca1b469f60d159f560462b6c7d92ac9",
+  "nested_source_sha256": "a2cd8b99107593972de0e2aa906d3aef7aaa7301330b9facb2a8944372876d76",
+  "display_thresholds_percent": [
+    1,
+    5,
+    10,
+    20,
+    50,
+    100
+  ],
+  "crop": {
+    "tau_min_us": 1.2130000000000003,
+    "tau_max_us": 1.2905000000000002,
+    "N_min": 1,
+    "N_max": 80,
+    "tau_count": 315,
+    "N_count": 30
+  },
+  "provenance": {
+    "canonical_source_sha256": "6ba1e9f751aa115a4287262a2cb7c74a96aa0270642c90fa7797d8b5d509770a",
+    "calibration_source_sha256": "80b3f5acca5bb59d1c0e8e793f7cf488beca1917078520c67fd8019449ff2a34",
+    "calibration_digest": "fe2b8d2c6faee1d4",
+    "refinement_configuration_digest": "e8363fe3e419560b",
+    "fine_tau_count": 1922,
+    "N_count": 32
+  },
+  "panel_messages": {
+    "A": "Nested sampled-cell sublevel sets remain centered on the fundamental resonance.",
+    "B": "beta_0 remains one from 1% through 100%; no births or mergers occur.",
+    "C": "The same region expands from 2.5 to 62.75 ns and from N=16-20 to N=3-64."
+  }
+}

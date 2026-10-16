@@ -1,0 +1,33 @@
+{
+  "assessment": "resource_terms_improve_decision_location_but_not_all_shape_metrics",
+  "figure_title": "Pulse errors recover the finite optimum, but simpler choices remain competitive",
+  "observed_optimum_total_pi_pulses": 106,
+  "observed_empirical_10pct_window_min_pulses": 80,
+  "observed_empirical_10pct_window_max_pulses": 212,
+  "best_predictive_optimum_method": "Full resource score",
+  "best_predictive_optimum_error_pulses": 20,
+  "lowest_normalized_rmse_method": "Coherence only",
+  "lowest_normalized_rmse": 0.14213486245877863,
+  "highest_rank_correlation_method": "Coherence + pulse fidelity; Full resource score (tie)",
+  "highest_rank_correlation": 0.516719712128055,
+  "fixed_xy8_N16_total_pi_pulses": 128,
+  "fixed_xy8_N16_interpolated_experimental_penalty_pct": 0.5530417295123158,
+  "interpretation": "The coherence-only model has the smallest normalized RMSE because it better matches the steep low-depth improvement, but it predicts 264 pulses, misses the measured finite optimum, and has almost no rank agreement. Adding independent pulse fidelity moves the optimum into the observed region and restores the high-depth decline. The full resource score gives the closest optimum and modestly improves RMSE over pulse fidelity alone, but it does not beat coherence-only RMSE. Fixed XY8 N=16 is also only about 0.55% above the interpolated measured minimum in this dataset. The evidence therefore identifies pulse fidelity as necessary for recovering a finite region, but it does not yet establish a large advantage for the full score over every simpler control choice.",
+  "metric_note": "RMSE and rank correlation are unavailable for fixed XY8 N=16 because one fixed setting is not a predicted curve. The experimental reference has RMSE=0 and rho=1 by definition and is not included when selecting the best predictive model.",
+  "input_digests": {
+    "manifest_sha256": "78107860dd16e23254f01c46a4265a26e1ed222a2c4d079a6633e321470718e8",
+    "measurement_csv_sha256": "ea292c86347784d11a3a73f55a6b9e58c5222e04a328df5a9242f8faaf6fa111"
+  },
+  "source": {
+    "citation": "L. M. Pham et al., Enhanced solid-state multi-spin metrology using dynamical decoupling, Physical Review B 86, 045214 (2012).",
+    "doi": "10.1103/PhysRevB.86.045214",
+    "doi_url": "https://doi.org/10.1103/PhysRevB.86.045214",
+    "arxiv_id": "1201.5686",
+    "arxiv_url": "https://arxiv.org/abs/1201.5686",
+    "figure": "Figure 3b",
+    "sample": "Sample C",
+    "sequence": "n-pulse XY",
+    "target_frequency_Hz": 84500.0
+  },
+  "no_fit_statement": "Neither pulse fidelity, overhead, coherence parameters, nor horizontal position is fitted to the digitized optimum."
+}

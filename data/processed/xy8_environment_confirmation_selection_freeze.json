@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "freeze_status": "frozen_before_medium_or_fine_confirmation_scores",
+  "frozen_at": "2026-09-23",
+  "configuration_id": "xy8_environment_scan_v1",
+  "configuration_sha256": "85730bb286f708488b0b14ead7aeb4e2166fa4b0143d7a197b63f42627f4e388",
+  "selection_csv": "data/processed/xy8_environment_confirmation_selection.csv",
+  "selection_csv_sha256": "7255c9620f142b627c2e8b3daddaa633088a16a5e8fc1b2c77a6cbbbb33ed3ec",
+  "selected_surface_count": 226,
+  "preregistered_surface_count": 60,
+  "supplementary_exact_N_surface_count": 180,
+  "source_discovery_thresholds_sha256": "2b001e7a97e6a284258be25495accd4330e47a7cf0c06f9ebe87f8dfcef71033",
+  "source_stage4_summary_sha256": "3c032eac854546b9d56ead4fe083830633bc6459797d2322f58b7dd7de95144f",
+  "source_stage4_surfaces_sha256": "0358175c7c0e654670a9b8d941a54e308f62a30234cba0db7241b1bd7d439b42",
+  "confirmation_scores_inspected_before_freeze": false,
+  "interpretation": "The supplementary exact-N rule expands the frozen minimum selection so the reported N=20 to N=16 or N=14 changes are tested even though all remain in the same pre-existing Moderate category."
+}

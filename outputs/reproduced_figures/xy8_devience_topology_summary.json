@@ -1,0 +1,153 @@
+{
+  "status": "frozen_devience_sparse_surface_evaluated",
+  "scope": "digitized experimental frequency-by-XY8-depth resonance-response surface",
+  "depths_xy8_blocks": [
+    10,
+    20,
+    25,
+    40
+  ],
+  "depths_total_pi_pulses": [
+    80,
+    160,
+    200,
+    320
+  ],
+  "frequency_grid_MHz": {
+    "min": 0.835,
+    "max": 1.005,
+    "step": 0.0050000000000000044,
+    "count": 35
+  },
+  "normalization": {
+    "response_definition": "response = 1 - corrected_contrast",
+    "measured_surface": "divide all four measured rows by one global measured-response maximum",
+    "predicted_surface": "if evaluated, normalize independently by its own global optimum",
+    "per_depth_normalization_allowed": false,
+    "purpose": "preserve the published depth dependence while preventing any absolute-scale comparison"
+  },
+  "no_fit_statement": "No timing shift, model fit, per-depth normalization, or absolute sensitivity comparison was performed.",
+  "strongest_measured_response": {
+    "frequency_MHz": 0.945,
+    "project_tau_us": 0.2645502645502646,
+    "xy8_blocks": 40,
+    "total_pi_pulses": 320
+  },
+  "primary_range_1_to_60pct": {
+    "maximum_central_beta_0": 3,
+    "central_events": [
+      {
+        "threshold_percent": 1,
+        "beta_0": 1
+      },
+      {
+        "threshold_percent": 9,
+        "beta_0": 2
+      },
+      {
+        "threshold_percent": 41,
+        "beta_0": 3
+      },
+      {
+        "threshold_percent": 42,
+        "beta_0": 2
+      },
+      {
+        "threshold_percent": 49,
+        "beta_0": 1
+      }
+    ]
+  },
+  "all_threshold_events": [
+    {
+      "threshold_percent": 1,
+      "beta_0": 1
+    },
+    {
+      "threshold_percent": 9,
+      "beta_0": 2
+    },
+    {
+      "threshold_percent": 41,
+      "beta_0": 3
+    },
+    {
+      "threshold_percent": 42,
+      "beta_0": 2
+    },
+    {
+      "threshold_percent": 49,
+      "beta_0": 1
+    },
+    {
+      "threshold_percent": 79,
+      "beta_0": 2
+    },
+    {
+      "threshold_percent": 80,
+      "beta_0": 3
+    },
+    {
+      "threshold_percent": 81,
+      "beta_0": 4
+    },
+    {
+      "threshold_percent": 85,
+      "beta_0": 3
+    },
+    {
+      "threshold_percent": 90,
+      "beta_0": 4
+    },
+    {
+      "threshold_percent": 92,
+      "beta_0": 3
+    },
+    {
+      "threshold_percent": 93,
+      "beta_0": 4
+    },
+    {
+      "threshold_percent": 94,
+      "beta_0": 6
+    },
+    {
+      "threshold_percent": 95,
+      "beta_0": 7
+    },
+    {
+      "threshold_percent": 98,
+      "beta_0": 5
+    },
+    {
+      "threshold_percent": 99,
+      "beta_0": 4
+    },
+    {
+      "threshold_percent": 100,
+      "beta_0": 1
+    }
+  ],
+  "bootstrap": {
+    "trials": 10000,
+    "seed": 2014313,
+    "scope": "digitization uncertainty only; experimental error bars were not published for Figure 2b"
+  },
+  "interpretation": "The data resolve distinct lower- and higher-frequency resonance regions over intermediate thresholds, followed by their merger as the response floor is relaxed. This is evidence that beta_0 captures spectral structure, not a validation of the project's 200 kHz optimum.",
+  "guardrail": "This surface tests whether connected resonance structure transfers across four XY8 depths. It does not validate the project's 200 kHz sensitivity optimum or establish that N=20 is optimal for the DeVience device.",
+  "source": {
+    "citation": "S. J. DeVience et al., Nanoscale NMR spectroscopy and imaging of multiple nuclear species, Nature Nanotechnology 10, 129-134 (2015).",
+    "doi": "10.1038/nnano.2014.313",
+    "doi_url": "https://doi.org/10.1038/nnano.2014.313",
+    "arxiv_id": "1406.3365",
+    "arxiv_url": "https://arxiv.org/abs/1406.3365",
+    "figure": "Figure 2b",
+    "source_asset_in_arxiv_archive": "20140302_fig2.pdf",
+    "observable": "normalized NV fluorescence contrast",
+    "sample": "fluorinated PFOS/POSF sample measured with a single shallow NV centre"
+  },
+  "input_digests": {
+    "manifest_sha256": "1a8997222e652f1f6ef0f55d27211d0ee45454929cbc8fd6473831eac37af71a",
+    "digitized_measurements_sha256": "304083acaf2ba6f5316aed46872d915ce65e558638478ab57917de26b384e132"
+  }
+}

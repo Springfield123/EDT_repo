@@ -1,0 +1,25 @@
+resource,resource_label,measurement,measurement_label,outcome,outcome_label,spearman_rho,abs_spearman_rho,bootstrap_95pct_lower,bootstrap_95pct_upper,bootstrap_samples
+pulse_fidelity,Pulse fidelity,piPulseFid,Per-pulse fidelity,N_best,Optimal XY8 depth,0.9668005880802734,0.9668005880802734,0.9550361104818476,0.9752336067521347,500
+pulse_fidelity,Pulse fidelity,piPulseFid,Per-pulse fidelity,fixed_N20_penalty_pct,Penalty from fixed N=20,-0.05607699488927501,0.05607699488927501,-0.18499408441362908,0.05825494282991882,500
+pulse_fidelity,Pulse fidelity,piPulseFid,Per-pulse fidelity,edt_window_width_blocks,10% window width,0.9532190841484547,0.9532190841484547,0.9371638919386903,0.9649891024535769,500
+pulse_fidelity,Pulse fidelity,piPulseFid,Per-pulse fidelity,edt_window_touches_boundary,Boundary-warning status,0.2568689595599085,0.2568689595599085,0.1494391545013378,0.32906670664851306,500
+coherence,Coherence time and scaling,T2_scale,Coherence-time scale,N_best,Optimal XY8 depth,0.11772487182707844,0.11772487182707844,0.017318543681906235,0.21540880943290638,500
+coherence,Coherence time and scaling,T2_scale,Coherence-time scale,fixed_N20_penalty_pct,Penalty from fixed N=20,-0.02933153106593383,0.02933153106593383,-0.130720659036756,0.06355076557727939,500
+coherence,Coherence time and scaling,T2_scale,Coherence-time scale,edt_window_width_blocks,10% window width,0.1140997157580184,0.1140997157580184,0.0194893764675738,0.2084034339196067,500
+coherence,Coherence time and scaling,T2_scale,Coherence-time scale,edt_window_touches_boundary,Boundary-warning status,0.05540310892468615,0.05540310892468615,-0.04810461731660839,0.1641082677204468,500
+coherence,Coherence time and scaling,T2_alpha,Coherence depth scaling,N_best,Optimal XY8 depth,0.12488040685564897,0.12488040685564897,0.029704926495262608,0.2261585131063079,500
+coherence,Coherence time and scaling,T2_alpha,Coherence depth scaling,fixed_N20_penalty_pct,Penalty from fixed N=20,-0.035432301354233045,0.035432301354233045,-0.1288134290111769,0.07869293378714735,500
+coherence,Coherence time and scaling,T2_alpha,Coherence depth scaling,edt_window_width_blocks,10% window width,0.14691096735674175,0.14691096735674175,0.057427891542922604,0.23911298831607342,500
+coherence,Coherence time and scaling,T2_alpha,Coherence depth scaling,edt_window_touches_boundary,Boundary-warning status,0.01934364145591809,0.01934364145591809,-0.06853724249605439,0.10434999660204901,500
+optical_contrast,Optical contrast,contrast_scale,Optical-contrast scale,N_best,Optimal XY8 depth,-0.04538495545684945,0.04538495545684945,-0.13874648658729352,0.04818303466932043,500
+optical_contrast,Optical contrast,contrast_scale,Optical-contrast scale,fixed_N20_penalty_pct,Penalty from fixed N=20,-0.04819704496198041,0.04819704496198041,-0.1484746867977437,0.055568254406485905,500
+optical_contrast,Optical contrast,contrast_scale,Optical-contrast scale,edt_window_width_blocks,10% window width,-0.04716849871974699,0.04716849871974699,-0.14702214032219044,0.04380714019734321,500
+optical_contrast,Optical contrast,contrast_scale,Optical-contrast scale,edt_window_touches_boundary,Boundary-warning status,-0.08328715057057563,0.08328715057057563,-0.15094106851815567,-0.006038617558643503,500
+photon_rate,Detected photon rate,photon_rate_scale,Photon-rate scale,N_best,Optimal XY8 depth,-0.08573012262963839,0.08573012262963839,-0.18376611330399048,0.01047400962228061,500
+photon_rate,Detected photon rate,photon_rate_scale,Photon-rate scale,fixed_N20_penalty_pct,Penalty from fixed N=20,0.033699036028502063,0.033699036028502063,-0.06006145726575176,0.1344743166526393,500
+photon_rate,Detected photon rate,photon_rate_scale,Photon-rate scale,edt_window_width_blocks,10% window width,-0.06966125870320206,0.06966125870320206,-0.16561758068957644,0.02718656260145917,500
+photon_rate,Detected photon rate,photon_rate_scale,Photon-rate scale,edt_window_touches_boundary,Boundary-warning status,0.005182636012717676,0.005182636012717676,-0.06490955040095356,0.07845634755819816,500
+timing_overhead,Preparation/readout overhead,overhead_scale,Timing-overhead scale,N_best,Optimal XY8 depth,0.04762048473204771,0.04762048473204771,-0.045728110582193005,0.15027866997921657,500
+timing_overhead,Preparation/readout overhead,overhead_scale,Timing-overhead scale,fixed_N20_penalty_pct,Penalty from fixed N=20,-0.038647808670060964,0.038647808670060964,-0.13003305115880673,0.06283780350714976,500
+timing_overhead,Preparation/readout overhead,overhead_scale,Timing-overhead scale,edt_window_width_blocks,10% window width,0.013299937406754942,0.013299937406754942,-0.08140272551583451,0.10718467624861455,500
+timing_overhead,Preparation/readout overhead,overhead_scale,Timing-overhead scale,edt_window_touches_boundary,Boundary-warning status,-0.0006569538607670294,0.0006569538607670294,-0.10830771853800113,0.0984110882149497,500

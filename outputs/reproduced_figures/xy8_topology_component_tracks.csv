@@ -1,0 +1,2 @@
+component_id,first_observed_threshold_percent,last_observed_separate_threshold_percent,merged_at_threshold_percent,merged_into,survives_through_maximum_threshold,contains_global_optimum
+R1,1.0,100.0,,,True,True

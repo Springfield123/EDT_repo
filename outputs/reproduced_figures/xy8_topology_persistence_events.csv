@@ -1,0 +1,2 @@
+event_type,threshold_percent,component_id,related_component_ids
+present_at_first_threshold,1.0,R1,

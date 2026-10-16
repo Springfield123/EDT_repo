@@ -1,0 +1,66 @@
+{
+  "assessment": "partial_trend_validation",
+  "figure_title": "Independent data identify where the model succeeds and where refinement is needed",
+  "scope": "scalar total-pulse resource model at resonant timing; not XY8-specific phase cycling",
+  "target_frequency_Hz": 84500.0,
+  "recommended_project_tau_s": 2.9585798816568047e-06,
+  "physical_interpulse_spacing_s": 5.917159763313609e-06,
+  "observed_central_value_optimum_total_pi_pulses": 106,
+  "predicted_baseline_optimum_total_pi_pulses": 86,
+  "absolute_optimum_difference_pulses": 20,
+  "predicted_baseline_10pct_window_min_pulses": 42,
+  "predicted_baseline_10pct_window_max_pulses": 158,
+  "spearman_rank_correlation": 0.516719712128055,
+  "normalized_rmse": 0.1551134616599272,
+  "experimental_errorbars_overlapping_95pct_model_band_count": 9,
+  "experimental_point_count": 10,
+  "uncertainty_case_count": 902,
+  "uncertainty_optimum_min_pulses": 60,
+  "uncertainty_optimum_max_pulses": 152,
+  "uncertainty_cases_containing_observed_optimum_in_10pct_window_fraction": 1.0,
+  "checks": {
+    "resonant_timing_matches": true,
+    "observed_optimum_in_baseline_10pct_window": true,
+    "predicted_optimum_within_32_pulses": true,
+    "low_depth_improvement_reproduced": true,
+    "high_depth_decline_reproduced": true,
+    "rank_correlation_at_least_0_7": false,
+    "normalized_rmse_at_most_0_2": true
+  },
+  "interpretation": "Without fitting to the measured optimum, the model reproduces the resonant timing, the improvement from low depth, and the high-depth decline. The measured central-value optimum lies inside the predicted 10% window. Agreement in global ordering is only moderate, indicating that a single independent per-pulse survival factor does not fully capture the asymmetric experimental curve.",
+  "parameter_provenance": {
+    "reported_by_holdout_paper": [
+      "target_frequency_Hz",
+      "contrast_collection_parameter_C",
+      "hahn_echo_T2_s",
+      "coherence_stretch_power_p",
+      "coherence_depth_scaling_s"
+    ],
+    "assumed_before_evaluation": [
+      "per_pulse_fidelity",
+      "preparation_readout_overhead_s"
+    ],
+    "cancels_after_normalization": [
+      "photon_rate",
+      "depth_independent_contrast_scale"
+    ]
+  },
+  "input_digests": {
+    "manifest_sha256": "78107860dd16e23254f01c46a4265a26e1ed222a2c4d079a6633e321470718e8",
+    "measurement_csv_sha256": "ea292c86347784d11a3a73f55a6b9e58c5222e04a328df5a9242f8faaf6fa111",
+    "nominal_scenario_sha256": "80b3f5acca5bb59d1c0e8e793f7cf488beca1917078520c67fd8019449ff2a34"
+  },
+  "source": {
+    "citation": "L. M. Pham et al., Enhanced solid-state multi-spin metrology using dynamical decoupling, Physical Review B 86, 045214 (2012).",
+    "doi": "10.1103/PhysRevB.86.045214",
+    "doi_url": "https://doi.org/10.1103/PhysRevB.86.045214",
+    "arxiv_id": "1201.5686",
+    "arxiv_url": "https://arxiv.org/abs/1201.5686",
+    "figure": "Figure 3b",
+    "sample": "Sample C",
+    "sequence": "n-pulse XY",
+    "target_frequency_Hz": 84500.0
+  },
+  "independence_statement": "Pham et al. (2012) was not directly cited as a source for the explicit values in the existing Table 1 scenario files and no parameter is adjusted to its measured optimum. The project's review references may discuss this experiment, so this is described as a holdout trend validation rather than a claim of complete bibliographic independence.",
+  "no_fit_statement": "Neither pulse fidelity, overhead, coherence parameters, nor horizontal position is fitted to the digitized optimum."
+}
