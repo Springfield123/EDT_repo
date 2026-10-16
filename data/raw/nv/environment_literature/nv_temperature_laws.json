@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "units": {
+    "temperature": "K",
+    "energy": "meV",
+    "frequency": "MHz",
+    "rate": "s^-1"
+  },
+  "constants": {
+    "boltzmann_meV_per_K": 0.08617333262
+  },
+  "zfs_two_mode_law": {
+    "source_id": "cambria_2023_zfs",
+    "source_type": "analytical fit to independent single-NV measurements with phonon-motivated functional form",
+    "equation": "D(T) = D0 + c1/expm1(delta1/(kB*T)) + c2/expm1(delta2/(kB*T))",
+    "temperature_range_K": [15.0, 500.0],
+    "parameters": {
+      "D0_MHz": {"value": 2877.38, "uncertainty_1sigma": 0.03},
+      "c1_MHz": {"value": -54.91, "uncertainty_1sigma": 7.35},
+      "delta1_meV": {"value": 58.73, "uncertainty_1sigma": 2.32},
+      "c2_MHz": {"value": -249.6, "uncertainty_1sigma": 19.4},
+      "delta2_meV": {"value": 145.5, "uncertainty_1sigma": 8.4}
+    },
+    "source_location": "Equation 3 and Table I",
+    "usage": "Operational temperature-to-ZFS law; do not describe the fitted coefficients as new DFT results."
+  },
+  "first_principles_room_temperature_slope": {
+    "source_id": "tang_2023_transition_energies",
+    "quantity": "dD/dT at room temperature",
+    "value_kHz_per_K": -75.99,
+    "reported_uncertainty_kHz_per_K": null,
+    "source_location": "main text following Figure 2",
+    "usage": "First-principles cross-check, not a fitted parameter in the two-mode law."
+  },
+  "jarmola_t1_law": {
+    "source_id": "jarmola_2012_t1",
+    "source_type": "analytical global fit to experimental ensemble-NV T1 measurements",
+    "equation": "1/T1 = A1(sample) + A2/expm1(delta/(kB*T)) + A3*T^5",
+    "temperature_range_K": [5.0, 475.0],
+    "shared_parameters": {
+      "A2_s_inv": {"value": 2100.0, "uncertainty_1sigma": 600.0},
+      "delta_meV": {"value": 73.0, "uncertainty_1sigma": 4.0},
+      "A3_K_minus5_s_inv": {"value": 2.2e-11, "uncertainty_1sigma": 5.0e-12}
+    },
+    "sample_A1_s_inv": {
+      "S2": {"value": 21.0, "uncertainty_1sigma": 3.0},
+      "S8": {"value": 0.06, "uncertainty_1sigma": 0.01},
+      "S3": {"value": 0.007, "uncertainty_1sigma": 0.004}
+    },
+    "source_location": "Equation 1 and main-text fit-parameter paragraph",
+    "transcription_note": "The main text reports A2 = 2.1e3 s^-1. A supplementary table renders 2.1e-3, which is inconsistent with the main text and plotted rates; the main-text value is retained and the discrepancy is recorded here.",
+    "usage": "Experimental comparison law only; it is not treated as a first-principles prediction."
+  }
+}

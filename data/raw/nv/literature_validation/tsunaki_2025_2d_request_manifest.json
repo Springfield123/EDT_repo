@@ -1,0 +1,67 @@
+{
+  "status": "request_drafted_not_sent",
+  "request_prepared_date": "2026-09-15",
+  "corresponding_author": {
+    "name": "Boris Naydenov",
+    "email": "boris.naydenov@helmholtz-berlin.de"
+  },
+  "source": {
+    "citation": "S. Tsunaki et al., Ambiguous resonances in multipulse quantum sensing with nitrogen-vacancy centers, Physical Review A 111, 022606 (2025).",
+    "doi": "10.1103/PhysRevA.111.022606",
+    "doi_url": "https://doi.org/10.1103/PhysRevA.111.022606",
+    "public_dataset_url": "https://doi.org/10.6084/m9.figshare.26245895.v8",
+    "public_code_url": "https://github.com/QISS-HZB/ambiguous-resonances-dataset",
+    "public_release_scope": "simulation dataset; not treated as the requested experimental holdout"
+  },
+  "selection_status": "preselected_before_receipt_or_model_comparison",
+  "selection_rationale": "The paper is explicitly XY8-specific and studies timing-dependent resonance structure. Multiple experimental timing sweeps at different XY8 depths would support a genuinely two-dimensional connected-region test.",
+  "minimum_acceptance_criteria": {
+    "experimental_timing_sweep_count": 2,
+    "distinct_xy8_depth_count": 2,
+    "required_fields": [
+      "pulse_timing_with_convention_and_units",
+      "xy8_block_count_or_order",
+      "total_pi_pulse_count",
+      "measured_observable",
+      "measurement_uncertainty_or_repeat_count"
+    ],
+    "preferred_fields": [
+      "repeat_level_values",
+      "normalization_or_reference_trace",
+      "pi_pulse_duration",
+      "rabi_frequency",
+      "detuning",
+      "bias_field",
+      "nv_transition",
+      "sample_identifier",
+      "calibration_timestamp",
+      "processing_code"
+    ]
+  },
+  "frozen_evaluation_policy": {
+    "fit_to_observed_optimum": false,
+    "horizontal_timing_shift_allowed": false,
+    "post_selection_parameter_tuning_allowed": false,
+    "threshold_percent_grid": {
+      "start": 1,
+      "stop": 100,
+      "step": 1
+    },
+    "primary_outputs": [
+      "connected_region_count",
+      "primary_region_timing_boundaries",
+      "primary_region_depth_boundaries",
+      "resonance_identity",
+      "threshold_persistence",
+      "measured_predicted_mask_overlap"
+    ]
+  },
+  "separation_policy": {
+    "pham_2012": "one-dimensional equal-total-pulse depth topology only",
+    "farfurnik_2015": "separate conventional-XY8 pulse-error mechanism check",
+    "tsunaki_2025_requested_data": "prospective two-dimensional XY8 timing-depth holdout"
+  },
+  "received_files": [],
+  "received_file_sha256": {},
+  "evaluation_status": "blocked_pending_author_supplied_experimental_data"
+}

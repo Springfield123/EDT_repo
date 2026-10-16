@@ -1,0 +1,7 @@
+coefficient,strain_value_MHz_per_strain,strain_uncertainty_MHz_per_strain,stress_coefficient,stress_value_MHz_per_GPa,stress_uncertainty_MHz_per_GPa,hamiltonian_sector,source_table
+h43,2300,200,g43,2.4,0.2,delta_ms_0,Table I
+h41,-6420,90,g41,-5.17,0.07,delta_ms_0,Table I
+h25,-2600,80,g25,-2.17,0.07,delta_ms_1,Table I
+h26,-2830,70,g26,-2.58,0.06,delta_ms_1,Table I
+h15,5700,200,g15,3.6,0.1,delta_ms_2,Table I
+h16,19660,90,g16,18.98,0.09,delta_ms_2,Table I

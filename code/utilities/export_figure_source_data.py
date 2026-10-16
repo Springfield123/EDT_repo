@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import csv
 import importlib.util
 import json
@@ -168,7 +169,7 @@ def export_material_panels() -> None:
         write_csv(FIGURE_SOURCE_DIR / file_map[config.key], rows)
 
 
-def export_plaquette_and_nv() -> None:
+def export_plaquette() -> None:
     plaquette_rows = []
     with (ROOT / "data" / "processed" / "plaquette_lambda_sweep.csv").open("r", encoding="utf-8") as handle:
         reader = csv.DictReader(handle)
@@ -176,7 +177,9 @@ def export_plaquette_and_nv() -> None:
     write_csv(FIGURE_SOURCE_DIR / "Fig3_source_data.csv", [dict(row) for row in plaquette_rows])
     write_csv(FIGURE_SOURCE_DIR / "Fig4_source_data.csv", [dict(row) for row in plaquette_rows])
 
-    nv_rows = []
+
+def export_nv() -> None:
+    metadata = {}
     with (ROOT / "data" / "processed" / "xy8_qre_nv_results.csv").open("r", encoding="utf-8") as handle:
         lines = [line.rstrip("\n") for line in handle]
     start = None
@@ -184,19 +187,36 @@ def export_plaquette_and_nv() -> None:
         if line == "tau_s,N,eta_proxy":
             start = idx
             break
+        if line and "," in line:
+            key, value = line.split(",", 1)
+            if key in {"scenario", "calibration_digest", "f_target_Hz", "tau_best_s", "N_best", "eta_best"}:
+                metadata[key] = value.rstrip("\r")
     if start is None:
         raise RuntimeError("Could not find XY8 sweep table in xy8_qre_nv_results.csv")
     reader = csv.DictReader(lines[start:])
-    nv_rows.extend(reader)
-    write_csv(FIGURE_SOURCE_DIR / "Fig5_source_data.csv", [dict(row) for row in nv_rows])
+    nv_rows = []
+    for row in reader:
+        nv_rows.append({**metadata, **dict(row)})
+    write_csv(FIGURE_SOURCE_DIR / "Fig5_source_data.csv", nv_rows)
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="Export figure-level source data.")
+    parser.add_argument("--only", choices=["fig5"], default=None, help="Export only the named figure source data.")
+    return parser
 
 
 def main() -> None:
+    args = build_parser().parse_args()
     ensure_dir(FIGURE_SOURCE_DIR)
+    if args.only == "fig5":
+        export_nv()
+        return
     export_fig1_summary()
     export_fig2_and_supp()
     export_material_panels()
-    export_plaquette_and_nv()
+    export_plaquette()
+    export_nv()
 
 
 if __name__ == "__main__":

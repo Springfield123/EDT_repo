@@ -1,0 +1,49 @@
+{
+  "selection_status": "frozen_before_digitization_and_topology_evaluation",
+  "selection_date": "2026-09-15",
+  "source": {
+    "citation": "M. Loretz et al., Spurious harmonic response of multipulse quantum sensing sequences, Physical Review X 5, 021009 (2015).",
+    "doi": "10.1103/PhysRevX.5.021009",
+    "doi_url": "https://doi.org/10.1103/PhysRevX.5.021009",
+    "arxiv_id": "1412.5768",
+    "figure": "Figure 4a",
+    "source_asset_in_arxiv_archive": "fig_13Cspectrum.pdf",
+    "observable": "experimental transition probability",
+    "sequence": "XY8",
+    "reported_nuclear_frequencies_MHz": [1.97, 2.08]
+  },
+  "predeclared_segments": [
+    {"segment_id": "N128", "total_pi_pulses": 128, "expected_path_points": 35},
+    {"segment_id": "N256", "total_pi_pulses": 256, "expected_path_points": 25},
+    {"segment_id": "N352", "total_pi_pulses": 352, "expected_path_points": 25},
+    {"segment_id": "N400", "total_pi_pulses": 400, "expected_path_points": 25},
+    {"segment_id": "N512", "total_pi_pulses": 512, "expected_path_points": 25}
+  ],
+  "axis_calibration_pdf_points": {
+    "frequency": {
+      "point_1": {"x": 58.936, "frequency_MHz": 1.0},
+      "point_2": {"x": 96.019, "frequency_MHz": 2.0}
+    },
+    "transition_probability": {
+      "point_1": {"top": 182.307, "probability": 0.2},
+      "point_2": {"top": 152.557, "probability": 0.4}
+    }
+  },
+  "analysis_policy": {
+    "baseline": "for each acquisition segment, median of the first and last 20% of samples, with at least three samples from each end",
+    "response": "maximum of transition_probability minus segment baseline and zero",
+    "normalization": "one global maximum across all baseline-corrected experimental segments",
+    "connectivity": "one-dimensional adjacency within each acquisition segment; gaps between segments are never bridged",
+    "threshold_percent_grid": {"start": 1, "stop": 100, "step": 1},
+    "published_simulation_used": false,
+    "model_fitting_allowed": false,
+    "purpose": "separate test that connected-region persistence detects multiple fundamental and spurious XY8 resonances"
+  },
+  "digitization_policy": {
+    "method": "extract experimental polyline vertices from the vector PDF in the arXiv source archive",
+    "frequency_error_MHz": 0.002,
+    "probability_error": 0.003,
+    "error_scope": "digitization only; no experimental error bars are reported for the plotted spectrum"
+  },
+  "separation_guardrail": "This irregular multi-acquisition spectrum is a pulse-error and harmonic-resonance mechanism check. It is not combined with DeVience, Pham, or the project's 200 kHz operating-point validation."
+}

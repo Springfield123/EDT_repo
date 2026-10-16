@@ -1,0 +1,15 @@
+{
+  "status": "experimental_vector_paths_extracted",
+  "source_vector_pdf_sha256": "b06406682a91c2690eccbe31652b5d5f8ba30fe3f3b38b56cc6162456d890355",
+  "manifest_sha256": "57aeea7a7c5d61f45e44ec17eb333685810a5bc9dbe2bb14c7bad00a7bc3bf81",
+  "row_count": 135,
+  "segment_point_counts": {
+    "N128": 35,
+    "N256": 25,
+    "N352": 25,
+    "N400": 25,
+    "N512": 25
+  },
+  "published_simulation_excluded": true,
+  "output_csv_sha256": "4c2795079ccde52a92e05be597fa7ba12cbbddba73d9e3bf25fa89c15c8e7c74"
+}

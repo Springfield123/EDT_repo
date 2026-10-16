@@ -4,6 +4,11 @@ from pathlib import Path
 
 import numpy as np
 
+try:
+    from . import xy8_coherent_control as coherent_xy8
+except ImportError:
+    import xy8_coherent_control as coherent_xy8
+
 # NumPy 2.0 compatibility shim for packages that still use np.float_
 if not hasattr(np, "float_"):
     np.float_ = np.float64
@@ -17,16 +22,15 @@ else:
     if not os.path.exists(lut_path):
         nv.updatePhononIntegralFullLUT(0.16800)
 
-import matplotlib
-
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-
-
 def plot_eta_vs_N(results):
     """
     results: list of (tau, N, eta, f_target)
     """
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
     taus = sorted(set(r[0] for r in results))
     for tau in taus:
         xs = sorted([r[1] for r in results if r[0] == tau])
@@ -59,6 +63,11 @@ def print_eta_table(results):
 
 
 def plot_filter_gain_best(best_tau, best_N):
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
     fgrid = np.linspace(1e3, 2e6, 600)
     gains = [xy8_filter_gain(f, best_tau, best_N) for f in fgrid]
     plt.plot(fgrid, gains)
@@ -194,7 +203,193 @@ def resolve_pi_pulse_fidelity(modeldict, calibration=None):
     return float(modeldict.get("piPulseFid", 1.0))
 
 
-def best_point_breakdown(best_tau, best_N, f_target, Rph_1, C_1, Neff, T2_params, overheads, piPulseFid):
+COHERENT_CONTROL_CONFIG_KEYS = frozenset(
+    {
+        "pi_pulse_duration_s",
+        "ensemble",
+        "rotation_angle_error_mean",
+        "rotation_angle_error_std",
+        "detuning_mean_angular_frequency_rad_s",
+        "detuning_std_angular_frequency_rad_s",
+        "quadrature_order",
+        "hyperfine_detunings_rad_s",
+        "hyperfine_weights",
+        "delta_field_t",
+        "gyromagnetic_ratio_rad_s_t",
+        "signal_phase_rad",
+        "readout_phase_rad",
+        "axis_z",
+        "phase_error_rad",
+        "pulse_substeps",
+    }
+)
+
+COHERENT_ENSEMBLE_CONFIG_KEYS = frozenset(
+    {
+        "rotation_angle_error_mean",
+        "rotation_angle_error_std",
+        "detuning_mean_angular_frequency_rad_s",
+        "detuning_std_angular_frequency_rad_s",
+        "quadrature_order",
+        "hyperfine_detunings_rad_s",
+        "hyperfine_weights",
+    }
+)
+
+
+def _validated_control_model(control_model):
+    model = str(control_model).strip().lower()
+    if model not in {"scalar", "coherent_xy8"}:
+        raise ValueError("control_model must be 'scalar' or 'coherent_xy8'.")
+    return model
+
+
+def _resolve_coherent_control(coherent_control):
+    if coherent_control is None:
+        raise ValueError(
+            "coherent_control is required when control_model='coherent_xy8'."
+        )
+    if not isinstance(coherent_control, dict):
+        raise TypeError("coherent_control must be a dictionary.")
+    unknown = set(coherent_control) - COHERENT_CONTROL_CONFIG_KEYS
+    if unknown:
+        raise ValueError(
+            "Unknown coherent_control keys: " + ", ".join(sorted(unknown))
+        )
+    if "pi_pulse_duration_s" not in coherent_control:
+        raise ValueError("coherent_control must declare pi_pulse_duration_s.")
+
+    supplied_ensemble = coherent_control.get("ensemble")
+    declared_distribution = set(coherent_control) & COHERENT_ENSEMBLE_CONFIG_KEYS
+    if supplied_ensemble is not None and declared_distribution:
+        raise ValueError(
+            "Supply either ensemble or distribution parameters, not both."
+        )
+    if supplied_ensemble is None:
+        ensemble_kwargs = {
+            key: coherent_control[key]
+            for key in COHERENT_ENSEMBLE_CONFIG_KEYS
+            if key in coherent_control
+        }
+        ensemble = coherent_xy8.gaussian_quadrature_ensemble(**ensemble_kwargs)
+    else:
+        if not isinstance(supplied_ensemble, coherent_xy8.QuasiStaticEnsemble):
+            raise TypeError("coherent_control['ensemble'] must be a QuasiStaticEnsemble.")
+        ensemble = supplied_ensemble
+    return dict(coherent_control), ensemble
+
+
+def _weighted_mean_and_std(values, weights):
+    values = np.asarray(values, dtype=float)
+    mean = float(np.dot(weights, values))
+    variance = float(np.dot(weights, (values - mean) ** 2))
+    return mean, float(np.sqrt(max(variance, 0.0)))
+
+
+def coherent_xy8_control_response(f, tau, N, coherent_control):
+    """Return the Stage 4 response using a validated Stage 5 configuration."""
+    config, ensemble = _resolve_coherent_control(coherent_control)
+    response_kwargs = {
+        "signal_frequency_hz": f,
+        "delta_field_t": config.get("delta_field_t", 1e-12),
+        "gyromagnetic_ratio_rad_s_t": config.get(
+            "gyromagnetic_ratio_rad_s_t",
+            coherent_xy8.ELECTRON_GYROMAGNETIC_RATIO_RAD_S_T,
+        ),
+        "signal_phase_rad": config.get("signal_phase_rad"),
+        "readout_phase_rad": config.get("readout_phase_rad"),
+        "axis_z": config.get("axis_z", 0.0),
+        "phase_error_rad": config.get("phase_error_rad", 0.0),
+        "pulse_substeps": config.get("pulse_substeps", 8),
+    }
+    return coherent_xy8.xy8_small_signal_response(
+        tau,
+        N,
+        config["pi_pulse_duration_s"],
+        ensemble,
+        **response_kwargs,
+    )
+
+
+def _json_safe_real_parameter(value):
+    values = np.asarray(value, dtype=float)
+    if values.ndim == 0:
+        return float(values)
+    return [float(item) for item in values.ravel()]
+
+
+def coherent_xy8_control_metadata(response, coherent_control=None):
+    """Return concise JSON-safe diagnostics for a coherent response."""
+    config = coherent_control or {}
+    ensemble = response.ensemble
+    amplitude_mean, amplitude_std = _weighted_mean_and_std(
+        ensemble.rotation_angle_errors, ensemble.weights
+    )
+    detuning_mean, detuning_std = _weighted_mean_and_std(
+        ensemble.detunings_angular_frequency_rad_s, ensemble.weights
+    )
+    hyperfine_populations = []
+    for line_index in sorted(set(ensemble.hyperfine_line_indices.tolist())):
+        if line_index < 0:
+            continue
+        selected = ensemble.hyperfine_line_indices == line_index
+        line_weight = float(np.sum(ensemble.weights[selected]))
+        hyperfine_populations.append(
+            {
+                "line_index": int(line_index),
+                "weight": line_weight,
+                "conditional_detuning_mean_angular_frequency_rad_s": float(
+                    np.dot(
+                        ensemble.weights[selected],
+                        ensemble.detunings_angular_frequency_rad_s[selected],
+                    )
+                    / line_weight
+                ),
+            }
+        )
+    return {
+        "pi_pulse_duration_s": float(response.pi_pulse_duration_s),
+        "pulse_substeps": int(response.pulse_substeps),
+        "delta_field_t": float(response.delta_field_t),
+        "gyromagnetic_ratio_rad_s_t": float(response.gyromagnetic_ratio_rad_s_t),
+        "signal_phase_rad": float(response.signal_phase_rad),
+        "readout_phase_rad": float(response.readout_phase_rad),
+        "phase_selection": response.phase_selection,
+        "initial_state": "plus_x",
+        "readout_observable": "equatorial_pauli",
+        "axis_z": _json_safe_real_parameter(config.get("axis_z", 0.0)),
+        "phase_error_rad": _json_safe_real_parameter(
+            config.get("phase_error_rad", 0.0)
+        ),
+        "ensemble_source": (
+            "explicit_samples" if config.get("ensemble") is not None else "gaussian_quadrature"
+        ),
+        "quadrature_order": (
+            None if config.get("ensemble") is not None else int(config.get("quadrature_order", 5))
+        ),
+        "ensemble_sample_count": int(ensemble.sample_count),
+        "rotation_angle_error_mean": amplitude_mean,
+        "rotation_angle_error_std": amplitude_std,
+        "detuning_mean_angular_frequency_rad_s": detuning_mean,
+        "detuning_std_angular_frequency_rad_s": detuning_std,
+        "hyperfine_populations": hyperfine_populations,
+    }
+
+
+def best_point_breakdown(
+    best_tau,
+    best_N,
+    f_target,
+    Rph_1,
+    C_1,
+    Neff,
+    T2_params,
+    overheads,
+    piPulseFid,
+    control_model="scalar",
+    coherent_control=None,
+):
+    control_model = _validated_control_model(control_model)
     T_seq = sequence_duration(best_tau, best_N)
     p = float(T2_params.get("p", 2.0))
     t2_kwargs = dict(T2_params)
@@ -203,8 +398,21 @@ def best_point_breakdown(best_tau, best_N, f_target, Rph_1, C_1, Neff, T2_params
     T2eff = t2_xy8_empirical(best_N, best_tau, **t2_kwargs)
 
     env_factor = coherence_factor(T_seq, T2eff, p=p)
-    pulse_factor = piPulseFid ** (8 * best_N)
-    gain = xy8_filter_gain(f_target, best_tau, best_N)
+    ideal_filter_gain = xy8_filter_gain(f_target, best_tau, best_N)
+    coherent_response = None
+    if control_model == "scalar":
+        pulse_factor = piPulseFid ** (8 * best_N)
+        gain = ideal_filter_gain
+        coherent_metadata = None
+    else:
+        coherent_response = coherent_xy8_control_response(
+            f_target, best_tau, best_N, coherent_control
+        )
+        pulse_factor = 1.0
+        gain = coherent_response.normalized_gain
+        coherent_metadata = coherent_xy8_control_metadata(
+            coherent_response, coherent_control
+        )
 
     breakdown = {
         "tau_s": float(best_tau),
@@ -215,6 +423,15 @@ def best_point_breakdown(best_tau, best_N, f_target, Rph_1, C_1, Neff, T2_params
         "env_factor": float(env_factor),
         "pulse_factor": float(pulse_factor),
         "G": float(gain),
+        "effective_control_gain": float(gain * pulse_factor),
+        "ideal_filter_gain": float(ideal_filter_gain),
+        "coherent_control_gain": (
+            None if coherent_response is None else float(coherent_response.normalized_gain)
+        ),
+        "control_model": control_model,
+        "independent_pulse_factor_applied": control_model == "scalar",
+        "ideal_filter_gain_applied_separately": control_model == "scalar",
+        "coherent_control": coherent_metadata,
         "effective_detected_rate_cps": float(Neff * Rph_1),
         "Rph_ens_cps": float(Neff * Rph_1),
         "C_raw": float(C_1),
@@ -224,8 +441,32 @@ def best_point_breakdown(best_tau, best_N, f_target, Rph_1, C_1, Neff, T2_params
     return breakdown
 
 
-def debug_best_point(best_tau, best_N, f_target, Rph_1, C_1, Neff, T2_params, overheads, piPulseFid):
-    breakdown = best_point_breakdown(best_tau, best_N, f_target, Rph_1, C_1, Neff, T2_params, overheads, piPulseFid)
+def debug_best_point(
+    best_tau,
+    best_N,
+    f_target,
+    Rph_1,
+    C_1,
+    Neff,
+    T2_params,
+    overheads,
+    piPulseFid,
+    control_model="scalar",
+    coherent_control=None,
+):
+    breakdown = best_point_breakdown(
+        best_tau,
+        best_N,
+        f_target,
+        Rph_1,
+        C_1,
+        Neff,
+        T2_params,
+        overheads,
+        piPulseFid,
+        control_model=control_model,
+        coherent_control=coherent_control,
+    )
     print("\n[Best-point resource breakdown]")
     for key, value in breakdown.items():
         print(f"{key}: {value}")
@@ -300,16 +541,35 @@ def xy8_filter_gain(f, tau, N):
     return xy8_sensitivity_kernel(f, tau, N)
 
 
-def t2_xy8_empirical(N, tau, T2_1=400e-6, alpha=0.6, beta=0.0, tau0=1e-6, **_ignored):
+def t2_xy8_empirical(
+    N,
+    tau,
+    T2_1=400e-6,
+    alpha=0.6,
+    beta=0.0,
+    tau0=1e-6,
+    T1_limit_s=None,
+    **_ignored,
+):
     """
     Empirical XY8 coherence model with tau dependence.
 
     T2eff(N, tau) = T2_1 * N^alpha * (tau / tau0)^beta
+
+    When an independently sourced ``T1_limit_s`` is supplied, the empirical
+    depth scaling is capped at the physical bound ``T2 <= 2*T1``. Existing
+    callers that omit the limit retain exactly the historical behavior.
     """
     N = max(int(N), 1)
     tau = max(float(tau), 1e-12)
     tau0 = max(float(tau0), 1e-12)
-    return float(T2_1) * (N ** float(alpha)) * ((tau / tau0) ** float(beta))
+    empirical = float(T2_1) * (N ** float(alpha)) * ((tau / tau0) ** float(beta))
+    if T1_limit_s is None:
+        return empirical
+    t1_limit = float(T1_limit_s)
+    if not np.isfinite(t1_limit) or t1_limit <= 0.0:
+        raise ValueError("T1_limit_s must be positive and finite when supplied.")
+    return min(empirical, 2.0 * t1_limit)
 
 
 def coherence_factor(T, T2eff, p=2.0):
@@ -319,7 +579,29 @@ def coherence_factor(T, T2eff, p=2.0):
 # ----------------------------
 # 3) Ensemble QRE sensitivity functional
 # ----------------------------
-def eta_ac(f, tau, N, Rph_1, C_1, Neff, T2_params, overheads, piPulseFid=1.0, kappa_C=1.0, kappa_T2=1.0):
+def eta_ac(
+    f,
+    tau,
+    N,
+    Rph_1,
+    C_1,
+    Neff,
+    T2_params,
+    overheads,
+    piPulseFid=1.0,
+    kappa_C=1.0,
+    kappa_T2=1.0,
+    control_model="scalar",
+    coherent_control=None,
+):
+    """Return the relative AC-sensitivity score for the selected control backend.
+
+    ``scalar`` retains the historical product of ideal filter gain and
+    independent per-pulse fidelity.  ``coherent_xy8`` replaces that complete
+    product with the Stage 4 coherent small-signal gain, preventing either
+    factor from being counted twice.
+    """
+    control_model = _validated_control_model(control_model)
     Rph = Neff * Rph_1
     contrast = kappa_C * C_1
 
@@ -333,11 +615,16 @@ def eta_ac(f, tau, N, Rph_1, C_1, Neff, T2_params, overheads, piPulseFid=1.0, ka
     T2eff = kappa_T2 * t2_xy8_empirical(N, tau, **t2_kwargs)
     env_factor = coherence_factor(T_seq, T2eff, p=p)
 
-    Npi = 8 * max(int(N), 1)
-    pulse_factor = piPulseFid ** Npi
+    if control_model == "scalar":
+        Npi = 8 * max(int(N), 1)
+        pulse_factor = piPulseFid ** Npi
+        gain = xy8_filter_gain(f, tau, N)
+    else:
+        pulse_factor = 1.0
+        gain = coherent_xy8_control_response(
+            f, tau, N, coherent_control
+        ).normalized_gain
     effective_contrast = contrast * env_factor * pulse_factor
-
-    gain = xy8_filter_gain(f, tau, N)
     T_cycle = T_seq + overheads["t_init"] + overheads["t_read"] + overheads.get("t_dead", 0.0)
 
     return float(np.sqrt(T_cycle / max(Rph, 1e-30)) / max(gain * effective_contrast * T_seq, 1e-30))

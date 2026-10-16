@@ -1,0 +1,201 @@
+{
+  "schema_version": "1.0",
+  "configuration_id": "xy8_environment_scan_v1",
+  "freeze_status": "predeclared_before_environment_conditioned_edt_analysis",
+  "freeze_date": "2026-09-23",
+  "objective": "Measure how temperature and independently applied NV-frame strain modes change the optimum, near-optimal connected regions, and persistence of the canonical 200 kHz XY8 EDT landscape.",
+  "preregistration": {
+    "environment_conditioned_edt_results_inspected_before_freeze": false,
+    "post_freeze_parameter_tuning_allowed": false,
+    "replacement_rule": "Any change to scan axes, physical assumptions, carrier policies, topology thresholds, or refinement rules requires a new configuration_id and freeze record.",
+    "source_data_replacement_rule": "Author-supplied data may replace digitized data only through a new frozen literature bundle and a new scan configuration version."
+  },
+  "frozen_dependencies": {
+    "literature_bundle": {
+      "path": "data/raw/nv/environment_literature/nv_environment_literature_freeze.json",
+      "bundle_id": "nv_environment_literature_v1",
+      "bundle_sha256": "1ae3ab99330f6c94b11bc8392c118e5b6115bc60c9a832ad81be6ab43d35a139"
+    },
+    "nominal_hardware_scenario": {
+      "path": "data/raw/nv/xy8_scenario_nominal.json",
+      "sha256": "80b3f5acca5bb59d1c0e8e793f7cf488beca1917078520c67fd8019449ff2a34"
+    },
+    "canonical_reference_surface": {
+      "path": "data/processed/xy8_qre_nv_results.csv",
+      "sha256": "6ba1e9f751aa115a4287262a2cb7c74a96aa0270642c90fa7797d8b5d509770a",
+      "reference_optimum": {
+        "temperature_K": 300.0,
+        "strain": "zero",
+        "tau_us": 1.25,
+        "N": 20,
+        "window_relative_limit": 1.1,
+        "window_N_min": 10,
+        "window_N_max": 34
+      }
+    }
+  },
+  "reference_environment": {
+    "temperature_K": 300.0,
+    "strain_tensor_nv_frame": [
+      [0.0, 0.0, 0.0],
+      [0.0, 0.0, 0.0],
+      [0.0, 0.0, 0.0]
+    ],
+    "magnetic_bias": {
+      "magnitude_T": 0.02,
+      "theta_from_nv_axis_rad": 0.0,
+      "azimuth_rad": 0.0,
+      "provenance": "Explicitly frozen repository-model assumption inherited from DEFAULT_MODEL_KWARGS; not a measured device calibration."
+    },
+    "transition": {
+      "name": "m_s_0_like_to_m_s_minus_1_like",
+      "selection_rule": "Track the lower-frequency transition from the state continuously connected to m_s=0 to the state continuously connected to m_s=-1 at the reference field.",
+      "tracking_method": "maximum eigenvector overlap with continuity across adjacent environmental grid points",
+      "ambiguity_threshold_minimum_overlap": 0.9
+    }
+  },
+  "signal_and_control": {
+    "target_frequency_Hz": 200000.0,
+    "primary_resonant_tau_s": 1.25e-06,
+    "tau_convention": "tau is half the centre-to-centre pulse spacing",
+    "depth_convention": "N counts complete XY8 blocks and the total pi-pulse count is 8N",
+    "sequence_duration_convention": "T_sequence = 16*N*tau before preparation and readout overhead",
+    "pi_pulse_duration_s": 4e-08,
+    "pi_pulse_duration_status": "representative coherent-model assumption; not device-calibrated",
+    "pi_pulse_duration_sensitivity_values_s": [
+      2e-08,
+      8e-08
+    ],
+    "environmental_detuning_integration": {
+      "method": "At every (tau,N), multiply the canonical scalar control gain by the coherent finite-pulse response ratio G(detuning)/G(reference detuning=0).",
+      "normalization": "The response ratio is normalized independently at each (tau,N), so the reference environment exactly retains the canonical scalar model.",
+      "double_counting_guard": "The coherent calculation supplies only the relative environmental detuning penalty; the nominal independent pulse-fidelity term remains the canonical baseline resource model."
+    }
+  },
+  "carrier_policies": [
+    {
+      "id": "fixed_reference_carrier",
+      "description": "Hold the microwave carrier at the transition frequency calculated at 300 K and zero strain.",
+      "detuning_rule": "delta_Hz = transition_frequency_Hz(T,strain) - transition_frequency_Hz(300 K,zero strain)"
+    },
+    {
+      "id": "ideal_retracked_carrier",
+      "description": "Set the microwave carrier equal to the calculated transition frequency at every environmental condition.",
+      "detuning_rule": "delta_Hz = 0",
+      "interpretation_limit": "This is an ideal recalibration benchmark and does not include calibration time, estimation error, or drift during a sequence."
+    }
+  ],
+  "temperature_axes": {
+    "operational": {
+      "values_K": [280.0, 285.0, 290.0, 295.0, 300.0, 305.0, 310.0, 315.0, 320.0, 325.0, 330.0],
+      "role": "primary decision map",
+      "source_validity": "Inside the reported ranges of the frozen D(T), experimental T1(T), and digitized first-principles T1(T) inputs."
+    },
+    "extended_stress_test": {
+      "values_K": [100.0, 125.0, 150.0, 175.0, 200.0, 225.0, 250.0, 275.0, 300.0, 325.0, 350.0, 375.0, 400.0],
+      "role": "secondary source-range sensitivity analysis",
+      "source_validity": "Restricted to the common 100-400 K range so the digitized Mondal curve is never extrapolated."
+    }
+  },
+  "strain_axes": {
+    "amplitudes_microstrain": [-100.0, -80.0, -60.0, -40.0, -20.0, 0.0, 20.0, 40.0, 60.0, 80.0, 100.0],
+    "amplitude_status": "predeclared engineering sensitivity range, not an experimentally measured strain distribution",
+    "coordinate_frame": "NV frame used by the frozen Udvarhelyi spin-strain Hamiltonian",
+    "paths": [
+      {
+        "id": "zero_strain",
+        "tensor_per_unit_amplitude": [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]],
+        "scan_rule": "Evaluate once per temperature; do not duplicate over amplitude."
+      },
+      {
+        "id": "axial_zz",
+        "tensor_per_unit_amplitude": [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 1.0]],
+        "description": "Pure epsilon_zz in the NV frame."
+      },
+      {
+        "id": "transverse_differential",
+        "tensor_per_unit_amplitude": [[1.0, 0.0, 0.0], [0.0, -1.0, 0.0], [0.0, 0.0, 0.0]],
+        "description": "Symmetry-breaking epsilon_xx=-epsilon_yy path."
+      },
+      {
+        "id": "shear_xz",
+        "tensor_per_unit_amplitude": [[0.0, 0.0, 1.0], [0.0, 0.0, 0.0], [1.0, 0.0, 0.0]],
+        "description": "Symmetric epsilon_xz=epsilon_zx shear path."
+      }
+    ],
+    "combination_policy": "Version 1 varies one strain path at a time. Combined strain tensors are excluded until the one-path maps and transition tracking pass validation.",
+    "extended_range_policy": "A later plus-or-minus 500 microstrain stress test requires a new configuration version."
+  },
+  "relaxation_policy": {
+    "primary_T1_source": "jarmola_2012_t1 sample S8 analytical law",
+    "secondary_T1_source": "mondal_2023_spin_phonon digitized first-principles curve",
+    "reference_T2_s": 0.0003,
+    "effective_coherence_rule": "1/T2_eff(T) = 1/Tphi + 1/(2*T1(T)), with 1/Tphi chosen once so T2_eff(300 K)=300 us.",
+    "double_counting_guard": "Do not multiply the nominal coherence envelope by a second full T1 decay. Compare the two T1 sources as separate variants and never combine or fit them.",
+    "held_constant": [
+      "optical contrast",
+      "detected photon rate",
+      "preparation and readout overhead",
+      "nominal independent per-pulse fidelity",
+      "non-T1 coherence-depth scaling exponent"
+    ]
+  },
+  "control_grids": {
+    "depths_N": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24, 28, 32, 33, 34, 35, 36, 37, 38, 39, 40, 48, 56, 64, 80, 96, 128],
+    "discovery_timing_grid": {
+      "tau_min_s": 3.125e-07,
+      "tau_max_s": 5e-06,
+      "background_count": 19,
+      "insert_exact_odd_harmonic_resonances": true,
+      "resonance_halfwidth_fraction": 0.08,
+      "resonance_bracket_count": 9,
+      "expected_tau_count_at_200_kHz": 37,
+      "role": "screen every environmental cell"
+    },
+    "confirmation_timing_grid": {
+      "tau_min_s": 3.125e-07,
+      "tau_max_s": 5e-06,
+      "background_count": 321,
+      "insert_exact_odd_harmonic_resonances": true,
+      "resonance_halfwidth_fraction": 0.08,
+      "resonance_bracket_count": 801,
+      "expected_tau_count_at_200_kHz": 1922,
+      "role": "confirm only cells selected by the frozen refinement rules"
+    }
+  },
+  "topology_analysis": {
+    "relative_limits": [1.01, 1.05, 1.1, 1.25, 1.5, 2.0],
+    "primary_relative_limit": 1.1,
+    "connectivity_primary": 4,
+    "connectivity_sensitivity": 8,
+    "region_tracking_rule": "Track components between adjacent environmental cells by maximum overlap of their (tau,N) masks; do not equate local integer labels across cells.",
+    "refinement_selection_rules": [
+      "reference environment for both carrier policies",
+      "all operational-map corners",
+      "every cell whose discovery optimum touches a tau or N sweep boundary",
+      "every cell where beta_0 differs from any immediately adjacent environmental cell",
+      "every cell where the recommended N category changes relative to an immediately adjacent environmental cell",
+      "the first cell on each side of every detected category or beta_0 transition"
+    ],
+    "stable_result_requirements": [
+      "global optimum agrees between discovery and confirmation grids",
+      "beta_0 agrees under four- and eight-neighbour connectivity or disagreement is reported",
+      "the primary region contains multiple timing and depth samples",
+      "the primary region does not touch a sweep boundary",
+      "timing width is stable under the existing medium-to-fine refinement tolerance"
+    ]
+  },
+  "planned_outputs": [
+    "data/processed/xy8_environment_score_summary.csv",
+    "data/processed/xy8_environment_components.csv",
+    "data/processed/xy8_environment_persistence.csv",
+    "data/processed/xy8_environment_topology_summary.json"
+  ],
+  "interpretation_limits": [
+    "The strain amplitudes are controlled sensitivity coordinates, not a measured strain distribution for a particular diamond.",
+    "The ideal retracked-carrier policy omits calibration cost and residual estimation error.",
+    "Temperature-dependent optical contrast, photon rate, overhead, pulse fidelity, and non-T1 bath dynamics remain fixed in version 1.",
+    "A stable sampled-grid beta_0 is evidence about the numerical EDT landscape, not proof of continuum topology.",
+    "No environment-conditioned result may be described as experimental validation."
+  ]
+}

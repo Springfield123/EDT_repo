@@ -1,0 +1,28 @@
+{
+  "analysis_started": false,
+  "configuration_id": "xy8_environment_scan_v1",
+  "configuration_path": "data/raw/nv/environment_literature/xy8_environment_scan_config.json",
+  "configuration_sha256": "85730bb286f708488b0b14ead7aeb4e2166fa4b0143d7a197b63f42627f4e388",
+  "freeze_status": "predeclared_before_environment_conditioned_edt_analysis",
+  "frozen_at": "2026-09-23",
+  "frozen_dependencies": [
+    {
+      "id": "nominal_hardware_scenario",
+      "path": "data/raw/nv/xy8_scenario_nominal.json",
+      "sha256": "80b3f5acca5bb59d1c0e8e793f7cf488beca1917078520c67fd8019449ff2a34"
+    },
+    {
+      "id": "canonical_reference_surface",
+      "path": "data/processed/xy8_qre_nv_results.csv",
+      "sha256": "6ba1e9f751aa115a4287262a2cb7c74a96aa0270642c90fa7797d8b5d509770a"
+    },
+    {
+      "bundle_sha256": "1ae3ab99330f6c94b11bc8392c118e5b6115bc60c9a832ad81be6ab43d35a139",
+      "id": "literature_bundle_record",
+      "path": "data/raw/nv/environment_literature/nv_environment_literature_freeze.json",
+      "sha256": "9023e3593472799bde074d3fb6923d099dfdd7428dd9aa6eade48f397ad94eaf"
+    }
+  ],
+  "hash_algorithm": "sha256",
+  "schema_version": "1.0"
+}

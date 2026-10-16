@@ -1,0 +1,2 @@
+temperature_min_K,temperature_max_K,dD_dT_kHz_per_K,uncertainty_1sigma_kHz_per_K,dataset_role,source_location,correction_status
+280,330,-75.0,0.6,external_validation,Erratum Table II,corrected_value

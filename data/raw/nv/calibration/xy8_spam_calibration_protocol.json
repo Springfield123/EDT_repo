@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "protocol_id": "xy8_spam_calibration_v1",
+  "status": "prospective_protocol_no_measurements",
+  "objective": "Calibrate NV state preparation, analysis rotations, and optical readout without using the frozen XY8 depth holdout.",
+  "holdout_exclusion": {
+    "dataset": "farfurnik_2015_fig3b_xy8.csv",
+    "xy8_blocks": [1, 9, 73],
+    "total_pi_pulses": [8, 72, 584],
+    "permitted_for_parameter_estimation": false,
+    "permitted_use": "final validation only after the complete calibration manifest is frozen"
+  },
+  "acquisition_rules": {
+    "minimum_repeats_per_setting": 1000,
+    "randomize_setting_order": true,
+    "interleave_bright_and_dark_references": true,
+    "record_timestamps": true,
+    "record_microwave_power_and_frequency": true,
+    "record_laser_power_and_readout_duration": true,
+    "retain_individual_shots": true
+  },
+  "measurement_set": [
+    {
+      "measurement_id": "bright_ms0_reference",
+      "preparation": "optical initialization only",
+      "analysis": "none",
+      "purpose": "bright fluorescence mean, variance, and drift",
+      "xy8_blocks": null,
+      "measured_value": null,
+      "uncertainty": null
+    },
+    {
+      "measurement_id": "dark_ms1_reference",
+      "preparation": "optical initialization followed by independently calibrated pi pulse",
+      "analysis": "none",
+      "purpose": "dark fluorescence mean, variance, and drift",
+      "xy8_blocks": null,
+      "measured_value": null,
+      "uncertainty": null
+    },
+    {
+      "measurement_id": "zero_depth_plus_x",
+      "preparation": "nominal plus-X pi/2 preparation",
+      "analysis": "nominal plus-X analysis rotation",
+      "purpose": "combined preparation and analysis reference with no XY8 pulses",
+      "xy8_blocks": 0,
+      "measured_value": null,
+      "uncertainty": null
+    },
+    {
+      "measurement_id": "zero_depth_minus_x",
+      "preparation": "nominal minus-X pi/2 preparation",
+      "analysis": "nominal plus-X analysis rotation",
+      "purpose": "separate analysis offset from preparation visibility",
+      "xy8_blocks": 0,
+      "measured_value": null,
+      "uncertainty": null
+    },
+    {
+      "measurement_id": "zero_depth_plus_y",
+      "preparation": "nominal plus-Y pi/2 preparation",
+      "analysis": "nominal plus-Y analysis rotation",
+      "purpose": "positive Y-quadrature zero-depth reference",
+      "xy8_blocks": 0,
+      "measured_value": null,
+      "uncertainty": null
+    },
+    {
+      "measurement_id": "zero_depth_minus_y",
+      "preparation": "nominal minus-Y pi/2 preparation",
+      "analysis": "nominal plus-Y analysis rotation",
+      "purpose": "separate Y-quadrature visibility from its offset",
+      "xy8_blocks": 0,
+      "measured_value": null,
+      "uncertainty": null
+    },
+    {
+      "measurement_id": "zero_depth_mixed_reference",
+      "preparation": "equalized or phase-randomized spin population",
+      "analysis": "none",
+      "purpose": "verify the fluorescence midpoint corresponding to zero normalized spin signal",
+      "xy8_blocks": 0,
+      "measured_value": null,
+      "uncertainty": null
+    }
+  ],
+  "predefined_acceptance_criteria": {
+    "reference_stability": "bright and dark reference drift remains below 20 percent of their separation over one acquisition",
+    "zero_depth_prediction": "the frozen SPAM model reproduces every zero-depth calibration setting within combined 95 percent uncertainty",
+    "identifiability": "reported parameter covariance is finite and no fitted parameter is fixed by an XY8 holdout value",
+    "minimum_visibility": "bright and dark reference means remain statistically distinguishable"
+  }
+}

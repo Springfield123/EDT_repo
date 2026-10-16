@@ -1,0 +1,14 @@
+{
+  "status": "vector_markers_extracted",
+  "source_vector_pdf_sha256": "d7d904297fa592d792cdcb1db1c4b2a14411f33f96784da30f519253cbcf4340",
+  "manifest_sha256": "601b0bd85b2ae84da8e0c4c31c6594ec865a9d4376d05868183bd637d0471525",
+  "extracted_marker_counts_by_xy8_depth": {
+    "10": 25,
+    "20": 25,
+    "25": 23,
+    "40": 22
+  },
+  "row_count": 95,
+  "published_fit_curves_excluded": true,
+  "output_csv_sha256": "304083acaf2ba6f5316aed46872d915ce65e558638478ab57917de26b384e132"
+}

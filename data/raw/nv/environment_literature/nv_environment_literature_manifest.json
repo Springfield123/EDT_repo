@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "bundle_id": "nv_environment_literature_v1",
+  "freeze_status": "frozen_before_edt_environment_analysis",
+  "freeze_date": "2026-09-23",
+  "objective": "Provide provenance-preserving strain and temperature inputs for a later EDT analysis of connected XY8 operating regions.",
+  "scope": {
+    "material": "negatively charged nitrogen-vacancy centre in diamond",
+    "included": [
+      "ground-state spin-strain coupling",
+      "temperature-dependent zero-field splitting",
+      "temperature-dependent longitudinal relaxation"
+    ],
+    "excluded": [
+      "new DFT calculations",
+      "fitting any parameter to the existing EDT optimum",
+      "claiming device-specific calibration",
+      "using validation data to tune an input law"
+    ]
+  },
+  "analysis_freeze_policy": {
+    "edt_results_consulted_during_extraction": false,
+    "post_freeze_parameter_tuning_allowed": false,
+    "digitized_values_may_be_replaced_by_author_data": true,
+    "replacement_rule": "A replacement requires a new bundle version, new file digests, and retention of this frozen version."
+  },
+  "sources": [
+    {
+      "source_id": "udvarhelyi_2018_spin_strain",
+      "citation": "P. Udvarhelyi et al., Spin-strain interaction in nitrogen-vacancy centers in diamond, Physical Review B 98, 075201 (2018).",
+      "doi": "10.1103/PhysRevB.98.075201",
+      "url": "https://doi.org/10.1103/PhysRevB.98.075201",
+      "arxiv_id": "1712.02684",
+      "arxiv_source_archive_sha256": "930df970dddc0752b721954342fa41552385c57417b246eef3e1ac2ccaa3f8d9",
+      "role": "parameter_input",
+      "quantity": "six DFT spin-strain and spin-stress coefficients",
+      "source_location": "Table I",
+      "extraction_method": "direct transcription of tabulated central values and reported one-sigma uncertainties",
+      "output_file": "udvarhelyi_2018_spin_strain_coefficients.csv"
+    },
+    {
+      "source_id": "tang_2023_transition_energies",
+      "citation": "H. Tang et al., First-Principles Calculation of the Temperature-Dependent Transition Energies in Spin Defects, Journal of Physical Chemistry Letters 14 (2023).",
+      "doi": "10.1021/acs.jpclett.3c00314",
+      "url": "https://doi.org/10.1021/acs.jpclett.3c00314",
+      "arxiv_id": "2205.02791",
+      "arxiv_source_archive_sha256": "93a16b22b4d85ad9d7bd005014a4b998fce27850c6ce7268fd0c18dd12f1beb7",
+      "role": "first_principles_cross_check",
+      "quantity": "room-temperature first-principles dD/dT",
+      "source_location": "main text following Figure 2",
+      "extraction_method": "direct transcription from text",
+      "output_file": "nv_temperature_laws.json"
+    },
+    {
+      "source_id": "cambria_2023_zfs",
+      "citation": "M. C. Cambria et al., Physically motivated analytical expression for the temperature dependence of the zero-field splitting of the nitrogen-vacancy center in diamond, Physical Review B 108, L180102 (2023).",
+      "doi": "10.1103/PhysRevB.108.L180102",
+      "url": "https://doi.org/10.1103/PhysRevB.108.L180102",
+      "arxiv_id": "2306.05318",
+      "arxiv_source_archive_sha256": "17a04c13b7b1ed7b4b2bbaee0de6c223d74e2a646a48a7de12012d7aad3d46b9",
+      "role": "analytical_temperature_law",
+      "quantity": "two-representative-phonon D(T) law",
+      "source_location": "Equation 3 and Table I",
+      "extraction_method": "direct transcription of equation, central values, and one-sigma uncertainties",
+      "output_file": "nv_temperature_laws.json"
+    },
+    {
+      "source_id": "mondal_2023_spin_phonon",
+      "citation": "S. Mondal and A. Lunghi, Spin-phonon decoherence in solid-state paramagnetic defects from first principles, npj Computational Materials 9, 120 (2023).",
+      "doi": "10.1038/s41524-023-01082-9",
+      "url": "https://doi.org/10.1038/s41524-023-01082-9",
+      "arxiv_id": "2212.11705",
+      "arxiv_source_archive_sha256": "666c846cbeadb179ba78896a65e6b2388c35c92643c73ebd447ab0e5a7ada837",
+      "source_figure_sha256": "6f4cb60aa92bbee13f046a7ee266cb98f95503cfa5be9ed1d4cd31d1d53a20ae",
+      "role": "first_principles_temperature_curve",
+      "quantity": "ab initio NV T1 relaxation rate versus temperature",
+      "source_location": "Figure 3 left panel; arXiv source asset tau_NV.pdf",
+      "extraction_method": "vector PDF centerline extraction; logarithmic T and rate axes calibrated to published ticks",
+      "digitization_uncertainty": {
+        "temperature": "0.2 percent of extracted temperature",
+        "rate": "1 percent of extracted rate",
+        "scope": "coordinate extraction only; does not represent first-principles model uncertainty"
+      },
+      "digitization_rationale": "The paper gives the functional form but does not report the complete numerical amplitude coefficients needed to reproduce the black ab initio curve.",
+      "output_file": "mondal_2023_fig3_nv_t1_dft.csv"
+    },
+    {
+      "source_id": "jarmola_2012_t1",
+      "citation": "A. Jarmola et al., Temperature- and Magnetic-Field-Dependent Longitudinal Spin Relaxation in Nitrogen-Vacancy Ensembles in Diamond, Physical Review Letters 108, 197601 (2012).",
+      "doi": "10.1103/PhysRevLett.108.197601",
+      "url": "https://doi.org/10.1103/PhysRevLett.108.197601",
+      "arxiv_id": "1112.5936",
+      "arxiv_source_archive_sha256": "17538cbee3124fa69bf6ace67fa41b5f317c7bbf6aac526277a84ee93c37c8b5",
+      "role": "experimental_comparison_law",
+      "quantity": "sample-dependent experimental T1(T) law",
+      "source_location": "Equation 1 and main-text parameter paragraph",
+      "extraction_method": "direct transcription; main-text A2 value takes precedence over inconsistent supplementary rendering",
+      "output_file": "nv_temperature_laws.json"
+    },
+    {
+      "source_id": "acosta_2011_zfs_erratum",
+      "citation": "V. M. Acosta et al., Erratum: Temperature Dependence of the Nitrogen-Vacancy Magnetic Resonance in Diamond, Physical Review Letters 106, 209901 (2011).",
+      "doi": "10.1103/PhysRevLett.106.209901",
+      "url": "https://doi.org/10.1103/PhysRevLett.106.209901",
+      "role": "external_validation_only",
+      "quantity": "corrected experimental dD/dT over 280-330 K",
+      "source_location": "Table II",
+      "extraction_method": "direct transcription of corrected central value and one-sigma uncertainty",
+      "output_file": "acosta_2011_zfs_slope_validation.csv",
+      "parameter_estimation_permitted": false
+    }
+  ],
+  "files_to_freeze": [
+    "udvarhelyi_2018_spin_strain_coefficients.csv",
+    "nv_temperature_laws.json",
+    "mondal_2023_fig3_nv_t1_dft.csv",
+    "acosta_2011_zfs_slope_validation.csv",
+    "nv_environment_literature_manifest.json"
+  ],
+  "next_stage": "Generate temperature- and strain-conditioned XY8 score surfaces only after the digest file has been written and verified."
+}

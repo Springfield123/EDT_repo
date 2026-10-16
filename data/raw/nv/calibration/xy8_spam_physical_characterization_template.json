@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "status": "unmeasured_template",
+  "calibration_id": null,
+  "usage_note": "Populate from independent zero-depth Rabi/Ramsey or tomography measurements. Do not use any Farfurnik XY8 depth-holdout value. Change status to independently_calibrated only after the fit and covariance checks pass.",
+  "optical_initial_bloch_vector": [null, null, null],
+  "preparation_pulse": {
+    "nominal_angle_rad": 1.5707963267948966,
+    "phase_rad": 1.5707963267948966,
+    "rotation_angle_error": null,
+    "axis_z": null,
+    "phase_error_rad": null
+  },
+  "readout_pulse": {
+    "nominal_angle_rad": -1.5707963267948966,
+    "phase_rad": 1.5707963267948966,
+    "rotation_angle_error": null,
+    "axis_z": null,
+    "phase_error_rad": null
+  },
+  "parameter_names": [
+    "optical_initial_bloch_x",
+    "optical_initial_bloch_y",
+    "optical_initial_bloch_z",
+    "preparation_rotation_angle_error",
+    "preparation_axis_z",
+    "preparation_phase_error_rad",
+    "readout_rotation_angle_error",
+    "readout_axis_z",
+    "readout_phase_error_rad"
+  ],
+  "parameter_covariance": null,
+  "calibration_sources": [],
+  "excluded_validation_sources": [
+    "farfurnik_2015_fig3b_xy8.csv: N=1,9,73"
+  ]
+}

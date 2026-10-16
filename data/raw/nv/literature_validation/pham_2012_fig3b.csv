@@ -1,0 +1,11 @@
+total_pi_pulses,sensitivity_nT_sqrt_Hz,reported_error_nT_sqrt_Hz,digitization_error_nT_sqrt_Hz,source_figure,extraction_status
+28,11.55,0.55,0.04,Fig. 3b,digitized_from_author_vector_figure
+54,9.00,0.50,0.04,Fig. 3b,digitized_from_author_vector_figure
+80,8.20,0.50,0.04,Fig. 3b,digitized_from_author_vector_figure
+106,7.65,0.45,0.04,Fig. 3b,digitized_from_author_vector_figure
+132,7.70,0.50,0.04,Fig. 3b,digitized_from_author_vector_figure
+160,7.80,0.85,0.04,Fig. 3b,digitized_from_author_vector_figure
+186,7.95,0.30,0.04,Fig. 3b,digitized_from_author_vector_figure
+212,8.15,0.55,0.04,Fig. 3b,digitized_from_author_vector_figure
+238,9.00,0.35,0.04,Fig. 3b,digitized_from_author_vector_figure
+276,9.80,0.75,0.04,Fig. 3b,digitized_from_author_vector_figure

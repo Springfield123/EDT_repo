@@ -1,0 +1,115 @@
+{
+  "selection_status": "frozen_before_validation_model_evaluation",
+  "selection_date": "2026-09-11",
+  "selection_rationale": "Figure 3b reports experimental relative fluorescence contrast over many pulse counts for conventional XY8, with complete eight-pulse blocks and a visible high-depth loss. The short-free-evolution condition deliberately isolates accumulated control errors from bath decoherence. This directly tests an XY8-specific mechanism represented only approximately by the project's scalar per-pulse survival factor.",
+  "independence_statement": "Farfurnik et al. (2015) was not used to select any explicit parameter in the project's Table 1 scenario files. The dataset, digitization rules, observable, and parameter treatment were frozen before evaluating the current model. No model parameter will be fitted to the measured curve.",
+  "source": {
+    "citation": "D. Farfurnik et al., Optimizing a dynamical decoupling protocol for solid-state electronic spin ensembles in diamond, Physical Review B 92, 060301(R) (2015).",
+    "doi": "10.1103/PhysRevB.92.060301",
+    "doi_url": "https://doi.org/10.1103/PhysRevB.92.060301",
+    "arxiv_id": "1505.00636",
+    "arxiv_url": "https://arxiv.org/abs/1505.00636",
+    "figure": "Figure 3b",
+    "panel_content": "experimental relative contrast in the short-free-evolution limit",
+    "sequence": "conventional XY8",
+    "initial_spin_component": "Sx",
+    "temperature_K": 77,
+    "source_archive_sha256": "9d160b16dbd8fde2b828a9805da22406cb963c4ab6e87549d451cf8576eaeece",
+    "source_figure_sha256": "615a22ea0fef5a95b7164a6a43c02daacdedd21164ec9ac1141d9a0af5f40956"
+  },
+  "reported_hardware": {
+    "sample_description": "approximately 10^4 NV centres in a 25 cubic micrometre measurement volume",
+    "nitrogen_density_cm3": 2e17,
+    "nv_density_cm3": 4e14,
+    "static_field_G": 300,
+    "main_text_rabi_frequency_Hz_approx": 1.5e7,
+    "supplement_rabi_frequency_Hz_approx": 1.4e7,
+    "measured_pi_pulse_duration_s": 3.6e-8,
+    "nitrogen_hyperfine_detuning_Hz": 2.2e6,
+    "rotation_angle_fractional_error_std": 0.06,
+    "rotation_axis_z_component_std": 0.06,
+    "rotation_axis_in_plane_component_std": 0.05,
+    "error_distribution": "independent zero-mean Gaussian samples held fixed for each simulated NV centre and complete pulse sequence",
+    "pulse_fidelity": null,
+    "target_frequency_Hz": null,
+    "uncertainty_bars": true
+  },
+  "observable_and_scope": {
+    "measured_observable": "relative fluorescence contrast normalized to a one-pulse Hahn echo in the same short-free-evolution limit",
+    "ideal_value": 1.0,
+    "mixed_state_value": 0.0,
+    "free_evolution_condition": "2*n*tau much less than T2",
+    "validation_target": "depth-dependent loss from accumulated XY8 control errors",
+    "not_validated": [
+      "absolute magnetic sensitivity",
+      "frequency-selective filter response",
+      "coherence-time scaling with depth",
+      "preparation/readout overhead"
+    ]
+  },
+  "predeclared_comparison": {
+    "project_prediction": "raw pulse survival is F_pi^(8*N); comparison to the paper's one-pulse Hahn-echo normalization is F_pi^(8*N-1)",
+    "normalization_reference_pi_pulses": 1,
+    "baseline_per_pulse_fidelity": 0.997,
+    "baseline_source": "existing nominal scenario, data/raw/nv/xy8_scenario_nominal.json",
+    "uncertainty_range": [0.995, 0.999],
+    "fitting": "none",
+    "no_fit_statement": "Neither the nominal fidelity, the fidelity range, nor the pulse-count axis is fitted to the measured XY8 contrast curve.",
+    "normalization": "the experimental curve retains the paper's Hahn-echo normalization; the scalar prediction starts at one at zero pulses",
+    "primary_checks": [
+      "correct direction of change with depth",
+      "Spearman rank correlation",
+      "normalized RMSE",
+      "pulse count at which relative contrast first falls below 0.5"
+    ]
+  },
+  "predeclared_coherent_comparison": {
+    "freeze_status": "frozen_before_coherent_model_evaluation",
+    "model": "instantaneous conventional-XY8 propagator with quasi-static coherent angle and rotation-axis errors",
+    "initial_spin_component": "Sx",
+    "readout_spin_component": "Sx",
+    "normalization_reference": "one imperfect X-axis pi pulse representing the reported Hahn-echo normalization",
+    "rotation_angle_fractional_error_std": 0.06,
+    "rotation_axis_z_component_std": 0.06,
+    "rotation_axis_in_plane_component_std": 0.05,
+    "distribution_means": 0.0,
+    "distribution_family": "independent Gaussian",
+    "quasi_static_scope": "one draw per NV centre, held fixed for all pulses in that sequence",
+    "sampling_method": "seeded Monte Carlo with common standard-normal draws for every uncertainty case",
+    "sample_count": 10000,
+    "random_seed": 150500636,
+    "sampling_rationale": "The source simulation averages 10000 NV centres. Seed 150500636 is fixed from the paper's arXiv identifier 1505.00636 and is unrelated to the measured contrast values. Preliminary numerical QA rejected low-order Gaussian quadrature because it was not converged at N=73; no physical parameter was changed.",
+    "uncertainty_range_rule": "multiply all three reported approximate standard deviations independently by 0.75, 1.00, or 1.25 and use the pointwise envelope of the resulting 27 predeclared combinations",
+    "uncertainty_range_rationale": "The supplement reports approximate error scales but no parameter confidence intervals; a symmetric plus-or-minus 25 percent sensitivity range was declared before coherent evaluation and is not fitted to the contrast points.",
+    "dense_xy8_block_range": [1, 128],
+    "fitting": "none",
+    "no_fit_statement": "No coherent error magnitude, distribution weight, normalization, pulse depth, or uncertainty range is adjusted after comparison with the three experimental XY8 points.",
+    "source_provenance": {
+      "main_article_doi": "10.1103/PhysRevB.92.060301",
+      "supplement_section": "Initial Contrast Simulation",
+      "reported_simulated_ensemble_size": 10000,
+      "reported_hyperfine_populations": [0.7, 0.2, 0.1],
+      "reported_hyperfine_line_offsets_Hz": [0.0, 2.2e6, 4.4e6],
+      "reported_within_line_detuning_std_Hz": 0.5e6,
+      "effective_axis_error_treatment": "The paper states that the physical detuning mixture gives behavior similar to a zero-mean Gaussian nz distribution with standard deviation approximately 0.06; the latter is used to match its Eq. 1 pulse-error abstraction without double-counting detuning."
+    }
+  },
+  "digitization_protocol": {
+    "source_asset": "author-supplied fig3b.eps from the arXiv source archive",
+    "series": "XY8 experimental markers only",
+    "x_coordinate": "total pi-pulse count n; retain multiples of eight and convert to XY8 block count N=n/8",
+    "y_coordinate": "relative contrast",
+    "point_rule": "digitize marker centres; do not digitize connecting line segments",
+    "uncertainty_rule": "the source panel provides no error bars; do not invent them",
+    "precision_rule": "retain two decimal places for contrast and exact integer pulse counts",
+    "axis_calibration": {
+      "x_scale": "base-10 logarithmic",
+      "x_major_ticks_total_pi_pulses": [1, 10, 100, 1000],
+      "y_scale": "linear",
+      "y_range": [0.0, 1.2]
+    },
+    "error_bar_rule": "digitize upper and lower cap positions separately; preserve asymmetry if visible",
+    "estimated_marker_digitization_error_relative_contrast": 0.01,
+    "model_blinding": "digitization and all corrections are completed before the current model is evaluated"
+  }
+}

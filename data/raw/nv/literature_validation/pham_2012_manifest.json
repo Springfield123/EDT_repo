@@ -1,0 +1,59 @@
+{
+  "selection_status": "frozen_before_validation_model_evaluation",
+  "selection_date": "2026-09-10",
+  "selection_rationale": "The dataset reports sensitivity over ten control depths, the target frequency, the pulse family, coherence parameters, uncertainty bars, and a high-depth decline. A single best-sensitivity value would not have been sufficient.",
+  "independence_statement": "Pham et al. (2012) was not directly cited as a source for the explicit values in the existing Table 1 scenario files and no parameter is adjusted to its measured optimum. The project's review references may discuss this experiment, so this is described as a holdout trend validation rather than a claim of complete bibliographic independence.",
+  "source": {
+    "citation": "L. M. Pham et al., Enhanced solid-state multi-spin metrology using dynamical decoupling, Physical Review B 86, 045214 (2012).",
+    "doi": "10.1103/PhysRevB.86.045214",
+    "doi_url": "https://doi.org/10.1103/PhysRevB.86.045214",
+    "arxiv_id": "1201.5686",
+    "arxiv_url": "https://arxiv.org/abs/1201.5686",
+    "figure": "Figure 3b",
+    "sample": "Sample C",
+    "sequence": "n-pulse XY",
+    "target_frequency_Hz": 84500.0
+  },
+  "reported_parameters": {
+    "contrast_collection_parameter_C": 0.1,
+    "hahn_echo_T2_s": 0.00025,
+    "coherence_stretch_power_p": 1.0,
+    "coherence_depth_scaling_s": 0.37,
+    "sample_description": "approximately 10^3 aligned sensing NV centres in a 30 cubic micrometre volume at room temperature",
+    "parameter_note": "These are the experimental parameters stated in the Figure 3 caption for the paper's Eq. 2 curve. The text also reports approximately 300 microseconds for Sample C; the caption-specific 250 microseconds is used here."
+  },
+  "pulse_timing_convention": {
+    "paper_ac_period_s": "1 / target_frequency_Hz",
+    "paper_interpulse_spacing_s": "1 / (2 * target_frequency_Hz)",
+    "project_tau_s": "1 / (4 * target_frequency_Hz)",
+    "sequence_duration_s": "total_pi_pulses / (2 * target_frequency_Hz)",
+    "scope_note": "The holdout uses an n-pulse XY sequence rather than complete XY8 blocks. The scalar model is therefore compared at equal total pulse count and resonant timing; this test does not validate XY8-specific phase cycling."
+  },
+  "predeclared_baseline_assumptions": {
+    "per_pulse_fidelity": 0.997,
+    "per_pulse_fidelity_source": "existing nominal Table 1 scenario, data/raw/nv/xy8_scenario_nominal.json",
+    "preparation_readout_overhead_s": 0.0000073,
+    "overhead_source": "sum of existing nominal scenario t_init, t_read, and t_dead",
+    "photon_rate_treatment": "not reported; omitted because each curve is normalized to its own minimum and a depth-independent rate cancels",
+    "contrast_treatment": "reported C=0.1 is retained in the score but cancels after within-curve normalization",
+    "no_fit_statement": "Neither pulse fidelity, overhead, coherence parameters, nor horizontal position is fitted to the digitized optimum."
+  },
+  "missing_parameter_uncertainty": {
+    "per_pulse_fidelity_min": 0.995,
+    "per_pulse_fidelity_max": 0.999,
+    "per_pulse_fidelity_points": 41,
+    "preparation_readout_overhead_s_min": 0.0,
+    "preparation_readout_overhead_s_max": 0.0000105,
+    "preparation_readout_overhead_points": 22,
+    "range_source": "predeclared envelope spanning the project's conservative-to-optimistic scenario fidelities and zero-to-conservative total overhead"
+  },
+  "digitization": {
+    "source_asset": "author-supplied fig3.eps from the arXiv source archive",
+    "axis_x_range_pulses": [10, 400],
+    "axis_y_range_nT_sqrt_Hz": [6, 18],
+    "pulse_counts": "rounded to the nearest even pulse after axis calibration; the first two values agree with n=28 and n=54 identified in the paper",
+    "reported_error": "vertical error-bar half width digitized from the plotted bars",
+    "digitization_error_nT_sqrt_Hz": 0.04,
+    "normalization": "experimental and predicted curves are each divided by their own minimum; no shape parameter is fitted"
+  }
+}

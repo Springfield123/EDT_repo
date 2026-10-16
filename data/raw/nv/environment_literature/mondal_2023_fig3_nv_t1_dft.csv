@@ -1,0 +1,13 @@
+temperature_K,t1_rate_s_inv,temperature_digitization_uncertainty_K,t1_rate_digitization_uncertainty_s_inv,series,source_figure,extraction_status
+100.00000000,2.488652893,0.20000000,0.02488652893,ab_initio_prediction,Figure 3 left panel,vector_centerline_digitized
+124.97906041,6.836970909,0.24995812,0.06836970909,ab_initio_prediction,Figure 3 left panel,vector_centerline_digitized
+150.00825254,14.04508953,0.30001651,0.1404508953,ab_initio_prediction,Figure 3 left panel,vector_centerline_digitized
+175.00455032,24.28398276,0.35000910,0.2428398276,ab_initio_prediction,Figure 3 left panel,vector_centerline_digitized
+199.95997240,37.55587224,0.39991994,0.3755587224,ab_initio_prediction,Figure 3 left panel,vector_centerline_digitized
+225.02475831,53.91904462,0.45004952,0.5391904462,ab_initio_prediction,Figure 3 left panel,vector_centerline_digitized
+250.00815694,73.08906012,0.50001631,0.7308906012,ab_initio_prediction,Figure 3 left panel,vector_centerline_digitized
+274.99935625,95.13665422,0.54999871,0.9513665422,ab_initio_prediction,Figure 3 left panel,vector_centerline_digitized
+299.95646039,120.1247099,0.59991292,1.201247099,ab_initio_prediction,Figure 3 left panel,vector_centerline_digitized
+324.95949219,147.1315503,0.64991898,1.471315503,ab_initio_prediction,Figure 3 left panel,vector_centerline_digitized
+349.93905053,177.1902477,0.69987810,1.771902477,ab_initio_prediction,Figure 3 left panel,vector_centerline_digitized
+400.00000000,245.1079231,0.80000000,2.451079231,ab_initio_prediction,Figure 3 left panel,vector_centerline_digitized

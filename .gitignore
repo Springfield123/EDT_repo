@@ -1,6 +1,11 @@
 .pytest_cache/
 __pycache__/
 *.py[cod]
+.DS_Store
+.tmp/
+tmp/
+~$*
+*.inspect.ndjson
 
 # Local inaccessible/temp folders.
 tmpah_n7yzr/

@@ -1,0 +1,73 @@
+{
+  "selection_status": "frozen_before_digitization_and_topology_evaluation",
+  "selection_date": "2026-09-15",
+  "selection_rationale": "Figure 2b reports experimental frequency sweeps from the same fluorinated sample at four complete XY8 block counts. It is the closest located published experimental approximation to a timing-depth surface.",
+  "source": {
+    "citation": "S. J. DeVience et al., Nanoscale NMR spectroscopy and imaging of multiple nuclear species, Nature Nanotechnology 10, 129-134 (2015).",
+    "doi": "10.1038/nnano.2014.313",
+    "doi_url": "https://doi.org/10.1038/nnano.2014.313",
+    "arxiv_id": "1406.3365",
+    "arxiv_url": "https://arxiv.org/abs/1406.3365",
+    "figure": "Figure 2b",
+    "source_asset_in_arxiv_archive": "20140302_fig2.pdf",
+    "observable": "normalized NV fluorescence contrast",
+    "sample": "fluorinated PFOS/POSF sample measured with a single shallow NV centre"
+  },
+  "predeclared_depths": {
+    "xy8_blocks": [10, 20, 25, 40],
+    "total_pi_pulses": [80, 160, 200, 320],
+    "expected_marker_counts": [25, 25, 23, 22]
+  },
+  "vertical_offset_correction": {
+    "XY8-10": 0.6,
+    "XY8-20": 0.4,
+    "XY8-25": 0.2,
+    "XY8-40": 0.0,
+    "operation": "corrected_contrast = plotted_contrast - displayed_vertical_offset",
+    "source": "caption states that spectra are offset vertically; dashed baselines occur at 1.6, 1.4, 1.2, and 1.0"
+  },
+  "axis_calibration_pdf_points": {
+    "frequency": {
+      "point_1": {"x": 473.2378, "frequency_MHz": 0.85},
+      "point_2": {"x": 534.4038, "frequency_MHz": 0.9}
+    },
+    "plotted_contrast": {
+      "point_1": {"top": 265.3623, "contrast": 0.0},
+      "point_2": {"top": 235.1123, "contrast": 0.2}
+    }
+  },
+  "normalization_policy": {
+    "response_definition": "response = 1 - corrected_contrast",
+    "measured_surface": "divide all four measured rows by one global measured-response maximum",
+    "predicted_surface": "if evaluated, normalize independently by its own global optimum",
+    "per_depth_normalization_allowed": false,
+    "purpose": "preserve the published depth dependence while preventing any absolute-scale comparison"
+  },
+  "topology_policy": {
+    "primary_outcomes": [
+      "connected_region_count",
+      "resonance_identity",
+      "timing_and_depth_boundaries",
+      "threshold_persistence"
+    ],
+    "absolute_sensitivity_comparison": false,
+    "timing_shift_allowed": false,
+    "model_parameter_fitting_allowed": false,
+    "published_fit_curves_used_as_measurements": false,
+    "threshold_percent_grid": {"start": 1, "stop": 100, "step": 1},
+    "common_frequency_grid_MHz": {"start": 0.835, "stop": 1.005, "step": 0.005},
+    "rectangularization": "linear interpolation of each measured row onto the frozen common grid without extrapolation",
+    "connectivity": "four-neighbour on the sampled frequency-depth grid",
+    "negative_response_treatment": "clip response values below zero to zero as physically non-resonant baseline fluctuations",
+    "primary_interpretation_range_percent": [1, 60],
+    "high_threshold_guardrail": "thresholds above 60% admit baseline noise and are exported but not interpreted as stable resonant topology"
+  },
+  "digitization_policy": {
+    "method": "extract marker-object centers from the vector PDF in the arXiv source archive",
+    "frequency_error_MHz": 0.00025,
+    "contrast_error": 0.0035,
+    "error_scope": "digitization only; the publication does not show pointwise experimental error bars in Figure 2b",
+    "markers_only": true
+  },
+  "interpretation_guardrail": "This surface tests whether connected resonance structure transfers across four XY8 depths. It does not validate the project's 200 kHz sensitivity optimum or establish that N=20 is optimal for the DeVience device."
+}
