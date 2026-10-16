@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XY8 Field Guide</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+img,svg{max-width:100%}
+
+:root{
+  --ground:#F4F6F5; --panel:#EAEEEC; --sunk:#E2E7E5;
+  --ink:#141E1C; --ink-2:#384644; --muted:#65736F; --rule:#C9D3D0;
+  --signal:#0E6B75; --loss:#B0472B; --wash:rgba(14,107,117,.09);
+  --display:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,ui-serif,serif;
+  --body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+  --measure:34rem; --wide:52rem;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1413; --panel:#161E1D; --sunk:#111918;
+    --ink:#E3EAE8; --ink-2:#B5C2BF; --muted:#8A9895; --rule:#2A3634;
+    --signal:#4FB8C3; --loss:#E3835C; --wash:rgba(79,184,195,.11);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E1413; --panel:#161E1D; --sunk:#111918;
+  --ink:#E3EAE8; --ink-2:#B5C2BF; --muted:#8A9895; --rule:#2A3634;
+  --signal:#4FB8C3; --loss:#E3835C; --wash:rgba(79,184,195,.11);
+}
+*{box-sizing:border-box}
+body{
+  background:var(--ground); color:var(--ink); font-family:var(--body);
+  font-size:17px; line-height:1.62; margin:0;
+  padding:clamp(1.75rem,5vw,4.5rem) clamp(1.1rem,5vw,2rem) 5rem;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--wide); margin:0 auto; display:flex; flex-direction:column; gap:3.25rem}
+.col{max-width:var(--measure)}
+p{margin:0 0 1.05em}
+p:last-child{margin-bottom:0}
+a{color:var(--signal); text-underline-offset:.18em; text-decoration-thickness:.06em}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--signal); outline-offset:3px; border-radius:2px}
+
+/* ---- masthead ---- */
+header{display:flex; flex-direction:column; gap:1.15rem; padding-bottom:2.5rem; border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:var(--mono); font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin:0}
+h1{font-family:var(--display); font-weight:600; font-size:clamp(2.5rem,7vw,4rem); line-height:1.02;
+   letter-spacing:-.02em; margin:0; text-wrap:balance}
+.standfirst{font-family:var(--display); font-size:clamp(1.1rem,2.4vw,1.32rem); line-height:1.45;
+  color:var(--ink-2); max-width:38rem; margin:0; text-wrap:pretty}
+.origin{font-family:var(--mono); font-size:.76rem; color:var(--muted); margin:0; line-height:1.7}
+
+/* ---- sections ---- */
+section{display:flex; flex-direction:column; gap:1.4rem}
+.head{display:flex; gap:1rem; align-items:baseline}
+.num{font-family:var(--mono); font-size:.76rem; color:var(--signal); letter-spacing:.08em; flex:none; padding-top:.42rem}
+h2{font-family:var(--display); font-weight:600; font-size:clamp(1.5rem,3.4vw,1.95rem); line-height:1.16;
+   letter-spacing:-.012em; margin:0; text-wrap:balance}
+h3{font-family:var(--body); font-weight:650; font-size:.95rem; letter-spacing:.01em; margin:0 0 .5rem}
+code{font-family:var(--mono); font-size:.86em; background:var(--panel); padding:.1em .34em; border-radius:3px}
+strong{font-weight:650}
+.lede{color:var(--ink-2)}
+
+/* ---- figures ---- */
+figure{margin:0; background:var(--panel); border:1px solid var(--rule); border-radius:5px; overflow:hidden}
+.plot{overflow-x:auto; padding:1.1rem 1.1rem .4rem}
+figure svg{display:block; width:100%; min-width:520px; height:auto}
+figcaption{font-size:.83rem; line-height:1.55; color:var(--muted); padding:.55rem 1.15rem 1rem; border-top:1px solid var(--rule);
+  margin-top:.5rem; background:var(--sunk)}
+figcaption b{color:var(--ink-2); font-weight:650}
+svg text{font-family:var(--mono); fill:var(--muted)}
+.lbl{font-size:11px}
+.lbl-s{font-size:9.5px; letter-spacing:.06em}
+.axis{stroke:var(--rule); stroke-width:1; fill:none}
+.grid{stroke:var(--rule); stroke-width:1; stroke-dasharray:2 4; fill:none; opacity:.75}
+.trace{fill:none; stroke:var(--signal); stroke-width:2; stroke-linejoin:round}
+.trace-2{fill:none; stroke:var(--loss); stroke-width:2; stroke-linejoin:round}
+.trace-f{fill:none; stroke:var(--ink-2); stroke-width:1.4; stroke-linejoin:round; opacity:.55}
+.tick{stroke:var(--loss); stroke-width:1; stroke-dasharray:2 3; opacity:.75}
+.pulse{fill:var(--signal)}
+.laser{fill:var(--ink-2); opacity:.35}
+.band{fill:var(--wash)}
+.mark{stroke:var(--loss); stroke-width:1.5; stroke-dasharray:4 3; fill:none}
+
+/* ---- key/legend ---- */
+.key{display:flex; flex-wrap:wrap; gap:.35rem 1.15rem; padding:0 1.15rem 1rem; font-family:var(--mono); font-size:.72rem; color:var(--muted)}
+.key span{display:flex; align-items:center; gap:.4rem}
+.sw{width:16px; height:2.5px; border-radius:2px; flex:none}
+
+/* ---- callout ---- */
+.note{border-left:2.5px solid var(--signal); background:var(--panel); padding:1rem 1.15rem; border-radius:0 4px 4px 0;
+  font-size:.93rem; line-height:1.58}
+.note.warn{border-left-color:var(--loss)}
+.note p{margin-bottom:.6em}
+.note .h{font-family:var(--mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:.45rem}
+
+/* ---- equation ---- */
+.eq{background:var(--panel); border:1px solid var(--rule); border-radius:5px; padding:1.15rem 1.15rem;
+  font-family:var(--mono); font-size:.85rem; line-height:1.9; overflow-x:auto; color:var(--ink-2)}
+.eq b{color:var(--signal); font-weight:400}
+.eq i{color:var(--loss); font-style:normal}
+
+/* ---- table ---- */
+.tw{overflow-x:auto; border:1px solid var(--rule); border-radius:5px; background:var(--panel)}
+table{border-collapse:collapse; width:100%; font-family:var(--mono); font-size:.79rem; font-variant-numeric:tabular-nums}
+th{text-align:right; font-weight:500; color:var(--muted); padding:.6rem .85rem; border-bottom:1px solid var(--rule);
+  letter-spacing:.05em; font-size:.68rem; text-transform:uppercase; white-space:nowrap}
+td{text-align:right; padding:.45rem .85rem; border-bottom:1px solid var(--rule); color:var(--ink-2); white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tr.hi td{background:var(--wash); color:var(--ink); font-weight:650}
+th:first-child,td:first-child{text-align:left}
+
+/* ---- reading list ---- */
+.reads{display:flex; flex-direction:column; gap:1.75rem}
+.grp{display:flex; flex-direction:column; gap:.7rem}
+.grp>h3{margin:0; padding-bottom:.45rem; border-bottom:1px solid var(--rule)}
+.ref{display:grid; grid-template-columns:1.35rem 1fr; gap:.75rem; align-items:start; font-size:.9rem; line-height:1.5}
+.ref .n{font-family:var(--mono); font-size:.72rem; color:var(--muted); padding-top:.2rem}
+.ref .t{font-weight:640; color:var(--ink)}
+.ref .c{color:var(--muted); font-size:.83rem; font-family:var(--mono)}
+.ref .w{display:block; margin-top:.2rem; color:var(--ink-2); font-size:.86rem}
+.gap{display:inline-block; font-family:var(--mono); font-size:.63rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--loss); border:1px solid var(--loss); border-radius:99px; padding:.03em .45em; vertical-align:.12em; margin-left:.3em}
+footer{border-top:1px solid var(--rule); padding-top:1.5rem; font-family:var(--mono); font-size:.74rem; color:var(--muted); line-height:1.7}
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">EDT companion · NV magnetometry</p>
+  <h1>XY8 Field Guide</h1>
+  <p class="standfirst">How a train of microwave pulses turns a decohering spin into a tuned radio receiver — and why, past a certain depth, adding more control makes the sensor worse.</p>
+  <p class="origin">Every curve on this page is computed from <code>code/analysis/nvratemodel_api.py</code><br>using the nominal scenario in <code>data/nv/xy8_scenario_nominal.json</code>.</p>
+</header>
+
+<section>
+  <div class="head"><span class="num">01</span><h2>The problem: a stopwatch that forgets</h2></div>
+  <div class="col">
+    <p>An NV centre measures magnetic field by accumulating <em>phase</em>. Put the spin in a superposition, let it sit in a field for time <code>T</code>, and the two branches pick up a phase difference proportional to <code>B·T</code>. Read that phase out optically and you have a magnetometer.</p>
+    <p>Two things break this. First, the spin forgets: local magnetic noise from the diamond's own nuclear spins randomises the phase in a few microseconds. Second — and this is the part XY8 exists to solve — if the field you want to measure <em>oscillates</em>, letting it run for a long time accumulates nothing at all. Half a cycle pushes the phase one way, the next half pushes it back. A weak AC field averages to zero in exactly the same way the noise does.</p>
+    <p class="lede">So you need a scheme that suppresses the noise you don't want while keeping the oscillating signal you do — even though both are, at heart, just a fluctuating field.</p>
+  </div>
+</section>
+
+<section>
+  <div class="head"><span class="num">02</span><h2>The sequence itself</h2></div>
+  <div class="col">
+    <p>XY8 is a train of π pulses — microwave pulses that flip the spin by 180°. The eight pulses of one block alternate phase in the pattern <code>X Y X Y Y X Y X</code>. That specific ordering isn't decoration: alternating and then mirroring the axes makes the block cancel its own pulse imperfections to first order, which is why XY8 is used instead of a plain CPMG train.</p>
+  </div>
+
+  <figure>
+    <div class="plot">
+      <svg viewBox="0 0 740 190" role="img" aria-label="Timing diagram of one XY8 block: optical initialisation, eight pi pulses spaced by 2 tau with tau at each end, then optical readout; the block repeats N times.">
+        <line x1="20" y1="120" x2="720" y2="120" class="axis"/>
+        <rect x="20" y="88" width="34" height="32" class="laser"/>
+        <text x="37" y="138" class="lbl-s" text-anchor="middle">INIT</text>
+        <rect x="666" y="88" width="34" height="32" class="laser"/>
+        <text x="683" y="138" class="lbl-s" text-anchor="middle">READ</text>
+        <rect x="90" y="76" width="9" height="44" class="pulse"/><text x="94" y="68" class="lbl" text-anchor="middle">X</text>
+        <rect x="160" y="76" width="9" height="44" class="pulse"/><text x="164" y="68" class="lbl" text-anchor="middle">Y</text>
+        <rect x="230" y="76" width="9" height="44" class="pulse"/><text x="234" y="68" class="lbl" text-anchor="middle">X</text>
+        <rect x="300" y="76" width="9" height="44" class="pulse"/><text x="304" y="68" class="lbl" text-anchor="middle">Y</text>
+        <rect x="370" y="76" width="9" height="44" class="pulse"/><text x="374" y="68" class="lbl" text-anchor="middle">Y</text>
+        <rect x="440" y="76" width="9" height="44" class="pulse"/><text x="444" y="68" class="lbl" text-anchor="middle">X</text>
+        <rect x="510" y="76" width="9" height="44" class="pulse"/><text x="514" y="68" class="lbl" text-anchor="middle">Y</text>
+        <rect x="580" y="76" width="9" height="44" class="pulse"/><text x="584" y="68" class="lbl" text-anchor="middle">X</text>
+        <line x1="59" y1="150" x2="90" y2="150" class="axis"/>
+        <line x1="59" y1="146" x2="59" y2="154" class="axis"/><line x1="90" y1="146" x2="90" y2="154" class="axis"/>
+        <text x="74" y="167" class="lbl" text-anchor="middle">τ</text>
+        <line x1="99" y1="150" x2="160" y2="150" class="axis"/>
+        <line x1="99" y1="146" x2="99" y2="154" class="axis"/><line x1="160" y1="146" x2="160" y2="154" class="axis"/>
+        <text x="130" y="167" class="lbl" text-anchor="middle">2τ</text>
+        <line x1="589" y1="150" x2="620" y2="150" class="axis"/>
+        <line x1="589" y1="146" x2="589" y2="154" class="axis"/><line x1="620" y1="146" x2="620" y2="154" class="axis"/>
+        <text x="604" y="167" class="lbl" text-anchor="middle">τ</text>
+        <path d="M59,44 L59,36 L620,36 L620,44" class="mark"/>
+        <text x="340" y="28" class="lbl" text-anchor="middle">one XY8 block — repeat N times — 8N pulses total</text>
+      </svg>
+    </div>
+    <figcaption><b>One XY8 block.</b> The free-evolution gap between pulses is <code>2τ</code>, with a half-gap <code>τ</code> at each end so the block tiles seamlessly when repeated. Total sequence time is <code>T_seq = 16·N·τ</code>. Note the convention used throughout this repo: <b>N counts blocks, not pulses</b> — N = 20 means 160 π pulses.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="head"><span class="num">03</span><h2>Why flipping the spin rectifies the signal</h2></div>
+  <div class="col">
+    <p>Each π pulse reverses the sign of the phase the spin is accumulating. Over the whole sequence, the spin therefore sees the field multiplied by a square wave that jumps between <code>+1</code> and <code>−1</code> at every pulse — the <em>toggling function</em>.</p>
+    <p>Now the trick is visible. Slow noise, which barely changes over one gap, gets multiplied by equal amounts of <code>+1</code> and <code>−1</code> and cancels — that's the decoupling. But an AC signal whose <em>half-period matches the pulse spacing</em> flips sign at exactly the same moments the toggling function does. The two sign flips cancel each other, the product stays positive throughout, and phase piles up linearly instead of averaging away. The pulse train has rectified the signal.</p>
+  </div>
+
+  <figure>
+    <div class="plot">
+      <svg viewBox="0 0 740 392" role="img" aria-label="Two panels comparing on-resonance and off-resonance pulse timing. On resonance the toggling function flips in step with the signal and accumulated phase grows steadily. Off resonance the flips drift out of step and the accumulated phase cancels to near zero.">
+        <text x="70" y="14" class="lbl-s" style="fill:var(--signal)">ON RESONANCE — one pulse every half-period</text>
+        <g transform="translate(0,22)">
+          <line x1="70" y1="27" x2="690" y2="27" class="grid"/>
+          <line x1="148" y1="2" x2="148" y2="52" class="tick"/><line x1="225" y1="2" x2="225" y2="52" class="tick"/><line x1="302" y1="2" x2="302" y2="52" class="tick"/><line x1="380" y1="2" x2="380" y2="52" class="tick"/><line x1="458" y1="2" x2="458" y2="52" class="tick"/><line x1="535" y1="2" x2="535" y2="52" class="tick"/><line x1="612" y1="2" x2="612" y2="52" class="tick"/><line x1="690" y1="2" x2="690" y2="52" class="tick"/>
+          <polyline points="70,27.0 74,23.2 78,19.4 82,15.9 86,12.6 89,9.6 93,7.1 97,5.1 101,3.7 105,2.8 109,2.5 113,2.8 116,3.7 120,5.1 124,7.1 128,9.6 132,12.6 136,15.9 140,19.4 144,23.2 148,27.0 151,30.8 155,34.6 159,38.1 163,41.4 167,44.4 171,46.9 175,48.9 178,50.3 182,51.2 186,51.5 190,51.2 194,50.3 198,48.9 202,46.9 206,44.4 210,41.4 213,38.1 217,34.6 221,30.8 225,27.0 229,23.2 233,19.4 237,15.9 240,12.6 244,9.6 248,7.1 252,5.1 256,3.7 260,2.8 264,2.5 268,2.8 272,3.7 275,5.1 279,7.1 283,9.6 287,12.6 291,15.9 295,19.4 299,23.2 302,27.0 306,30.8 310,34.6 314,38.1 318,41.4 322,44.4 326,46.9 330,48.9 334,50.3 337,51.2 341,51.5 345,51.2 349,50.3 353,48.9 357,46.9 361,44.4 364,41.4 368,38.1 372,34.6 376,30.8 380,27.0 384,23.2 388,19.4 392,15.9 396,12.6 399,9.6 403,7.1 407,5.1 411,3.7 415,2.8 419,2.5 423,2.8 427,3.7 430,5.1 434,7.1 438,9.6 442,12.6 446,15.9 450,19.4 454,23.2 458,27.0 461,30.8 465,34.6 469,38.1 473,41.4 477,44.4 481,46.9 485,48.9 488,50.3 492,51.2 496,51.5 500,51.2 504,50.3 508,48.9 512,46.9 516,44.4 520,41.4 523,38.1 527,34.6 531,30.8 535,27.0 539,23.2 543,19.4 547,15.9 550,12.6 554,9.6 558,7.1 562,5.1 566,3.7 570,2.8 574,2.5 578,2.8 582,3.7 585,5.1 589,7.1 593,9.6 597,12.6 601,15.9 605,19.4 609,23.2 612,27.0 616,30.8 620,34.6 624,38.1 628,41.4 632,44.4 636,46.9 640,48.9 644,50.3 647,51.2 651,51.5 655,51.2 659,50.3 663,48.9 667,46.9 671,44.4 674,41.4 678,38.1 682,34.6 686,30.8 690,27.0" class="trace-f"/>
+          <text x="700" y="30" class="lbl-s">field</text>
+        </g>
+        <g transform="translate(0,84)">
+          <path d="M70,8 H148 V30 H225 V8 H302 V30 H380 V8 H458 V30 H535 V8 H612 V30 H690 V8 H690" class="trace" stroke-width="1.8"/>
+          <text x="700" y="23" class="lbl-s">toggle</text>
+        </g>
+        <g transform="translate(0,122)">
+          <line x1="70" y1="43.6" x2="690" y2="43.6" class="axis"/>
+          <polyline points="70,43.6 74,43.5 78,43.2 82,42.9 86,42.5 89,42.0 93,41.5 97,40.9 101,40.2 105,39.5 109,38.8 113,38.1 116,37.5 120,36.9 124,36.3 128,35.8 132,35.4 136,35.1 140,34.9 144,34.8 148,34.8 151,34.7 155,34.5 159,34.1 163,33.7 167,33.3 171,32.7 175,32.1 178,31.4 182,30.7 186,30.0 190,29.4 194,28.7 198,28.1 202,27.5 206,27.0 210,26.6 213,26.3 217,26.1 221,26.0 225,26.0 229,25.9 233,25.7 237,25.4 240,25.0 244,24.5 248,23.9 252,23.3 256,22.6 260,22.0 264,21.3 268,20.6 272,19.9 275,19.3 279,18.7 283,18.3 287,17.9 291,17.5 295,17.3 299,17.2 302,17.2 306,17.1 310,16.9 314,16.6 318,16.2 322,15.7 326,15.1 330,14.5 334,13.9 337,13.2 341,12.5 345,11.8 349,11.1 353,10.5 357,10.0 361,9.5 364,9.1 368,8.8 372,8.5 376,8.4 380,8.4 384,8.3 388,8.1 392,7.8 396,7.4 399,6.9 403,6.3 407,5.7 411,5.1 415,4.4 419,3.7 423,3.0 427,2.4 430,1.7 434,1.2 438,0.7 442,0.3 446,0.0 450,0.0 454,0.0 458,0.0 461,0.0 465,0.0 469,0.0 473,0.0 477,0.0 481,0.0 485,0.0 488,0.0 492,0.0 496,0.0 500,0.0 504,0.0 508,0.0 512,0.0 516,0.0 520,0.0 523,0.0 527,0.0 531,0.0 535,0.0 539,0.0 543,0.0 547,0.0 550,0.0 554,0.0 558,0.0 562,0.0 566,0.0 570,0.0 574,0.0 578,0.0 582,0.0 585,0.0 589,0.0 593,0.0 597,0.0 601,0.0 605,0.0 609,0.0 612,0.0 616,0.0 620,0.0 624,0.0 628,0.0 632,0.0 636,0.0 640,0.0 644,0.0 647,0.0 651,0.0 655,0.0 659,0.0 663,0.0 667,0.0 671,0.0 674,0.0 678,0.0 682,0.0 686,0.0 690,0.0" class="trace"/>
+          <text x="700" y="47" class="lbl-s">phase</text>
+          <text x="78" y="16" class="lbl" style="fill:var(--signal)">net = +1.00 — accumulates</text>
+        </g>
+        <line x1="70" y1="190" x2="690" y2="190" class="grid"/>
+        <text x="70" y="210" class="lbl-s" style="fill:var(--loss)">OFF RESONANCE — same pulses, wrong spacing</text>
+        <g transform="translate(0,218)">
+          <line x1="70" y1="27" x2="690" y2="27" class="grid"/>
+          <line x1="123" y1="2" x2="123" y2="52" class="tick"/><line x1="175" y1="2" x2="175" y2="52" class="tick"/><line x1="228" y1="2" x2="228" y2="52" class="tick"/><line x1="281" y1="2" x2="281" y2="52" class="tick"/><line x1="334" y1="2" x2="334" y2="52" class="tick"/><line x1="386" y1="2" x2="386" y2="52" class="tick"/><line x1="439" y1="2" x2="439" y2="52" class="tick"/><line x1="492" y1="2" x2="492" y2="52" class="tick"/><line x1="544" y1="2" x2="544" y2="52" class="tick"/><line x1="597" y1="2" x2="597" y2="52" class="tick"/><line x1="650" y1="2" x2="650" y2="52" class="tick"/>
+          <polyline points="70,27.0 74,23.2 78,19.4 82,15.9 86,12.6 89,9.6 93,7.1 97,5.1 101,3.7 105,2.8 109,2.5 113,2.8 116,3.7 120,5.1 124,7.1 128,9.6 132,12.6 136,15.9 140,19.4 144,23.2 148,27.0 151,30.8 155,34.6 159,38.1 163,41.4 167,44.4 171,46.9 175,48.9 178,50.3 182,51.2 186,51.5 190,51.2 194,50.3 198,48.9 202,46.9 206,44.4 210,41.4 213,38.1 217,34.6 221,30.8 225,27.0 229,23.2 233,19.4 237,15.9 240,12.6 244,9.6 248,7.1 252,5.1 256,3.7 260,2.8 264,2.5 268,2.8 272,3.7 275,5.1 279,7.1 283,9.6 287,12.6 291,15.9 295,19.4 299,23.2 302,27.0 306,30.8 310,34.6 314,38.1 318,41.4 322,44.4 326,46.9 330,48.9 334,50.3 337,51.2 341,51.5 345,51.2 349,50.3 353,48.9 357,46.9 361,44.4 364,41.4 368,38.1 372,34.6 376,30.8 380,27.0 384,23.2 388,19.4 392,15.9 396,12.6 399,9.6 403,7.1 407,5.1 411,3.7 415,2.8 419,2.5 423,2.8 427,3.7 430,5.1 434,7.1 438,9.6 442,12.6 446,15.9 450,19.4 454,23.2 458,27.0 461,30.8 465,34.6 469,38.1 473,41.4 477,44.4 481,46.9 485,48.9 488,50.3 492,51.2 496,51.5 500,51.2 504,50.3 508,48.9 512,46.9 516,44.4 520,41.4 523,38.1 527,34.6 531,30.8 535,27.0 539,23.2 543,19.4 547,15.9 550,12.6 554,9.6 558,7.1 562,5.1 566,3.7 570,2.8 574,2.5 578,2.8 582,3.7 585,5.1 589,7.1 593,9.6 597,12.6 601,15.9 605,19.4 609,23.2 612,27.0 616,30.8 620,34.6 624,38.1 628,41.4 632,44.4 636,46.9 640,48.9 644,50.3 647,51.2 651,51.5 655,51.2 659,50.3 663,48.9 667,46.9 671,44.4 674,41.4 678,38.1 682,34.6 686,30.8 690,27.0" class="trace-f"/>
+        </g>
+        <g transform="translate(0,280)">
+          <path d="M70,8 H123 V30 H175 V8 H228 V30 H281 V8 H334 V30 H386 V8 H439 V30 H492 V8 H544 V30 H597 V8 H650 V30 H690" class="trace-2" stroke-width="1.8"/>
+        </g>
+        <g transform="translate(0,318)">
+          <line x1="70" y1="43.6" x2="690" y2="43.6" class="axis"/>
+          <polyline points="70,43.6 74,43.5 78,43.2 82,42.9 86,42.5 89,42.0 93,41.5 97,40.9 101,40.2 105,39.5 109,38.8 113,38.1 116,37.5 120,36.9 124,37.4 128,37.9 132,38.3 136,38.6 140,38.9 144,39.0 148,39.0 151,38.9 155,38.6 159,38.3 163,37.9 167,37.4 171,36.9 175,36.3 178,36.9 182,37.6 186,38.3 190,39.0 194,39.6 198,40.2 202,40.8 206,41.3 210,41.7 213,42.0 217,42.2 221,42.3 225,42.3 229,42.4 233,42.7 237,43.0 240,43.4 244,43.9 248,44.4 252,45.0 256,45.7 260,46.4 264,47.1 268,47.8 272,48.4 275,49.0 279,49.6 283,49.1 287,48.7 291,48.4 295,48.2 299,48.1 302,48.1 306,48.2 310,48.4 314,48.7 318,49.1 322,49.6 326,50.1 330,50.8 334,50.1 337,49.4 341,48.7 345,48.0 349,47.4 353,46.8 357,46.2 361,45.7 364,45.3 368,45.0 372,44.8 376,44.7 380,44.7 384,44.8 388,44.6 392,44.3 396,43.9 399,43.4 403,42.8 407,42.2 411,41.5 415,40.9 419,40.2 423,39.5 427,38.8 430,38.2 434,37.6 438,37.2 442,37.6 446,37.9 450,38.1 454,38.2 458,38.2 461,38.1 465,37.9 469,37.6 473,37.2 477,36.7 481,36.1 485,35.5 488,34.8 492,35.5 496,36.2 500,36.9 504,37.6 508,38.2 512,38.7 516,39.2 520,39.6 523,39.9 527,40.2 531,40.3 535,40.3 539,40.2 543,39.9 547,40.3 550,40.7 554,41.1 558,41.7 562,42.3 566,43.0 570,43.7 574,44.4 578,45.0 582,45.7 585,46.3 589,46.9 593,47.4 597,47.0 601,46.6 605,46.4 609,46.3 612,46.3 616,46.4 620,46.6 624,47.0 628,47.4 632,47.8 636,48.4 640,49.0 644,49.7 647,50.4 651,49.7 655,49.0 659,48.3 663,47.7 667,47.2 671,46.7 674,46.3 678,45.9 682,45.7 686,45.6 690,45.6" class="trace-2"/>
+          <text x="78" y="16" class="lbl" style="fill:var(--loss)">net = -0.03 — cancels</text>
+        </g>
+      </svg>
+    </div>
+    <div class="key">
+      <span><i class="sw" style="background:var(--ink-2);opacity:.55"></i>field being sensed</span>
+      <span><i class="sw" style="background:var(--loss)"></i>π pulse times</span>
+      <span><i class="sw" style="background:var(--signal)"></i>toggling function &amp; accumulated phase</span>
+    </div>
+    <figcaption><b>Rectification is the whole mechanism.</b> Top: when the pulse spacing <code>2τ</code> equals half the signal period, every sign flip of the field is matched by a sign flip of the toggling function, and phase grows without bound. Bottom: shift the spacing by a third and the two combs drift out of step — contributions alternate in sign and the net phase collapses to almost nothing. The sensor is blind to that frequency.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="head"><span class="num">04</span><h2>τ picks the station, N sharpens the tuning</h2></div>
+  <div class="col">
+    <p>Resonance happens when the pulse spacing is half a signal period: <code>2τ = 1/(2f)</code>, so</p>
+  </div>
+  <div class="eq col"><b>τ_res = (2m+1) / (4f)</b>   →   for f = 200 kHz:  <b>1.25 µs</b>, 3.75 µs, 6.25 µs, …</div>
+  <div class="col">
+    <p>The odd harmonics are real: a square wave contains only odd Fourier components, so the sensor also responds at 3f, 5f, 7f — but with gain falling as <code>2/(π·(2m+1))</code>. The fundamental peaks at <code>2/π ≈ 0.637</code>; the third harmonic reaches only 0.212.</p>
+    <p><strong>N does something different.</strong> At exact resonance the gain is <code>2/π</code> <em>regardless of N</em> — stacking more blocks does not make the signal bigger. What N buys is <em>selectivity</em>: the resonance peak narrows as <code>1/T_seq</code>, so a deeper sequence discriminates more finely between nearby frequencies.</p>
+  </div>
+
+  <figure>
+    <div class="plot">
+      <svg viewBox="0 0 740 230" role="img" aria-label="Filter gain versus frequency near 200 kilohertz for three sequence depths. All three peak at the same height of 0.637, but the peak narrows sharply as N increases from 4 to 20 to 64.">
+        <line x1="80" y1="185" x2="690" y2="185" class="axis"/>
+        <line x1="80" y1="40" x2="80" y2="185" class="axis"/>
+        <line x1="385" y1="40" x2="385" y2="190" class="grid"/>
+        <polyline points="80,123.5 82,122.8 84,122.1 85,121.4 87,120.7 89,120.0 91,119.2 93,118.5 94,117.8 96,117.1 98,116.4 100,115.7 102,115.0 103,114.3 105,113.6 107,112.9 109,112.2 110,111.5 112,110.8 114,110.1 116,109.4 118,108.7 119,108.0 121,107.3 123,106.6 125,105.9 127,105.2 128,104.5 130,103.8 132,103.1 134,102.4 136,101.8 137,101.1 139,100.4 141,99.7 143,99.0 145,98.4 146,97.7 148,97.0 150,96.4 152,95.7 154,95.0 155,94.4 157,93.7 159,93.0 161,92.4 163,91.7 164,91.1 166,90.4 168,89.8 170,89.2 172,88.5 173,87.9 175,87.3 177,86.6 179,86.0 180,85.4 182,84.8 184,84.1 186,83.5 188,82.9 189,82.3 191,81.7 193,81.1 195,80.5 197,79.9 198,79.3 200,78.8 202,78.2 204,77.6 206,77.0 207,76.4 209,75.9 211,75.3 213,74.8 215,74.2 216,73.7 218,73.1 220,72.6 222,72.0 224,71.5 225,71.0 227,70.4 229,69.9 231,69.4 232,68.9 234,68.4 236,67.9 238,67.4 240,66.9 241,66.4 243,65.9 245,65.4 247,64.9 249,64.5 250,64.0 252,63.5 254,63.1 256,62.6 258,62.2 259,61.8 261,61.3 263,60.9 265,60.5 267,60.0 268,59.6 270,59.2 272,58.8 274,58.4 276,58.0 277,57.6 279,57.2 281,56.9 283,56.5 285,56.1 286,55.8 288,55.4 290,55.1 292,54.7 294,54.4 295,54.0 297,53.7 299,53.4 301,53.1 302,52.8 304,52.5 306,52.2 308,51.9 310,51.6 311,51.3 313,51.0 315,50.8 317,50.5 319,50.2 320,50.0 322,49.7 324,49.5 326,49.3 328,49.0 329,48.8 331,48.6 333,48.4 335,48.2 337,48.0 338,47.8 340,47.6 342,47.5 344,47.3 346,47.1 347,47.0 349,46.8 351,46.7 353,46.5 354,46.4 356,46.3 358,46.1 360,46.0 362,45.9 363,45.8 365,45.7 367,45.6 369,45.6 371,45.5 372,45.4 374,45.4 376,45.3 378,45.3 380,45.2 381,45.2 383,45.2 385,45.1 387,45.1 389,45.1 390,45.1 392,45.1 394,45.1 396,45.1 398,45.2 399,45.2 401,45.2 403,45.3 405,45.3 407,45.4 408,45.4 410,45.5 412,45.6 414,45.7 416,45.8 417,45.9 419,46.0 421,46.1 423,46.2 424,46.3 426,46.4 428,46.6 430,46.7 432,46.9 433,47.0 435,47.2 437,47.3 439,47.5 441,47.7 442,47.9 444,48.1 446,48.3 448,48.5 450,48.7 451,48.9 453,49.1 455,49.3 457,49.6 459,49.8 460,50.1 462,50.3 464,50.6 466,50.8 468,51.1 469,51.4 471,51.7 473,52.0 475,52.3 476,52.6 478,52.9 480,53.2 482,53.5 484,53.8 485,54.2 487,54.5 489,54.8 491,55.2 493,55.6 494,55.9 496,56.3 498,56.7 500,57.0 502,57.4 503,57.8 505,58.2 507,58.6 509,59.0 511,59.4 512,59.8 514,60.2 516,60.7 518,61.1 520,61.5 521,62.0 523,62.4 525,62.9 527,63.3 529,63.8 530,64.3 532,64.8 534,65.2 536,65.7 538,66.2 539,66.7 541,67.2 543,67.7 545,68.2 546,68.7 548,69.2 550,69.7 552,70.3 554,70.8 555,71.3 557,71.9 559,72.4 561,73.0 563,73.5 564,74.1 566,74.6 568,75.2 570,75.8 572,76.3 573,76.9 575,77.5 577,78.1 579,78.7 581,79.3 582,79.9 584,80.5 586,81.1 588,81.7 590,82.3 591,82.9 593,83.5 595,84.1 597,84.8 598,85.4 600,86.0 602,86.7 604,87.3 606,87.9 607,88.6 609,89.2 611,89.9 613,90.5 615,91.2 616,91.8 618,92.5 620,93.2 622,93.8 624,94.5 625,95.2 627,95.9 629,96.5 631,97.2 633,97.9 634,98.6 636,99.3 638,100.0 640,100.6 642,101.3 643,102.0 645,102.7 647,103.4 649,104.1 651,104.8 652,105.5 654,106.2 656,107.0 658,107.7 660,108.4 661,109.1 663,109.8 665,110.5 667,111.2 668,111.9 670,112.7 672,113.4 674,114.1 676,114.8 677,115.6 679,116.3 681,117.0 683,117.7 685,118.5 686,119.2 688,119.9 690,120.6" class="trace-f" stroke-width="1.8"/>
+        <polyline points="80,177.0 82,177.6 84,178.3 85,179.0 87,179.7 89,180.4 91,181.2 93,182.0 94,182.8 96,183.6 98,184.5 100,184.7 102,183.8 103,182.9 105,182.1 107,181.2 109,180.3 110,179.4 112,178.6 114,177.7 116,176.9 118,176.0 119,175.2 121,174.5 123,173.7 125,173.0 127,172.3 128,171.6 130,171.0 132,170.4 134,169.9 136,169.4 137,169.0 139,168.6 141,168.2 143,167.9 145,167.7 146,167.5 148,167.4 150,167.4 152,167.4 154,167.4 155,167.6 157,167.8 159,168.0 161,168.3 163,168.7 164,169.2 166,169.7 168,170.3 170,170.9 172,171.6 173,172.4 175,173.2 177,174.1 179,175.0 180,176.0 182,177.0 184,178.1 186,179.2 188,180.3 189,181.5 191,182.8 193,184.0 195,184.7 197,183.4 198,182.0 200,180.7 202,179.3 204,177.9 206,176.6 207,175.2 209,173.8 211,172.5 213,171.1 215,169.8 216,168.5 218,167.3 220,166.0 222,164.9 224,163.7 225,162.6 227,161.6 229,160.6 231,159.7 232,158.8 234,158.1 236,157.4 238,156.7 240,156.2 241,155.8 243,155.4 245,155.1 247,155.0 249,154.9 250,155.0 252,155.1 254,155.4 256,155.8 258,156.3 259,156.9 261,157.6 263,158.4 265,159.4 267,160.5 268,161.7 270,163.0 272,164.5 274,166.0 276,167.7 277,169.5 279,171.5 281,173.5 283,175.6 285,177.9 286,180.3 288,182.8 290,184.7 292,182.0 294,179.2 295,176.4 297,173.4 299,170.4 301,167.3 302,164.1 304,160.9 306,157.5 308,154.2 310,150.8 311,147.3 313,143.8 315,140.3 317,136.7 319,133.1 320,129.5 322,125.9 324,122.3 326,118.8 328,115.2 329,111.6 331,108.1 333,104.6 335,101.2 337,97.8 338,94.4 340,91.1 342,87.9 344,84.8 346,81.7 347,78.7 349,75.8 351,73.0 353,70.4 354,67.8 356,65.3 358,63.0 360,60.8 362,58.7 363,56.8 365,55.0 367,53.3 369,51.8 371,50.4 372,49.2 374,48.2 376,47.3 378,46.5 380,45.9 381,45.5 383,45.2 385,45.1 387,45.2 389,45.4 390,45.8 392,46.4 394,47.1 396,47.9 398,49.0 399,50.2 401,51.5 403,53.0 405,54.6 407,56.4 408,58.3 410,60.3 412,62.5 414,64.8 416,67.3 417,69.8 419,72.5 421,75.2 423,78.1 424,81.1 426,84.1 428,87.3 430,90.5 432,93.8 433,97.1 435,100.5 437,104.0 439,107.5 441,111.0 442,114.6 444,118.2 446,121.8 448,125.4 450,129.0 451,132.6 453,136.2 455,139.8 457,143.4 459,146.9 460,150.4 462,153.8 464,157.2 466,160.6 468,163.8 469,167.1 471,170.2 473,173.3 475,176.3 476,179.1 478,182.0 480,184.7 482,182.7 484,180.2 485,177.8 487,175.5 489,173.3 491,171.2 493,169.3 494,167.4 496,165.7 498,164.1 500,162.6 502,161.3 503,160.1 505,158.9 507,158.0 509,157.1 511,156.3 512,155.7 514,155.2 516,154.8 518,154.5 520,154.4 521,154.3 523,154.4 525,154.5 527,154.8 529,155.1 530,155.6 532,156.1 534,156.7 536,157.4 538,158.2 539,159.1 541,160.0 543,161.0 545,162.1 546,163.2 548,164.4 550,165.6 552,166.8 554,168.1 555,169.4 557,170.8 559,172.2 561,173.5 563,174.9 564,176.3 566,177.7 568,179.2 570,180.6 572,181.9 573,183.3 575,184.7 577,184.0 579,182.7 581,181.4 582,180.2 584,179.0 586,177.9 588,176.7 590,175.7 591,174.7 593,173.7 595,172.8 597,172.0 598,171.2 600,170.5 602,169.8 604,169.2 606,168.7 607,168.2 609,167.8 611,167.4 613,167.2 615,167.0 616,166.8 618,166.7 620,166.7 622,166.8 624,166.9 625,167.1 627,167.3 629,167.6 631,168.0 633,168.4 634,168.8 636,169.3 638,169.9 640,170.5 642,171.1 643,171.8 645,172.5 647,173.3 649,174.0 651,174.8 652,175.7 654,176.5 656,177.4 658,178.3 660,179.2 661,180.1 663,181.0 665,181.9 667,182.8 668,183.8 670,184.7 672,184.4 674,183.6 676,182.7 677,181.8 679,181.0 681,180.2 683,179.4 685,178.7 686,178.0 688,177.3 690,176.6" class="trace"/>
+        <polyline points="80,182.1 82,182.7 84,183.4 85,184.2 87,185.0 89,184.2 91,183.4 93,182.6 94,181.9 96,181.3 98,180.9 100,180.6 102,180.4 103,180.4 105,180.6 107,180.9 109,181.4 110,182.0 112,182.8 114,183.6 116,184.5 118,184.6 119,183.7 121,182.8 123,182.0 125,181.3 127,180.7 128,180.3 130,180.0 132,179.9 134,179.9 136,180.2 137,180.6 139,181.2 141,182.0 143,182.8 145,183.8 146,184.8 148,184.2 150,183.1 152,182.2 154,181.3 155,180.5 157,179.9 159,179.5 161,179.2 163,179.2 164,179.3 166,179.7 168,180.3 170,181.0 172,181.9 173,183.0 175,184.1 177,184.7 179,183.6 180,182.4 182,181.3 184,180.4 186,179.5 188,178.9 189,178.5 191,178.3 193,178.3 195,178.6 197,179.1 198,179.8 200,180.8 202,181.9 204,183.1 206,184.5 207,184.2 209,182.8 211,181.4 213,180.2 215,179.1 216,178.2 218,177.6 220,177.1 222,177.0 224,177.1 225,177.6 227,178.3 229,179.2 231,180.4 232,181.8 234,183.4 236,185.0 238,183.3 240,181.7 241,180.1 243,178.6 245,177.4 247,176.4 249,175.7 250,175.3 252,175.2 254,175.5 256,176.1 258,177.1 259,178.4 261,180.0 263,181.8 265,183.8 267,184.1 268,182.0 270,180.0 272,178.0 274,176.2 276,174.7 277,173.6 279,172.8 281,172.4 283,172.4 285,172.9 286,173.9 288,175.3 290,177.1 292,179.3 294,181.8 295,184.5 297,182.7 299,179.9 301,177.1 302,174.5 304,172.1 306,170.1 308,168.6 310,167.6 311,167.2 313,167.4 315,168.2 317,169.7 319,171.9 320,174.7 322,178.0 324,181.7 326,184.1 328,179.8 329,175.4 331,171.0 333,166.9 335,163.1 337,159.8 338,157.3 340,155.5 342,154.8 344,155.0 346,156.4 347,159.0 349,162.9 351,168.0 353,174.3 354,181.7 356,179.8 358,170.3 360,160.1 362,149.2 363,138.0 365,126.5 367,115.0 369,103.7 371,92.9 372,82.7 374,73.4 376,65.2 378,58.2 380,52.6 381,48.5 383,46.0 385,45.1 387,46.0 389,48.4 390,52.5 392,58.0 394,65.0 396,73.2 398,82.5 399,92.7 401,103.5 403,114.8 405,126.3 407,137.8 408,149.1 410,160.0 412,170.3 414,179.7 416,181.7 417,174.2 419,167.9 421,162.8 423,158.9 424,156.3 426,154.8 428,154.6 430,155.3 432,157.1 433,159.7 435,162.9 437,166.7 439,170.9 441,175.3 442,179.8 444,184.1 446,181.7 448,177.9 450,174.6 451,171.8 453,169.6 455,168.0 457,167.2 459,167.0 460,167.4 462,168.4 464,170.0 466,172.0 468,174.3 469,177.0 471,179.8 473,182.7 475,184.5 476,181.7 478,179.2 480,177.0 482,175.2 484,173.7 485,172.7 487,172.2 489,172.2 491,172.6 493,173.4 494,174.6 496,176.1 498,177.9 500,179.9 502,182.0 503,184.1 505,183.8 507,181.7 509,179.9 511,178.3 512,177.0 514,176.0 516,175.3 518,175.0 520,175.1 521,175.5 523,176.2 525,177.2 527,178.5 529,180.0 530,181.6 532,183.3 534,185.0 536,183.3 538,181.8 539,180.3 541,179.1 543,178.1 545,177.4 546,176.9 548,176.8 550,176.9 552,177.4 554,178.0 555,179.0 557,180.1 559,181.3 561,182.7 563,184.1 564,184.4 566,183.1 568,181.8 570,180.6 572,179.7 573,178.9 575,178.4 577,178.1 579,178.1 581,178.3 582,178.7 584,179.4 586,180.2 588,181.2 590,182.3 591,183.5 593,184.7 595,184.0 597,182.9 598,181.8 600,180.9 602,180.1 604,179.5 606,179.1 607,179.0 609,179.0 611,179.3 613,179.7 615,180.4 616,181.2 618,182.1 620,183.1 622,184.1 624,184.8 625,183.7 627,182.8 629,181.9 631,181.1 633,180.5 634,180.0 636,179.7 638,179.7 640,179.8 642,180.1 643,180.5 645,181.1 647,181.9 649,182.7 651,183.7 652,184.6 654,184.4 656,183.5 658,182.7 660,181.9 661,181.3 663,180.8 665,180.4 667,180.2 668,180.2 670,180.4 672,180.7 674,181.2 676,181.8 677,182.5 679,183.3 681,184.1 683,185.0 685,184.2 686,183.4 688,182.6 690,182.0" class="trace-2"/>
+        <text x="80" y="204" class="lbl" text-anchor="middle">192</text>
+        <text x="385" y="204" class="lbl" text-anchor="middle">200</text>
+        <text x="690" y="204" class="lbl" text-anchor="end">208 kHz</text>
+        <text x="385" y="222" class="lbl-s" text-anchor="middle">SIGNAL FREQUENCY</text>
+        <text x="74" y="44" class="lbl" text-anchor="end">0.64</text>
+        <text x="74" y="188" class="lbl" text-anchor="end">0</text>
+        <text x="30" y="115" class="lbl-s" text-anchor="middle" transform="rotate(-90 30 115)">GAIN G</text>
+        <text x="96" y="58" class="lbl" style="fill:var(--loss)">N = 64 · 0.94 kHz wide</text>
+        <text x="96" y="76" class="lbl" style="fill:var(--signal)">N = 20 · 2.96 kHz</text>
+        <text x="96" y="94" class="lbl">N = 4 · 15.06 kHz</text>
+      </svg>
+    </div>
+    <figcaption><b>Depth buys bandwidth, not amplitude.</b> All three curves peak at the same <code>2/π</code>. Going from N = 4 to N = 64 narrows the passband sixteenfold — the sensor becomes a spectrometer. That sharpening is the real payoff of depth, and it is what the abstract means by "spectral selectivity".</figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="head"><span class="num">05</span><h2>Where more control stops paying</h2></div>
+  <div class="col">
+    <p>If depth only ever sharpened the filter, you would always want more of it. Five quantities actually move when you change N, and they do not move together. The sensitivity proxy the repo minimises is:</p>
+  </div>
+  <div class="eq col">η  ∝  √(T_cycle / R)  /  ( <b>G</b> · <b>C</b> · <i>e^−(T_seq/T₂)^p</i> · <i>F^8N</i> · <b>T_seq</b> )</div>
+  <div class="col">
+    <p>Lower η is better. Three terms in that denominator <em>improve</em> with depth or stay flat — the gain <code>G</code> is constant at resonance, contrast <code>C</code> is fixed, and phase accumulation time <code>T_seq</code> grows linearly with N. Two terms <em>decay</em>: the coherence envelope, and pulse fidelity raised to the power of the pulse count.</p>
+    <p>Plotting them together shows which competition actually decides the answer — and it is not the one you would guess.</p>
+  </div>
+
+  <figure>
+    <div class="plot">
+      <svg viewBox="0 0 740 340" role="img" aria-label="Top panel: filter gain stays flat while the coherence envelope decays gently and pulse fidelity decays steeply with sequence depth. Bottom panel: the resulting sensitivity proxy forms a valley with its minimum at N equals 20.">
+        <line x1="70" y1="150" x2="620" y2="150" class="axis"/>
+        <line x1="70" y1="34" x2="70" y2="150" class="axis"/>
+        <text x="64" y="38" class="lbl" text-anchor="end">1.0</text>
+        <text x="64" y="153" class="lbl" text-anchor="end">0</text>
+        <polyline points="70,76.2 79,76.2 87,76.2 96,76.2 105,76.2 114,76.2 122,76.2 131,76.2 140,76.2 149,76.2 157,76.2 166,76.2 175,76.2 183,76.2 192,76.2 201,76.2 210,76.2 218,76.2 227,76.2 236,76.2 245,76.2 253,76.2 262,76.2 271,76.2 280,76.2 288,76.2 297,76.2 306,76.2 314,76.2 323,76.2 332,76.2 341,76.2 349,76.2 358,76.2 367,76.2 376,76.2 384,76.2 393,76.2 402,76.2 410,76.2 419,76.2 428,76.2 437,76.2 445,76.2 454,76.2 463,76.2 472,76.2 480,76.2 489,76.2 498,76.2 507,76.2 515,76.2 524,76.2 533,76.2 541,76.2 550,76.2 559,76.2 568,76.2 576,76.2 585,76.2 594,76.2 603,76.2 611,76.2 620,76.2" class="trace" stroke-dasharray="5 3"/>
+        <polyline points="70,34.5 79,34.9 87,35.2 96,35.6 105,35.9 114,36.1 122,36.4 131,36.7 140,37.0 149,37.2 157,37.5 166,37.7 175,37.9 183,38.2 192,38.4 201,38.6 210,38.9 218,39.1 227,39.3 236,39.5 245,39.7 253,40.0 262,40.2 271,40.4 280,40.6 288,40.8 297,41.0 306,41.2 314,41.4 323,41.6 332,41.8 341,42.0 349,42.2 358,42.3 367,42.5 376,42.7 384,42.9 393,43.1 402,43.3 410,43.5 419,43.6 428,43.8 437,44.0 445,44.2 454,44.3 463,44.5 472,44.7 480,44.9 489,45.0 498,45.2 507,45.4 515,45.5 524,45.7 533,45.9 541,46.0 550,46.2 559,46.4 568,46.5 576,46.7 585,46.9 594,47.0 603,47.2 611,47.3 620,47.5" class="trace-f" stroke-width="2"/>
+        <polyline points="70,36.8 79,39.4 87,42.1 96,44.6 105,47.1 114,49.6 122,52.0 131,54.3 140,56.6 149,58.8 157,61.0 166,63.1 175,65.1 183,67.1 192,69.1 201,71.0 210,72.9 218,74.7 227,76.5 236,78.3 245,80.0 253,81.6 262,83.3 271,84.8 280,86.4 288,87.9 297,89.4 306,90.8 314,92.2 323,93.6 332,94.9 341,96.2 349,97.5 358,98.8 367,100.0 376,101.2 384,102.3 393,103.5 402,104.6 410,105.6 419,106.7 428,107.7 437,108.7 445,109.7 454,110.7 463,111.6 472,112.5 480,113.4 489,114.3 498,115.1 507,116.0 515,116.8 524,117.6 533,118.3 541,119.1 550,119.8 559,120.5 568,121.2 576,121.9 585,122.6 594,123.2 603,123.9 611,124.5 620,125.1" class="trace-2"/>
+        <text x="630" y="76.15" class="lbl" style="fill:var(--signal)" dy="4">gain G</text>
+        <text x="630" y="47.51" class="lbl" dy="4">coherence</text>
+        <text x="630" y="125.09" class="lbl" style="fill:var(--loss)" dy="4">pulse fid.</text>
+        <text x="24" y="92" class="lbl-s" text-anchor="middle" transform="rotate(-90 24 92)">FACTOR</text>
+        <line x1="70" y1="178" x2="620" y2="178" class="grid"/>
+        <rect x="235.87" y="196" width="0.1" height="104" class="band"/>
+        <line x1="235.87" y1="190" x2="235.87" y2="306" class="mark"/>
+        <text x="235.87" y="322" class="lbl" text-anchor="middle" style="fill:var(--loss)">N = 20</text>
+        <polyline points="70,196.0 79,241.7 87,261.9 96,272.9 105,280.0 114,284.8 122,288.4 131,291.1 140,293.2 149,294.9 157,296.2 166,297.2 175,298.0 183,298.6 192,299.1 201,299.5 210,299.8 218,299.9 227,300.0 236,300.0 245,299.9 253,299.8 262,299.6 271,299.4 280,299.1 288,298.8 297,298.5 306,298.1 314,297.6 323,297.2 332,296.6 341,296.1 349,295.5 358,294.9 367,294.3 376,293.6 384,292.9 393,292.2 402,291.4 410,290.6 419,289.8 428,289.0 437,288.1 445,287.2 454,286.2 463,285.3 472,284.3 480,283.2 489,282.2 498,281.1 507,280.0 515,278.8 524,277.6 533,276.4 541,275.2 550,273.9 559,272.6 568,271.2 576,269.8 585,268.4 594,266.9 603,265.4 611,263.9 620,262.3" class="trace" stroke-width="2.4"/>
+        <line x1="70" y1="196" x2="70" y2="300" class="axis"/>
+        <text x="64" y="200" class="lbl" text-anchor="end">3×</text>
+        <text x="64" y="303" class="lbl" text-anchor="end">1×</text>
+        <text x="24" y="248" class="lbl-s" text-anchor="middle" transform="rotate(-90 24 248)">η / η_min</text>
+        <text x="620" y="322" class="lbl" text-anchor="middle">N = 64</text>
+        <text x="70" y="322" class="lbl">N = 1</text>
+        <text x="78" y="214" class="lbl" style="fill:var(--signal)">shallow — too little phase time</text>
+        <text x="612" y="240" class="lbl" text-anchor="end" style="fill:var(--signal)">deep — pulse errors dominate</text>
+      </svg>
+    </div>
+    <figcaption><b>The window, and what actually sets it.</b> The coherence envelope barely moves across this range — it only falls from 0.996 to 0.884. The steep decay is <em>pulse fidelity</em>: at 0.997 per pulse and 8N pulses per sequence, N = 64 means 512 pulses and a factor of 0.215. So the real competition is <b>phase accumulation time against accumulated pulse error</b>, not coherence against control. The minimum sits at N = 20.</figcaption>
+  </figure>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>N blocks</th><th>π pulses</th><th>gain G</th><th>coherence</th><th>pulse fid.</th><th>η / η_min</th></tr></thead>
+      <tbody><tr><td>1</td><td>8</td><td>0.637</td><td>0.996</td><td>0.976</td><td>3.137</td></tr><tr><td>4</td><td>32</td><td>0.637</td><td>0.987</td><td>0.908</td><td>1.521</td></tr><tr><td>8</td><td>64</td><td>0.637</td><td>0.977</td><td>0.825</td><td>1.171</td></tr><tr><td>16</td><td>128</td><td>0.637</td><td>0.960</td><td>0.681</td><td>1.010</td></tr><tr class="hi"><td>20</td><td>160</td><td>0.637</td><td>0.952</td><td>0.618</td><td>1.000</td></tr><tr><td>32</td><td>256</td><td>0.637</td><td>0.931</td><td>0.463</td><td>1.075</td></tr><tr><td>48</td><td>384</td><td>0.637</td><td>0.906</td><td>0.315</td><td>1.323</td></tr><tr><td>64</td><td>512</td><td>0.637</td><td>0.884</td><td>0.215</td><td>1.724</td></tr></tbody>
+    </table>
+  </div>
+
+  <div class="note col">
+    <span class="h">The counter-intuitive bit</span>
+    <p>Because gain is flat at resonance, "stronger filtering" never amplifies your signal. Depth pays only through <code>T_seq</code> in the denominator — longer sequences accumulate more phase per shot and amortise the fixed readout overhead. The moment that linear gain is outrun by the exponential <code>F^8N</code>, the curve turns around.</p>
+  </div>
+</section>
+
+<section>
+  <div class="head"><span class="num">06</span><h2>What EDT is claiming here</h2></div>
+  <div class="col">
+    <p>The EDT framing is deliberately narrow: a window counts as real only if an explicit diagnostic extracts a finite interval from observables, and performance degrades on <em>both</em> sides of it. The NV case study is the cleanest instance — the valley above has a genuine interior minimum, with worse sensitivity at both lower and higher depth, and the degradation on each side has a named physical cause.</p>
+    <p>That is a modest claim, and it holds. What it does not automatically give you is a <em>universal</em> window: rerunning the same diagnostic across the three calibration scenarios moves the optimum from N = 8 to N = 20 to N = 64. The window tracks the coherence and fidelity budget of the particular device. Arguably that is the more interesting result — the diagnostic reports a property of the hardware, not a constant of nature.</p>
+  </div>
+  <div class="note warn col">
+    <span class="h">Sampling caveat — worth internalising</span>
+    <p>The resonances are narrow, and how narrow is set by N. At N = 20 the passband is only 2.96 kHz wide out of 200 kHz. A τ sweep on a grid coarser than that peak width will miss the resonance entirely and report whichever off-peak sample happened to score best.</p>
+    <p>That is exactly what the original 19-point linear τ grid did: it straddled 1.25 µs and 3.75 µs without landing on either. Any sweep over τ must be aligned to <code>(2m+1)/(4f)</code>, or refined locally around each peak, before its optimum means anything.</p>
+  </div>
+</section>
+
+<section>
+  <div class="head"><span class="num">07</span><h2>Reading list</h2></div>
+  <div class="col"><p>Ordered by what will pay off fastest given what the repo already models. Items marked <span class="gap">gap</span> are not currently in <code>references.bib</code>. Verify volume and page numbers against the publisher before adding them.</p></div>
+
+  <div class="reads">
+    <div class="grp">
+      <h3>Start here</h3>
+      <div class="ref"><span class="n">1</span><span><span class="t">New, compensated Carr–Purcell sequences</span> <span class="gap">gap</span><br><span class="c">Gullion, Baker &amp; Conradi · J. Magn. Reson. 89, 479 (1990)</span><span class="w">The paper that introduced XY8. Four pages, and it explains exactly why the <code>X Y X Y Y X Y X</code> phase pattern is what it is. You are citing the sequence throughout without citing its origin.</span></span></div>
+      <div class="ref"><span class="n">2</span><span><span class="t">Quantum sensing</span><br><span class="c">Degen, Reinhard &amp; Cappellaro · Rev. Mod. Phys. 89, 035002 (2017)</span><span class="w">Already cited. §V and §VI are the canonical derivation of the filter-function picture behind your <code>xy8_filter_gain</code>.</span></span></div>
+      <div class="ref"><span class="n">3</span><span><span class="t">Sensitivity optimization for NV-diamond magnetometry</span><br><span class="c">Barry, Schloss, Bauch, Turner, Hart, Pham &amp; Walsworth · Rev. Mod. Phys. 92, 015004 (2020)</span><span class="w">Already cited, and the direct reference for your η. Compare its sensitivity expression term-by-term against <code>eta_ac</code> — particularly the readout and overhead factors, where your 1.5 × 10¹⁰ cps with N_eff = 1 needs a defensible justification.</span></span></div>
+    </div>
+
+    <div class="grp">
+      <h3>The filter picture — the maths under your G</h3>
+      <div class="ref"><span class="n">4</span><span><span class="t">Dynamical decoupling sequence construction as a filter-design problem</span> <span class="gap">gap</span><br><span class="c">Biercuk, Doherty &amp; Uys · J. Phys. B 44, 154002 (2011)</span><span class="w">Treats sequence design explicitly as filter design. This is the closest published framing to what your τ–N sweep is doing, and the most useful single citation for positioning EDT against prior art.</span></span></div>
+      <div class="ref"><span class="n">5</span><span><span class="t">How to enhance dephasing time in superconducting qubits</span><br><span class="c">Cywiński, Lutchyn, Nave &amp; Das Sarma · Phys. Rev. B 77, 174509 (2008)</span><span class="w">Already cited. The origin of the filter-function formalism; where the odd-harmonic comb and the <code>1/T_seq</code> linewidth come from.</span></span></div>
+      <div class="ref"><span class="n">6</span><span><span class="t">Measuring the spectrum of colored noise by dynamical decoupling</span> <span class="gap">gap</span><br><span class="c">Álvarez &amp; Suter · Phys. Rev. Lett. 107, 230501 (2011)</span><span class="w">Inverts the same physics to do spectroscopy. Useful because it makes the narrow-passband assumption explicit — the assumption your original τ grid silently violated.</span></span></div>
+    </div>
+
+    <div class="grp">
+      <h3>NV decoupling experiments — where your T₂(N) model comes from</h3>
+      <div class="ref"><span class="n">7</span><span><span class="t">Universal dynamical decoupling of a single solid-state spin from a spin bath</span> <span class="gap">gap</span><br><span class="c">de Lange, Wang, Ristè, Dobrovitski &amp; Hanson · Science 330, 60 (2010)</span><span class="w">The standard experimental anchor for T₂ scaling with pulse number in NV. Your <code>t2_xy8_empirical</code> uses <code>T₂ ∝ N^α</code> with α = 0.6 — this is where such exponents are measured, and citing it turns a bare parameter into a sourced one.</span></span></div>
+      <div class="ref"><span class="n">8</span><span><span class="t">Solid-state electronic spin coherence time approaching one second</span> <span class="gap">gap</span><br><span class="c">Bar-Gill, Pham, Jarmola, Budker &amp; Walsworth · Nat. Commun. 4, 1743 (2013)</span><span class="w">The extreme-depth limit, with thousands of pulses. Directly relevant to whether your optimistic scenario's N = 64 optimum is physically reachable.</span></span></div>
+      <div class="ref"><span class="n">9</span><span><span class="t">Robust dynamical decoupling for quantum computing and quantum memory</span> <span class="gap">gap</span><br><span class="c">Souza, Álvarez &amp; Suter · Phys. Rev. Lett. 106, 240501 (2011)</span><span class="w">Quantifies how pulse-error accumulation differs between sequences. Since your window is set almost entirely by <code>F^8N</code>, this is the paper that decides whether a single scalar fidelity is the right model at all.</span></span></div>
+      <div class="ref"><span class="n">10</span><span><span class="t">Enhanced solid-state multispin metrology using dynamical decoupling</span> <span class="gap">gap</span><br><span class="c">Pham, Bar-Gill, Belthangady, Le Sage, Cappellaro, Lukin, Yacoby &amp; Walsworth · Phys. Rev. B 86, 045214 (2012)</span><span class="w">Ensemble NV under decoupling — the closest published match to the regime your N_eff parameter is meant to represent.</span></span></div>
+    </div>
+
+    <div class="grp">
+      <h3>Why anyone cares</h3>
+      <div class="ref"><span class="n">11</span><span><span class="t">Nuclear magnetic resonance spectroscopy on a (5-nanometer)³ sample volume</span> <span class="gap">gap</span><br><span class="c">Staudacher, Shi, Pezzagna, Meijer, Du, Meriles, Reinhard &amp; Wrachtrup · Science 339, 561 (2013)</span><span class="w">XY8 doing real work: nanoscale NMR. The companion paper by Mamin et al. in the same issue (Science 339, 557) is worth reading alongside it.</span></span></div>
+      <div class="ref"><span class="n">12</span><span><span class="t">Probing condensed matter physics with magnetometry based on nitrogen-vacancy centres in diamond</span><br><span class="c">Casola, van der Sar &amp; Yacoby · Nat. Rev. Mater. 3, 17088 (2018)</span><span class="w">Already cited. The bridge between the NV case study and the materials half of your paper.</span></span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Generated from the EDT companion repository · nominal scenario, f_target = 200 kHz, τ = 1.25 µs<br>
+  Figures 2–4 computed live from <code>nvratemodel_api.py</code>; Figure 1 is schematic.
+</footer>
+
+</div>
+</body>
+</html>
